@@ -15,6 +15,8 @@ from typing import Any, Literal
 import pandas as pd
 import yfinance as yf
 
+from . import nse_live as _nse
+
 Market = Literal["IN", "US"]
 
 # A few common aliases so users can type the obvious thing.
@@ -200,7 +202,15 @@ class LiveQuote:
     market_state: str                 # REGULAR / PREPRE / POST / CLOSED / ...
     bars: pd.DataFrame                 # intraday OHLCV for the chosen window
     interval: str
+    source: str = "YAHOO"              # NSE = exchange real-time, YAHOO = ~15m delayed
+    vwap: float | None = None          # session VWAP as published by the exchange
+    has_bar_volume: bool = True        # False when per-bar volume is unavailable
+    volume_delayed: bool = False       # volume bars lag the price candles
     fetched_at: _dt.datetime = field(default_factory=lambda: _dt.datetime.now(_dt.UTC))
+
+    @property
+    def is_realtime(self) -> bool:
+        return self.source == "NSE"
 
     @property
     def change(self) -> float:
@@ -251,12 +261,15 @@ def _us_market_state() -> str:
     return "CLOSED"
 
 
-def fetch_live(
+def _fetch_live_yahoo(
     raw_ticker: str, interval: str = "5m", period: str = "1d", market: Market = "IN"
 ) -> LiveQuote:
     """A light, short-lived fetch for the live chart — intraday bars plus the
     latest quote. Kept separate from :func:`fetch` so it can be cached with a
     much shorter TTL.
+
+    Yahoo delays Indian intraday data by roughly 15 minutes; see
+    :func:`fetch_live` for the real-time path.
     """
     symbol = normalize_ticker(raw_ticker, market)
     interval = interval if interval in _INTRADAY_MAX_PERIOD else "5m"
@@ -360,3 +373,98 @@ def _clean_news(raw: list[dict[str, Any]]) -> list[dict[str, Any]]:
             {"title": title, "publisher": publisher, "link": link, "published": pub}
         )
     return out
+
+
+# --------------------------------------------------------------------------
+# Real-time path
+# --------------------------------------------------------------------------
+def _borrow_yahoo_volume(bars: pd.DataFrame, symbol: str, interval: str) -> tuple[pd.DataFrame, bool]:
+    """NSE's chart feed carries price but no per-bar volume. Yahoo has volume
+    on the same bar grid, ~15 min behind, so we graft it on for the bars it
+    covers and leave the most recent ones at zero.
+
+    Returns ``(bars, delayed)`` — ``delayed`` is True when any volume landed.
+    """
+    try:
+        vol = yf.Ticker(symbol).history(period="1d", interval=interval,
+                                        auto_adjust=False)
+    except Exception:  # noqa: BLE001
+        return bars, False
+    if vol is None or vol.empty or "Volume" not in vol:
+        return bars, False
+
+    v = vol["Volume"]
+    try:
+        if v.index.tz is None:
+            v.index = v.index.tz_localize("Asia/Kolkata")
+        else:
+            v.index = v.index.tz_convert("Asia/Kolkata")
+        bidx = bars.index.tz_convert("Asia/Kolkata") if bars.index.tz is not None else bars.index
+        aligned = v.reindex(bidx).to_numpy()
+    except Exception:  # noqa: BLE001
+        return bars, False
+
+    bars = bars.copy()
+    bars["Volume"] = pd.Series(aligned, index=bars.index).fillna(0.0)
+    return bars, bool(bars["Volume"].sum() > 0)
+
+
+def _fetch_live_nse(raw_ticker: str, interval: str, market: Market) -> LiveQuote | None:
+    """Exchange real-time quote + candles, or ``None`` if this symbol/market
+    is not served by the NSE provider or NSE refuses."""
+    if market != "IN":
+        return None
+    symbol = normalize_ticker(raw_ticker, market)
+    base = _nse.nse_base_symbol(symbol)
+    if not base:
+        return None
+
+    try:
+        snap = _nse.snapshot(base, interval=interval)
+    except Exception:  # noqa: BLE001 — any failure means "use Yahoo"
+        return None
+
+    bars = snap["bars"]
+    if bars is None or bars.empty or not snap.get("price"):
+        return None
+
+    bars, vol_delayed = _borrow_yahoo_volume(bars, symbol, interval)
+
+    return LiveQuote(
+        symbol=symbol,
+        name=snap.get("name") or symbol,
+        currency="INR",
+        price=float(snap["price"]),
+        prev_close=float(snap.get("prev_close") or snap["price"]),
+        day_open=snap.get("day_open"),
+        day_high=snap.get("day_high"),
+        day_low=snap.get("day_low"),
+        day_volume=snap.get("day_volume"),
+        # NSE tells us the session state outright ("PO" = pre-open,
+        # "NM" = normal market); fall back to the clock for anything else.
+        market_state={"PO": "PRE", "NM": "REGULAR"}.get(
+            str(snap.get("status") or "").upper(), _in_market_state()),
+        bars=bars,
+        interval=interval,
+        source="NSE",
+        vwap=snap.get("vwap"),
+        has_bar_volume=vol_delayed,
+        volume_delayed=vol_delayed,
+    )
+
+
+def fetch_live(
+    raw_ticker: str, interval: str = "5m", period: str = "1d", market: Market = "IN"
+) -> LiveQuote:
+    """Live chart data for one symbol.
+
+    Prefers NSE's own real-time feed for single-session Indian equity views
+    (``period == "1d"``); falls back to the ~15 min delayed Yahoo feed for
+    indices, BSE symbols, US tickers, multi-day windows, and whenever NSE is
+    unreachable. Check :attr:`LiveQuote.source` to see which one answered.
+    """
+    if market == "IN" and period == "1d":
+        q = _fetch_live_nse(raw_ticker, interval, market)
+        if q is not None:
+            return q
+    return _fetch_live_yahoo(raw_ticker, interval=interval, period=period, market=market)
