@@ -244,6 +244,21 @@ section[data-testid="stSidebar"] label, section[data-testid="stSidebar"] .stMark
   padding:.35rem;
 }}
 
+/* narrow viewports: keep figures on one line */
+@media (max-width: 1000px) {{
+  .kpi {{ padding:.5rem .55rem; min-height:4.5rem; }}
+  .kpi .k-val {{ font-size:1.0rem; }}
+  .kpi .k-val.sm {{ font-size:.88rem; }}
+  .kpi .k-lab {{ font-size:.56rem; letter-spacing:.1em; }}
+  .kpi .k-sub {{ font-size:.64rem; }}
+  .meter .m-val {{ font-size:1rem; }}
+  .term-bar .tb-cell {{ padding:0 .5rem; font-size:.68rem; }}
+  .term-bar .tb-px {{ font-size:.9rem; padding:0 .5rem; }}
+  .term-bar .tb-name {{ max-width:18ch; }}
+  .stTabs [data-baseweb="tab"] {{ padding:0 .55rem; font-size:.64rem; }}
+}}
+.kpi .k-val {{ white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }}
+
 /* headline rows */
 .hl {{
   display:flex; gap:.7rem; align-items:flex-start; padding:.55rem .1rem;
