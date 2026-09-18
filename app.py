@@ -216,10 +216,17 @@ def _price_chart(frame: pd.DataFrame, ind: dict) -> go.Figure:
 
 def _live_chart(q, cur: str, market: str = "IN") -> go.Figure:
     df = q.bars.copy()
-    fig = make_subplots(
-        rows=2, cols=1, shared_xaxes=True, row_heights=[0.78, 0.22],
-        vertical_spacing=0.035,
-    )
+    # The exchange feed carries price but not per-bar volume; drop the volume
+    # panel rather than draw an empty one.
+    show_vol = bool(getattr(q, "has_bar_volume", True)) and \
+        "Volume" in df and float(df["Volume"].sum()) > 0
+    if show_vol:
+        fig = make_subplots(
+            rows=2, cols=1, shared_xaxes=True, row_heights=[0.78, 0.22],
+            vertical_spacing=0.035,
+        )
+    else:
+        fig = make_subplots(rows=1, cols=1)
     fig.add_trace(
         go.Candlestick(
             x=df.index, open=df["Open"], high=df["High"], low=df["Low"],
@@ -231,9 +238,16 @@ def _live_chart(q, cur: str, market: str = "IN") -> go.Figure:
         row=1, col=1,
     )
 
-    # Session VWAP (resets per trading day).
+    # Session VWAP. On the exchange feed NSE publishes the official session
+    # VWAP outright, so use that rather than reconstructing one from bars
+    # whose volume came from a different (delayed) source.
     session_tz = "America/New_York" if market == "US" else "Asia/Kolkata"
-    if "Volume" in df and df["Volume"].sum() > 0:
+    if getattr(q, "vwap", None):
+        fig.add_hline(y=float(q.vwap), line=dict(color=C["amber"], width=1.2, dash="dot"),
+                      annotation_text=f"VWAP {q.vwap:,.2f}", annotation_position="top right",
+                      annotation_font=dict(size=9, color=C["amber"], family=T.MONO),
+                      row=1, col=1)
+    elif "Volume" in df and df["Volume"].sum() > 0:
         typ = (df["High"] + df["Low"] + df["Close"]) / 3
         day = df.index.tz_convert(session_tz).date if df.index.tz is not None else df.index.date
         grp = pd.Series(day, index=df.index)
@@ -256,19 +270,21 @@ def _live_chart(q, cur: str, market: str = "IN") -> go.Figure:
                       annotation_font=dict(size=9.5, color=C["blue"], family=T.MONO),
                       row=1, col=1)
 
-    up = df["Close"] >= df["Open"]
-    fig.add_trace(
-        go.Bar(x=df.index, y=df["Volume"], name="Volume",
-               marker_color=up.map({True: C["up"], False: C["down"]}), opacity=.55),
-        row=2, col=1,
-    )
+    if show_vol:
+        up = df["Close"] >= df["Open"]
+        fig.add_trace(
+            go.Bar(x=df.index, y=df["Volume"],
+                   name="Volume" + (" (delayed)" if getattr(q, "volume_delayed", False) else ""),
+                   marker_color=up.map({True: C["up"], False: C["down"]}), opacity=.55),
+            row=2, col=1,
+        )
 
     # Hide non-trading gaps (nights / weekends) so candles sit flush.
     hour_gap = [16, 9.5] if market == "US" else [15.6, 9.25]
     fig.update_xaxes(rangebreaks=[dict(bounds=["sat", "mon"]),
                                   dict(bounds=hour_gap, pattern="hour")])
     fig.update_layout(
-        height=560, margin=dict(l=8, r=8, t=8, b=8),
+        height=560 if show_vol else 480, margin=dict(l=8, r=8, t=8, b=8),
         xaxis_rangeslider_visible=False, showlegend=True,
         legend=dict(orientation="h", y=1.05, x=0), bargap=0,
     )
@@ -392,9 +408,12 @@ def _render_live() -> None:
         tz, tz_label = dt.timezone(dt.timedelta(hours=5, minutes=30)), "IST"
 
     state_txt, state_tone = _MKT.get(q.market_state.upper(), (q.market_state.upper(), "flat"))
+    realtime = getattr(q, "source", "YAHOO") == "NSE"
+    feed_pill = (T.pill("LIVE · NSE", "up") if realtime
+                 else T.pill("DELAYED ~15M · YAHOO", "amber"))
     st.markdown(
         f'<div style="display:flex;align-items:center;gap:.8rem;margin:.2rem 0 .7rem">'
-        f'{T.pill(state_txt, state_tone)}'
+        f'{T.pill(state_txt, state_tone)}{feed_pill}'
         f'<span style="font-family:{T.MONO};font-size:.68rem;color:{C["faint"]};'
         f'letter-spacing:.08em">{interval} CANDLES · UPDATED '
         f"{q.fetched_at.astimezone(tz):%H:%M:%S} {tz_label}"
@@ -402,22 +421,37 @@ def _render_live() -> None:
         unsafe_allow_html=True,
     )
 
-    m = st.columns(5)
+    m = st.columns(6 if getattr(q, "vwap", None) else 5)
     T.kpi(m[0], f"Last ({q.currency})", f"{q.price:,.2f}",
           f"{q.change:+,.2f}  {q.change_pct:+.2f}%", T.sign_tone(q.change))
     T.kpi(m[1], "Open", _fmt(q.day_open))
     T.kpi(m[2], "High", _fmt(q.day_high), tone="up")
     T.kpi(m[3], "Low", _fmt(q.day_low), tone="down")
     T.kpi(m[4], "Volume", f"{q.day_volume:,.0f}" if q.day_volume else "—")
+    if getattr(q, "vwap", None):
+        T.kpi(m[5], "VWAP", f"{q.vwap:,.2f}",
+              f"{q.price - q.vwap:+,.2f}", T.sign_tone(q.price - q.vwap))
 
     if q.bars is None or q.bars.empty:
-        st.info("No intraday bars returned (market may be closed and Yahoo has "
-                "not published the last session yet). Try the 5d window.")
+        st.info("No intraday bars returned (the market may be closed and the "
+                "feed has not published the last session yet). Try the 5d window.")
         return
     st.markdown("<div style='height:.6rem'></div>", unsafe_allow_html=True)
     st.plotly_chart(_live_chart(q, q.currency, a.get("market", "IN")),
                     use_container_width=True, key=f"live-{a['ticker']}")
-    st.caption("VWAP resets each session · delayed ~15 min · not a trading feed")
+    if realtime:
+        vol_note = ("volume bars ~15 min behind the candles"
+                    if getattr(q, "volume_delayed", False)
+                    else "no per-bar volume on the exchange chart feed")
+        st.caption(
+            f"Price and VWAP straight from NSE, updated in real time · {vol_note} · "
+            "research only, not a trading feed"
+        )
+    else:
+        st.caption(
+            "Yahoo feed — candles delayed ~15 min · VWAP resets each session · "
+            "not a trading feed"
+        )
 
 
 with tab_live:
