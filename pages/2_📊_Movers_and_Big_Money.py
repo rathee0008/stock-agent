@@ -6,15 +6,16 @@ from pathlib import Path
 import streamlit as st
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from agent import bigmoney, screener  # noqa: E402
+from agent import bigmoney, market, screener, theme as T, ui  # noqa: E402
 
-st.set_page_config(page_title="Movers and Big Money", page_icon="📊", layout="wide")
-st.title("📊 Top Gainers / Losers & Big Money")
-st.warning("⚠️ Not investment advice. Movers are computed over ~60 liquid large-caps per market "
-           "(last close vs previous close, delayed data).")
+ui.setup("Movers and Big Money", "📊")
 
+# ---------------------------------------------------------------- sidebar
+ui.sidebar_brand()
+T.sidebar_head("Window")
 days = st.sidebar.slider("Look-back (days) for deals/insiders", 3, 30, 7)
-if st.sidebar.button("🔄 Refresh"):
+T.sidebar_head("Data")
+if st.sidebar.button("Refresh", use_container_width=True):
     st.cache_data.clear()
 
 
@@ -33,39 +34,64 @@ def _ins(d):
     return bigmoney.us_insiders(d)
 
 
-cfg = {"Change %": st.column_config.NumberColumn(format="%+.2f%%"),
-       "Vol vs 5d avg": st.column_config.NumberColumn("Volume x avg", format="%.1fx")}
-for flag, name in (("IN", "🇮🇳 India"), ("US", "🇺🇸 United States")):
-    st.header(name)
+@st.cache_data(ttl=300, show_spinner=False)
+def _idx():
+    return market.index_quotes()
+
+
+# ---------------------------------------------------------------- header
+ui.hero(
+    "Movers & Big Money",
+    "Day gainers and losers across ~60 liquid large-caps per market, plus deal headlines and US insider "
+    "transactions. Volume × avg well above 1 on a big move hints at institutional participation.",
+    pills=[("Last close vs previous", "amber"), ("Delayed data", "flat")],
+)
+ui.market_strip(_idx())
+
+tab_in, tab_us, tab_ins = st.tabs(["🇮🇳 INDIA", "🇺🇸 UNITED STATES", "🕵️ INSIDERS (FORM 4)"])
+
+
+def _market_tab(flag: str) -> None:
     g, l = _movers(flag)
+    both = [x for x in (g, l) if x is not None and not x.empty]
+    if both:
+        k = st.columns(3)
+        bg, bl = g.iloc[0], l.iloc[0]
+        unusual = int(sum((x["Vol vs 5d avg"] >= 1.5).sum() for x in both))
+        T.kpi(k[0], "Top gainer", ui.short_sym(bg["Symbol"]), f"{bg['Change %']:+.2f}%", "up")
+        T.kpi(k[1], "Top loser", ui.short_sym(bl["Symbol"]), f"{bl['Change %']:+.2f}%", "down")
+        T.kpi(k[2], "Unusual volume", f"{unusual}", "movers trading ≥1.5× avg", "amber")
+        st.markdown("<div style='height:.7rem'></div>", unsafe_allow_html=True)
     c1, c2 = st.columns(2)
-    c1.subheader("🟢 Top gainers")
-    c1.dataframe(g, hide_index=True, use_container_width=True, column_config=cfg)
-    c2.subheader("🔴 Top losers")
-    c2.dataframe(l, hide_index=True, use_container_width=True, column_config=cfg)
-    st.caption("Volume x avg well above 1 on a big move suggests institutional participation.")
+    with c1:
+        ui.table_title("Top gainers", "up")
+        ui.movers_table(g)
+    with c2:
+        ui.table_title("Top losers", "down")
+        ui.movers_table(l)
+    T.rule("Big investments & deals in the news")
+    ui.feed(_deals(flag, days), empty="No deal headlines found.")
 
-    st.subheader("💰 Big investments & deals in the news")
-    d = _deals(flag, days)
-    if d.empty:
-        st.info("No deal headlines found.")
+
+with tab_in:
+    _market_tab("IN")
+with tab_us:
+    _market_tab("US")
+
+with tab_ins:
+    ins = _ins(max(days, 14))
+    if ins.empty:
+        ui.empty_note("<b>No insider trades returned.</b> Source: SEC EDGAR Form 4.")
+        errs = bigmoney.last_errors()
+        if errs:
+            st.caption("Diagnostics: " + " | ".join(errs))
     else:
-        d = d.copy()
-        d["Published"] = d["Published"].dt.strftime("%d %b %H:%M UTC")
-        st.dataframe(d[["Published", "Headline", "Source", "Link"]], hide_index=True,
-                     use_container_width=True,
-                     column_config={"Link": st.column_config.LinkColumn("Link", display_text="open")})
+        b, s = st.tabs(["BUYS", "SELLS"])
+        with b:
+            ui.insider_table(ins[ins.Type == "BUY"], "No open-market buys in this window.")
+        with s:
+            ui.insider_table(ins[ins.Type == "SELL"], "No open-market sales in this window.")
+    st.caption("India bulk/block-deal exchange feeds are bot-protected; India deal flow comes from news. "
+               "Per-stock FII/DII shareholding trends are on the main Analyze page.")
 
-st.header("🕵️ US insider transactions (Form 4)")
-ins = _ins(max(days, 14))
-if ins.empty:
-    st.info("No insider trades returned.")
-    _errs = bigmoney.last_errors()
-    if _errs:
-        st.caption("Diagnostics: " + " | ".join(_errs))
-else:
-    b, s = st.tabs(["Buys", "Sells"])
-    b.dataframe(ins[ins.Type == "BUY"], hide_index=True, use_container_width=True)
-    s.dataframe(ins[ins.Type == "SELL"], hide_index=True, use_container_width=True)
-st.caption("India bulk/block-deal exchange feeds are bot-protected; deal flow above comes from news. "
-           "Per-stock FII/DII shareholding trends are on the main Analyze page.")
+ui.footer()
