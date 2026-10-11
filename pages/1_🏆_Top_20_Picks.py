@@ -95,6 +95,11 @@ with tab_table:
                ["Day %", "3M %", "P/E", "ROE %", "Rev growth %", "RSI", "Upside %", "Price"]},
         },
     )
+    st.download_button(
+        "Download this list (CSV)",
+        top.drop(columns=["Why"], errors="ignore").to_csv(index=False).encode("utf-8"),
+        file_name="top20_picks.csv", mime="text/csv",
+    )
     st.caption("Score = weighted blend of technical (trend, RSI, MACD, volume), fundamental (growth, ROE, margins, "
                "valuation, debt) and news tone, −100…+100.")
 
