@@ -139,7 +139,10 @@ def fii_dii_trend(nse_symbol: str, quarters: int = 8) -> FiiDiiTrend:
     if not scripcode:
         return FiiDiiTrend(scripcode="", available=False)
 
-    qlist = _quarter_list(scripcode, quarters)
+    try:
+        qlist = _quarter_list(scripcode, quarters)
+    except Exception:  # BSE unreachable / blocking cloud IPs
+        return FiiDiiTrend(scripcode=scripcode, available=False)
     rows = []
     for q in qlist:
         try:
