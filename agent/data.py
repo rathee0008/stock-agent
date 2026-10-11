@@ -101,6 +101,24 @@ def _first_float(info: dict[str, Any], *keys: str) -> float | None:
     return None
 
 
+def get_info(symbol: str, attempts: int = 3) -> dict[str, Any]:
+    """Yahoo `.info` with retries — it often returns {} or a stub when rate-limited."""
+    for i in range(attempts):
+        try:
+            info = yf.Ticker(symbol).get_info() or {}
+            if info.get("shortName") or info.get("longName") or info.get("marketCap"):
+                return info
+        except Exception:  # noqa: BLE001
+            pass
+        time.sleep(1.0 * (i + 1))
+    # Last resort: minimal fields from fast_info so name/cap/currency still show.
+    try:
+        fi = yf.Ticker(symbol).fast_info
+        return {"marketCap": fi.get("market_cap"), "currency": fi.get("currency")}
+    except Exception:  # noqa: BLE001
+        return {}
+
+
 def _history_with_retry(symbol: str, period: str, attempts: int = 4) -> pd.DataFrame:
     """Yahoo intermittently times out on the cookie/crumb handshake or
     rate-limits, returning an empty frame. Retry with backoff, and fall back
@@ -158,10 +176,7 @@ def fetch(raw_ticker: str, period: str = "2y", market: Market = "IN") -> StockDa
     except Exception:
         intraday = pd.DataFrame()
 
-    try:
-        info = tk.info or {}
-    except Exception:
-        info = {}
+    info = get_info(symbol)
 
     try:
         news = tk.news or []
