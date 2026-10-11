@@ -8,6 +8,9 @@ from __future__ import annotations
 
 import concurrent.futures as cf
 import email.utils
+import os
+import threading
+import time
 import urllib.parse
 import xml.etree.ElementTree as ET
 
@@ -72,12 +75,114 @@ def _insider(sym: str, days: int) -> list[dict]:
     return out
 
 
+_SEC_UA = os.environ.get(
+    "SEC_USER_AGENT",
+    "stock-agent research app (https://github.com/rathee0008/stock-agent)",
+)
+_sec_lock = threading.Lock()
+_sec_last = [0.0]
+_CIK: dict[str, str] = {}
+
+
+def _sec_get(url: str, as_json: bool = False):
+    """GET from SEC EDGAR, throttled to ~8 req/s across threads (limit is 10/s)."""
+    with _sec_lock:
+        wait = 0.125 - (time.time() - _sec_last[0])
+        if wait > 0:
+            time.sleep(wait)
+        _sec_last[0] = time.time()
+    r = requests.get(url, headers={"User-Agent": _SEC_UA}, timeout=15)
+    r.raise_for_status()
+    return r.json() if as_json else r.content
+
+
+def _cik_for(sym: str) -> str | None:
+    if not _CIK:
+        data = _sec_get("https://www.sec.gov/files/company_tickers.json", as_json=True)
+        for v in data.values():
+            _CIK[str(v["ticker"]).upper()] = str(v["cik_str"]).zfill(10)
+    return _CIK.get(sym.upper())
+
+
+def _txt(node, path: str) -> str:
+    el = node.find(path) if node is not None else None
+    return (el.text or "").strip() if el is not None else ""
+
+
+def _num(s: str) -> float | None:
+    try:
+        return float(s)
+    except (TypeError, ValueError):
+        return None
+
+
+def _edgar_insider(sym: str, days: int, max_filings: int = 6) -> list[dict]:
+    """Open-market buys (code P) and sells (code S) from recent SEC Form 4 filings."""
+    cik = _cik_for(sym)
+    if not cik:
+        return []
+    sub = _sec_get(f"https://data.sec.gov/submissions/CIK{cik}.json", as_json=True)
+    rec = sub.get("filings", {}).get("recent", {})
+    cutoff = (pd.Timestamp.now() - pd.Timedelta(days=days)).date()
+    out: list[dict] = []
+    seen = 0
+    for form, fdate, acc, doc in zip(rec.get("form", []), rec.get("filingDate", []),
+                                     rec.get("accessionNumber", []),
+                                     rec.get("primaryDocument", [])):
+        if form != "4":
+            continue
+        if pd.to_datetime(fdate).date() < cutoff:
+            break  # the list is newest-first
+        seen += 1
+        if seen > max_filings:
+            break
+        raw_doc = doc.rsplit("/", 1)[-1]  # strip the xslF345X0N/ rendered-HTML prefix
+        url = f"https://www.sec.gov/Archives/edgar/data/{int(cik)}/{acc.replace('-', '')}/{raw_doc}"
+        try:
+            root = ET.fromstring(_sec_get(url))
+        except Exception:  # noqa: BLE001
+            continue
+        owner = _txt(root, "reportingOwner/reportingOwnerId/rptOwnerName")
+        rel = root.find("reportingOwner/reportingOwnerRelationship")
+        role = _txt(rel, "officerTitle")
+        if not role and _txt(rel, "isDirector") in ("1", "true"):
+            role = "Director"
+        if not role and _txt(rel, "isTenPercentOwner") in ("1", "true"):
+            role = "10% owner"
+        for t in root.findall("nonDerivativeTable/nonDerivativeTransaction"):
+            kind = {"P": "BUY", "S": "SELL"}.get(_txt(t, "transactionCoding/transactionCode"))
+            if not kind:
+                continue
+            shares = _num(_txt(t, "transactionAmounts/transactionShares/value"))
+            price = _num(_txt(t, "transactionAmounts/transactionPricePerShare/value"))
+            tdate = _txt(t, "transactionDate/value") or fdate
+            out.append({
+                "Symbol": sym, "Insider": owner, "Role": role, "Type": kind,
+                "Shares": shares,
+                "Value $": shares * price if shares is not None and price is not None else None,
+                "Date": pd.to_datetime(tdate).date(),
+            })
+    return out
+
+
 def us_insiders(days: int = 30) -> pd.DataFrame:
+    """US insider buys/sells. Source: SEC EDGAR Form 4 (Yahoo's insider feed is
+    unreliable from cloud hosts); falls back to Yahoo if EDGAR returns nothing."""
+    syms = [s for s in US if "-" not in s]
     rows: list[dict] = []
-    with cf.ThreadPoolExecutor(max_workers=8) as ex:
-        for f in [ex.submit(_insider, s, days) for s in US if "-" not in s]:
+    with cf.ThreadPoolExecutor(max_workers=6) as ex:
+        for f in [ex.submit(_edgar_insider, s, days) for s in syms]:
             try:
                 rows += f.result()
             except Exception:  # noqa: BLE001
                 pass
-    return pd.DataFrame(rows).sort_values("Value $", ascending=False).reset_index(drop=True) if rows else pd.DataFrame()
+    if not rows:
+        with cf.ThreadPoolExecutor(max_workers=8) as ex:
+            for f in [ex.submit(_insider, s, days) for s in syms]:
+                try:
+                    rows += f.result()
+                except Exception:  # noqa: BLE001
+                    pass
+    if not rows:
+        return pd.DataFrame()
+    return pd.DataFrame(rows).sort_values("Value $", ascending=False).reset_index(drop=True)
