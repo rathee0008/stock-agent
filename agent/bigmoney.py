@@ -82,6 +82,7 @@ _SEC_UA = os.environ.get(
 _sec_lock = threading.Lock()
 _sec_last = [0.0]
 _CIK: dict[str, str] = {}
+_ERRS: list[str] = []
 
 
 def _sec_get(url: str, as_json: bool = False):
@@ -140,7 +141,8 @@ def _edgar_insider(sym: str, days: int, max_filings: int = 6) -> list[dict]:
         url = f"https://www.sec.gov/Archives/edgar/data/{int(cik)}/{acc.replace('-', '')}/{raw_doc}"
         try:
             root = ET.fromstring(_sec_get(url))
-        except Exception:  # noqa: BLE001
+        except Exception as exc:  # noqa: BLE001
+            _ERRS.append(f"{sym} form4: {type(exc).__name__}: {exc}"[:160])
             continue
         owner = _txt(root, "reportingOwner/reportingOwnerId/rptOwnerName")
         rel = root.find("reportingOwner/reportingOwnerRelationship")
@@ -169,13 +171,14 @@ def us_insiders(days: int = 30) -> pd.DataFrame:
     """US insider buys/sells. Source: SEC EDGAR Form 4 (Yahoo's insider feed is
     unreliable from cloud hosts); falls back to Yahoo if EDGAR returns nothing."""
     syms = [s for s in US if "-" not in s]
+    _ERRS.clear()
     rows: list[dict] = []
     with cf.ThreadPoolExecutor(max_workers=6) as ex:
         for f in [ex.submit(_edgar_insider, s, days) for s in syms]:
             try:
                 rows += f.result()
-            except Exception:  # noqa: BLE001
-                pass
+            except Exception as exc:  # noqa: BLE001
+                _ERRS.append(f"EDGAR: {type(exc).__name__}: {exc}"[:160])
     if not rows:
         with cf.ThreadPoolExecutor(max_workers=8) as ex:
             for f in [ex.submit(_insider, s, days) for s in syms]:
@@ -186,3 +189,8 @@ def us_insiders(days: int = 30) -> pd.DataFrame:
     if not rows:
         return pd.DataFrame()
     return pd.DataFrame(rows).sort_values("Value $", ascending=False).reset_index(drop=True)
+
+
+def last_errors() -> list[str]:
+    """Distinct recent EDGAR errors, for on-page diagnostics when no trades return."""
+    return list(dict.fromkeys(_ERRS))[:4]
