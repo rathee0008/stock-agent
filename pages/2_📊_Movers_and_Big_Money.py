@@ -60,6 +60,9 @@ st.header("🕵️ US insider transactions (Form 4)")
 ins = _ins(max(days, 14))
 if ins.empty:
     st.info("No insider trades returned.")
+    _errs = bigmoney.last_errors()
+    if _errs:
+        st.caption("Diagnostics: " + " | ".join(_errs))
 else:
     b, s = st.tabs(["Buys", "Sells"])
     b.dataframe(ins[ins.Type == "BUY"], hide_index=True, use_container_width=True)
