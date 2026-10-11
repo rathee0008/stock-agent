@@ -119,6 +119,61 @@ def _get_info_uncached(symbol: str, attempts: int = 3) -> dict[str, Any]:
         return {}
 
 
+def _row(df: pd.DataFrame, *names: str) -> pd.Series | None:
+    """First matching row of a yfinance statement frame (newest column first), or None."""
+    if df is None or getattr(df, "empty", True):
+        return None
+    for n in names:
+        if n in df.index:
+            r = pd.to_numeric(df.loc[n], errors="coerce").dropna()
+            if len(r):
+                return r
+    return None
+
+
+def _derive_from_statements(symbol: str, info: dict[str, Any]) -> dict[str, Any]:
+    """Fill missing valuation/quality fields from the financial statements.
+
+    Yahoo's quote-summary endpoint (.info) is often blocked on cloud hosts while the
+    statements endpoints still work, so ROE, margins, growth, P/E and debt/equity are
+    rebuilt from them. Existing values in info are never overwritten.
+    """
+    out = dict(info)
+    try:
+        tk = yf.Ticker(symbol)
+        inc = tk.get_income_stmt(freq="yearly")
+        bal = tk.get_balance_sheet(freq="yearly")
+        rev = _row(inc, "TotalRevenue", "OperatingRevenue")
+        ni = _row(inc, "NetIncomeCommonStockholders", "NetIncome")
+        op = _row(inc, "OperatingIncome", "EBIT")
+        eps = _row(inc, "DilutedEPS", "BasicEPS")
+        eq = _row(bal, "StockholdersEquity", "CommonStockEquity")
+        debt = _row(bal, "TotalDebt")
+        if rev is not None and len(rev) >= 2 and rev.iloc[1] > 0:
+            out.setdefault("revenueGrowth", float(rev.iloc[0] / rev.iloc[1] - 1))
+        if ni is not None and len(ni) >= 2 and ni.iloc[1] > 0:
+            out.setdefault("earningsGrowth", float(ni.iloc[0] / ni.iloc[1] - 1))
+        if rev is not None and rev.iloc[0] > 0:
+            if ni is not None:
+                out.setdefault("profitMargins", float(ni.iloc[0] / rev.iloc[0]))
+            if op is not None:
+                out.setdefault("operatingMargins", float(op.iloc[0] / rev.iloc[0]))
+        if ni is not None and eq is not None and eq.iloc[0] > 0:
+            out.setdefault("returnOnEquity", float(ni.iloc[0] / eq.iloc[0]))
+        if debt is not None and eq is not None and eq.iloc[0] > 0:
+            out.setdefault("debtToEquity", float(debt.iloc[0] / eq.iloc[0] * 100))
+        price = None
+        try:
+            price = float(tk.fast_info.get("last_price"))
+        except Exception:  # noqa: BLE001
+            pass
+        if price and eps is not None and eps.iloc[0] > 0:
+            out.setdefault("trailingPE", price / float(eps.iloc[0]))
+    except Exception:  # noqa: BLE001
+        pass
+    return out
+
+
 _INFO_CACHE: dict[str, tuple[float, dict[str, Any]]] = {}
 _INFO_TTL_OK = 6 * 3600   # good fundamentals change slowly
 _INFO_TTL_BAD = 300       # retry failures soon, but don't hammer Yahoo
@@ -132,6 +187,8 @@ def get_info(symbol: str, attempts: int = 3) -> dict[str, Any]:
     if hit and now < hit[0]:
         return hit[1]
     info = _get_info_uncached(symbol, attempts)
+    if not (info.get("trailingPE") or info.get("profitMargins") or info.get("returnOnEquity")):
+        info = _derive_from_statements(symbol, info)
     good = bool(info.get("shortName") or info.get("longName") or info.get("sector")
                 or info.get("trailingPE"))
     _INFO_CACHE[symbol] = (now + (_INFO_TTL_OK if good else _INFO_TTL_BAD), info)
