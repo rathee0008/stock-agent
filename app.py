@@ -307,39 +307,25 @@ _ui.market_strip(_idx())
 # Empty state
 # --------------------------------------------------------------------------
 if not run and "last" not in st.session_state:
+    _ui.hero(
+        "Stock Analysis Terminal",
+        "Choose a market and symbol in the left rail, then hit Run analysis. The agent pulls price history, "
+        "scores technicals and fundamentals, reads recent headlines, and blends the three into one composite call.",
+        pills=[("Delayed data", "amber"), ("Not advice", "flat")],
+    )
+    _cells = [
+        ("LIVE", "Intraday candles, VWAP, volume"),
+        ("BRIEFING", "Composite score + rationale"),
+        ("CHART", "Daily OHLC, SMA, Bollinger, RSI"),
+        ("OWNERSHIP", "FII/DII (IN) · 13F (US)"),
+        ("NEWS", "Headline tone tilt"),
+    ]
     st.markdown(
-        f"""
-<div style="border:1px solid {C['line']};border-left:3px solid {C['amber']};
-            background:linear-gradient(180deg,{C['panel']} 0%,{C['bg']} 100%);
-            border-radius:3px;padding:2.2rem 2rem;margin-top:1rem">
-  <div style="font-family:{T.MONO};font-size:.66rem;letter-spacing:.24em;
-              color:{C['amber']};font-weight:700">STOCK ANALYSIS AGENT</div>
-  <div style="font-size:1.9rem;font-weight:700;color:{C['text']};
-              margin:.5rem 0 .2rem;letter-spacing:-.01em">Terminal standing by</div>
-  <div style="color:{C['dim']};font-size:.9rem;max-width:62ch;line-height:1.6">
-    Choose a market and symbol in the left rail, then hit
-    <b style="color:{C['amber']}">Run analysis</b>. The agent pulls price history,
-    scores technicals and fundamentals, reads recent headlines, and blends the
-    three into one composite call.
-  </div>
-  <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.4rem">
-    {"".join(
-        f'<div style="border:1px solid {C["line"]};background:{C["panel"]};'
-        f'border-radius:3px;padding:.55rem .8rem;min-width:150px">'
-        f'<div style="font-family:{T.MONO};font-size:.6rem;letter-spacing:.14em;'
-        f'color:{C["faint"]};font-weight:600">{k}</div>'
-        f'<div style="color:{C["dim"]};font-size:.76rem;margin-top:.25rem">{v}</div></div>'
-        for k, v in [
-            ("LIVE", "Intraday candles, VWAP, volume"),
-            ("BRIEFING", "Composite score + rationale"),
-            ("CHART", "Daily OHLC, SMA, Bollinger, RSI"),
-            ("OWNERSHIP", "FII/DII (IN) · 13F (US)"),
-            ("NEWS", "Headline tone tilt"),
-        ]
-    )}
-  </div>
-</div>
-""",
+        '<div class="pgrid">' + "".join(
+            f'<div class="pcard"><div class="chip">{k}</div>'
+            f'<div style="color:var(--dim);font-size:.8rem;margin-top:.55rem">{v}</div></div>'
+            for k, v in _cells
+        ) + "</div>",
         unsafe_allow_html=True,
     )
     st.stop()
