@@ -83,6 +83,8 @@ text-transform:uppercase;font-weight:700;margin-bottom:.25rem}
 .mini .f{position:absolute;top:0;height:4px;border-radius:2px}
 .pcard .why{margin-top:.7rem;border-top:1px solid var(--line);padding-top:.55rem;color:var(--dim);font-size:.73rem;line-height:1.55}
 .pcard .why b{color:var(--text);font-weight:600}
+a.symlink{color:inherit;text-decoration:none;border-bottom:1px dotted var(--faint)}
+a.symlink:hover{color:var(--amber);border-bottom-color:var(--amber)}
 .chip{display:inline-block;font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;
 padding:.1rem .4rem;border-radius:2px;border:1px solid var(--line-hi);color:var(--dim);white-space:nowrap}
 
@@ -191,7 +193,20 @@ def table_title(text: str, tone: str = "flat") -> None:
     )
 
 
-def movers_table(df: pd.DataFrame) -> None:
+def analyze_href(sym, market: str | None = None) -> str:
+    """Link to the Analyze page with the company pre-selected (it runs automatically)."""
+    s = str(sym)
+    mk = market or ("IN" if s.endswith((".NS", ".BO")) else "US")
+    from urllib.parse import quote
+
+    return f"/?s={quote(short_sym(s))}&m={mk}"
+
+
+def symlink(sym, market: str | None = None) -> str:
+    return f'<a class="symlink" href="{_e(analyze_href(sym, market))}" target="_self">{_e(short_sym(sym))}</a>'
+
+
+def movers_table(df: pd.DataFrame, market: str | None = None) -> None:
     if df is None or df.empty:
         st.markdown('<div class="empty">No data returned.</div>', unsafe_allow_html=True)
         return
@@ -205,7 +220,7 @@ def movers_table(df: pd.DataFrame) -> None:
         vcol = C["amber"] if _ok(vv) and float(vv) >= 1.5 else C["dim"]
         vtxt = f"{float(vv):.1f}x" if _ok(vv) else "—"
         rows.append(
-            f'<tr><td><span class="rk">{i:02d}</span><b>{_e(short_sym(r["Symbol"]))}</b></td>'
+            f'<tr><td><span class="rk">{i:02d}</span><b>{symlink(r["Symbol"], market)}</b></td>'
             f'<td>{_px(r["Price"])}</td>'
             f'<td class="chg" style="color:{col}"><span class="bar" style="width:{w:.0f}px;background:{col}"></span>{_pct(ch)}</td>'
             f'<td style="color:{vcol}">{vtxt}</td></tr>'
@@ -269,7 +284,7 @@ def pick_cards(df: pd.DataFrame) -> None:
         cards.append(
             f'<div class="pcard" style="--accent:{col}">'
             f'<div class="top"><span class="rank">#{rank}</span>'
-            f'<div><div class="psym">{_e(short_sym(r["Symbol"]))}</div><div class="pname">{_e(name)}</div></div>'
+            f'<div><div class="psym">{symlink(r["Symbol"], mk)}</div><div class="pname">{_e(name)}</div></div>'
             f'<div class="pscore"><div class="v" style="color:{col}">{float(sc):+.1f}</div><div class="l">SCORE</div></div></div>'
             f'<div class="meta">{"".join(chips)}</div>'
             f'<div class="px"><span class="big">{cur}{_px(r.get("Price"))}</span>'
