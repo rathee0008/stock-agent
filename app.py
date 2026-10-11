@@ -577,7 +577,10 @@ with tab_fund:
 with tab_own:
     if a.get("market") == "IN":
         with st.spinner("Fetching shareholding pattern from BSE…"):
-            trend = _fii_dii(a["ticker"], 8)
+            try:
+                trend = _fii_dii(a["ticker"], 8)
+            except Exception:  # BSE unreachable
+                trend = _own.FiiDiiTrend(scripcode="", available=False)
         if not trend.available or trend.quarters.empty:
             st.info(
                 "No BSE shareholding-pattern data found for this symbol — it may "
