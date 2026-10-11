@@ -28,8 +28,13 @@ if st.sidebar.button("Refresh data", use_container_width=True):
 
 
 @st.cache_data(ttl=1800, show_spinner=False)
-def _rank(market, w):
-    return screener.rank(market, w)
+def _rank_both(w):
+    """Scan India and the US at the same time (about half the wait of doing them in turn)."""
+    import concurrent.futures as cf
+
+    with cf.ThreadPoolExecutor(max_workers=2) as ex:
+        fi, fu = ex.submit(screener.rank, "IN", w), ex.submit(screener.rank, "US", w)
+        return fi.result(), fu.result()
 
 
 # ---------------------------------------------------------------- header
@@ -42,7 +47,7 @@ ui.hero(
 
 with st.spinner("Scanning both markets — fundamentals for ~120 stocks, takes ~1 minute on first load…"):
     w = (w_t, w_f, w_n)
-    ind, us = _rank("IN", w), _rank("US", w)
+    ind, us = _rank_both(w)
 
 if mode.startswith("Balanced"):
     top = pd.concat([ind.head(10), us.head(10)])
