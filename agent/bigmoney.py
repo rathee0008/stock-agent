@@ -63,8 +63,10 @@ def _insider(sym: str, days: int) -> list[dict]:
     out = []
     for _, r in df.iterrows():
         txt = str(r.get("Text", ""))
-        kind = "BUY" if "purchase" in txt.lower() else "SELL" if "sale" in txt.lower() else None
-        if kind and (r.get("Value") or 0) > 0:
+        low = txt.lower()
+        kind = ("BUY" if ("purchase" in low or "buy" in low)
+                else "SELL" if ("sale" in low or "sell" in low) else None)
+        if kind:  # keep rows even when Yahoo leaves Value empty
             out.append({"Symbol": sym, "Insider": r.get("Insider"), "Role": r.get("Position"), "Type": kind,
                         "Shares": r.get("Shares"), "Value $": r.get("Value"), "Date": pd.to_datetime(r["Start Date"]).date()})
     return out
