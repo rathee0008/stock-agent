@@ -15,6 +15,7 @@ import yfinance as yf
 from . import fundamental as _fund
 from . import news as _news
 from . import technical as _tech
+from .data import get_info
 from .universe import symbols
 
 
@@ -35,10 +36,7 @@ def batch_history(syms: list[str], period: str = "1y", min_rows: int = 60) -> di
 
 def _info_and_news(sym: str) -> tuple[dict, list]:
     tk = yf.Ticker(sym)
-    try:
-        info = tk.info or {}
-    except Exception:  # noqa: BLE001
-        info = {}
+    info = get_info(sym)
     try:
         from .data import _clean_news
         news = _clean_news(tk.news or [])
@@ -119,7 +117,11 @@ def rank(market: str, w: tuple[float, float, float] = (0.40, 0.45, 0.15),
         })
     df = pd.DataFrame(rows)
     # Investable = decent fundamentals AND not overheated; keeps momentum-only junk out.
-    df = df[df["_fund_ok"]].drop(columns="_fund_ok")
     df["RSI"] = pd.to_numeric(df["RSI"], errors="coerce")
-    df = df[(df["Fundamental"] > -10) & (df["RSI"].fillna(50) < 80)]
-    return df.sort_values("Score", ascending=False).reset_index(drop=True)
+    ok_rsi = df["RSI"].fillna(50) < 80
+    good = df[df["_fund_ok"] & (df["Fundamental"] > -10) & ok_rsi]
+    if len(good) < 10:  # Yahoo fundamentals flaky -> backfill with technical/news-only picks
+        rest = df[~df["_fund_ok"] & ok_rsi].sort_values("Score", ascending=False)
+        good = pd.concat([good, rest.head(10 - len(good))])
+    return (good.drop(columns="_fund_ok")
+            .sort_values("Score", ascending=False).reset_index(drop=True))
