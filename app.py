@@ -20,6 +20,8 @@ load_dotenv()
 from agent import ownership as _own  # noqa: E402
 from agent import theme as T  # noqa: E402
 from agent import tradingview as _tv  # noqa: E402
+from agent import market as _market  # noqa: E402
+from agent import ui as _ui  # noqa: E402
 from agent.analyze import analyze_stock  # noqa: E402
 from agent.data import fetch_live  # noqa: E402
 from agent.llm import synthesize  # noqa: E402
@@ -32,6 +34,7 @@ st.set_page_config(
 )
 T.inject()
 T.register_plotly()
+_ui.inject_extra()
 C = T.C
 
 # --------------------------------------------------------------------------
@@ -290,6 +293,14 @@ def _live_chart(q, cur: str, market: str = "IN") -> go.Figure:
     )
     fig.update_yaxes(title_text=cur, title_font=dict(size=10, color=C["faint"]), row=1, col=1)
     return T.style_axes(fig)
+
+
+@st.cache_data(show_spinner=False, ttl=300)
+def _idx():
+    return _market.index_quotes()
+
+
+_ui.market_strip(_idx())
 
 
 # --------------------------------------------------------------------------
