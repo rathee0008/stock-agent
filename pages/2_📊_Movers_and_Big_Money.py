@@ -65,10 +65,10 @@ def _market_tab(flag: str) -> None:
     c1, c2 = st.columns(2)
     with c1:
         ui.table_title("Top gainers", "up")
-        ui.movers_table(g)
+        ui.movers_table(g, flag)
     with c2:
         ui.table_title("Top losers", "down")
-        ui.movers_table(l)
+        ui.movers_table(l, flag)
     T.rule("Big investments & deals in the news")
     ui.feed(_deals(flag, days), empty="No deal headlines found.")
 
