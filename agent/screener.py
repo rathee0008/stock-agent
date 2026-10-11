@@ -16,6 +16,7 @@ from . import fundamental as _fund
 from . import news as _news
 from . import technical as _tech
 from .data import get_info
+from .sectors import sector_map
 from .universe import symbols
 
 
@@ -71,6 +72,7 @@ def rank(market: str, w: tuple[float, float, float] = (0.40, 0.45, 0.15),
          shortlist: int = 40) -> pd.DataFrame:
     """Score every symbol; fetch fundamentals for all, news for the shortlist."""
     syms = symbols(market)
+    smap = sector_map(market)
     hist = batch_history(syms)
 
     tech: dict[str, Any] = {}
@@ -81,7 +83,7 @@ def rank(market: str, w: tuple[float, float, float] = (0.40, 0.45, 0.15),
             pass
 
     infos: dict[str, tuple[dict, list]] = {}
-    with cf.ThreadPoolExecutor(max_workers=8) as ex:
+    with cf.ThreadPoolExecutor(max_workers=12) as ex:
         futs = {ex.submit(_info_and_news, s): s for s in tech}
         for f in cf.as_completed(futs):
             try:
@@ -101,7 +103,7 @@ def rank(market: str, w: tuple[float, float, float] = (0.40, 0.45, 0.15),
         close = hist[s]["Close"]
         m = f.metrics or {}
         rows.append({
-            "Symbol": s, "Name": info.get("shortName") or s, "Sector": info.get("sector", "—"),
+            "Symbol": s, "Name": info.get("shortName") or s, "Sector": info.get("sector") or smap.get(s, "—"),
             "Price": close.iloc[-1], "Day %": (close.iloc[-1] / close.iloc[-2] - 1) * 100,
             "3M %": (close.iloc[-1] / close.iloc[-63] - 1) * 100 if len(close) > 63 else None,
             "Score": round(score, 1), "Technical": round(t.score), "Fundamental": round(f.score),
