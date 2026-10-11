@@ -101,7 +101,7 @@ def _first_float(info: dict[str, Any], *keys: str) -> float | None:
     return None
 
 
-def get_info(symbol: str, attempts: int = 3) -> dict[str, Any]:
+def _get_info_uncached(symbol: str, attempts: int = 3) -> dict[str, Any]:
     """Yahoo `.info` with retries — it often returns {} or a stub when rate-limited."""
     for i in range(attempts):
         try:
@@ -117,6 +117,25 @@ def get_info(symbol: str, attempts: int = 3) -> dict[str, Any]:
         return {"marketCap": fi.get("market_cap"), "currency": fi.get("currency")}
     except Exception:  # noqa: BLE001
         return {}
+
+
+_INFO_CACHE: dict[str, tuple[float, dict[str, Any]]] = {}
+_INFO_TTL_OK = 6 * 3600   # good fundamentals change slowly
+_INFO_TTL_BAD = 300       # retry failures soon, but don't hammer Yahoo
+
+
+def get_info(symbol: str, attempts: int = 3) -> dict[str, Any]:
+    """Cached wrapper around :func:`_get_info_uncached` (process-wide, shared by
+    the analyzer and the screener) so repeated runs don't re-hit Yahoo."""
+    now = time.time()
+    hit = _INFO_CACHE.get(symbol)
+    if hit and now < hit[0]:
+        return hit[1]
+    info = _get_info_uncached(symbol, attempts)
+    good = bool(info.get("shortName") or info.get("longName") or info.get("sector")
+                or info.get("trailingPE"))
+    _INFO_CACHE[symbol] = (now + (_INFO_TTL_OK if good else _INFO_TTL_BAD), info)
+    return info
 
 
 def _history_with_retry(symbol: str, period: str, attempts: int = 4) -> pd.DataFrame:
