@@ -47,21 +47,23 @@ st.sidebar.markdown(
 )
 
 T.sidebar_head("Instrument")
+_qp_sym = str(st.query_params.get("s", "")).strip().upper()
+_qp_mkt = str(st.query_params.get("m", "")).strip().upper()
 market_choice = st.sidebar.radio(
     "Market", ["IN · NSE/BSE", "US · NYSE/NASDAQ"], horizontal=True,
-    label_visibility="collapsed",
+    label_visibility="collapsed", index=1 if _qp_mkt == "US" else 0,
 )
 market = "US" if market_choice.startswith("US") else "IN"
 
 if market == "IN":
     ticker = st.sidebar.text_input(
-        "Symbol", value="RELIANCE",
+        "Symbol", value=_qp_sym or "RELIANCE",
         help="Plain NSE symbol, e.g. RELIANCE, TCS, INFY, HDFCBANK, TATASTEEL, MARUTI. "
         "Use SYMBOL.BO for BSE, ^NSEI for the Nifty 50.",
     ).strip().upper()
 else:
     ticker = st.sidebar.text_input(
-        "Symbol", value="AAPL",
+        "Symbol", value=_qp_sym or "AAPL",
         help="Plain US symbol, e.g. AAPL, MSFT, TSLA, NVDA, AMZN. "
         "Use ^GSPC for the S&P 500, ^IXIC for the Nasdaq Composite.",
     ).strip().upper()
@@ -91,6 +93,8 @@ if use_llm and not os.environ.get("ANTHROPIC_API_KEY"):
     st.sidebar.warning("No ANTHROPIC_API_KEY — falling back to the rule-based summary.")
 
 run = st.sidebar.button("▸ Run analysis", type="primary", use_container_width=True)
+if _qp_sym and "last" not in st.session_state:
+    run = True  # opened from a symbol link (Movers / Top 20): analyze it straight away
 
 T.sidebar_head("Live feed")
 live_interval = st.sidebar.selectbox("Candle interval", ["1m", "5m", "15m", "30m", "60m"], index=1)
