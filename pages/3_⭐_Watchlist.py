@@ -92,7 +92,14 @@ if not syms:
     st.stop()
 
 with st.spinner("Fetching quotes…"):
-    df = _scan(tuple(syms))
+    try:
+        df = _scan(tuple(syms))
+    except Exception as exc:  # noqa: BLE001 - keep the page alive if Yahoo fails
+        from agent import log as _log
+        _log.record("watchlist:scan", exc)
+        st.error(f"Quotes failed ({type(exc).__name__}). Try Refresh in a minute.")
+        ui.footer()
+        st.stop()
 
 ok = df[df["ok"]].copy()
 missing = df[~df["ok"]]["Symbol"].tolist()
