@@ -113,12 +113,22 @@ html,body{margin:0;background:#0A0B0D;font-family:ui-monospace,Menlo,Consolas,mo
 .t b{font-size:clamp(8px,1.15vw,14px);font-weight:600;white-space:nowrap}
 .t i{font-style:normal;font-size:clamp(8px,1vw,12px);opacity:.95}
 .t u{text-decoration:none;font-size:clamp(7px,.8vw,10px);opacity:.7}
+#srh{display:grid;grid-template-columns:34px minmax(110px,1.6fr) 70px 90px minmax(120px,2fr) 80px;gap:8px;padding:14px 10px 6px;color:#7d8490;font-size:10px;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid #22252c}
+#sr{position:relative}
+.sr{position:absolute;left:0;right:0;height:32px;display:grid;grid-template-columns:34px minmax(110px,1.6fr) 70px 90px minmax(120px,2fr) 80px;gap:8px;align-items:center;padding:0 10px;
+  box-sizing:border-box;border:1px solid #1b1e24;background:#111317;border-radius:6px;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.sr .n{color:#9aa0aa;font-weight:700}.sr .mv{font-size:10px;margin-left:3px}.sr b{font-size:12px}
+.sr .trk{height:8px;background:#1b1e24;border-radius:4px;position:relative;overflow:hidden}
+.sr .trk i{position:absolute;top:0;bottom:0;transition:left .5s,width .5s,background-color .5s}
+.sr .v{text-align:right;font-weight:700}.up{color:#19d27a}.dn{color:#ff6b6b}
 #leg{display:flex;align-items:center;gap:6px;font-size:11px;color:#7d8490;padding:6px 2px}
 #bar{flex:0 0 200px;height:8px;border-radius:4px;background:linear-gradient(90deg,#ff3b4e,#7a1f2a 30%,#1b1e24 50%,#14683e 70%,#19d27a)}
 </style></head><body>
 <div id="top"><span><span id="dot"></span><b id="st">connecting…</b></span><span id="tk"></span><span id="adv"></span><span id="avg"></span><span>__SUB__</span></div>
 <div id="map"></div>
 <div id="leg"><span>falling</span><div id="bar"></div><span>rising</span><span style="margin-left:12px">brighter = bigger move · each tick flashes the tile</span></div>
+<div id="srh"><span>#</span><span>Sector (live ranking)</span><span>Stocks</span><span>Up / down</span><span>Average move today</span><span style="text-align:right">Avg</span></div>
+<div id="sr"></div>
 <script>
 const D=__DATA__, LIM=D.limit||2, map=document.getElementById('map');
 const N=[27,30,36], UP=[25,210,122], DN=[255,59,78];
@@ -140,11 +150,31 @@ for(const t of D.tiles){
 }
 // animate Python's previous snapshot -> current once
 requestAnimationFrame(()=>requestAnimationFrame(()=>{for(const o of all){o.pct=o.t.new;o.e.style.backgroundColor=col(o.pct);o.i.textContent=fmt(o.pct);}summary();}));
+const SRH=36,srEl=document.getElementById('sr'),srRows={};let srInit=null;
+srEl.style.height=(Object.keys(secMembers).length*SRH+6)+'px';
+for(const s of Object.keys(secMembers)){const e=document.createElement('div');e.className='sr';
+  e.innerHTML='<span class="n"></span><b>'+s+'</b><span class="c"></span><span class="ud"></span><span class="trk"><i></i></span><span class="v"></span>';
+  srEl.appendChild(e);srRows[s]={e,n:e.querySelector('.n'),ud:e.querySelector('.ud'),bar:e.querySelector('.trk i'),v:e.querySelector('.v'),c:e.querySelector('.c'),last:null};
+  srRows[s].c.textContent=secMembers[s].length;}
+function srUpdate(first){
+  const list=Object.keys(secMembers).map(s=>{const m=secMembers[s];return {s,a:m.reduce((x,o)=>x+o.pct,0)/m.length,up:m.filter(o=>o.pct>0).length,dn:m.filter(o=>o.pct<0).length};}).sort((x,y)=>y.a-x.a);
+  const mx=Math.max(1,...list.map(x=>Math.abs(x.a)));
+  if(!srInit){srInit={};list.forEach((x,i)=>srInit[x.s]=i);}
+  list.forEach((x,i)=>{const r=srRows[x.s];r.e.style.transform='translateY('+(i*SRH)+'px)';
+    const mv=srInit[x.s]-i;r.n.innerHTML=(i+1)+(mv>0?'<span class="mv up">▲'+mv+'</span>':mv<0?'<span class="mv dn">▼'+(-mv)+'</span>':'');
+    r.ud.innerHTML='<span class="up">'+x.up+'↑</span> <span class="dn">'+x.dn+'↓</span>';
+    const w=Math.min(Math.abs(x.a)/mx,1)*50;r.bar.style.left=x.a>=0?'50%':(50-w)+'%';r.bar.style.width=w+'%';
+    r.bar.style.backgroundColor=x.a>=0?'#19d27a':'#ff6b6b';
+    r.v.textContent=fmt(x.a);r.v.className='v '+(x.a>=0?'up':'dn');
+    if(r.last!==null&&Math.abs(x.a-r.last)>=0.005&&!first)r.e.animate([{backgroundColor:x.a>r.last?'#17472f':'#4a1c24'},{backgroundColor:'#111317'}],{duration:900});
+    r.last=x.a;});
+}
 function fit(){for(const o of all){const r=o.e.getBoundingClientRect();o.u.style.display=r.height<52?'none':'';o.i.style.display=r.height<30?'none':'';}}
 function summary(){
   let up=0,dn=0,sum=0;for(const o of all){if(o.pct>0)up++;else if(o.pct<0)dn++;sum+=o.pct;}
   document.getElementById('adv').innerHTML='advancers <b>'+up+'</b> / decliners <b>'+dn+'</b>';
   document.getElementById('avg').innerHTML='market avg <b>'+fmt(sum/all.length)+'</b>';
+  srUpdate(false);
   for(const s in secMembers){const m=secMembers[s],a=m.reduce((x,o)=>x+o.pct,0)/m.length,el=secEls[s];
     el.textContent=fmt(a);el.style.color=a>=0?'#19d27a':'#ff6b6b';}
 }
