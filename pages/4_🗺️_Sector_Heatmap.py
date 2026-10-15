@@ -9,9 +9,10 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
+import streamlit.components.v1 as components
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from agent import cache, screener, sectors, theme as T, ui  # noqa: E402
+from agent import cache, liveheat, screener, sectors, theme as T, ui  # noqa: E402
 
 ui.setup("Sector Heatmap", "🗺️")
 C = T.C
@@ -101,18 +102,25 @@ def _view(mkt: str, live: bool) -> None:
     st.markdown("<div style='height:.8rem'></div>", unsafe_allow_html=True)
 
     lim = max(2.0, float(df["Change %"].abs().quantile(0.9)))
-    fig = px.treemap(
-        df.assign(All=mkt), path=["All", "Sector", "Symbol"], values=[1] * len(df), color="Change %",
-        color_continuous_scale=[(0, C["down"]), (0.5, "#1B1E24"), (1, C["up"])],
-        range_color=(-lim, lim), custom_data=["Change %", "Price"],
-    )
-    fig.update_traces(
-        texttemplate="%{label}<br>%{customdata[0]:+.1f}%", textfont=dict(family="monospace", size=13),
-        hovertemplate="%{label}: %{customdata[0]:+.2f}%<extra></extra>", marker_line_width=1,
-        marker_line_color="#0A0B0D",
-    )
-    fig.update_layout(height=560, margin=dict(l=0, r=0, t=0, b=0), coloraxis_showscale=False)
-    st.plotly_chart(fig, use_container_width=True)
+    if live:
+        pkey = f"heat_prev_{_M}_{span}"
+        prev = st.session_state.get(pkey)
+        components.html(liveheat.build_html(df, prev, lim, 560, f"Live · {datetime.now().strftime('%H:%M:%S')}"),
+                        height=620)
+        st.session_state[pkey] = dict(zip(df["Symbol"], df["Change %"].astype(float)))
+    else:
+        fig = px.treemap(
+            df.assign(All=mkt), path=["All", "Sector", "Symbol"], values=[1] * len(df), color="Change %",
+            color_continuous_scale=[(0, C["down"]), (0.5, "#1B1E24"), (1, C["up"])],
+            range_color=(-lim, lim), custom_data=["Change %", "Price"],
+        )
+        fig.update_traces(
+            texttemplate="%{label}<br>%{customdata[0]:+.1f}%", textfont=dict(family="monospace", size=13),
+            hovertemplate="%{label}: %{customdata[0]:+.2f}%<extra></extra>", marker_line_width=1,
+            marker_line_color="#0A0B0D",
+        )
+        fig.update_layout(height=560, margin=dict(l=0, r=0, t=0, b=0), coloraxis_showscale=False)
+        st.plotly_chart(fig, use_container_width=True)
 
     ui.table_title("Sector ranking", "flat")
     rows = []
