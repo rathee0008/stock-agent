@@ -35,6 +35,31 @@ def batch_history(syms: list[str], period: str = "1y", min_rows: int = 60) -> di
     return out
 
 
+def live_prices(syms: list[str]) -> dict[str, tuple[float, float]]:
+    """{symbol: (last price, previous close)} from 5-minute bars (Yahoo, ~15 min delayed).
+
+    Previous close is the last close of the prior trading day found in the bars, so the
+    change is "today vs yesterday's close" even before the first bar of a new session.
+    """
+    raw = yf.download(syms, period="5d", interval="5m", auto_adjust=False, progress=False,
+                      threads=True, group_by="ticker", prepost=False)
+    out: dict[str, tuple[float, float]] = {}
+    for s in syms:
+        try:
+            c = raw[s]["Close"].dropna()
+            if c.empty:
+                continue
+            days = c.index.normalize()
+            today = days[-1]
+            prev = c[days < today]
+            if prev.empty:
+                continue
+            out[s] = (float(c.iloc[-1]), float(prev.iloc[-1]))
+        except Exception:  # noqa: BLE001
+            continue
+    return out
+
+
 def _info_and_news(sym: str) -> tuple[dict, list]:
     tk = yf.Ticker(sym)
     info = get_info(sym)
