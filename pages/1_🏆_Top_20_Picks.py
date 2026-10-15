@@ -6,9 +6,10 @@ from pathlib import Path
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
+import streamlit.components.v1 as components
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from agent import log as _log, screener, theme as T, tradingview as tv, ui  # noqa: E402
+from agent import livepicks, log as _log, screener, theme as T, tradingview as tv, ui  # noqa: E402
 
 ui.setup("Top 20 Picks", "🏆")
 C = T.C
@@ -87,7 +88,15 @@ T.kpi(cols[4], "Avg 3M return", f"{top['3M %'].mean():+.1f}%" if top["3M %"].not
 
 st.markdown("<div style='height:.8rem'></div>", unsafe_allow_html=True)
 
-tab_cards, tab_table, tab_scores, tab_chart = st.tabs(["CARDS", "TABLE", "SCORES", "LIVE CHART"])
+tab_live, tab_cards, tab_table, tab_scores, tab_chart = st.tabs(["LIVE RANKING", "CARDS", "TABLE", "SCORES", "LIVE CHART"])
+
+with tab_live:
+    T.note("<b>Live re-ranking.</b> Prices stream into your browser and the list re-scores itself on every tick: "
+           "base score (computed once) plus a live tilt from today's move. Rows glide to their new rank; "
+           "stocks entering the top 20 are tagged NEW. Prices only move while the exchange is open.")
+    _bal = mode.startswith("Balanced")
+    _pool = (pd.concat([ind.head(20), us.head(20)]) if _bal else pd.concat([ind, us]).sort_values("Score", ascending=False).head(40))
+    components.html(livepicks.build_html(_pool.reset_index(drop=True), 20, _bal), height=20 * 46 + 190, scrolling=False)
 
 with tab_cards:
     ui.pick_cards(top)
@@ -137,7 +146,6 @@ with tab_chart:
         T.note("<b>NSE/BSE isn't available in TradingView's free embed.</b> Open the full live chart on TradingView:")
         st.link_button(f"Open {base} on TradingView ↗", f"https://www.tradingview.com/chart/?symbol=NSE:{base}")
     else:
-        import streamlit.components.v1 as components
         components.html(tv.widget_html(pick.replace("-", "."), height=620), height=640)
 
 ui.footer()
