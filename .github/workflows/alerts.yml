@@ -1,0 +1,66 @@
+name: Alerts and daily brief
+
+# Times are UTC. IST = UTC+5:30, so 03:45-10:15 UTC covers the NSE session (09:15-15:30 IST).
+# US regular hours 13:30-20:00 UTC (summer) / 14:30-21:00 UTC (winter); one window covers both.
+on:
+  schedule:
+    - cron: "*/30 3-10 * * 1-5"     # India session: check rules every 30 min
+    - cron: "*/30 13-21 * * 1-5"    # US session
+    - cron: "30 3 * * 1-5"          # 09:00 IST pre-market brief
+    - cron: "15 10 * * 1-5"         # 15:45 IST post-market brief
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "check | pre | post | test"
+        default: "check"
+
+permissions:
+  contents: read
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      # Keep the "already fired" state between runs so you are not re-alerted every 30 minutes.
+      - uses: actions/cache@v4
+        with:
+          path: .cache
+          key: alert-state-${{ github.run_id }}
+          restore-keys: alert-state-
+      - name: Decide mode
+        id: mode
+        run: |
+          MODE="${{ github.event.inputs.mode }}"
+          if [ -z "$MODE" ]; then
+            case "${{ github.event.schedule }}" in
+              "30 3 * * 1-5") MODE=pre ;;
+              "15 10 * * 1-5") MODE=post ;;
+              *) MODE=check ;;
+            esac
+          fi
+          echo "mode=$MODE" >> "$GITHUB_OUTPUT"
+      - name: Run
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ALPHAVANTAGE_API_KEY: ${{ secrets.ALPHAVANTAGE_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          ALERT_EMAIL_TO: ${{ secrets.ALERT_EMAIL_TO }}
+        run: |
+          case "${{ steps.mode.outputs.mode }}" in
+            pre)  python scripts/run_alerts.py --brief pre ;;
+            post) python scripts/run_alerts.py --brief post ;;
+            test) python scripts/run_alerts.py --test ;;
+            *)    python scripts/run_alerts.py ;;
+          esac
