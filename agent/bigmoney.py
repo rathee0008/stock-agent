@@ -75,7 +75,9 @@ def _insider(sym: str, days: int) -> list[dict]:
     return out
 
 
-_SEC_UA = os.environ.get(
+from . import config as _config
+
+_SEC_UA = _config.get(
     "SEC_USER_AGENT",
     "stock-agent research app (https://github.com/rathee0008/stock-agent)",
 )
@@ -194,3 +196,32 @@ def us_insiders(days: int = 30) -> pd.DataFrame:
 def last_errors() -> list[str]:
     """Distinct recent EDGAR errors, for on-page diagnostics when no trades return."""
     return list(dict.fromkeys(_ERRS))[:4]
+
+
+def stock_headline(name: str, market: str, days: int = 2) -> dict | None:
+    """Newest headline about one stock in the last ``days`` days (Google News RSS), or None."""
+    try:
+        rows = _rss(f'"{name}" shares', market, days)
+    except Exception:  # noqa: BLE001
+        return None
+    rows = [r for r in rows if r["Headline"]]
+    if not rows:
+        return None
+    rows.sort(key=lambda r: r["Published"], reverse=True)
+    return {"Headline": rows[0]["Headline"], "Source": rows[0]["Source"], "Link": rows[0]["Link"]}
+
+
+def headlines_for(symbols: list[str], market: str, names: dict[str, str] | None = None) -> dict[str, dict]:
+    """Parallel :func:`stock_headline` lookups keyed by Yahoo symbol."""
+    out: dict[str, dict] = {}
+    names = names or {}
+    with cf.ThreadPoolExecutor(max_workers=6) as ex:
+        futs = {ex.submit(stock_headline, names.get(s) or s.replace(".NS", ""), market): s for s in symbols}
+        for f in cf.as_completed(futs):
+            try:
+                h = f.result()
+            except Exception:  # noqa: BLE001
+                h = None
+            if h:
+                out[futs[f]] = h
+    return out

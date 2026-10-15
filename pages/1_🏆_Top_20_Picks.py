@@ -8,7 +8,7 @@ import plotly.graph_objects as go
 import streamlit as st
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from agent import screener, theme as T, tradingview as tv, ui  # noqa: E402
+from agent import log as _log, screener, theme as T, tradingview as tv, ui  # noqa: E402
 
 ui.setup("Top 20 Picks", "🏆")
 C = T.C
@@ -47,7 +47,17 @@ ui.hero(
 
 with st.spinner("Scanning both markets — fundamentals for ~120 stocks, takes ~1 minute on first load…"):
     w = (w_t, w_f, w_n)
-    ind, us = _rank_both(w)
+    try:
+        ind, us = _rank_both(w)
+    except Exception as exc:  # noqa: BLE001 - one failed source must not blank the page
+        _log.record("top20:rank", exc)
+        ind = us = pd.DataFrame()
+        st.error(f"Scan failed ({type(exc).__name__}). Try Refresh data in a minute; details are under System status.")
+
+if ind.empty and us.empty:
+    ui.empty_note("<b>No stocks scored.</b> Yahoo may be rate-limiting. Try Refresh data in a minute.")
+    ui.footer()
+    st.stop()
 
 if mode.startswith("Balanced"):
     top = pd.concat([ind.head(10), us.head(10)])

@@ -5,10 +5,11 @@ from pathlib import Path
 
 import pandas as pd
 import plotly.express as px
+import plotly.graph_objects as go
 import streamlit as st
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from agent import screener, sectors, theme as T, ui  # noqa: E402
+from agent import cache, screener, sectors, theme as T, ui  # noqa: E402
 
 ui.setup("Sector Heatmap", "🗺️")
 C = T.C
@@ -16,25 +17,28 @@ C = T.C
 ui.sidebar_brand()
 T.sidebar_head("View")
 mkt = st.sidebar.radio("Market", ["India", "United States"], label_visibility="collapsed")
-span = st.sidebar.radio("Change over", ["1 day", "1 week", "1 month"], horizontal=True)
+span = st.sidebar.radio("Change over", ["1 day", "1 week", "1 month", "3 months"], horizontal=True)
 T.sidebar_head("Data")
 if st.sidebar.button("Refresh", use_container_width=True):
     st.cache_data.clear()
 
-_LOOK = {"1 day": 1, "1 week": 5, "1 month": 21}
+_LOOK = {"1 day": 1, "1 week": 5, "1 month": 21, "3 months": 63}
 
 
-@st.cache_data(ttl=600, show_spinner=False)
-def _load(market: str, lookback: int) -> pd.DataFrame:
+@st.cache_data(ttl=6 * 3600, show_spinner=False)
+def _load(market: str, lookback: int, b: int) -> pd.DataFrame:
+    """``b`` is a market-hours-aware cache bucket (short while open, long when closed)."""
     smap = sectors.sector_map(market)
-    hist = screener.batch_history(list(smap), period="3mo", min_rows=lookback + 2)
+    hist = screener.batch_history(list(smap), period="6mo", min_rows=lookback + 2)
     rows = []
     for s, df in hist.items():
         c = df["Close"].dropna()
         if len(c) <= lookback:
             continue
         rows.append({"Symbol": ui.short_sym(s), "Sector": smap[s], "Price": float(c.iloc[-1]),
-                     "Change %": (float(c.iloc[-1]) / float(c.iloc[-1 - lookback]) - 1) * 100})
+                     "Change %": (float(c.iloc[-1]) / float(c.iloc[-1 - lookback]) - 1) * 100,
+                     "1D %": (float(c.iloc[-1]) / float(c.iloc[-2]) - 1) * 100,
+                     "Trend": [float(x) for x in c.tail(30)]})
     return pd.DataFrame(rows)
 
 
@@ -46,7 +50,8 @@ ui.hero(
 )
 
 with st.spinner("Loading prices…"):
-    df = _load("IN" if mkt == "India" else "US", _LOOK[span])
+    _M = "IN" if mkt == "India" else "US"
+    df = _load(_M, _LOOK[span], cache.bucket(_M, 3))
 
 if df.empty:
     ui.empty_note("<b>No prices returned.</b> Yahoo may be rate-limiting. Try Refresh in a minute.")
@@ -93,4 +98,27 @@ st.markdown(
     "<tbody>" + "".join(rows) + "</tbody></table></div>",
     unsafe_allow_html=True,
 )
+T.rule("Drill into a sector")
+pick = st.selectbox("Sector", list(sec.index), label_visibility="collapsed")
+sub = df[df["Sector"] == pick].sort_values("Change %", ascending=False)
+c1, c2 = st.columns([1, 1])
+with c1:
+    fig = go.Figure(go.Bar(x=sub["Change %"], y=sub["Symbol"], orientation="h",
+                           marker_color=[C["up"] if v >= 0 else C["down"] for v in sub["Change %"]],
+                           hovertemplate="%{y}: %{x:+.2f}%<extra></extra>"))
+    fig.update_layout(height=max(260, 28 * len(sub) + 60), margin=dict(l=8, r=8, t=8, b=8),
+                      yaxis=dict(autorange="reversed"), xaxis_title=f"Change over {span}",
+                      xaxis_title_font=dict(size=10, color=C["faint"]))
+    st.plotly_chart(T.style_axes(fig), use_container_width=True)
+with c2:
+    st.dataframe(
+        sub[["Symbol", "Price", "Change %", "1D %", "Trend"]], use_container_width=True, hide_index=True,
+        column_config={
+            "Price": st.column_config.NumberColumn(format="%.2f"),
+            "Change %": st.column_config.NumberColumn(format="%+.2f"),
+            "1D %": st.column_config.NumberColumn(format="%+.2f"),
+            "Trend": st.column_config.LineChartColumn("30-day trend"),
+        },
+    )
+    st.caption("Open any of these on the Analyze page by typing the symbol in the left rail.")
 ui.footer()

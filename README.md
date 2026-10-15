@@ -114,12 +114,59 @@ largest individual institutional holders.
 - The scoring thresholds are heuristic and deliberately conservative. Tune the
   weights in the sidebar; edit `agent/technical.py` / `agent/fundamental.py` to
   change the rules.
-- No backtest is included. Treat the composite score as a structured checklist,
-  not a track record.
+- The **Backtest** page tests the technical score only (Yahoo has no point-in-time
+  fundamentals/news). It is survivorship-biased and cost-modelled with a flat
+  per-side estimate. Treat the composite as a structured checklist, not a track record.
 - News sentiment is a simple word-list heuristic, not an NLP model.
 - FII/DII scrip-code lookup covers ~20 large caps directly and falls back to
   BSE's symbol search for everything else — if a name doesn't resolve, BSE may
   list it under a different short name.
+
+## What's new (reliability, signal quality, alerts, risk)
+
+**Data reliability** — `agent/cache.py`, `agent/fallback.py`, `agent/log.py`, `agent/config.py`
+- Market-hours-aware caching: every cached page takes a `cache.bucket(market)` argument that rolls
+  every 2 min while the session is open and every 3 h when it is shut.
+- If Yahoo fails, price history falls back to Alpha Vantage (set `ALPHAVANTAGE_API_KEY`) then Stooq
+  (US only), then the last good copy on disk (flagged *stale*).
+- Every analysis shows a freshness strip (data age + source for price, fundamentals and news) and
+  the sidebar has a **System status** panel listing recent failures.
+- Settings are read from `st.secrets` first, then environment / `.env`.
+
+**Composite call** — `agent/signal.py`, `agent/backtest.py`
+- "What moved the call": the top signals ranked by weighted contribution.
+- Confidence drops (and is capped) when technical, fundamental and news disagree.
+- Backtest: trading costs, Sharpe, drawdown, index benchmark, first-half/second-half split, a
+  **calibration** table (how often each score band was actually higher N days later; quoted on the
+  Analyze page) and a **signal lab** (rank-IC per signal group) that can save tuned technical weights.
+
+**Movers & Big Money** — `agent/flows.py`, `agent/why.py`
+- Delivery % (NSE bhavcopy), bulk/block deals, FII/DII cash flows, and a "why it moved" column
+  (volume, gap, 52-week position, sector move, deal, newest headline, optional Claude sentence).
+  NSE blocks some hosts; every source degrades gracefully.
+
+**Daily Brief, Ask, Alerts** — `agent/briefing.py`, `agent/chat.py`, `agent/alerts.py`
+- Pre/post-market brief covering your watchlist and holdings; a chat page that answers from the
+  app's own numbers; alert rules (price, % move, RSI, volume spike, score, composite flip) delivered
+  to Telegram/email by a GitHub Actions schedule (`.github/workflows/alerts.yml`). See the Alerts page
+  for the one-time setup and the list of secrets.
+
+**Portfolio** — `agent/portfolio.py`
+- Dated BUY/SELL lines, FIFO lots, realised P&L, India STCG/LTCG estimate (editable rates), 45-day
+  "turns long-term" nudge, correlation, beta, historical VaR/expected shortfall, risk contributions
+  and ATR position sizing. Not tax advice.
+
+**Also**: sector drill-down + 3-month view, Compare page, Screener with saved filters (URL / JSON),
+mobile layout, and `.github/workflows/keepalive.yml` (a headless browser visit; a plain HTTP ping
+does not wake a sleeping Streamlit Cloud app — set the repo variable `STREAMLIT_APP_URL`).
+
+## Tests
+
+```bash
+pip install -r requirements-dev.txt
+pytest -q                          # 30+ unit tests, no network needed
+python tests/smoke_pages.py        # runs every page headless on synthetic data
+```
 
 ## Project layout
 
@@ -133,7 +180,21 @@ agent/
   llm.py          Claude synthesis with template fallback
   tradingview.py  TradingView widget symbol mapping + embed HTML
   ownership.py    BSE FII/DII shareholding pattern + US institutional ownership
-  analyze.py      orchestrator
+  analyze.py      orchestrator (+ per-signal freshness)
+  cache.py        market-hours-aware cache buckets, disk stale-while-error
+  fallback.py     Alpha Vantage / Stooq price fallbacks
+  backtest.py     backtest engine, calibration, signal lab
+  flows.py        NSE delivery %, bulk/block deals, FII/DII
+  why.py          'why is it moving' tags + Claude summary
+  briefing.py     daily brief
+  chat.py         Ask-the-agent
+  alerts.py       alert rules, Telegram/email delivery
+  portfolio.py    FIFO, tax, VaR/beta, position sizing
 app.py            Streamlit dashboard
 cli.py            terminal runner
+pages/            Top 20, Movers, Watchlist, Sector Heatmap, Portfolio, Backtest,
+                  Daily Brief, Ask, Alerts, Compare, Screener
+scripts/          run_alerts.py, keepalive.py
+tests/            unit tests + headless page smoke test
+alerts.json       alert rules (edit on the Alerts page, commit to save)
 ```

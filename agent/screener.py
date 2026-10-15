@@ -52,20 +52,41 @@ def _why(signals, n: int = 2) -> str:
     return "; ".join(f"{a}: {b}" for a, b, _ in pos)
 
 
-def movers(market: str, top: int = 10) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Day gainers / losers across the universe (last close vs previous close)."""
-    hist = batch_history(symbols(market), period="5d", min_rows=2)
+def movers_frame(market: str) -> pd.DataFrame:
+    """Every universe stock's last-day move, with gap %, 52-week position and sector."""
+    hist = batch_history(symbols(market), period="1y", min_rows=2)
+    smap = sector_map(market)
     rows = []
     for s, df in hist.items():
         c = df["Close"]
         if len(c) < 2:
             continue
+        hi, lo = float(df["High"].max()), float(df["Low"].min())
+        opn = float(df["Open"].iloc[-1]) if "Open" in df else float("nan")
         rows.append({"Symbol": s, "Price": c.iloc[-1], "Change %": (c.iloc[-1] / c.iloc[-2] - 1) * 100,
                      "Volume": df["Volume"].iloc[-1],
-                     "Vol vs 5d avg": df["Volume"].iloc[-1] / max(df["Volume"].mean(), 1),
+                     "Vol vs 5d avg": df["Volume"].iloc[-1] / max(df["Volume"].tail(5).mean(), 1),
+                     "Gap %": (opn / float(c.iloc[-2]) - 1) * 100 if opn == opn else float("nan"),
+                     "52W pos %": (float(c.iloc[-1]) - lo) / max(hi - lo, 1e-9) * 100,
+                     "Sector": smap.get(s, "—"),
                      "As of": df.index[-1].date()})
-    d = pd.DataFrame(rows).sort_values("Change %", ascending=False)
+    return pd.DataFrame(rows).sort_values("Change %", ascending=False).reset_index(drop=True)
+
+
+def split_movers(d: pd.DataFrame, top: int = 10) -> tuple[pd.DataFrame, pd.DataFrame]:
     return d.head(top).reset_index(drop=True), d.tail(top).iloc[::-1].reset_index(drop=True)
+
+
+def sector_averages(d: pd.DataFrame) -> dict[str, float]:
+    """Mean day change per sector over every stock in the universe frame."""
+    if d is None or d.empty:
+        return {}
+    return d.groupby("Sector")["Change %"].mean().to_dict()
+
+
+def movers(market: str, top: int = 10) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Day gainers / losers across the universe (last close vs previous close)."""
+    return split_movers(movers_frame(market), top)
 
 
 def rank(market: str, w: tuple[float, float, float] = (0.40, 0.45, 0.15),

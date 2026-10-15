@@ -25,12 +25,13 @@ from agent import ui as _ui  # noqa: E402
 from agent.analyze import analyze_stock  # noqa: E402
 from agent.data import fetch_live  # noqa: E402
 from agent.llm import synthesize  # noqa: E402
+from agent import backtest as _BT, cache as _cache, config as _config  # noqa: E402
 
 st.set_page_config(
     page_title="TERMINAL · Stock Analysis Agent",
     page_icon="📊",
     layout="wide",
-    initial_sidebar_state="expanded",
+    initial_sidebar_state="auto",
 )
 T.inject()
 T.register_plotly()
@@ -45,6 +46,7 @@ st.sidebar.markdown(
     '<div class="sb-tag">NSE / BSE / US EQUITIES</div>',
     unsafe_allow_html=True,
 )
+_ui.system_status()
 
 T.sidebar_head("Instrument")
 _qp_sym = str(st.query_params.get("s", "")).strip().upper()
@@ -86,10 +88,15 @@ st.sidebar.markdown(
 
 use_llm = st.sidebar.checkbox(
     "Claude synthesis",
-    value=bool(os.environ.get("ANTHROPIC_API_KEY")),
-    help="Needs ANTHROPIC_API_KEY in your environment or .env file.",
+    value=bool(_config.get("ANTHROPIC_API_KEY")),
+    help="Needs ANTHROPIC_API_KEY in Streamlit secrets, your environment or .env file.",
 )
-if use_llm and not os.environ.get("ANTHROPIC_API_KEY"):
+tuned_tech = st.sidebar.checkbox(
+    "Backtest-tuned technical weights", value=False,
+    disabled=_BT.load_weights() is None,
+    help="Rescales technical signal groups using the Signal lab on the Backtest page (run it there first).",
+)
+if use_llm and not _config.get("ANTHROPIC_API_KEY"):
     st.sidebar.warning("No ANTHROPIC_API_KEY — falling back to the rule-based summary.")
 
 run = st.sidebar.button("▸ Run analysis", type="primary", use_container_width=True)
@@ -117,10 +124,12 @@ st.sidebar.markdown(
 # --------------------------------------------------------------------------
 # Data helpers (unchanged logic)
 # --------------------------------------------------------------------------
-@st.cache_data(show_spinner=False, ttl=600)
-def _run(ticker: str, weights: tuple, period: str, market: str) -> dict:
+@st.cache_data(show_spinner=False, ttl=6 * 3600)
+def _run(ticker: str, weights: tuple, period: str, market: str, tuned: bool, bucket: int) -> dict:
+    """``bucket`` (see agent.cache) rolls every 2 min while the market is open and every
+    3 h when it is shut, so the TTL adapts to whether the data can actually change."""
     w = {"technical": weights[0], "fundamental": weights[1], "news": weights[2]}
-    return analyze_stock(ticker, weights=w, period=period, market=market)
+    return analyze_stock(ticker, weights=w, period=period, market=market, tuned_technical=tuned)
 
 
 @st.cache_data(show_spinner=False, ttl=20)
@@ -337,7 +346,8 @@ if not run and "last" not in st.session_state:
 if run:
     try:
         with st.spinner(f"Fetching and scoring {ticker}…"):
-            st.session_state["last"] = _run(ticker, (w_tech, w_fund, w_news), period, market)
+            st.session_state["last"] = _run(
+                ticker, (w_tech, w_fund, w_news), period, market, tuned_tech, _cache.bucket(market))
     except Exception as exc:  # noqa: BLE001
         st.error(f"Could not analyze '{ticker}': {exc}")
         st.stop()
@@ -371,6 +381,12 @@ T.kpi(s1, "Composite call", sig["label"].upper(),
 T.meter(s2, "Technical", a["technical"]["score"])
 T.meter(s3, "Fundamental", a["fundamental"]["score"])
 T.meter(s4, "News tone", a["news"]["score"])
+
+_ui.freshness_bar(a.get("freshness", {}), a.get("stale", False))
+if sig.get("conflict_note"):
+    st.warning(sig["conflict_note"])
+if sig.get("calibration"):
+    st.caption(sig["calibration"])
 
 T.note(
     "<b>NOT INVESTMENT ADVICE.</b> Automated, rule-based analysis on delayed data "
@@ -472,7 +488,7 @@ with tab_brief:
     st.markdown(
         f'<div style="font-family:{T.MONO};font-size:.64rem;color:{C["faint"]};'
         f'letter-spacing:.08em;margin-top:.6rem">SOURCE: '
-        + ("CLAUDE · " + os.environ.get("STOCK_AGENT_MODEL", "claude-sonnet-5").upper()
+        + ("CLAUDE · " + _config.get("STOCK_AGENT_MODEL", "claude-sonnet-5").upper()
            if source == "claude" else "RULE-BASED TEMPLATE")
         + "</div>",
         unsafe_allow_html=True,
@@ -490,9 +506,11 @@ with tab_brief:
         "Expected %": "{:+.1f}", "Low %": "{:+.1f}", "High %": "{:+.1f}",
     }), hide_index=True, use_container_width=True)
 
-    T.rule("How the score was built")
-    for r in sig["rationale"]:
-        st.markdown(r if r.startswith("•") else f"- {r}")
+    T.rule("What moved the call · top drivers (weighted points)")
+    _ui.drivers_panel(sig.get("drivers", []))
+    with st.expander("Full rationale"):
+        for r in sig["rationale"]:
+            st.markdown(r if r.startswith("•") else f"- {r}")
 
 # --- Chart --------------------------------------------------------------
 with tab_chart:

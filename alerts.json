@@ -1,0 +1,9 @@
+{
+  "rules": [
+    {"symbol": "RELIANCE", "market": "IN", "type": "composite_flip", "value": null, "note": "call changed"},
+    {"symbol": "RELIANCE", "market": "IN", "type": "rsi_above", "value": 75, "note": "overbought"},
+    {"symbol": "NVDA", "market": "US", "type": "pct_move", "value": 5, "note": "big move"}
+  ],
+  "watchlist": ["RELIANCE", "TCS", "HDFCBANK"],
+  "daily_brief": {"enabled": true, "markets": ["IN"]}
+}

@@ -38,6 +38,10 @@ class CompositeSignal:
     contributions: dict[str, float] = field(default_factory=dict)
     projections: list[Projection] = field(default_factory=list)
     rationale: list[str] = field(default_factory=list)
+    drivers: list[dict] = field(default_factory=list)     # per-signal weighted contributions
+    conflict: bool = False                                 # components point opposite ways
+    conflict_note: str = ""
+    calibration: str | None = None                         # historical hit-rate sentence
 
 
 def _label(score: float) -> str:
@@ -87,6 +91,15 @@ def _project(history: pd.DataFrame, tech: TechnicalResult, bias: float) -> list[
     return out
 
 
+def parts_named(tech, fund, news, active) -> list[tuple[str, float]]:
+    out = [("technical", tech.score)]
+    if active["fundamental"]:
+        out.append(("fundamental", fund.score))
+    if active["news"]:
+        out.append(("news", news.score))
+    return out
+
+
 def combine(
     tech: TechnicalResult,
     fund: FundamentalResult,
@@ -119,8 +132,39 @@ def combine(
     signs = [1 if s > 8 else -1 if s < -8 else 0 for s in comp_scores]
     agree = abs(sum(signs)) / len(signs)
     completeness = sum(active.values()) / 3
-    conf_pct = round(100 * (0.55 * agree + 0.30 * completeness + 0.15 * min(1.0, abs(score) / 50)))
+    conf_pct = 100 * (0.55 * agree + 0.30 * completeness + 0.15 * min(1.0, abs(score) / 50))
+
+    # Disagreement penalty: a wide spread between components (e.g. technical -14 vs
+    # fundamental +16 is mild, -40 vs +40 is severe) means the call is shakier.
+    spread = max(comp_scores) - min(comp_scores)
+    conflict = (max(comp_scores) > 15 and min(comp_scores) < -15)
+    conf_pct -= min(35.0, max(0.0, spread - 30.0) * 0.5)
+    if conflict:
+        conf_pct = min(conf_pct, 45.0)
+    conf_pct = round(max(0.0, conf_pct))
     confidence = "High" if conf_pct >= 67 else "Moderate" if conf_pct >= 40 else "Low"
+    conflict_note = ""
+    if conflict:
+        hi = max(parts_named(tech, fund, news, active), key=lambda x: x[1])
+        lo = min(parts_named(tech, fund, news, active), key=lambda x: x[1])
+        conflict_note = (f"Signals disagree: {hi[0]} is {hi[1]:+.0f} but {lo[0]} is {lo[1]:+.0f}. "
+                         f"Confidence is capped until they agree.")
+
+    drivers: list[dict] = []
+    for comp, res in (("Technical", tech), ("Fundamental", fund)):
+        if comp == "Fundamental" and not fund.available:
+            continue
+        wk = eff["technical" if comp == "Technical" else "fundamental"]
+        for name, note, pts in res.signals:
+            drivers.append({"component": comp, "name": name, "note": note,
+                            "points": float(pts), "weighted": float(pts * wk)})
+    if news.available:
+        for h in news.headlines:
+            if h.get("hits"):
+                drivers.append({"component": "News", "name": "Headline", "note": h["title"],
+                                "points": float(h["hits"]) * 45.0,
+                                "weighted": float(h["hits"]) * 45.0 * eff["news"] / max(len(news.headlines), 1)})
+    drivers.sort(key=lambda d: -abs(d["weighted"]))
 
     rationale: list[str] = []
     rationale.append(f"Technical: {tech.label} ({tech.score:+.0f}).")
@@ -144,4 +188,7 @@ def combine(
         contributions=parts,
         projections=_project(history, tech, score),
         rationale=rationale,
+        drivers=drivers,
+        conflict=conflict,
+        conflict_note=conflict_note,
     )

@@ -7,11 +7,12 @@ returns a deterministic template instead so the app always has narrative text.
 from __future__ import annotations
 
 import json
-import os
 from dataclasses import asdict
 from typing import Any
 
-MODEL = os.environ.get("STOCK_AGENT_MODEL", "claude-sonnet-5")
+from . import config, log
+
+MODEL = config.get("STOCK_AGENT_MODEL", "claude-sonnet-5")
 
 _SYSTEM = """You are an equities analyst assistant for Indian (NSE/BSE) stocks.
 You are given pre-computed technical indicators, fundamental ratios and news
@@ -65,7 +66,7 @@ def _payload(analysis: dict[str, Any]) -> str:
 
 def synthesize(analysis: dict[str, Any]) -> tuple[str, str]:
     """Return (markdown_text, source) where source is 'claude' or 'template'."""
-    key = os.environ.get("ANTHROPIC_API_KEY")
+    key = config.get("ANTHROPIC_API_KEY")
     if key:
         try:
             import anthropic
@@ -88,6 +89,7 @@ def synthesize(analysis: dict[str, Any]) -> tuple[str, str]:
             if text.strip():
                 return text.strip(), "claude"
         except Exception as exc:  # noqa: BLE001 - fall back on any failure
+            log.record("claude", exc)
             return _template(analysis, note=f"(Claude call failed: {exc})"), "template"
     return _template(analysis), "template"
 
