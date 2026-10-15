@@ -21,7 +21,6 @@ ui.sidebar_brand()
 T.sidebar_head("View")
 span = st.sidebar.radio("Change over", ["1 day", "1 week", "1 month", "3 months"], horizontal=True)
 T.sidebar_head("Data")
-every = st.sidebar.select_slider("Live refresh every", [30, 60, 120, 300], value=60, format_func=lambda x: f"{x}s")
 if st.sidebar.button("Refresh", use_container_width=True):
     st.cache_data.clear()
 
@@ -63,7 +62,7 @@ def _load(market: str, lookback: int, b: int) -> pd.DataFrame:
         c = df["Close"].dropna()
         if len(c) <= lookback:
             continue
-        rows.append({"Symbol": ui.short_sym(s), "Sector": smap[s], "Price": float(c.iloc[-1]),
+        rows.append({"Symbol": ui.short_sym(s), "Y": s, "Sector": smap[s], "Price": float(c.iloc[-1]),
                      "Change %": (float(c.iloc[-1]) / float(c.iloc[-1 - lookback]) - 1) * 100,
                      "1D %": (float(c.iloc[-1]) / float(c.iloc[-2]) - 1) * 100,
                      "Trend": [float(x) for x in c.tail(30)]})
@@ -85,7 +84,8 @@ def _view(mkt: str, live: bool) -> None:
         df = _load(_M, _LOOK[span], cache.bucket(_M, 3))
         if live:
             _LOOK_SEL = _LOOK[span]
-            df = _apply_live(df, _M, int(time.time() // every))
+            df = _apply_live(df, _M, int(time.time() // 60))
+            df["Change %"] = df["1D %"]   # live mode is always "today vs previous close"
 
     if df.empty:
         ui.empty_note("<b>No prices returned.</b> Yahoo may be rate-limiting. Try Refresh in a minute.")
@@ -103,11 +103,8 @@ def _view(mkt: str, live: bool) -> None:
 
     lim = max(2.0, float(df["Change %"].abs().quantile(0.9)))
     if live:
-        pkey = f"heat_prev_{_M}_{span}"
-        prev = st.session_state.get(pkey)
-        components.html(liveheat.build_html(df, prev, lim, 560, f"Live · {datetime.now().strftime('%H:%M:%S')}"),
-                        height=620)
-        st.session_state[pkey] = dict(zip(df["Symbol"], df["Change %"].astype(float)))
+        components.html(liveheat.build_html(df, None, lim, 560, "Prices stream from Yahoo; they are exchange-delayed where Yahoo says so."),
+                        height=640)
     else:
         fig = px.treemap(
             df.assign(All=mkt), path=["All", "Sector", "Symbol"], values=[1] * len(df), color="Change %",
@@ -162,18 +159,16 @@ def _view(mkt: str, live: bool) -> None:
         )
         st.caption("Open any of these on the Analyze page by typing the symbol in the left rail.")
     if live:
-        st.caption(f"Live · updated {datetime.now().strftime('%H:%M:%S')} · refreshes every {every}s · "
-                   "prices are ~15 min delayed by Yahoo.")
+        st.caption("Live ticks stream straight to your browser (no page refresh). The summary cards above are a "
+                   "snapshot from when you switched Live on; the map's own header updates tick by tick. "
+                   "Live mode shows today's change vs the previous close. Tiles stay still while the exchange is closed.")
 
 
 c_m, c_l = st.columns([2, 1])
 with c_m:
     mkt = st.radio("Market", ["India", "United States"], horizontal=True, label_visibility="collapsed")
 with c_l:
-    live = st.toggle("Live", value=False, help="Auto-refresh with intraday prices (today vs previous close).")
+    live = st.toggle("Live", value=False, help="Stream live price ticks into the map (today vs previous close).")
 _LOOK_SEL = 0
-if live:
-    st.fragment(run_every=every)(_view)(mkt, True)
-else:
-    _view(mkt, False)
+_view(mkt, live)
 ui.footer()
