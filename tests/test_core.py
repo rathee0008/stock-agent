@@ -317,3 +317,12 @@ def test_chat_offline_without_key(monkeypatch):
     monkeypatch.setattr(chat, "gather", lambda q, e=None: ({"stocks": []}, []))
     text, src = chat.answer("hello")
     assert src == "template" and "API key" in text
+
+
+def test_live_prices_uses_prev_day_close(monkeypatch):
+    import pandas as pd
+    from agent import screener
+    idx = pd.to_datetime(["2026-10-14 09:30", "2026-10-14 15:25", "2026-10-15 09:30", "2026-10-15 09:35"])
+    raw = pd.concat({"AAA.NS": pd.DataFrame({"Close": [100.0, 110.0, 111.0, 121.0]}, index=idx)}, axis=1)
+    monkeypatch.setattr(screener.yf, "download", lambda *a, **k: raw)
+    assert screener.live_prices(["AAA.NS"]) == {"AAA.NS": (121.0, 110.0)}
