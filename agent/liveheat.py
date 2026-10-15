@@ -81,6 +81,7 @@ def build_html(df: pd.DataFrame, prev: dict[str, float] | None, limit: float, he
     cur = dict(zip(df["Symbol"], df["Change %"].astype(float)))
     price = dict(zip(df["Symbol"], df["Price"].astype(float)))
     ysym = dict(zip(df["Symbol"], df["Y"])) if "Y" in df.columns else {}
+    trend = dict(zip(df["Symbol"], df["Trend"])) if "Trend" in df.columns else {}
     data = []
     for t in tiles:
         d = {k: (round(v, 3) if isinstance(v, float) else v) for k, v in t.items()}
@@ -88,6 +89,9 @@ def build_html(df: pd.DataFrame, prev: dict[str, float] | None, limit: float, he
             d["new"] = round(cur[t["sym"]], 3)
             d["old"] = round((prev or {}).get(t["sym"], cur[t["sym"]]), 3)
             d["px"] = round(price[t["sym"]], 2)
+            if "Trend" in df.columns:
+                trd = trend[t["sym"]]
+                d["tr"] = [round(float(v), 2) for v in trd][-30:] if trd is not None and len(trd) else []
             if "Y" in df.columns:
                 d["ys"] = ysym[t["sym"]]
                 d["prev"] = round(price[t["sym"]] / (1 + cur[t["sym"]] / 100), 4) if cur[t["sym"]] > -99 else None
@@ -121,6 +125,16 @@ html,body{margin:0;background:#0A0B0D;font-family:ui-monospace,Menlo,Consolas,mo
 .sr .trk{height:8px;background:#1b1e24;border-radius:4px;position:relative;overflow:hidden}
 .sr .trk i{position:absolute;top:0;bottom:0;transition:left .5s,width .5s,background-color .5s}
 .sr .v{text-align:right;font-weight:700}.up{color:#19d27a}.dn{color:#ff6b6b}
+#dh{display:flex;align-items:center;gap:12px;padding:18px 2px 8px;color:#7d8490;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+#dsel{background:#111317;color:#e8e8ea;border:1px solid #2a2e36;border-radius:6px;padding:6px 10px;font-family:inherit;font-size:12px}
+#dhd,.dr{display:grid;grid-template-columns:34px minmax(90px,1.2fr) 90px minmax(120px,2fr) 80px 110px;gap:8px;align-items:center;padding:0 10px;box-sizing:border-box}
+#dhd{height:24px;color:#7d8490;font-size:10px;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid #22252c}
+#dl{position:relative}
+.dr{position:absolute;left:0;right:0;height:32px;border:1px solid #1b1e24;background:#111317;border-radius:6px;transition:transform .7s cubic-bezier(.2,.8,.2,1),opacity .4s}
+.dr.out{opacity:0;pointer-events:none}.dr .n{color:#9aa0aa;font-weight:700}.dr b{font-size:12px}.dr .mv{font-size:10px;margin-left:3px}
+.dr .trk{height:8px;background:#1b1e24;border-radius:4px;position:relative;overflow:hidden}
+.dr .trk i{position:absolute;top:0;bottom:0;transition:left .5s,width .5s,background-color .5s}
+.dr .v{text-align:right;font-weight:700}.dr svg{display:block}
 #leg{display:flex;align-items:center;gap:6px;font-size:11px;color:#7d8490;padding:6px 2px}
 #bar{flex:0 0 200px;height:8px;border-radius:4px;background:linear-gradient(90deg,#ff3b4e,#7a1f2a 30%,#1b1e24 50%,#14683e 70%,#19d27a)}
 </style></head><body>
@@ -129,6 +143,9 @@ html,body{margin:0;background:#0A0B0D;font-family:ui-monospace,Menlo,Consolas,mo
 <div id="leg"><span>falling</span><div id="bar"></div><span>rising</span><span style="margin-left:12px">brighter = bigger move · each tick flashes the tile</span></div>
 <div id="srh"><span>#</span><span>Sector (live ranking)</span><span>Stocks</span><span>Up / down</span><span>Average move today</span><span style="text-align:right">Avg</span></div>
 <div id="sr"></div>
+<div id="dh"><span>Drill into a sector</span><select id="dsel"></select><span id="dnote"></span></div>
+<div id="dhd"><span>#</span><span>Stock</span><span>Price</span><span>Move today</span><span style="text-align:right">Change</span><span>30-day trend + live</span></div>
+<div id="dl"></div>
 <script>
 const D=__DATA__, LIM=D.limit||2, map=document.getElementById('map');
 const N=[27,30,36], UP=[25,210,122], DN=[255,59,78];
@@ -169,12 +186,39 @@ function srUpdate(first){
     if(r.last!==null&&Math.abs(x.a-r.last)>=0.005&&!first)r.e.animate([{backgroundColor:x.a>r.last?'#17472f':'#4a1c24'},{backgroundColor:'#111317'}],{duration:900});
     r.last=x.a;});
 }
+const DRH=36,dl=document.getElementById('dl'),dsel=document.getElementById('dsel');let dInit=null,dSector=null;
+const maxN=Math.max(...Object.values(secMembers).map(m=>m.length));dl.style.height=(maxN*DRH+6)+'px';
+for(const o of all){const e=document.createElement('div');e.className='dr out';
+  e.innerHTML='<span class="n"></span><b>'+o.t.sym+'</b><span class="p"></span><span class="trk"><i></i></span><span class="v"></span><span class="sp"></span>';
+  dl.appendChild(e);o.dr={e,n:e.querySelector('.n'),p:e.querySelector('.p'),bar:e.querySelector('.trk i'),v:e.querySelector('.v'),sp:e.querySelector('.sp'),last:null};}
+function spark(o){const tr=(o.t.tr||[]).slice();if(!tr.length)return '';tr[tr.length-1]=o.px;
+  const mn=Math.min(...tr),mx=Math.max(...tr),w=100,h=22,rg=(mx-mn)||1;
+  const pts=tr.map((v,i)=>(i/(tr.length-1||1)*w).toFixed(1)+','+(h-2-(v-mn)/rg*(h-4)).toFixed(1)).join(' ');
+  const up=tr[tr.length-1]>=tr[0];
+  return '<svg width="'+w+'" height="'+h+'"><polyline fill="none" stroke="'+(up?'#19d27a':'#ff6b6b')+'" stroke-width="1.5" points="'+pts+'"/></svg>';}
+function drUpdate(first,reset){
+  const sec=dsel.value;if(sec!==dSector||reset){dSector=sec;dInit=null;}
+  const m=secMembers[sec].slice().sort((a,b)=>b.pct-a.pct);
+  if(!dInit){dInit={};m.forEach((o,i)=>dInit[o.t.sym]=i);}
+  const mx=Math.max(1,...m.map(o=>Math.abs(o.pct))),inSec=new Set(m);
+  for(const o of all)if(!inSec.has(o)){o.dr.e.classList.add('out');}
+  m.forEach((o,i)=>{const d=o.dr;d.e.classList.remove('out');d.e.style.transform='translateY('+(i*DRH)+'px)';
+    const mv=dInit[o.t.sym]-i;d.n.innerHTML=(i+1)+(mv>0?'<span class="mv up">▲'+mv+'</span>':mv<0?'<span class="mv dn">▼'+(-mv)+'</span>':'');
+    d.p.textContent=Number(o.px).toFixed(2);const w=Math.min(Math.abs(o.pct)/mx,1)*50;
+    d.bar.style.left=o.pct>=0?'50%':(50-w)+'%';d.bar.style.width=w+'%';d.bar.style.backgroundColor=o.pct>=0?'#19d27a':'#ff6b6b';
+    d.v.textContent=fmt(o.pct);d.v.className='v '+(o.pct>=0?'up':'dn');d.sp.innerHTML=spark(o);
+    if(d.last!==null&&d.lastpx!==o.px&&!first)d.e.animate([{backgroundColor:o.px>d.lastpx?'#17472f':'#4a1c24'},{backgroundColor:'#111317'}],{duration:900});
+    d.last=o.pct;d.lastpx=o.px;});
+}
+const avgNew=k=>secMembers[k].reduce((x,o)=>x+o.t.new,0)/secMembers[k].length;
+for(const s of Object.keys(secMembers).sort((a,b)=>avgNew(b)-avgNew(a))){const op=document.createElement('option');op.value=s;op.textContent=s;dsel.appendChild(op);}
+dsel.addEventListener('change',()=>drUpdate(true,true));
 function fit(){for(const o of all){const r=o.e.getBoundingClientRect();o.u.style.display=r.height<52?'none':'';o.i.style.display=r.height<30?'none':'';}}
 function summary(){
   let up=0,dn=0,sum=0;for(const o of all){if(o.pct>0)up++;else if(o.pct<0)dn++;sum+=o.pct;}
   document.getElementById('adv').innerHTML='advancers <b>'+up+'</b> / decliners <b>'+dn+'</b>';
   document.getElementById('avg').innerHTML='market avg <b>'+fmt(sum/all.length)+'</b>';
-  srUpdate(false);
+  srUpdate(false);drUpdate(false,false);
   for(const s in secMembers){const m=secMembers[s],a=m.reduce((x,o)=>x+o.pct,0)/m.length,el=secEls[s];
     el.textContent=fmt(a);el.style.color=a>=0?'#19d27a':'#ff6b6b';}
 }

@@ -104,7 +104,7 @@ def _view(mkt: str, live: bool) -> None:
     lim = max(2.0, float(df["Change %"].abs().quantile(0.9)))
     if live:
         components.html(liveheat.build_html(df, None, lim, 560, "Prices stream from Yahoo; they are exchange-delayed where Yahoo says so."),
-                        height=640 + 36 * int(df['Sector'].nunique()) + 110)
+                        height=640 + 36 * int(df['Sector'].nunique()) + 110 + 36 * int(df.groupby('Sector').size().max()) + 130)
     else:
         fig = px.treemap(
             df.assign(All=mkt), path=["All", "Sector", "Symbol"], values=[1] * len(df), color="Change %",
@@ -136,29 +136,31 @@ def _view(mkt: str, live: bool) -> None:
             "<tbody>" + "".join(rows) + "</tbody></table></div>",
             unsafe_allow_html=True,
         )
-    T.rule("Drill into a sector")
-    pick = st.selectbox("Sector", list(sec.index), label_visibility="collapsed")
-    sub = df[df["Sector"] == pick].sort_values("Change %", ascending=False)
-    c1, c2 = st.columns([1, 1])
-    with c1:
-        fig = go.Figure(go.Bar(x=sub["Change %"], y=sub["Symbol"], orientation="h",
-                               marker_color=[C["up"] if v >= 0 else C["down"] for v in sub["Change %"]],
-                               hovertemplate="%{y}: %{x:+.2f}%<extra></extra>"))
-        fig.update_layout(height=max(260, 28 * len(sub) + 60), margin=dict(l=8, r=8, t=8, b=8),
-                          yaxis=dict(autorange="reversed"), xaxis_title=f"Change over {span}",
-                          xaxis_title_font=dict(size=10, color=C["faint"]))
-        st.plotly_chart(T.style_axes(fig), use_container_width=True)
-    with c2:
-        st.dataframe(
-            sub[["Symbol", "Price", "Change %", "1D %", "Trend"]], use_container_width=True, hide_index=True,
-            column_config={
-                "Price": st.column_config.NumberColumn(format="%.2f"),
-                "Change %": st.column_config.NumberColumn(format="%+.2f"),
-                "1D %": st.column_config.NumberColumn(format="%+.2f"),
-                "Trend": st.column_config.LineChartColumn("30-day trend"),
-            },
-        )
-        st.caption("Open any of these on the Analyze page by typing the symbol in the left rail.")
+    if not live:  # live mode has its own streaming drill-down inside the block above
+        T.rule("Drill into a sector")
+        pick = st.selectbox("Sector", list(sec.index), label_visibility="collapsed")
+        sub = df[df["Sector"] == pick].sort_values("Change %", ascending=False)
+        c1, c2 = st.columns([1, 1])
+        with c1:
+            fig = go.Figure(go.Bar(x=sub["Change %"], y=sub["Symbol"], orientation="h",
+                                   marker_color=[C["up"] if v >= 0 else C["down"] for v in sub["Change %"]],
+                                   hovertemplate="%{y}: %{x:+.2f}%<extra></extra>"))
+            fig.update_layout(height=max(260, 28 * len(sub) + 60), margin=dict(l=8, r=8, t=8, b=8),
+                              yaxis=dict(autorange="reversed"), xaxis_title=f"Change over {span}",
+                              xaxis_title_font=dict(size=10, color=C["faint"]))
+            st.plotly_chart(T.style_axes(fig), use_container_width=True)
+        with c2:
+            st.dataframe(
+                sub[["Symbol", "Price", "Change %", "1D %", "Trend"]], use_container_width=True, hide_index=True,
+                column_config={
+                    "Price": st.column_config.NumberColumn(format="%.2f"),
+                    "Change %": st.column_config.NumberColumn(format="%+.2f"),
+                    "1D %": st.column_config.NumberColumn(format="%+.2f"),
+                    "Trend": st.column_config.LineChartColumn("30-day trend"),
+                },
+            )
+            st.caption("Open any of these on the Analyze page by typing the symbol in the left rail.")
+
     if live:
         st.caption("Live ticks stream straight to your browser (no page refresh). The summary cards above are a "
                    "snapshot from when you switched Live on; the map's own header updates tick by tick. "
