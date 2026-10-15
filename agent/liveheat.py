@@ -89,7 +89,7 @@ def build_html(df: pd.DataFrame, prev: dict[str, float] | None, limit: float, he
             d["old"] = round((prev or {}).get(t["sym"], cur[t["sym"]]), 3)
             d["px"] = round(price[t["sym"]], 2)
             if "Y" in df.columns:
-                d["y"] = ysym[t["sym"]]
+                d["ys"] = ysym[t["sym"]]
                 d["prev"] = round(price[t["sym"]] / (1 + cur[t["sym"]] / 100), 4) if cur[t["sym"]] > -99 else None
         data.append(d)
     payload = json.dumps({"tiles": data, "limit": float(limit)})
@@ -136,7 +136,7 @@ for(const t of D.tiles){
   const o={e,i:e.querySelector('i'),u:e.querySelector('u'),t,pct:t.old,px:t.px,prev:t.prev,ticks:0};
   o.i.textContent=fmt(t.old);o.u.textContent=t.px;e.style.backgroundColor=col(t.old);
   map.appendChild(e);all.push(o);(secMembers[t.sector]=secMembers[t.sector]||[]).push(o);
-  if(t.y)bySym[t.y]=o;
+  if(t.ys)bySym[t.ys]=o;
 }
 // animate Python's previous snapshot -> current once
 requestAnimationFrame(()=>requestAnimationFrame(()=>{for(const o of all){o.pct=o.t.new;o.e.style.backgroundColor=col(o.pct);o.i.textContent=fmt(o.pct);}summary();}));
