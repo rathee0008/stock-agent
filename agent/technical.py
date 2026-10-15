@@ -71,7 +71,21 @@ def _label(score: float) -> str:
     return "Strongly Bearish"
 
 
-def analyze(history: pd.DataFrame) -> TechnicalResult:
+# Signal-name -> group, used by the backtest "signal lab" and optional weight tuning.
+def signal_group(name: str) -> str:
+    if name.startswith(("Price vs", "Golden", "Death")):
+        return "Trend"
+    if name.endswith("return"):
+        return "Momentum"
+    return {"RSI": "RSI", "MACD": "MACD", "Bollinger": "Bollinger", "Volume": "Volume"}.get(name, "Other")
+
+
+GROUPS = ["Trend", "Momentum", "RSI", "MACD", "Bollinger", "Volume"]
+
+
+def analyze(history: pd.DataFrame, group_weights: dict[str, float] | None = None) -> TechnicalResult:
+    """Score a daily OHLCV frame. ``group_weights`` optionally rescales each signal
+    group (e.g. ``{"Momentum": 1.4, "RSI": 0.6}``); missing groups default to 1."""
     df = history.copy()
     close = df["Close"]
 
@@ -92,6 +106,8 @@ def analyze(history: pd.DataFrame) -> TechnicalResult:
     signals: list[tuple[str, str, float]] = []
 
     def add(name: str, note: str, pts: float) -> None:
+        if group_weights:
+            pts = pts * float(group_weights.get(signal_group(name), 1.0))
         signals.append((name, note, pts))
 
     # --- Trend: price vs moving averages -----------------------------------

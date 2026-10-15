@@ -15,6 +15,8 @@ from typing import Any, Literal
 import pandas as pd
 import yfinance as yf
 
+from . import fallback as _fallback
+from . import log as _log
 from . import nse_live as _nse
 
 Market = Literal["IN", "US"]
@@ -85,6 +87,8 @@ class StockData:
     info: dict[str, Any] = field(default_factory=dict)
     news: list[dict[str, Any]] = field(default_factory=list)
     fetched_at: _dt.datetime = field(default_factory=lambda: _dt.datetime.now(_dt.UTC))
+    sources: dict[str, str] = field(default_factory=dict)   # price/info/news -> provider
+    stale: bool = False                                      # served from the disk cache
 
     @property
     def day_change_pct(self) -> float:
@@ -195,6 +199,20 @@ def get_info(symbol: str, attempts: int = 3) -> dict[str, Any]:
     return info
 
 
+_SOURCE: dict[str, str] = {}
+
+
+def _remember(symbol: str, df: pd.DataFrame) -> None:
+    """Note that Yahoo answered and persist the frame for stale-while-error."""
+    _SOURCE[symbol] = "YAHOO"
+    _log.mark_ok("yahoo:history", symbol)
+    try:
+        from . import cache as _cache
+        _cache.disk_put(f"hist:{symbol}", df)
+    except Exception:  # noqa: BLE001
+        pass
+
+
 def _history_with_retry(symbol: str, period: str, attempts: int = 4) -> pd.DataFrame:
     """Yahoo intermittently times out on the cookie/crumb handshake or
     rate-limits, returning an empty frame. Retry with backoff, and fall back
@@ -212,6 +230,7 @@ def _history_with_retry(symbol: str, period: str, attempts: int = 4) -> pd.DataF
             tk = yf.Ticker(symbol)
             df = tk.history(period=p, interval="1d", auto_adjust=False)
             if not df.empty and df["Close"].notna().any():
+                _remember(symbol, df)
                 return df
             df = yf.download(
                 symbol, period=p, interval="1d", auto_adjust=False,
@@ -220,10 +239,24 @@ def _history_with_retry(symbol: str, period: str, attempts: int = 4) -> pd.DataF
             if isinstance(df.columns, pd.MultiIndex):
                 df.columns = df.columns.get_level_values(0)
             if not df.empty and df["Close"].notna().any():
+                _remember(symbol, df)
                 return df
         except Exception as exc:  # noqa: BLE001
             last_err = exc
+            _log.record("yahoo:history", exc)
         time.sleep(1.5 * (i + 1))
+
+    # Yahoo failed: try the secondary providers, then the last good on-disk copy.
+    df, src = _fallback.daily_history(symbol)
+    if not df.empty:
+        _SOURCE[symbol] = src
+        return df
+    from . import cache as _cache  # local import: cache imports this module
+    old = _cache.disk_get(f"hist:{symbol}")
+    if old is not None and not old.empty:
+        _SOURCE[symbol] = "CACHE (stale)"
+        _log.record("history", f"{symbol}: serving stale cached history")
+        return old
 
     if last_err:
         raise LookupError(
@@ -266,7 +299,11 @@ def fetch(raw_ticker: str, period: str = "2y", market: Market = "IN") -> StockDa
     if prev_close is None:
         prev_close = float(history["Close"].iloc[-2]) if len(history) > 1 else price
 
+    src = _SOURCE.get(symbol, "YAHOO")
     return StockData(
+        sources={"price": src, "info": "YAHOO" if info.get("shortName") or info.get("longName") else "DERIVED",
+                 "news": "YAHOO" if news else "NONE"},
+        stale=src.startswith("CACHE"),
         ticker=symbol,
         name=info.get("longName") or info.get("shortName") or symbol,
         currency=info.get("currency", "USD" if market == "US" else "INR"),

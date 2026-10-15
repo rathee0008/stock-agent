@@ -15,6 +15,7 @@ import re
 import pandas as pd
 import streamlit as st
 
+from . import log as _log
 from . import theme as T
 
 C = T.C
@@ -111,6 +112,38 @@ section[data-testid="stSidebar"] [data-testid="stThumbValue"]{color:#ffb020!impo
 section[data-testid="stSidebar"] [data-testid="stSidebarNav"] a[aria-current="page"]{background:var(--panel-hi);border-left:2px solid var(--amber)}
 [data-testid="stRadio"] label p{font-size:.78rem}
 @media (max-width:760px){.hero .ttl{font-size:1.35rem}.pgrid{grid-template-columns:1fr}.mcell{min-width:112px}}
+/* ---------- phones: stack columns, tighten type, scroll tables ---------- */
+@media (max-width:640px){
+  [data-testid="stHorizontalBlock"]{flex-wrap:wrap !important;gap:.5rem !important}
+  [data-testid="stHorizontalBlock"]>[data-testid="stColumn"],
+  [data-testid="stHorizontalBlock"]>div{min-width:calc(50% - .5rem) !important;flex:1 1 calc(50% - .5rem) !important}
+  .block-container{padding:.9rem .7rem 3rem !important}
+  .hero{padding:.8rem .85rem}.hero .sub{font-size:.78rem}
+  table.tt{font-size:.7rem}table.tt th,table.tt td{padding:.38rem .5rem}
+  .mcell{min-width:104px;padding:.4rem .6rem}
+  .stTabs [data-baseweb="tab-list"]{overflow-x:auto;flex-wrap:nowrap}
+  [data-testid="stPlotlyChart"]{padding:.1rem}
+  .fresh{gap:.35rem}.fresh .fc{min-width:46%}
+}
+@media (max-width:420px){
+  [data-testid="stHorizontalBlock"]>[data-testid="stColumn"],
+  [data-testid="stHorizontalBlock"]>div{min-width:100% !important;flex:1 1 100% !important}
+}
+
+/* ---------- freshness strip ---------- */
+.fresh{display:flex;flex-wrap:wrap;gap:.5rem;margin:.1rem 0 .7rem}
+.fresh .fc{flex:1 1 150px;border:1px solid var(--line);border-radius:3px;background:var(--panel);padding:.35rem .6rem}
+.fresh .fc .fl{font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);font-weight:700}
+.fresh .fc .fv{font-family:var(--mono);font-size:.72rem;color:var(--text);margin-top:.1rem}
+.fresh .fc .fs{font-size:.6rem;color:var(--dim)}
+.fresh .fc.old{border-color:var(--amber)}
+.fresh .fc.stale{border-color:var(--down)}
+
+/* ---------- driver bars ---------- */
+.drv{display:grid;grid-template-columns:1fr 130px;gap:.15rem .8rem;align-items:center;padding:.35rem 0;border-bottom:1px solid var(--line)}
+.drv .dn{font-size:.82rem;color:var(--text)}.drv .dn small{color:var(--dim);display:block;font-size:.7rem;line-height:1.35}
+.drv .db{font-family:var(--mono);font-size:.74rem;text-align:right;white-space:nowrap}
+.drv .db span{display:inline-block;height:5px;border-radius:2px;vertical-align:middle;margin-right:.4rem}
 </style>
 """
 
@@ -123,7 +156,7 @@ def inject_extra() -> None:
 def setup(title: str, icon: str = "📊") -> None:
     """First call on every page: page config + theme + component CSS."""
     st.set_page_config(page_title=title, page_icon=icon, layout="wide",
-                       initial_sidebar_state="expanded")
+                       initial_sidebar_state="auto")
     T.inject()
     T.register_plotly()
     inject_extra()
@@ -157,6 +190,62 @@ def sidebar_brand(tag: str = "NSE / BSE / US EQUITIES") -> None:
         f'<div class="sb-brand">STOCK<span>·</span>AGENT</div><div class="sb-tag">{_e(tag)}</div>',
         unsafe_allow_html=True,
     )
+    system_status()
+
+
+def system_status() -> None:
+    """Sidebar expander: recent data-source failures and last successes. Silent when healthy."""
+    ev, ok = _log.recent(8), _log.last_ok()
+    with st.sidebar.expander("System status" + (f" · {len(ev)} issue(s)" if ev else " · OK"), expanded=False):
+        if not ev:
+            st.caption("No recent data-source failures.")
+        for e in ev:
+            st.caption(f"`{e['t']:%H:%M:%S}Z` **{e['source']}** — {e['msg']}")
+        for k, v in ok.items():
+            st.caption(f"✓ {k} · {v}")
+
+
+def freshness_bar(fr: dict, stale: bool = False) -> None:
+    """One cell per signal: where the data came from and how old it is."""
+    if not fr:
+        return
+    cells = []
+    for name, label in (("technical", "Price · technical"), ("fundamental", "Fundamental"), ("news", "News")):
+        f = fr.get(name) or {}
+        age = f.get("age_h")
+        cls = "stale" if (stale and name == "technical") else ("old" if age is not None and age > (96 if name != "news" else 72) else "")
+        if age is None:
+            age_txt = "no data"
+        elif age < 1:
+            age_txt = "under 1h old"
+        elif age < 48:
+            age_txt = f"{age:.0f}h old"
+        else:
+            age_txt = f"{age / 24:.0f}d old"
+        asof = (f.get("as_of") or "")[:16].replace("T", " ")
+        note = f.get("note") or (asof + ("Z" if asof else ""))
+        cells.append(f'<div class="fc {cls}"><div class="fl">{_e(label)}</div>'
+                     f'<div class="fv">{_e(age_txt)} · {_e(f.get("source", "—"))}</div><div class="fs">{_e(note)}</div></div>')
+    st.markdown('<div class="fresh">' + "".join(cells) + "</div>", unsafe_allow_html=True)
+    if stale:
+        st.warning("Live sources failed — showing the last good copy of price history. Numbers may be out of date.")
+
+
+def drivers_panel(drivers: list[dict], top: int = 8) -> None:
+    """Top factors behind the composite call, signed by their weighted contribution."""
+    if not drivers:
+        return
+    mx = max(abs(d["weighted"]) for d in drivers[:top]) or 1.0
+    rows = []
+    for d in drivers[:top]:
+        col = T.tone_color(T.sign_tone(d["weighted"]))
+        w = max(3, int(abs(d["weighted"]) / mx * 70))
+        rows.append(
+            f'<div class="drv"><div class="dn">{_e(d["name"])} <span style="color:var(--faint);font-size:.62rem;'
+            f'letter-spacing:.1em">{_e(d["component"].upper())}</span><small>{_e(d["note"])}</small></div>'
+            f'<div class="db" style="color:{col}"><span style="width:{w}px;background:{col}"></span>{d["weighted"]:+.1f}</div></div>'
+        )
+    st.markdown("".join(rows), unsafe_allow_html=True)
 
 
 def hero(title: str, subtitle: str = "", pills: list[tuple[str, str]] | None = None,
@@ -207,10 +296,13 @@ def symlink(sym, market: str | None = None) -> str:
 
 
 def movers_table(df: pd.DataFrame, market: str | None = None) -> None:
+    """Gainers/losers table. Optional columns: ``Delivery %`` and ``Why`` (list of tags or str)."""
     if df is None or df.empty:
         st.markdown('<div class="empty">No data returned.</div>', unsafe_allow_html=True)
         return
     mx = max(float(df["Change %"].abs().max()), 0.01)
+    has_deliv = "Delivery %" in df and df["Delivery %"].notna().any()
+    has_why = "Why" in df
     rows = []
     for i, (_, r) in enumerate(df.iterrows(), 1):
         ch = r["Change %"]
@@ -219,15 +311,27 @@ def movers_table(df: pd.DataFrame, market: str | None = None) -> None:
         vv = r.get("Vol vs 5d avg")
         vcol = C["amber"] if _ok(vv) and float(vv) >= 1.5 else C["dim"]
         vtxt = f"{float(vv):.1f}x" if _ok(vv) else "—"
-        rows.append(
-            f'<tr><td><span class="rk">{i:02d}</span><b>{symlink(r["Symbol"], market)}</b></td>'
+        cells = (
+            f'<td><span class="rk">{i:02d}</span><b>{symlink(r["Symbol"], market)}</b></td>'
             f'<td>{_px(r["Price"])}</td>'
             f'<td class="chg" style="color:{col}"><span class="bar" style="width:{w:.0f}px;background:{col}"></span>{_pct(ch)}</td>'
-            f'<td style="color:{vcol}">{vtxt}</td></tr>'
+            f'<td style="color:{vcol}">{vtxt}</td>'
         )
+        if has_deliv:
+            dv = r.get("Delivery %")
+            dcol = C["up"] if _ok(dv) and float(dv) >= 60 else C["dim"]
+            cells += f'<td style="color:{dcol}">{f"{float(dv):.0f}%" if _ok(dv) else "—"}</td>'
+        if has_why:
+            why = r.get("Why")
+            txt = " · ".join(why) if isinstance(why, (list, tuple)) else str(why or "")
+            cells += f'<td class="dim wrap">{_e(txt)}</td>'
+        rows.append(f"<tr>{cells}</tr>")
+    head = "<th>Symbol</th><th>Price</th><th>Change</th><th>Vol × avg</th>"
+    head += "<th>Deliv.</th>" if has_deliv else ""
+    head += "<th>Why it moved</th>" if has_why else ""
     st.markdown(
-        '<div class="ttw"><table class="tt"><thead><tr><th>Symbol</th><th>Price</th>'
-        '<th>Change</th><th>Vol × avg</th></tr></thead><tbody>' + "".join(rows) + "</tbody></table></div>",
+        f'<div class="ttw"><table class="tt"><thead><tr>{head}</tr></thead><tbody>' + "".join(rows)
+        + "</tbody></table></div>",
         unsafe_allow_html=True,
     )
 
