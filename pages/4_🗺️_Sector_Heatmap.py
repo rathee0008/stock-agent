@@ -104,7 +104,7 @@ def _view(mkt: str, live: bool) -> None:
     lim = max(2.0, float(df["Change %"].abs().quantile(0.9)))
     if live:
         components.html(liveheat.build_html(df, None, lim, 560, "Prices stream from Yahoo; they are exchange-delayed where Yahoo says so."),
-                        height=640)
+                        height=640 + 36 * int(df['Sector'].nunique()) + 110)
     else:
         fig = px.treemap(
             df.assign(All=mkt), path=["All", "Sector", "Symbol"], values=[1] * len(df), color="Change %",
@@ -119,22 +119,23 @@ def _view(mkt: str, live: bool) -> None:
         fig.update_layout(height=560, margin=dict(l=0, r=0, t=0, b=0), coloraxis_showscale=False)
         st.plotly_chart(fig, use_container_width=True)
 
-    ui.table_title("Sector ranking", "flat")
-    rows = []
-    mx = max(float(sec["mean"].abs().max()), 0.01)
-    for name, r in sec.iterrows():
-        col = T.tone_color(T.sign_tone(r["mean"]))
-        w = min(60, abs(float(r["mean"])) / mx * 60)
-        rows.append(
-            f'<tr><td><b>{ui._e(name)}</b></td><td class="dim">{int(r["count"])}</td>'
-            f'<td class="chg" style="color:{col}"><span class="bar" style="width:{w:.0f}px;background:{col}"></span>'
-            f'{ui._pct(r["mean"])}</td></tr>'
+    if not live:  # in live mode the ranking is part of the streaming block above
+        ui.table_title("Sector ranking", "flat")
+        rows = []
+        mx = max(float(sec["mean"].abs().max()), 0.01)
+        for name, r in sec.iterrows():
+            col = T.tone_color(T.sign_tone(r["mean"]))
+            w = min(60, abs(float(r["mean"])) / mx * 60)
+            rows.append(
+                f'<tr><td><b>{ui._e(name)}</b></td><td class="dim">{int(r["count"])}</td>'
+                f'<td class="chg" style="color:{col}"><span class="bar" style="width:{w:.0f}px;background:{col}"></span>'
+                f'{ui._pct(r["mean"])}</td></tr>'
+            )
+        st.markdown(
+            '<div class="ttw"><table class="tt"><thead><tr><th>Sector</th><th>Stocks</th><th>Avg change</th></tr></thead>'
+            "<tbody>" + "".join(rows) + "</tbody></table></div>",
+            unsafe_allow_html=True,
         )
-    st.markdown(
-        '<div class="ttw"><table class="tt"><thead><tr><th>Sector</th><th>Stocks</th><th>Avg change</th></tr></thead>'
-        "<tbody>" + "".join(rows) + "</tbody></table></div>",
-        unsafe_allow_html=True,
-    )
     T.rule("Drill into a sector")
     pick = st.selectbox("Sector", list(sec.index), label_visibility="collapsed")
     sub = df[df["Sector"] == pick].sort_values("Change %", ascending=False)
