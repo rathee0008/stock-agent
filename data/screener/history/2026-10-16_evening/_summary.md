@@ -4,15 +4,15 @@ Universe scored: 125 stocks. Not investment advice.
 
 | Preset | Matches | Top 5 by score |
 |---|---|---|
-| Quality momentum | 34 | CVX, KOTAKBANK.NS, MSFT, BLK, COP |
-| Quality compounders | 37 | KOTAKBANK.NS, MSFT, BLK, META, MU |
-| GARP (growth at fair price) | 15 | KOTAKBANK.NS, MSFT, BLK, META, MU |
-| Deep value | 17 | MU, AXISBANK.NS, COALINDIA.NS, JPM, ONGC.NS |
-| Cheap and profitable | 24 | MU, GOOGL, ACN, INFY.NS, COALINDIA.NS |
-| Momentum breakout | 17 | CVX, KOTAKBANK.NS, MSFT, COP, XOM |
-| Strong technicals | 26 | CVX, KOTAKBANK.NS, MSFT, BLK, COP |
-| Oversold quality | 5 | AMAT, GS, BAC, CHOLAFIN.NS, SUNPHARMA.NS |
-| Relative strength leaders | 12 | CVX, KOTAKBANK.NS, MSFT, XOM, COP |
-| Growth acceleration | 12 | CVX, KOTAKBANK.NS, XOM, COP, PLTR |
-| Analyst upside | 52 | MU, GOOGL, ICICIBANK.NS, NVDA, SPGI |
-| Large-cap safety | 53 | CVX, KOTAKBANK.NS, MSFT, BLK, XOM |
+| Quality momentum | 31 | CVX, KOTAKBANK.NS, XOM, MSFT, BLK |
+| Quality compounders | 39 | KOTAKBANK.NS, TECHM.NS, MSFT, BLK, MU |
+| GARP (growth at fair price) | 14 | KOTAKBANK.NS, TECHM.NS, MSFT, BLK, META |
+| Deep value | 17 | AXISBANK.NS, MU, COALINDIA.NS, WFC, ADBE |
+| Cheap and profitable | 24 | MU, ACN, GOOGL, JPM, INFY.NS |
+| Momentum breakout | 14 | CVX, KOTAKBANK.NS, XOM, TECHM.NS, MSFT |
+| Strong technicals | 24 | CVX, KOTAKBANK.NS, XOM, TECHM.NS, MSFT |
+| Oversold quality | 5 | MU, AMAT, CHOLAFIN.NS, SUNPHARMA.NS, BAC |
+| Relative strength leaders | 13 | CVX, KOTAKBANK.NS, XOM, MSFT, SHOP |
+| Growth acceleration | 12 | CVX, KOTAKBANK.NS, XOM, SHOP, COP |
+| Analyst upside | 51 | AXISBANK.NS, MU, ICICIBANK.NS, SPGI, BHARTIARTL.NS |
+| Large-cap safety | 51 | CVX, KOTAKBANK.NS, XOM, MSFT, BLK |

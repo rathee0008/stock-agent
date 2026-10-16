@@ -1,21 +1,21 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
-US,CVX,Chevron Corporation,Energy,219.32,-1.22,15.61,54.00,57,51,0,20.69,12.23,53.50,65.41,buy,3.92
-IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,448.00,0.01,17.26,53.30,71,38,0,21.97,,21.00,68.86,buy,6.25
-US,MSFT,Microsoft Corporation,Technology,539.44,1.08,34.09,50.50,62,40,0,30.05,34.04,17.70,65.04,strong_buy,10.53
-US,BLK,"BlackRock, Inc.",Financial Services,1120.78,4.38,6.32,49.20,48,50,0,25.52,,19.10,60.82,strong_buy,19.27
-US,XOM,ExxonMobil Holdings Corporation,Energy,174.68,-1.32,17.74,48.70,58,40,0,22.48,12.58,44.10,68.06,buy,-0.39
-US,COP,ConocoPhillips,Energy,141.73,-0.43,22.52,48.70,61,38,0,18.77,14.18,35.50,69.51,buy,5.24
-US,PLTR,Palantir Technologies Inc.,Technology,200.50,-0.23,48.68,47.40,58,38,0,172.84,38.10,92.80,62.58,buy,2.96
-US,META,"Meta Platforms, Inc.",Communication Services,736.72,-0.11,14.07,44.60,50,40,0,27.76,29.85,28.00,57.86,strong_buy,10.44
-US,MU,"Micron Technology, Inc.",Technology,931.24,1.87,7.60,43.10,8,74,0,12.53,88.26,379.30,39.16,strong_buy,67.58
-US,CRM,"Salesforce, Inc.",Technology,246.74,4.57,41.98,41.60,52,32,0,22.76,19.38,10.80,61.50,buy,15.78
-US,GOOGL,Alphabet Inc.,Communication Services,349.22,0.45,-0.79,41.40,36,46,0,17.52,48.68,24.20,52.80,strong_buy,23.28
-IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1779.20,7.83,12.86,40.20,47,34,0,28.60,,17.70,75.00,buy,-2.78
-US,LLY,Eli Lilly and Company,Healthcare,1251.61,3.55,9.13,39.50,52,28,0,42.01,102.29,47.70,67.77,buy,6.11
-US,ACN,Accenture plc,Technology,224.92,4.63,55.41,36.80,43,31,0,16.59,26.02,6.20,70.26,buy,0.01
-US,AAPL,Apple Inc.,Technology,342.00,-0.28,4.72,36.50,53,22,0,39.22,148.75,16.40,60.58,buy,-3.69
-US,SHOP,Shopify Inc.,Technology,178.14,3.27,43.11,36.20,50,24,0,120.36,15.54,33.70,70.95,buy,-1.37
-US,TMO,Thermo Fisher Scientific Inc,Healthcare,696.49,3.46,32.35,35.90,51,22,0,37.49,13.51,10.50,67.43,strong_buy,-1.12
-US,AMD,"Advanced Micro Devices, Inc.",Technology,562.23,-1.50,11.65,35.30,37,34,0,143.43,10.20,50.10,44.52,strong_buy,13.16
-IN,HCLTECH.NS,HCL TECHNOLOGIES LTD,Technology,1370.00,0.74,12.18,34.20,39,30,0,20.27,24.65,2.20,67.96,hold,-7.32
-IN,ICICIBANK.NS,ICICI BANK LTD.,Financial Services,1397.00,0.55,-4.33,34.10,34,34,0,18.06,16.07,11.40,59.24,strong_buy,25.15
+US,CVX,Chevron Corporation,Energy,221.91,1.18,16.14,54.40,58,51,0,21.36,12.23,53.50,68.08,buy,2.71
+IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,447.40,-0.12,17.11,53.30,71,38,0,21.93,,21.00,68.25,buy,6.39
+US,XOM,ExxonMobil Holdings Corporation,Energy,176.19,0.86,16.14,49.40,60,40,0,22.67,12.58,44.10,69.97,buy,-1.24
+IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1790.00,8.48,13.55,47.30,48,47,0,28.77,19.19,15.60,75.57,buy,-3.37
+US,MSFT,Microsoft Corporation,Technology,533.68,-1.07,34.17,47.20,55,40,0,30.07,34.04,17.70,60.53,strong_buy,11.72
+US,BLK,"BlackRock, Inc.",Financial Services,1142.65,1.95,10.06,46.00,41,50,0,26.02,,19.10,65.06,strong_buy,16.98
+IN,AXISBANK.NS,AXIS BANK LIMITED,Financial Services,1290.00,0.16,2.71,45.40,38,52,0,14.51,13.35,14.00,62.80,strong_buy,22.66
+US,SHOP,Shopify Inc.,Technology,177.03,-0.62,43.89,43.30,65,24,0,119.52,15.54,33.70,69.49,buy,-0.75
+US,TMO,Thermo Fisher Scientific Inc,Healthcare,689.96,-0.94,31.81,43.00,67,22,0,37.13,13.51,10.50,63.94,strong_buy,-0.18
+US,COP,ConocoPhillips,Energy,144.05,1.64,22.60,42.10,47,38,0,19.07,14.18,35.50,72.28,buy,3.54
+US,MU,"Micron Technology, Inc.",Technology,897.16,-3.66,-7.59,40.80,3,74,0,12.07,88.26,379.30,35.66,strong_buy,73.95
+US,META,"Meta Platforms, Inc.",Communication Services,721.58,-2.06,12.08,40.70,41,40,0,27.19,29.85,28.00,53.38,strong_buy,12.76
+US,CRM,"Salesforce, Inc.",Technology,238.46,-3.36,40.22,39.20,47,32,0,21.81,19.38,10.80,53.90,buy,19.80
+US,BRK-B,Berkshire Hathaway Inc. New,Financial Services,531.50,1.11,8.55,37.40,32,42,0,13.37,12.12,10.00,74.69,buy,3.04
+US,AAPL,Apple Inc.,Technology,345.92,1.15,5.55,37.00,54,22,0,39.67,148.75,16.40,64.34,buy,-4.78
+US,AMGN,Amgen Inc.,Healthcare,438.08,0.93,19.62,36.30,57,18,0,27.23,91.47,9.50,65.33,hold,-9.84
+US,PLTR,Palantir Technologies Inc.,Technology,192.27,-4.10,44.93,35.70,33,38,0,165.53,38.10,92.80,52.13,buy,7.36
+US,ACN,Accenture plc,Technology,227.08,0.96,61.21,35.00,43,28,0,16.74,26.02,6.20,71.16,buy,-0.94
+US,TXN,Texas Instruments Incorporated,Technology,281.19,0.74,-3.47,34.50,31,38,0,42.80,35.18,22.80,51.95,buy,15.48
+IN,HCLTECH.NS,HCL TECHNOLOGIES LTD,Technology,1380.00,1.47,12.99,34.50,40,30,0,20.42,24.65,2.20,68.98,hold,-7.99
