@@ -2,4 +2,5 @@ Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,
 US,AMAT,"Applied Materials, Inc.",Technology,430.01,-3.72,-18.20,4.60,-49,52,0,37.10,41.07,24.80,32.93,strong_buy,47.04
 US,GS,"Goldman Sachs Group, Inc. (The)",Financial Services,891.28,1.43,-15.52,2.90,-34,36,0,12.81,17.75,23.30,36.76,hold,16.45
 US,BAC,Bank of America Corporation,Financial Services,51.70,0.60,-14.43,-2.20,-34,26,0,12.34,10.73,7.10,25.34,strong_buy,22.74
-IN,SUNPHARMA.NS,SUN PHARMACEUTICAL IND L,Healthcare,1752.80,-0.63,-10.41,-5.30,-43,28,0,34.77,,10.50,36.07,buy,24.05
+IN,CHOLAFIN.NS,CHOLAMANDALAM IN & FIN CO,Financial Services,1573.00,-0.82,-11.77,-3.70,-35,24,0,23.26,,34.60,37.04,strong_buy,27.19
+IN,SUNPHARMA.NS,SUN PHARMACEUTICAL IND L,Healthcare,1753.40,-0.60,-10.38,-5.30,-43,28,0,34.78,,10.50,36.16,buy,24.01

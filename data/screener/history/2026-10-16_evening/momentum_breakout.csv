@@ -1,18 +1,18 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
 US,CVX,Chevron Corporation,Energy,219.32,-1.22,15.61,54.00,57,51,0,20.69,12.23,53.50,65.41,buy,3.92
-IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,444.95,-0.67,16.46,53.00,70,38,0,21.81,,21.00,65.73,buy,6.98
+IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,448.00,0.01,17.26,53.30,71,38,0,21.97,,21.00,68.86,buy,6.25
 US,MSFT,Microsoft Corporation,Technology,539.44,1.08,34.09,50.50,62,40,0,30.05,34.04,17.70,65.04,strong_buy,10.53
 US,COP,ConocoPhillips,Energy,141.73,-0.43,22.52,48.70,61,38,0,18.77,14.18,35.50,69.51,buy,5.24
 US,XOM,ExxonMobil Holdings Corporation,Energy,174.68,-1.32,17.74,48.70,58,40,0,22.48,12.58,44.10,68.06,buy,-0.39
 US,PLTR,Palantir Technologies Inc.,Technology,200.50,-0.23,48.68,47.40,58,38,0,172.84,38.10,92.80,62.58,buy,2.96
 US,META,"Meta Platforms, Inc.",Communication Services,736.72,-0.11,14.07,44.60,50,40,0,27.76,29.85,28.00,57.86,strong_buy,10.44
 US,CRM,"Salesforce, Inc.",Technology,246.74,4.57,41.98,41.60,52,32,0,22.76,19.38,10.80,61.50,buy,15.78
-IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1782.00,8.00,13.04,40.20,47,34,0,28.66,,17.70,75.15,buy,-6.14
+IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1779.20,7.83,12.86,40.20,47,34,0,28.60,,17.70,75.00,buy,-2.78
 US,LLY,Eli Lilly and Company,Healthcare,1251.61,3.55,9.13,39.50,52,28,0,42.01,102.29,47.70,67.77,buy,6.11
 US,ACN,Accenture plc,Technology,224.92,4.63,55.41,36.80,43,31,0,16.59,26.02,6.20,70.26,buy,0.01
 US,SHOP,Shopify Inc.,Technology,178.14,3.27,43.11,36.20,50,24,0,120.36,15.54,33.70,70.95,buy,-1.37
 US,TMO,Thermo Fisher Scientific Inc,Healthcare,696.49,3.46,32.35,35.90,51,22,0,37.49,13.51,10.50,67.43,strong_buy,-1.12
-IN,HCLTECH.NS,HCL TECHNOLOGIES LTD,Technology,1376.00,1.18,12.67,34.40,39,30,0,20.35,24.65,2.20,68.58,hold,-7.73
+IN,HCLTECH.NS,HCL TECHNOLOGIES LTD,Technology,1370.00,0.74,12.18,34.20,39,30,0,20.27,24.65,2.20,67.96,hold,-7.32
 US,KO,Coca-Cola Company (The),Consumer Defensive,92.00,0.24,12.03,33.50,51,18,0,27.63,42.05,6.70,69.90,buy,2.98
 US,AMGN,Amgen Inc.,Healthcare,434.03,1.86,19.18,33.20,50,18,0,26.96,91.47,9.50,63.63,hold,-9.00
 US,ABBV,AbbVie Inc.,Healthcare,283.40,-0.03,11.85,31.70,49,16,0,77.43,,10.20,69.55,buy,-0.28
