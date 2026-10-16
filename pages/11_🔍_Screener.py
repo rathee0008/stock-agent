@@ -12,11 +12,28 @@ from agent import cache, screener, theme as T, ui  # noqa: E402
 
 ui.setup("Screener", "🔍")
 
+_B = {"market": "Both", "min_score": -100, "min_fund": -100, "rsi": [0, 100], "max_pe": 200, "min_roe": -50,
+      "min_rev": -100, "min_3m": -100, "min_upside": -100, "analyst": [], "min_cap": 0, "sectors": []}
+
+
+def _p(**kw):
+    return {**_B, **kw}
+
+
+# Strategy presets, built only from columns the scorer already produces.
 PRESETS = {
-    "Quality momentum": {"market": "Both", "min_score": 15, "min_fund": 10, "rsi": [45, 72], "max_pe": 45, "min_roe": 12, "sectors": []},
-    "Oversold quality": {"market": "Both", "min_score": -100, "min_fund": 15, "rsi": [0, 38], "max_pe": 40, "min_roe": 10, "sectors": []},
-    "Cheap and profitable": {"market": "Both", "min_score": -100, "min_fund": 5, "rsi": [0, 100], "max_pe": 18, "min_roe": 15, "sectors": []},
-    "Strong technicals": {"market": "Both", "min_score": 30, "min_fund": -100, "rsi": [50, 78], "max_pe": 200, "min_roe": -100, "sectors": []},
+    "Quality momentum": _p(min_score=15, min_fund=10, rsi=[45, 72], max_pe=45, min_roe=12),
+    "Quality compounders": _p(min_fund=25, min_roe=18, max_pe=60, min_rev=10, min_cap=10),
+    "GARP (growth at fair price)": _p(min_fund=10, min_roe=15, max_pe=35, min_rev=12, min_3m=0),
+    "Deep value": _p(min_fund=0, max_pe=15, min_roe=10, min_upside=10),
+    "Cheap and profitable": _p(min_fund=5, max_pe=18, min_roe=15),
+    "Momentum breakout": _p(min_score=30, rsi=[55, 78], min_3m=8),
+    "Strong technicals": _p(min_score=30, rsi=[50, 78]),
+    "Oversold quality": _p(min_fund=15, rsi=[0, 38], max_pe=40, min_roe=10),
+    "Relative strength leaders": _p(min_score=20, min_3m=15, rsi=[50, 80], min_cap=10),
+    "Growth acceleration": _p(min_fund=5, min_rev=20, min_3m=0, rsi=[45, 75]),
+    "Analyst upside": _p(min_fund=5, min_upside=20, analyst=["buy", "strong_buy"]),
+    "Large-cap safety": _p(min_fund=15, min_roe=12, max_pe=40, min_cap=50, rsi=[35, 70]),
 }
 DEFAULT = PRESETS["Quality momentum"]
 
@@ -52,6 +69,12 @@ min_fund = st.sidebar.slider("Min fundamental score", -100, 100, int(cur.get("mi
 rsi_lo, rsi_hi = st.sidebar.slider("RSI between", 0, 100, tuple(cur.get("rsi", [0, 100])))
 max_pe = st.sidebar.slider("Max P/E", 5, 200, int(cur.get("max_pe", 200)))
 min_roe = st.sidebar.slider("Min ROE %", -50, 60, int(cur.get("min_roe", -50)))
+min_rev = st.sidebar.slider("Min revenue growth %", -100, 100, int(cur.get("min_rev", -100)))
+min_3m = st.sidebar.slider("Min 3-month return %", -100, 100, int(cur.get("min_3m", -100)))
+min_upside = st.sidebar.slider("Min analyst upside %", -100, 100, int(cur.get("min_upside", -100)))
+min_cap = st.sidebar.slider("Min market cap (bn, local ccy)", 0, 500, int(cur.get("min_cap", 0)))
+analyst = st.sidebar.multiselect("Analyst rating (empty = any)", ["strong_buy", "buy", "hold", "underperform", "sell"],
+                                 default=[a for a in cur.get("analyst", []) if a in ["strong_buy", "buy", "hold", "underperform", "sell"]])
 T.sidebar_head("Blend weights")
 w = (st.sidebar.slider("Technical", 0.0, 1.0, 0.40, 0.05), st.sidebar.slider("Fundamental", 0.0, 1.0, 0.45, 0.05),
      st.sidebar.slider("News", 0.0, 1.0, 0.15, 0.05))
@@ -87,7 +110,8 @@ all_sectors = sorted({s for s in df.get("Sector", pd.Series(dtype=str)).dropna()
 sel_sectors = st.sidebar.multiselect("Sectors (empty = all)", all_sectors, default=[s for s in cur.get("sectors", []) if s in all_sectors])
 
 filters = {"market": market, "min_score": min_score, "min_fund": min_fund, "rsi": [rsi_lo, rsi_hi],
-           "max_pe": max_pe, "min_roe": min_roe, "sectors": sel_sectors}
+           "max_pe": max_pe, "min_roe": min_roe, "min_rev": min_rev, "min_3m": min_3m, "min_upside": min_upside,
+           "analyst": analyst, "min_cap": min_cap, "sectors": sel_sectors}
 st.session_state["f"] = filters
 try:
     st.query_params["f"] = json.dumps(filters, separators=(",", ":"))
@@ -100,6 +124,16 @@ out = out[out["Fundamental"] >= min_fund]
 out = out[out["RSI"].between(rsi_lo, rsi_hi) | out["RSI"].isna()]
 out = out[out["P/E"].isna() | (out["P/E"] <= max_pe)] if max_pe < 200 else out
 out = out[out["ROE %"].isna() | (out["ROE %"] >= min_roe)] if min_roe > -50 else out
+if min_rev > -100:
+    out = out[out["Rev growth %"].notna() & (out["Rev growth %"] >= min_rev)]
+if min_3m > -100:
+    out = out[out["3M %"].notna() & (out["3M %"] >= min_3m)]
+if min_upside > -100:
+    out = out[out["Upside %"].notna() & (out["Upside %"] >= min_upside)]
+if min_cap > 0:
+    out = out[out["Mkt cap"].notna() & (out["Mkt cap"] >= min_cap * 1e9)]
+if analyst:
+    out = out[out["Analyst"].isin(analyst)]
 if sel_sectors:
     out = out[out["Sector"].isin(sel_sectors)]
 out = out.sort_values("Score", ascending=False).reset_index(drop=True)
@@ -115,10 +149,10 @@ if out.empty:
 else:
     st.dataframe(
         out[["Market", "Symbol", "Name", "Sector", "Price", "Day %", "3M %", "Score", "Technical", "Fundamental",
-             "News", "P/E", "ROE %", "RSI", "Analyst", "Upside %"]],
+             "News", "P/E", "ROE %", "Rev growth %", "RSI", "Analyst", "Upside %"]],
         use_container_width=True, height=620, hide_index=True,
         column_config={"Score": st.column_config.ProgressColumn("Score", min_value=-100, max_value=100, format="%.1f"),
-                       **{c: st.column_config.NumberColumn(c, format="%.1f") for c in ["Day %", "3M %", "P/E", "ROE %", "RSI", "Upside %", "Price"]}},
+                       **{c: st.column_config.NumberColumn(c, format="%.1f") for c in ["Day %", "3M %", "P/E", "ROE %", "Rev growth %", "RSI", "Upside %", "Price"]}},
     )
     st.download_button("Download results (CSV)", out.drop(columns=["Why"], errors="ignore").to_csv(index=False).encode(), "screen.csv", "text/csv")
 
