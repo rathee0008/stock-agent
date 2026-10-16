@@ -77,6 +77,7 @@ html, body, [class*="st-"], .stApp {{
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }}
 .stApp {{ background: var(--bg); }}
+[data-testid="stIconMaterial"] {{ font-family: "Material Symbols Rounded" !important; }}
 
 /* kill Streamlit's default top padding — the terminal bar sits flush */
 .block-container {{ padding-top: 1.1rem !important; padding-bottom: 3rem !important;
