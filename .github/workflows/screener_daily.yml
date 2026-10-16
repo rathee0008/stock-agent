@@ -1,0 +1,41 @@
+name: Screener daily lists
+
+# Times are UTC (IST = UTC+5:30).
+# 03:00 UTC = 08:30 IST, before India opens: picks up the latest US close and the previous India close.
+# 11:00 UTC = 16:30 IST, after India closes: picks up the day's NSE close.
+on:
+  schedule:
+    - cron: "0 3 * * 2-6"
+    - cron: "0 11 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: screener-daily
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Run all presets
+        env:
+          ALPHAVANTAGE_API_KEY: ${{ secrets.ALPHAVANTAGE_API_KEY }}
+        run: |
+          if [ "${{ github.event.schedule }}" = "0 3 * * 2-6" ]; then TAG=morning; else TAG=evening; fi
+          python scripts/run_screener_daily.py --tag "$TAG"
+      - name: Commit results
+        run: |
+          git config user.name "screener-bot"
+          git config user.email "screener-bot@users.noreply.github.com"
+          git add data/screener
+          git diff --cached --quiet && echo "No changes" || (git commit -m "Screener: daily results $(date -u +%F)" && git pull --rebase && git push)
