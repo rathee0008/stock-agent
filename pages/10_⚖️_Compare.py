@@ -17,8 +17,9 @@ IN_SET = set(universe.IN)
 
 ui.sidebar_brand()
 T.sidebar_head("Stocks")
-a_raw = st.sidebar.text_input("First symbol", value=st.query_params.get("a", "TCS")).strip().upper()
-b_raw = st.sidebar.text_input("Second symbol", value=st.query_params.get("b", "INFY")).strip().upper()
+_cmp = st.session_state.pop("cmp", None)  # two symbols sent from the Top 20 page
+a_raw = st.sidebar.text_input("First symbol", value=_cmp[0] if _cmp else st.query_params.get("a", "TCS")).strip().upper()
+b_raw = st.sidebar.text_input("Second symbol", value=_cmp[1] if _cmp else st.query_params.get("b", "INFY")).strip().upper()
 unknown_as = st.sidebar.radio("Unknown symbols are", ["US", "India (NSE)"], horizontal=True)
 T.sidebar_head("Blend weights")
 w = (st.sidebar.slider("Technical", 0.0, 1.0, 0.45, 0.05), st.sidebar.slider("Fundamental", 0.0, 1.0, 0.40, 0.05),

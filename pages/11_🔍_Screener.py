@@ -9,32 +9,11 @@ import streamlit as st
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from agent import cache, screener, theme as T, ui  # noqa: E402
+from agent.presets import PRESETS  # noqa: E402
 
 ui.setup("Screener", "🔍")
 
-_B = {"market": "Both", "min_score": -100, "min_fund": -100, "rsi": [0, 100], "max_pe": 200, "min_roe": -50,
-      "min_rev": -100, "min_3m": -100, "min_upside": -100, "analyst": [], "min_cap": 0, "sectors": []}
-
-
-def _p(**kw):
-    return {**_B, **kw}
-
-
-# Strategy presets, built only from columns the scorer already produces.
-PRESETS = {
-    "Quality momentum": _p(min_score=15, min_fund=10, rsi=[45, 72], max_pe=45, min_roe=12),
-    "Quality compounders": _p(min_fund=25, min_roe=18, max_pe=60, min_rev=10, min_cap=10),
-    "GARP (growth at fair price)": _p(min_fund=10, min_roe=15, max_pe=35, min_rev=12, min_3m=0),
-    "Deep value": _p(min_fund=0, max_pe=15, min_roe=10, min_upside=10),
-    "Cheap and profitable": _p(min_fund=5, max_pe=18, min_roe=15),
-    "Momentum breakout": _p(min_score=30, rsi=[55, 78], min_3m=8),
-    "Strong technicals": _p(min_score=30, rsi=[50, 78]),
-    "Oversold quality": _p(min_fund=15, rsi=[0, 38], max_pe=40, min_roe=10),
-    "Relative strength leaders": _p(min_score=20, min_3m=15, rsi=[50, 80], min_cap=10),
-    "Growth acceleration": _p(min_fund=5, min_rev=20, min_3m=0, rsi=[45, 75]),
-    "Analyst upside": _p(min_fund=5, min_upside=20, analyst=["buy", "strong_buy"]),
-    "Large-cap safety": _p(min_fund=15, min_roe=12, max_pe=40, min_cap=50, rsi=[35, 70]),
-}
+# Strategy presets live in agent/presets.py (shared with the Top 20 page and the daily job).
 DEFAULT = PRESETS["Quality momentum"]
 
 ui.sidebar_brand()

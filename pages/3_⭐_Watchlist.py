@@ -17,7 +17,10 @@ DEFAULT = "RELIANCE, TCS, HDFCBANK, AAPL, NVDA, MSFT"
 # ---------------------------------------------------------------- sidebar
 ui.sidebar_brand()
 T.sidebar_head("Your tickers")
-saved = st.query_params.get("w", DEFAULT)
+saved = st.query_params.get("w") or st.session_state.get("wl_last") or DEFAULT
+_add = st.session_state.pop("wl_add", None)  # symbols sent from the Top 20 page
+if _add:
+    saved = ", ".join(dict.fromkeys([t.strip() for t in saved.split(",") if t.strip()] + list(_add)))
 raw = st.sidebar.text_area("Comma-separated symbols", value=saved, height=120,
                            help="Indian large-caps are detected automatically. Use SYMBOL.NS / SYMBOL.BO "
                                 "to force an exchange, or plain US tickers like AAPL.")
@@ -48,6 +51,7 @@ try:
     st.query_params["w"] = ", ".join(s.replace(".NS", "") if s.endswith(".NS") else s for s in syms)
 except Exception:  # noqa: BLE001
     pass
+st.session_state["wl_last"] = ", ".join(s.replace(".NS", "") if s.endswith(".NS") else s for s in syms)
 
 
 @st.cache_data(ttl=300, show_spinner=False)
