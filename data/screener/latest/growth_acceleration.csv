@@ -1,13 +1,13 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
-US,CVX,Chevron Corporation,Energy,221.91,1.18,16.14,54.40,58,51,0,21.36,12.23,53.50,68.08,buy,2.71
 IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,447.40,-0.12,17.11,53.30,71,38,0,21.93,,21.00,68.25,buy,6.39
-US,XOM,ExxonMobil Holdings Corporation,Energy,176.19,0.86,16.14,49.40,60,40,0,22.67,12.58,44.10,69.97,buy,-1.24
-US,SHOP,Shopify Inc.,Technology,177.03,-0.62,43.89,43.30,65,24,0,119.52,15.54,33.70,69.49,buy,-0.75
-US,COP,ConocoPhillips,Energy,144.05,1.64,22.60,42.10,47,38,0,19.07,14.18,35.50,72.28,buy,3.54
-US,META,"Meta Platforms, Inc.",Communication Services,721.58,-2.06,12.08,40.70,41,40,0,27.19,29.85,28.00,53.38,strong_buy,12.76
-US,PLTR,Palantir Technologies Inc.,Technology,192.27,-4.10,44.93,35.70,33,38,0,165.53,38.10,92.80,52.13,buy,7.36
-US,LLY,Eli Lilly and Company,Healthcare,1270.91,1.54,8.12,32.20,37,28,0,42.63,102.29,47.70,70.43,buy,4.50
+US,CVX,Chevron Corporation,Energy,224.99,2.59,17.75,45.00,38,51,0,21.23,12.23,53.50,70.77,buy,1.30
+US,SHOP,Shopify Inc.,Technology,169.52,-4.84,37.79,40.50,59,24,0,114.54,15.54,33.70,60.96,buy,3.65
+US,XOM,ExxonMobil Holdings Corporation,Energy,178.98,2.46,17.98,40.00,40,40,0,23.03,12.58,44.10,72.95,buy,-2.00
+US,META,"Meta Platforms, Inc.",Communication Services,709.33,-3.72,10.18,39.80,40,40,0,26.73,29.85,28.00,50.23,strong_buy,14.83
+US,COP,ConocoPhillips,Energy,146.51,3.37,24.69,39.60,41,38,0,19.41,14.18,35.50,74.71,buy,1.80
+US,LLY,Eli Lilly and Company,Healthcare,1257.03,0.43,6.94,38.90,51,28,0,42.20,102.29,47.70,68.56,buy,5.65
+US,PLTR,Palantir Technologies Inc.,Technology,186.03,-7.22,40.23,35.10,32,38,0,160.37,38.10,92.80,46.27,buy,10.96
 IN,DIVISLAB.NS,DIVI S LABORATORIES LTD,Healthcare,9144.50,1.27,24.96,28.60,36,22,0,82.97,,27.80,46.92,hold,-6.27
-IN,PERSISTENT.NS,PERSISTENT SYSTEMS LTD,Technology,5741.00,-1.70,10.64,23.10,38,10,0,50.22,22.92,30.90,56.72,hold,-0.15
-IN,ETERNAL.NS,ETERNAL LIMITED,Consumer Cyclical,325.30,0.71,13.36,21.00,33,10,0,692.13,,182.00,51.61,buy,13.80
-IN,HEROMOTOCO.NS,HERO MOTOCORP LIMITED,Consumer Cyclical,5225.00,0.29,4.97,3.90,-8,14,0,19.20,,34.90,52.20,buy,18.67
+IN,PERSISTENT.NS,PERSISTENT SYSTEMS LTD,Technology,5741.00,-1.70,10.64,23.10,38,10,0,50.22,22.92,30.90,56.72,hold,0.07
+IN,ETERNAL.NS,ETERNAL LIMITED,Consumer Cyclical,325.30,0.71,13.36,21.00,33,10,0,692.13,,182.00,51.61,buy,13.92
+IN,HEROMOTOCO.NS,HERO MOTOCORP LIMITED,Consumer Cyclical,5210.00,3.80,6.11,10.20,6,14,0,19.26,,34.90,51.46,buy,18.95

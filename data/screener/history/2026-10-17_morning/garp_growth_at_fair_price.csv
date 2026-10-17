@@ -1,0 +1,15 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,447.40,-0.12,17.11,53.30,71,38,0,21.93,,21.00,68.25,buy,6.39
+US,MSFT,Microsoft Corporation,Technology,529.05,-1.93,33.01,51.30,55,48,0,29.47,34.04,17.70,57.33,strong_buy,13.27
+US,BLK,"BlackRock, Inc.",Financial Services,1134.38,1.21,9.26,49.40,49,50,0,25.83,,19.10,63.57,strong_buy,17.84
+IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1790.00,8.48,13.55,47.30,48,47,0,28.77,19.19,15.60,75.57,buy,-2.39
+US,META,"Meta Platforms, Inc.",Communication Services,709.33,-3.72,10.18,39.80,40,40,0,26.73,29.85,28.00,50.23,strong_buy,14.83
+US,NVDA,NVIDIA Corporation,Technology,214.13,-1.43,3.30,32.70,2,60,0,27.07,117.21,105.90,37.53,strong_buy,53.51
+US,MA,Mastercard Incorporated,Financial Services,617.42,0.18,14.70,28.90,43,16,0,33.96,241.20,14.10,75.07,strong_buy,8.86
+US,V,Visa Inc.,Financial Services,402.61,0.72,13.15,26.50,43,12,0,34.26,61.19,14.40,73.62,strong_buy,5.01
+US,INTU,Intuit Inc.,Technology,325.15,-1.52,12.15,21.90,6,36,0,19.75,23.60,13.70,60.91,buy,25.15
+US,AMZN,"Amazon.com, Inc.",Consumer Cyclical,250.00,-1.87,0.99,21.30,5,36,0,20.11,30.56,19.60,44.99,strong_buy,32.58
+US,ADBE,Adobe Inc.,Technology,245.20,-2.57,7.94,14.60,-9,36,0,13.69,61.90,12.90,50.12,hold,11.06
+IN,HEROMOTOCO.NS,HERO MOTOCORP LIMITED,Consumer Cyclical,5210.00,3.80,6.11,10.20,6,14,0,19.26,,34.90,51.46,buy,18.95
+US,ORCL,Oracle Corporation,Technology,128.23,-4.64,0.93,3.50,-42,44,0,20.10,41.19,29.60,39.67,buy,85.11
+US,NFLX,"Netflix, Inc.",Communication Services,70.53,-2.86,2.71,0.30,-29,26,0,22.18,49.54,13.40,45.53,buy,29.58

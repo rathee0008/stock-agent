@@ -1,0 +1,21 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,447.40,-0.12,17.11,53.30,71,38,0,21.93,,21.00,68.25,buy,6.39
+US,MSFT,Microsoft Corporation,Technology,529.05,-1.93,33.01,51.30,55,48,0,29.47,34.04,17.70,57.33,strong_buy,13.27
+US,BLK,"BlackRock, Inc.",Financial Services,1134.38,1.21,9.26,49.40,49,50,0,25.83,,19.10,63.57,strong_buy,17.84
+IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1790.00,8.48,13.55,47.30,48,47,0,28.77,19.19,15.60,75.57,buy,-2.39
+IN,AXISBANK.NS,AXIS BANK LIMITED,Financial Services,1290.00,0.16,2.71,45.40,38,52,0,14.51,13.35,14.00,62.80,strong_buy,22.66
+US,CVX,Chevron Corporation,Energy,224.99,2.59,17.75,45.00,38,51,0,21.23,12.23,53.50,70.77,buy,1.30
+US,TMO,Thermo Fisher Scientific Inc,Healthcare,690.00,-0.93,31.82,43.00,67,22,0,37.14,13.51,10.50,63.97,strong_buy,0.09
+US,CRM,"Salesforce, Inc.",Technology,240.70,-2.45,41.54,41.70,53,32,0,22.20,19.38,10.80,55.76,buy,18.69
+US,AAPL,Apple Inc.,Technology,343.46,0.43,4.80,40.50,61,22,0,39.39,148.75,16.40,62.07,buy,-4.10
+US,SHOP,Shopify Inc.,Technology,169.52,-4.84,37.79,40.50,59,24,0,114.54,15.54,33.70,60.96,buy,3.65
+US,MU,"Micron Technology, Inc.",Technology,878.84,-5.63,-9.47,40.20,2,74,0,11.82,88.26,379.30,34.03,strong_buy,77.57
+US,XOM,ExxonMobil Holdings Corporation,Energy,178.98,2.46,17.98,40.00,40,40,0,23.03,12.58,44.10,72.95,buy,-2.00
+US,META,"Meta Platforms, Inc.",Communication Services,709.33,-3.72,10.18,39.80,40,40,0,26.73,29.85,28.00,50.23,strong_buy,14.83
+US,COP,ConocoPhillips,Energy,146.51,3.37,24.69,39.60,41,38,0,19.41,14.18,35.50,74.71,buy,1.80
+US,LLY,Eli Lilly and Company,Healthcare,1257.03,0.43,6.94,38.90,51,28,0,42.20,102.29,47.70,68.56,buy,5.65
+US,BRK-B,Berkshire Hathaway Inc. New,Financial Services,532.02,1.21,8.65,37.40,32,42,0,13.38,12.12,10.00,75.00,buy,2.94
+US,AMGN,Amgen Inc.,Healthcare,432.49,-0.35,18.09,35.80,56,18,0,26.86,91.47,9.50,62.47,hold,-8.67
+US,ACN,Accenture plc,Technology,229.68,2.12,63.06,35.20,43,28,0,16.94,26.02,6.20,72.17,buy,-1.90
+US,PLTR,Palantir Technologies Inc.,Technology,186.03,-7.22,40.23,35.10,32,38,0,160.37,38.10,92.80,46.27,buy,10.96
+IN,HCLTECH.NS,HCL TECHNOLOGIES LTD,Technology,1380.00,1.47,12.99,34.50,40,30,0,20.42,24.65,2.20,68.98,hold,-7.99

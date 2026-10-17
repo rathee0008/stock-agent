@@ -1,0 +1,9 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+US,MU,"Micron Technology, Inc.",Technology,878.84,-5.63,-9.47,40.20,2,74,0,11.82,88.26,379.30,34.03,strong_buy,77.57
+US,NVDA,NVIDIA Corporation,Technology,214.13,-1.43,3.30,32.70,2,60,0,27.07,117.21,105.90,37.53,strong_buy,53.51
+US,AMAT,"Applied Materials, Inc.",Technology,409.29,-4.82,-27.50,15.80,-25,52,0,35.31,41.07,24.80,29.20,strong_buy,53.40
+US,GS,"Goldman Sachs Group, Inc. (The)",Financial Services,881.26,-1.12,-18.82,1.90,-37,36,0,12.67,17.75,23.30,34.23,hold,17.78
+IN,MARUTI.NS,MARUTI SUZUKI INDIA LTD.,Consumer Cyclical,11445.00,2.39,-17.08,-1.60,-39,32,0,25.30,,35.90,37.38,buy,34.76
+IN,CHOLAFIN.NS,CHOLAMANDALAM IN & FIN CO,Financial Services,1574.40,-0.73,-11.69,-3.70,-35,24,0,23.29,,34.60,37.18,strong_buy,27.07
+IN,SUNPHARMA.NS,SUN PHARMACEUTICAL IND L,Healthcare,1764.00,1.01,-8.72,-5.00,-42,28,0,34.79,,10.50,37.87,buy,23.26
+US,BAC,Bank of America Corporation,Financial Services,51.23,-0.91,-16.32,-6.30,-43,26,0,12.23,10.73,7.10,23.97,strong_buy,23.86
