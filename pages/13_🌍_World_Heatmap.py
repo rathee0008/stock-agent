@@ -17,7 +17,7 @@ C = T.C
 
 ui.sidebar_brand()
 T.sidebar_head("View")
-view = st.sidebar.radio("Chart", ["World map", "Treemap"], horizontal=True)
+view = st.sidebar.radio("Chart", ["Treemap", "World map"], horizontal=True)
 T.sidebar_head("Live")
 refresh = st.sidebar.select_slider("Auto-refresh (seconds)", options=[10, 15, 30, 60, 120, 300], value=30)
 limit = st.sidebar.select_slider("Colour scale ±%", options=[1, 2, 3, 5], value=3)
@@ -157,15 +157,17 @@ def world_map(df, lim):
 
 
 def treemap(df, lim):
+    df = df.assign(tickstr=[("▲ " if t > 0 else "▼ ") + f"{t:+.3f}%" if abs(t) >= 0.0005 else "·"
+                            for t in df["tick"]])
     fig = px.treemap(
         df, path=[px.Constant("World"), "region", "country"], values="mcap", color="pct",
         color_continuous_scale=SCALE(), range_color=(-lim, lim), color_continuous_midpoint=0,
-        custom_data=["index", "exchange", "pct", "price", "asof"],
+        custom_data=["index", "exchange", "pct", "price", "asof", "tickstr"],
     )
     fig.update_traces(
-        texttemplate="<b>%{label}</b><br>%{customdata[0]}<br>%{customdata[2]:+.2f}%",
+        texttemplate="<b>%{label}</b><br>%{customdata[0]}<br><b>%{customdata[2]:+.2f}%</b><br>%{customdata[5]}",
         hovertemplate="<b>%{label}</b><br>%{customdata[1]} · %{customdata[0]}<br>Level: %{customdata[3]:,.2f}"
-                      "<br>Change: %{customdata[2]:+.2f}%<br>As of %{customdata[4]}<extra></extra>",
+                      "<br>Change: %{customdata[2]:+.2f}%<br>Last tick: %{customdata[5]}<br>As of %{customdata[4]}<extra></extra>",
         marker=dict(line=dict(width=1, color="#0A0B0D")),
     )
     return _style(fig, 620)
