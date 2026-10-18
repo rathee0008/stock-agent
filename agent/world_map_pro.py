@@ -20,7 +20,7 @@ SMALL = {
 }
 
 
-def world_map(df, lim, center_lon=10, height=560):
+def world_map(df, lim, center_lon=10, height=400):
     """df columns: iso3, country, index, exchange, price, pct, live (bool), asof."""
     d = df.dropna(subset=["pct"]).reset_index(drop=True)
     live_tag = "<span style='color:#26a69a'>● LIVE</span>"
@@ -67,7 +67,7 @@ def world_map(df, lim, center_lon=10, height=560):
         projection_type="natural earth", projection_rotation=dict(lon=center_lon),
         showframe=False, showcoastlines=False, showcountries=True,
         countrycolor="#161b27", countrywidth=0.4, showland=True, landcolor="#141925",
-        showocean=True, oceancolor=BG, showlakes=False, bgcolor=BG, lataxis_range=[-58, 84],
+        showocean=True, oceancolor="rgba(0,0,0,0)", showlakes=False, bgcolor="rgba(0,0,0,0)", lataxis_range=[-58, 84],
     )
     fig.update_layout(
         height=height, margin=dict(l=0, r=0, t=0, b=0), paper_bgcolor="rgba(0,0,0,0)",
