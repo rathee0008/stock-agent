@@ -38,7 +38,7 @@ def world_map(df, lim, center_lon=10, height=400):
         marker=dict(line=dict(color=BG, width=0.6)),
         colorbar=dict(
             title=dict(text="1D %", font=dict(color=MUTED, size=11)),
-            orientation="h", thickness=8, len=0.45, x=0.5, y=0.02, yanchor="bottom", outlinewidth=0, bgcolor="rgba(0,0,0,0)",
+            thickness=8, len=0.55, x=1.0, xpad=4, outlinewidth=0, bgcolor="rgba(0,0,0,0)",
             tickfont=dict(color=MUTED, size=10),
             tickvals=[-lim, -half, 0, half, lim],
             ticktext=[f"≤−{lim:g}", f"−{half:g}", "0", f"+{half:g}", f"≥+{lim:g}"],
@@ -70,7 +70,7 @@ def world_map(df, lim, center_lon=10, height=400):
         showocean=True, oceancolor="rgba(0,0,0,0)", showlakes=False, bgcolor="rgba(0,0,0,0)", lataxis_range=[-58, 84],
     )
     fig.update_layout(
-        height=height, margin=dict(l=0, r=0, t=0, b=0), paper_bgcolor="rgba(0,0,0,0)",
+        height=height, margin=dict(l=0, r=46, t=0, b=0), paper_bgcolor="rgba(0,0,0,0)",
         font=dict(color=TXT), dragmode="pan",
         hoverlabel=dict(bgcolor=PANEL, bordercolor=GRID, font=dict(color=TXT, size=12)),
     )
