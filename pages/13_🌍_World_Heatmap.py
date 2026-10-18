@@ -19,7 +19,7 @@ ui.sidebar_brand()
 T.sidebar_head("View")
 view = st.sidebar.radio("Chart", ["World map", "Treemap"], horizontal=True)
 T.sidebar_head("Live")
-refresh = st.sidebar.select_slider("Auto-refresh (seconds)", options=[15, 30, 60, 120, 300], value=60)
+refresh = st.sidebar.select_slider("Auto-refresh (seconds)", options=[10, 15, 30, 60, 120, 300], value=30)
 limit = st.sidebar.select_slider("Colour scale ±%", options=[1, 2, 3, 5], value=3)
 
 # country, ISO-3, exchange, index name, Yahoo symbol, region, approx. market cap (US$ trillion)
@@ -113,6 +113,28 @@ def fetch_prices() -> pd.DataFrame:
 
 
 
+@st.cache_data(ttl=10, show_spinner=False)
+def fetch_intraday() -> pd.DataFrame:
+    """5-minute bars for the current/last session: sparkline + whether the feed is still ticking."""
+    raw = yf.download(list(META["symbol"]), period="1d", interval="5m", group_by="ticker",
+                      threads=True, progress=False, auto_adjust=False)
+    now = datetime.now(timezone.utc)
+    rows = []
+    for sym in META["symbol"]:
+        try:
+            c = raw[sym]["Close"].dropna()
+            if len(c) < 2:
+                continue
+            last_ts = c.index[-1]
+            last_ts = last_ts.tz_convert("UTC") if last_ts.tzinfo else last_ts.tz_localize("UTC")
+            age_min = (now - last_ts.to_pydatetime()).total_seconds() / 60
+            rows.append({"symbol": sym, "spark": [float(x) for x in c.tail(80)], "live": age_min <= 45,
+                         "bar_age": age_min})
+        except Exception:
+            continue
+    return pd.DataFrame(rows, columns=["symbol", "spark", "live", "bar_age"])
+
+
 SCALE = lambda: [(0, C["down"]), (0.5, "#1B1E24"), (1, C["up"])]
 
 
@@ -153,7 +175,7 @@ ui.hero(
     "World Heatmap",
     "Headline index of each major stock exchange, coloured by today's move vs the previous close. "
     "Switch between a world map and a treemap in the left rail.",
-    pills=[("Delayed data", "amber"), ("Auto-refresh", "flat")],
+    pills=[("Delayed ~15 min", "amber"), ("Live auto-refresh", "flat")],
 )
 
 
@@ -161,7 +183,14 @@ ui.hero(
 def live_panel():
     if refresh <= 30:
         fetch_prices.clear()
-    data = fetch_prices()
+        fetch_intraday.clear()
+    data = fetch_prices().merge(fetch_intraday(), on="symbol", how="left")
+    data["live"] = data["live"].fillna(False).astype(bool)
+    # tick = change in % since the previous refresh of this panel (per browser session)
+    prev = st.session_state.get("wh_prev_pct", {})
+    data["tick"] = [(p - prev[sym]) if (sym in prev and pd.notna(p)) else 0.0
+                    for sym, p in zip(data["symbol"], data["pct"])]
+    st.session_state["wh_prev_pct"] = {sym: p for sym, p in zip(data["symbol"], data["pct"]) if pd.notna(p)}
     ok = data.dropna(subset=["pct"])
     missing = data[data["pct"].isna()]
     if ok.empty:
@@ -184,11 +213,30 @@ def live_panel():
         "typically ~15 min delayed; closed markets show the last session's move. Treemap tile size uses rounded "
         "approximate market caps."
     )
-    t = ok[["country", "exchange", "index", "price", "pct", "asof"]].sort_values("pct", ascending=False)
+    ok = data.dropna(subset=["pct"])
+    n_live = int(ok["live"].sum())
+    mv = ok.assign(_a=ok["tick"].abs())
+    ticks = mv[mv["_a"] >= 0.005].sort_values("_a", ascending=False).head(6)
+    if ticks.empty:
+        feed = "No change since the last refresh (feed is delayed ~15 min, so ticks arrive in steps)."
+    else:
+        feed = "  ·  ".join(
+            f"{'▲' if r['tick'] > 0 else '▼'} **{r['country']}** {r['tick']:+.3f}% → {r['pct']:+.2f}%"
+            for _, r in ticks.iterrows()
+        )
+    st.markdown(f"**● LIVE {n_live}** of {len(ok)} markets trading now · **Last ticks:** {feed}")
+
+    ok = ok.assign(spark=ok["spark"].map(lambda v: v if isinstance(v, list) else None))
+    t = ok.assign(status=ok["live"].map({True: "● LIVE", False: "closed"}))[
+        ["status", "country", "index", "price", "pct", "tick", "spark", "asof"]
+    ].sort_values("pct", ascending=False)
     st.dataframe(
-        t.rename(columns={"pct": "% change", "asof": "as of"}), hide_index=True, use_container_width=True,
+        t.rename(columns={"pct": "% change", "tick": "Δ since refresh", "spark": "Today", "asof": "as of"}),
+        hide_index=True, use_container_width=True,
         column_config={"% change": st.column_config.NumberColumn(format="%+.2f"),
-                       "price": st.column_config.NumberColumn(format="%.2f")},
+                       "Δ since refresh": st.column_config.NumberColumn(format="%+.3f"),
+                       "price": st.column_config.NumberColumn(format="%.2f"),
+                       "Today": st.column_config.LineChartColumn("Today (5-min)")},
     )
     if not missing.empty:
         with st.expander(f"{len(missing)} exchange(s) with no data right now"):
