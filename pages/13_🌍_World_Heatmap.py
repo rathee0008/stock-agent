@@ -30,7 +30,7 @@ MARKETS = [
     ("Mexico", "MEX", "BMV", "IPC", "^MXX", "Americas", 0.5),
     ("Brazil", "BRA", "B3", "Bovespa", "^BVSP", "Americas", 1.0),
     ("Argentina", "ARG", "BCBA", "Merval", "^MERV", "Americas", 0.1),
-    ("Chile", "CHL", "Santiago", "IPSA", "^IPSA", "Americas", 0.2),
+    ("Chile", "CHL", "Santiago", "MSCI Chile ETF (proxy)", "ECH", "Americas", 0.2),
     ("United Kingdom", "GBR", "LSE", "FTSE 100", "^FTSE", "Europe", 3.2),
     ("Germany", "DEU", "Xetra", "DAX", "^GDAXI", "Europe", 2.4),
     ("France", "FRA", "Euronext Paris", "CAC 40", "^FCHI", "Europe", 3.2),
@@ -59,7 +59,6 @@ MARKETS = [
     ("Indonesia", "IDN", "IDX", "Jakarta Composite", "^JKSE", "Asia-Pacific", 0.8),
     ("Thailand", "THA", "SET", "SET Index", "^SET.BK", "Asia-Pacific", 0.5),
     ("Philippines", "PHL", "PSE", "PSEi", "PSEI.PS", "Asia-Pacific", 0.25),
-    ("Pakistan", "PAK", "PSX", "KSE-100", "^KSE", "Asia-Pacific", 0.05),
     ("Australia", "AUS", "ASX", "S&P/ASX 200", "^AXJO", "Asia-Pacific", 1.8),
     ("New Zealand", "NZL", "NZX", "NZX 50", "^NZ50", "Asia-Pacific", 0.2),
 ]
@@ -83,19 +82,32 @@ def fetch_prices() -> pd.DataFrame:
     for sym in META["symbol"]:
         try:
             closes = raw[sym]["Close"].dropna()
-            if len(closes) < 2:
+            if len(closes) >= 2:
+                last, prev = float(closes.iloc[-1]), float(closes.iloc[-2])
+                rows.append(
+                    {
+                        "symbol": sym,
+                        "price": last,
+                        "pct": (last / prev - 1) * 100,
+                        "asof": closes.index[-1].strftime("%d %b"),
+                    }
+                )
                 continue
-            last, prev = float(closes.iloc[-1]), float(closes.iloc[-2])
-            rows.append(
-                {
-                    "symbol": sym,
-                    "price": last,
-                    "pct": (last / prev - 1) * 100,
-                    "asof": closes.index[-1].strftime("%d %b"),
-                }
-            )
         except Exception:
-            continue  # symbol missing / delisted on Yahoo — skipped, listed below
+            pass
+        # Some Yahoo indices (Saudi, Egypt, Thailand, Philippines, Poland) return a single daily bar;
+        # fall back to the quote metadata (live price vs previous close).
+        try:
+            t = yf.Ticker(sym)
+            t.history(period="1d")
+            m = t.history_metadata or {}
+            last, prev, ts = m.get("regularMarketPrice"), m.get("chartPreviousClose"), m.get("regularMarketTime")
+            if last and prev:
+                when = ts if hasattr(ts, "strftime") else datetime.fromtimestamp(ts or 0, tz=timezone.utc)
+                rows.append({"symbol": sym, "price": float(last), "pct": (float(last) / float(prev) - 1) * 100,
+                             "asof": when.strftime("%d %b")})
+        except Exception:
+            continue  # truly unavailable — listed in the "no data" expander
     prices = pd.DataFrame(rows, columns=["symbol", "price", "pct", "asof"])
     return META.merge(prices, on="symbol", how="left")
 
