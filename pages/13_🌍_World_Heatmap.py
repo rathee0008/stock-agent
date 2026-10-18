@@ -11,6 +11,7 @@ import yfinance as yf
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from agent import theme as T, ui  # noqa: E402
+from agent.world_map_pro import world_map as pro_world_map  # noqa: E402
 
 ui.setup("World Heatmap", "🌍")
 C = T.C
@@ -208,7 +209,7 @@ def live_panel():
     T.kpi(k[3], "Average move", f"{ok['pct'].mean():+.2f}%", "all markets", T.sign_tone(ok["pct"].mean()))
     st.markdown("<div style='height:.8rem'></div>", unsafe_allow_html=True)
 
-    st.plotly_chart(world_map(ok, limit) if view == "World map" else treemap(ok, limit), use_container_width=True)
+    st.plotly_chart(pro_world_map(ok, limit) if view == "World map" else treemap(ok, limit), use_container_width=True)
 
     st.caption(
         f"Updated {datetime.now(timezone.utc).strftime('%H:%M:%S')} UTC · refreshes every {refresh}s · Yahoo Finance, "
