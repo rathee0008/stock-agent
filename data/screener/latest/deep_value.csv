@@ -1,18 +1,19 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
-IN,AXISBANK.NS,AXIS BANK LIMITED,Financial Services,1290.00,0.16,2.71,45.40,38,52,0,14.51,13.35,14.00,62.80,strong_buy,22.66
-US,MU,"Micron Technology, Inc.",Technology,878.84,-5.63,-9.47,40.20,2,74,0,11.82,88.26,379.30,34.03,strong_buy,77.57
-IN,COALINDIA.NS,COAL INDIA LTD,Energy,417.20,-0.19,-2.84,18.00,-12,45,0,8.24,,45.10,50.53,buy,13.06
-US,ADBE,Adobe Inc.,Technology,245.20,-2.57,7.94,14.60,-9,36,0,13.69,61.90,12.90,50.12,hold,11.06
-US,WFC,Wells Fargo & Company,Financial Services,83.87,1.35,-4.41,5.60,-15,24,0,11.83,12.91,0.40,52.34,buy,15.83
-IN,SBIN.NS,STATE BANK OF INDIA,Financial Services,962.60,0.27,-9.19,3.10,-34,36,0,10.32,15.18,10.30,44.71,strong_buy,30.42
-US,GS,"Goldman Sachs Group, Inc. (The)",Financial Services,881.26,-1.12,-18.82,1.90,-37,36,0,12.67,17.75,23.30,34.23,hold,17.78
-IN,HINDALCO.NS,HINDALCO  INDUSTRIES  LTD,Basic Materials,908.00,1.58,-4.20,-2.90,-47,36,0,12.32,,32.10,40.29,buy,27.26
-IN,JSWSTEEL.NS,JSW STEEL LIMITED,Basic Materials,1216.30,1.32,-3.24,-3.40,-27,18,0,11.84,,9.80,45.25,buy,13.75
-IN,ONGC.NS,OIL AND NATURAL GAS CORP.,Energy,222.00,-1.18,-11.05,-4.30,-56,42,0,6.42,,25.70,39.11,buy,31.95
-IN,BPCL.NS,BHARAT PETROLEUM CORP  LT,Energy,293.50,-0.07,-7.59,-5.90,-44,28,0,7.32,,34.40,43.07,buy,18.44
-US,BAC,Bank of America Corporation,Financial Services,51.23,-0.91,-16.32,-6.30,-43,26,0,12.23,10.73,7.10,23.97,strong_buy,23.86
-IN,NTPC.NS,NTPC LTD,Utilities,315.15,0.16,-9.24,-10.30,-31,8,0,11.01,,7.80,40.97,strong_buy,35.12
-IN,VEDL.NS,VEDANTA LIMITED,Basic Materials,246.10,0.08,-6.01,-10.70,-53,27,0,10.35,,-37.30,38.91,buy,27.55
-US,T,AT&T Inc.,Communication Services,23.44,-0.26,5.30,-15.50,-43,9,0,7.74,18.34,2.30,41.67,buy,22.70
-IN,POWERGRID.NS,POWER GRID CORP. LTD.,Utilities,250.45,0.24,-13.25,-17.40,-50,12,0,14.65,,2.70,38.76,buy,27.27
-US,VZ,Verizon Communications Inc.,Communication Services,44.79,0.88,2.31,-19.10,-42,1,0,11.66,15.84,-0.70,42.98,buy,14.40
+US,MU,"Micron Technology, Inc.",Technology,908.17,3.34,-5.35,36.00,-7,74,0,12.22,88.26,379.30,38.86,strong_buy,71.84
+US,JPM,JP Morgan Chase & Co.,Financial Services,336.65,-0.90,-3.32,19.50,10,28,0,14.12,18.01,10.20,46.63,buy,10.67
+US,ADBE,Adobe Inc.,Technology,245.41,0.09,12.39,15.20,-8,36,0,13.71,61.90,12.90,50.29,hold,10.96
+IN,AXISBANK.NS,AXIS BANK LIMITED,Financial Services,1236.00,-4.19,-1.76,11.70,-34,52,0,13.90,13.35,14.00,46.68,strong_buy,27.92
+IN,ONGC.NS,OIL AND NATURAL GAS CORP.,Energy,225.00,1.35,-9.96,9.80,-26,42,0,6.50,,25.70,45.05,buy,30.19
+IN,SBIN.NS,STATE BANK OF INDIA,Financial Services,973.70,1.15,-6.77,9.40,-21,36,0,10.44,15.18,10.30,49.54,strong_buy,28.93
+IN,COALINDIA.NS,COAL INDIA LTD,Energy,411.70,-1.32,-4.53,6.00,-38,45,0,8.13,,45.10,46.04,buy,14.57
+IN,JSWSTEEL.NS,JSW STEEL LIMITED,Basic Materials,1241.30,2.06,-2.06,5.40,-9,18,0,12.25,,9.80,51.28,buy,11.46
+IN,BPCL.NS,BHARAT PETROLEUM CORP  LT,Energy,294.30,0.27,-7.84,2.20,-27,28,0,7.34,,34.40,44.08,buy,18.12
+US,GS,"Goldman Sachs Group, Inc. (The)",Financial Services,878.60,-0.30,-20.00,1.30,-38,36,0,12.63,17.75,23.30,33.57,hold,18.13
+US,WFC,Wells Fargo & Company,Financial Services,82.36,-1.79,-4.69,0.80,-25,24,0,11.97,12.91,0.40,47.20,buy,17.95
+US,BAC,Bank of America Corporation,Financial Services,50.52,-1.39,-18.02,-0.40,-30,26,0,12.06,10.73,7.10,22.03,strong_buy,25.61
+IN,HINDALCO.NS,HINDALCO  INDUSTRIES  LTD,Basic Materials,900.45,-0.83,-5.36,-3.50,-48,36,0,12.22,,32.10,38.64,buy,28.33
+IN,VEDL.NS,VEDANTA LIMITED,Basic Materials,243.20,-1.18,-8.17,-11.70,-55,27,0,10.23,,-37.30,37.21,buy,29.07
+US,T,AT&T Inc.,Communication Services,23.24,-0.87,0.85,-16.00,-44,9,0,7.67,18.34,2.30,39.95,buy,23.78
+IN,POWERGRID.NS,POWER GRID CORP. LTD.,Utilities,250.35,-0.04,-12.68,-17.70,-51,12,0,14.64,,2.70,38.65,buy,27.33
+US,VZ,Verizon Communications Inc.,Communication Services,44.31,-1.07,0.05,-19.60,-43,1,0,11.54,15.84,-0.70,40.77,buy,15.64
+IN,NTPC.NS,NTPC LTD,Utilities,309.00,-1.95,-11.35,-25.30,-63,8,0,10.79,,7.80,34.60,strong_buy,37.81

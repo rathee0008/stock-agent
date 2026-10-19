@@ -1,0 +1,20 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+US,CVX,Chevron Corporation,Energy,224.49,-0.22,16.33,54.90,59,51,0,21.61,12.23,53.50,69.74,buy,1.95
+IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,442.30,-1.14,14.60,50.00,63,38,0,21.68,,21.00,62.86,buy,7.62
+US,BLK,"BlackRock, Inc.",Financial Services,1128.97,-0.48,6.85,45.40,40,50,0,25.71,,19.10,61.71,strong_buy,18.40
+US,MSFT,Microsoft Corporation,Technology,533.68,0.88,36.72,43.20,38,48,0,29.73,34.04,17.70,59.63,strong_buy,12.29
+US,COP,ConocoPhillips,Energy,145.21,-0.88,22.25,42.40,47,38,0,19.23,14.18,35.50,71.17,buy,2.71
+US,XOM,ExxonMobil Holdings Corporation,Energy,178.37,-0.34,15.49,42.30,45,40,0,22.96,12.58,44.10,71.29,buy,-1.53
+US,CRM,"Salesforce, Inc.",Technology,240.85,0.06,47.76,42.10,53,32,0,22.04,19.38,10.80,55.87,buy,18.61
+IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1779.10,-0.61,12.87,41.60,39,44,0,28.59,19.19,15.60,73.74,buy,-1.80
+US,SHOP,Shopify Inc.,Technology,171.24,1.01,44.60,40.50,59,24,0,115.70,15.54,33.70,62.10,buy,2.61
+US,BRK-B,Berkshire Hathaway Inc. New,Financial Services,531.40,-0.12,8.58,40.30,38,42,0,13.36,12.12,10.00,73.85,buy,3.06
+US,AMZN,"Amazon.com, Inc.",Consumer Cyclical,262.53,5.01,7.22,39.80,44,36,0,21.12,30.56,19.60,57.32,strong_buy,26.26
+US,PLTR,Palantir Technologies Inc.,Technology,195.55,5.12,56.98,38.60,39,38,0,168.65,38.10,92.80,54.65,buy,5.56
+US,LLY,Eli Lilly and Company,Healthcare,1248.39,-0.69,7.34,38.30,50,28,0,41.91,102.29,47.70,65.78,buy,6.38
+IN,HCLTECH.NS,HCL TECHNOLOGIES LTD,Technology,1379.90,-0.01,11.33,37.10,45,30,0,20.42,24.65,2.20,68.96,hold,-7.99
+US,AAPL,Apple Inc.,Technology,341.84,-0.47,4.89,36.60,53,22,0,39.20,148.75,16.40,59.39,buy,-3.65
+US,ACN,Accenture plc,Technology,234.93,2.29,67.70,35.50,44,28,0,17.33,26.02,6.20,74.14,buy,-4.09
+US,SPGI,S&P Global Inc.,Financial Services,427.78,-0.43,-0.30,35.30,41,30,0,26.13,14.26,10.40,63.67,strong_buy,20.17
+US,ABBV,AbbVie Inc.,Healthcare,283.82,-0.56,12.05,35.30,57,16,0,80.15,,10.20,68.18,buy,-0.43
+US,AMGN,Amgen Inc.,Healthcare,427.45,-1.17,16.77,35.00,54,18,0,26.55,91.47,9.50,58.68,hold,-7.60

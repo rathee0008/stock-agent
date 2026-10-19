@@ -1,0 +1,14 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+US,CVX,Chevron Corporation,Energy,224.49,-0.22,16.33,54.90,59,51,0,21.61,12.23,53.50,69.74,buy,1.95
+IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,442.30,-1.14,14.60,50.00,63,38,0,21.68,,21.00,62.86,buy,7.62
+US,COP,ConocoPhillips,Energy,145.21,-0.88,22.25,42.40,47,38,0,19.23,14.18,35.50,71.17,buy,2.71
+US,XOM,ExxonMobil Holdings Corporation,Energy,178.37,-0.34,15.49,42.30,45,40,0,22.96,12.58,44.10,71.29,buy,-1.53
+US,SHOP,Shopify Inc.,Technology,171.24,1.01,44.60,40.50,59,24,0,115.70,15.54,33.70,62.10,buy,2.61
+US,META,"Meta Platforms, Inc.",Communication Services,701.50,-1.10,11.85,40.10,40,40,0,26.43,29.85,28.00,48.27,strong_buy,16.22
+US,PLTR,Palantir Technologies Inc.,Technology,195.55,5.12,56.98,38.60,39,38,0,168.65,38.10,92.80,54.65,buy,5.56
+US,LLY,Eli Lilly and Company,Healthcare,1248.39,-0.69,7.34,38.30,50,28,0,41.91,102.29,47.70,65.78,buy,6.38
+US,GOOGL,Alphabet Inc.,Communication Services,344.42,1.12,0.68,34.70,22,46,0,17.28,48.68,24.20,48.35,strong_buy,25.00
+IN,PERSISTENT.NS,PERSISTENT SYSTEMS LTD,Technology,5690.00,-0.89,9.02,20.40,32,10,0,49.77,22.92,30.30,54.38,hold,0.96
+IN,DIVISLAB.NS,DIVI S LABORATORIES LTD,Healthcare,9087.00,-0.63,23.97,16.90,11,22,0,82.45,,27.80,45.19,hold,-5.68
+IN,ETERNAL.NS,ETERNAL LIMITED,Consumer Cyclical,320.20,-1.57,11.72,8.90,8,10,0,681.28,,182.00,47.19,buy,15.74
+IN,HEROMOTOCO.NS,HERO MOTOCORP LIMITED,Consumer Cyclical,5230.00,0.10,3.89,-2.40,-21,14,0,19.22,,34.90,52.47,buy,18.50
