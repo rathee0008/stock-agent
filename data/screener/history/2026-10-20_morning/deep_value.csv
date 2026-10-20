@@ -1,0 +1,19 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+US,MU,"Micron Technology, Inc.",Technology,904.90,2.97,-5.69,35.90,-7,74,0,12.17,88.26,379.30,38.36,strong_buy,72.46
+US,JPM,JP Morgan Chase & Co.,Financial Services,333.53,-1.82,-4.22,16.70,4,28,0,13.99,18.01,10.20,42.90,buy,11.70
+US,ADBE,Adobe Inc.,Technology,247.09,0.77,13.16,15.50,-8,36,0,13.80,61.90,12.90,51.56,hold,10.21
+IN,AXISBANK.NS,AXIS BANK LIMITED,Financial Services,1236.00,-4.19,-1.76,11.70,-34,52,0,13.90,13.35,14.00,46.68,strong_buy,28.17
+IN,ONGC.NS,OIL AND NATURAL GAS CORP.,Energy,225.00,1.35,-9.96,9.80,-26,42,0,6.50,,25.70,45.05,buy,30.19
+IN,SBIN.NS,STATE BANK OF INDIA,Financial Services,973.70,1.15,-6.77,9.40,-21,36,0,10.44,15.18,10.30,49.54,strong_buy,28.93
+IN,COALINDIA.NS,COAL INDIA LTD,Energy,411.70,-1.32,-4.53,6.00,-38,45,0,8.13,,45.10,46.04,buy,14.57
+IN,JSWSTEEL.NS,JSW STEEL LIMITED,Basic Materials,1241.30,2.06,-2.06,5.40,-9,18,0,12.25,,9.80,51.28,buy,11.46
+US,GS,"Goldman Sachs Group, Inc. (The)",Financial Services,875.78,-0.62,-20.25,1.10,-38,36,0,12.67,17.75,23.30,32.90,hold,18.51
+US,WFC,Wells Fargo & Company,Financial Services,81.80,-2.47,-5.35,0.50,-26,24,0,11.89,12.91,0.40,45.52,buy,18.76
+US,BAC,Bank of America Corporation,Financial Services,50.39,-1.64,-18.22,-0.50,-30,26,0,12.03,10.73,7.10,21.72,strong_buy,25.93
+IN,HINDALCO.NS,HINDALCO  INDUSTRIES  LTD,Basic Materials,908.00,1.58,-4.20,-2.90,-47,36,0,12.11,,32.10,40.29,buy,27.26
+IN,BPCL.NS,BHARAT PETROLEUM CORP  LT,Energy,293.50,-0.07,-7.59,-5.90,-44,28,0,7.36,,34.40,43.07,buy,18.44
+IN,VEDL.NS,VEDANTA LIMITED,Basic Materials,243.20,-1.18,-8.17,-11.70,-55,27,0,10.23,,-37.30,37.21,buy,29.07
+US,T,AT&T Inc.,Communication Services,23.20,-1.02,0.69,-16.10,-44,9,0,7.66,18.34,2.30,39.67,buy,23.97
+IN,POWERGRID.NS,POWER GRID CORP. LTD.,Utilities,250.35,-0.04,-12.68,-17.70,-51,12,0,14.64,,2.70,38.65,buy,27.33
+US,VZ,Verizon Communications Inc.,Communication Services,44.15,-1.43,-0.32,-19.70,-43,1,0,11.50,15.84,-0.70,40.09,buy,16.06
+IN,NTPC.NS,NTPC LTD,Utilities,309.00,-1.95,-11.35,-25.30,-63,8,0,10.79,,7.80,34.60,strong_buy,37.81

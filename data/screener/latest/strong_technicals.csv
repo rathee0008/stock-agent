@@ -1,20 +1,23 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
-US,CVX,Chevron Corporation,Energy,224.49,-0.22,16.33,54.90,59,51,0,21.61,12.23,53.50,69.74,buy,1.95
+US,CVX,Chevron Corporation,Energy,224.37,-0.28,16.27,54.80,59,51,0,21.59,12.23,53.50,69.50,buy,2.01
 IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,442.30,-1.14,14.60,50.00,63,38,0,21.68,,21.00,62.86,buy,7.62
-US,BLK,"BlackRock, Inc.",Financial Services,1128.97,-0.48,6.85,45.40,40,50,0,25.71,,19.10,61.71,strong_buy,18.40
-US,MSFT,Microsoft Corporation,Technology,533.68,0.88,36.72,43.20,38,48,0,29.73,34.04,17.70,59.63,strong_buy,12.29
-US,COP,ConocoPhillips,Energy,145.21,-0.88,22.25,42.40,47,38,0,19.23,14.18,35.50,71.17,buy,2.71
-US,XOM,ExxonMobil Holdings Corporation,Energy,178.37,-0.34,15.49,42.30,45,40,0,22.96,12.58,44.10,71.29,buy,-1.53
-US,CRM,"Salesforce, Inc.",Technology,240.85,0.06,47.76,42.10,53,32,0,22.04,19.38,10.80,55.87,buy,18.61
+US,BLK,"BlackRock, Inc.",Financial Services,1124.60,-0.86,6.43,45.20,40,50,0,25.61,,19.10,60.29,strong_buy,19.12
+US,AMZN,"Amazon.com, Inc.",Consumer Cyclical,262.45,4.98,7.19,43.60,52,36,0,21.11,30.56,19.60,57.26,strong_buy,26.39
+US,MSFT,Microsoft Corporation,Technology,533.52,0.84,36.68,43.10,38,48,0,29.72,34.04,17.70,59.55,strong_buy,12.32
+US,COP,ConocoPhillips,Energy,145.24,-0.87,22.27,42.40,47,38,0,19.42,14.18,35.50,71.24,buy,3.22
+US,XOM,ExxonMobil Holdings Corporation,Energy,178.28,-0.39,15.43,42.30,45,40,0,23.03,12.58,44.10,71.04,buy,-0.39
+US,CRM,"Salesforce, Inc.",Technology,242.45,0.73,48.74,42.20,54,32,0,22.18,19.38,10.80,57.01,buy,17.83
 IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1779.10,-0.61,12.87,41.60,39,44,0,28.59,19.19,15.60,73.74,buy,-1.80
-US,SHOP,Shopify Inc.,Technology,171.24,1.01,44.60,40.50,59,24,0,115.70,15.54,33.70,62.10,buy,2.61
-US,BRK-B,Berkshire Hathaway Inc. New,Financial Services,531.40,-0.12,8.58,40.30,38,42,0,13.36,12.12,10.00,73.85,buy,3.06
-US,AMZN,"Amazon.com, Inc.",Consumer Cyclical,262.53,5.01,7.22,39.80,44,36,0,21.12,30.56,19.60,57.32,strong_buy,26.26
-US,PLTR,Palantir Technologies Inc.,Technology,195.55,5.12,56.98,38.60,39,38,0,168.65,38.10,92.80,54.65,buy,5.56
-US,LLY,Eli Lilly and Company,Healthcare,1248.39,-0.69,7.34,38.30,50,28,0,41.91,102.29,47.70,65.78,buy,6.38
+US,SHOP,Shopify Inc.,Technology,171.06,0.91,44.45,40.50,59,24,0,115.58,15.54,33.70,61.99,buy,2.72
+US,BRK-B,Berkshire Hathaway Inc. New,Financial Services,532.23,0.04,8.75,40.40,39,42,0,13.39,12.12,10.00,75.13,buy,2.90
+US,PLTR,Palantir Technologies Inc.,Technology,194.15,4.36,55.86,38.50,39,38,0,167.37,38.10,92.80,53.58,buy,6.32
+US,LLY,Eli Lilly and Company,Healthcare,1240.34,-1.33,6.65,38.10,49,28,0,41.64,102.29,47.70,63.38,buy,7.07
+US,TMO,Thermo Fisher Scientific Inc,Healthcare,679.38,-1.54,29.05,37.30,54,22,0,37.14,13.51,10.50,58.65,strong_buy,1.65
 IN,HCLTECH.NS,HCL TECHNOLOGIES LTD,Technology,1379.90,-0.01,11.33,37.10,45,30,0,20.42,24.65,2.20,68.96,hold,-7.99
-US,AAPL,Apple Inc.,Technology,341.84,-0.47,4.89,36.60,53,22,0,39.20,148.75,16.40,59.39,buy,-3.65
-US,ACN,Accenture plc,Technology,234.93,2.29,67.70,35.50,44,28,0,17.33,26.02,6.20,74.14,buy,-4.09
-US,SPGI,S&P Global Inc.,Financial Services,427.78,-0.43,-0.30,35.30,41,30,0,26.13,14.26,10.40,63.67,strong_buy,20.17
-US,ABBV,AbbVie Inc.,Healthcare,283.82,-0.56,12.05,35.30,57,16,0,80.15,,10.20,68.18,buy,-0.43
-US,AMGN,Amgen Inc.,Healthcare,427.45,-1.17,16.77,35.00,54,18,0,26.55,91.47,9.50,58.68,hold,-7.60
+US,AAPL,Apple Inc.,Technology,342.94,-0.15,5.23,36.70,53,22,0,39.33,148.75,16.40,61.18,buy,-3.96
+US,ACN,Accenture plc,Technology,236.93,3.16,69.13,35.50,44,28,0,17.47,26.02,6.20,74.82,buy,-4.90
+US,SPGI,S&P Global Inc.,Financial Services,427.83,-0.42,-0.29,35.30,41,30,0,26.14,14.26,10.40,63.71,strong_buy,20.15
+US,ABBV,AbbVie Inc.,Healthcare,282.68,-0.96,11.60,35.20,57,16,0,79.85,,10.20,66.26,buy,-0.03
+US,AMGN,Amgen Inc.,Healthcare,424.94,-1.75,16.09,34.80,54,18,0,26.39,91.47,9.50,56.97,hold,-7.05
+IN,TRENT.NS,TRENT LTD,Consumer Cyclical,2958.70,0.31,1.12,31.30,58,8,0,85.25,,17.80,61.73,buy,14.16
+IN,DLF.NS,DLF LIMITED,Real Estate,675.00,0.67,0.96,30.60,47,16,0,36.49,10.31,-23.30,55.25,strong_buy,21.39
