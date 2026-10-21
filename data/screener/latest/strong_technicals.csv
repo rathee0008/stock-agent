@@ -1,22 +1,20 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
-US,CVX,Chevron Corporation,Energy,222.89,-0.66,14.64,54.90,59,51,0,21.44,12.23,53.50,66.44,buy,3.02
-IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,442.30,-1.14,14.60,50.00,63,38,0,21.68,,21.00,62.86,buy,7.62
-US,COP,ConocoPhillips,Energy,144.55,-0.48,20.25,49.60,63,38,0,19.15,14.18,35.50,69.34,buy,4.28
-US,XOM,ExxonMobil Holdings Corporation,Energy,175.55,-1.53,11.89,46.20,53,40,0,22.59,12.58,44.10,64.02,buy,1.60
-US,BLK,"BlackRock, Inc.",Financial Services,1145.71,1.88,10.47,45.70,41,50,0,26.10,,19.10,64.54,strong_buy,17.92
-US,MSFT,Microsoft Corporation,Technology,531.04,-0.46,39.17,45.60,43,48,0,29.57,34.04,17.70,57.75,strong_buy,12.85
-IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1779.10,-0.61,12.87,41.60,39,44,0,28.59,19.19,15.60,73.74,buy,-1.59
-US,BRK-B,Berkshire Hathaway Inc. New,Financial Services,536.65,0.83,9.33,41.20,40,42,0,13.50,12.12,10.00,77.77,buy,2.05
-US,SHOP,Shopify Inc.,Technology,174.85,2.22,56.12,40.50,59,24,0,118.11,15.54,33.70,64.47,buy,0.49
-US,AMZN,"Amazon.com, Inc.",Consumer Cyclical,263.51,0.40,12.77,39.80,44,36,0,21.19,30.56,19.60,58.11,strong_buy,25.89
-US,CRM,"Salesforce, Inc.",Technology,239.20,-1.34,52.42,39.70,48,32,0,21.88,19.38,10.80,53.96,buy,19.43
-US,PLTR,Palantir Technologies Inc.,Technology,194.65,0.26,57.78,38.00,38,38,0,167.74,38.10,92.80,54.00,buy,6.05
-US,TXN,Texas Instruments Incorporated,Technology,280.92,1.73,-1.43,37.40,28,46,0,42.76,35.18,22.80,52.13,buy,17.30
-US,TMO,Thermo Fisher Scientific Inc,Healthcare,682.82,0.51,19.31,37.20,54,22,0,36.79,13.51,10.50,59.81,strong_buy,1.14
-IN,HCLTECH.NS,HCL TECHNOLOGIES LTD,Technology,1379.90,-0.01,11.33,37.10,45,30,0,20.42,24.65,2.20,68.96,hold,-7.99
-US,KO,Coca-Cola Company (The),Consumer Defensive,93.00,-0.44,14.58,36.70,58,18,0,27.93,42.05,6.70,68.87,buy,1.86
-US,ACN,Accenture plc,Technology,240.29,1.42,73.19,35.50,44,28,0,17.72,26.02,6.20,75.96,buy,-6.23
-US,AMGN,Amgen Inc.,Healthcare,434.41,2.23,16.93,35.30,55,18,0,26.98,91.47,9.50,61.54,hold,-9.08
-US,SPGI,S&P Global Inc.,Financial Services,435.87,1.88,3.78,33.40,37,30,0,26.54,14.26,10.40,67.82,strong_buy,17.94
-US,LLY,Eli Lilly and Company,Healthcare,1296.26,4.51,9.31,32.50,38,28,0,43.51,102.29,47.70,71.23,buy,2.60
-US,ADBE,Adobe Inc.,Technology,253.93,2.77,19.68,32.20,28,36,0,14.18,61.90,12.90,56.46,hold,7.24
+US,BLK,"BlackRock, Inc.",Financial Services,1128.68,0.36,8.82,51.50,53,50,0,25.70,,19.10,61.19,strong_buy,19.70
+US,XOM,ExxonMobil Holdings Corporation,Energy,177.86,-0.24,13.37,49.50,60,40,0,22.89,12.58,44.10,69.86,buy,0.87
+US,CVX,Chevron Corporation,Energy,225.71,0.60,16.09,48.30,45,51,0,21.72,12.23,53.50,70.72,buy,2.20
+US,MSFT,Microsoft Corporation,Technology,531.87,-0.31,39.39,45.70,43,48,0,29.63,34.04,17.70,58.34,strong_buy,12.97
+IN,ICICIBANK.NS,ICICI BANK LTD.,Financial Services,1387.80,0.49,-3.67,45.00,39,50,0,17.94,16.49,15.80,56.34,strong_buy,27.37
+US,ADBE,Adobe Inc.,Technology,256.73,3.90,21.00,44.10,53,36,0,14.33,61.90,12.90,58.19,hold,6.07
+US,TMO,Thermo Fisher Scientific Inc,Healthcare,687.37,1.18,20.10,43.90,68,22,0,37.00,13.51,10.50,61.26,strong_buy,0.47
+IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,435.85,-1.46,14.35,43.70,50,38,0,21.36,,21.00,56.76,buy,9.21
+US,COP,ConocoPhillips,Energy,145.95,0.49,21.42,42.90,48,38,0,19.33,14.18,35.50,72.02,buy,3.64
+IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1827.50,2.72,17.10,42.70,41,44,0,29.37,19.19,15.60,76.46,buy,-4.20
+US,CRM,"Salesforce, Inc.",Technology,242.43,-0.01,54.48,42.30,54,32,0,22.18,19.38,10.80,56.99,buy,18.03
+US,SHOP,Shopify Inc.,Technology,173.48,1.41,54.89,40.50,59,24,0,117.22,15.54,33.70,63.62,buy,1.16
+US,AMZN,"Amazon.com, Inc.",Consumer Cyclical,262.63,0.07,12.40,39.60,44,36,0,21.13,30.56,19.60,57.41,strong_buy,26.31
+US,LLY,Eli Lilly and Company,Healthcare,1283.66,3.49,8.25,39.20,52,28,0,43.09,102.29,47.70,69.77,buy,3.71
+US,PLTR,Palantir Technologies Inc.,Technology,192.60,-0.80,56.12,37.90,38,38,0,166.03,38.10,92.80,52.12,buy,7.18
+US,AMGN,Amgen Inc.,Healthcare,438.94,3.29,18.15,35.70,56,18,0,27.26,91.47,9.50,63.40,hold,-10.02
+US,ACN,Accenture plc,Technology,239.12,0.92,72.35,35.50,44,28,0,17.63,26.02,6.20,75.57,buy,-6.13
+US,SPGI,S&P Global Inc.,Financial Services,438.12,2.41,4.31,33.70,38,30,0,26.67,14.26,10.40,68.81,strong_buy,17.33
+IN,HCLTECH.NS,HCL TECHNOLOGIES LTD,Technology,1405.90,1.88,13.63,31.00,32,30,0,20.81,24.65,2.20,71.68,hold,-9.69

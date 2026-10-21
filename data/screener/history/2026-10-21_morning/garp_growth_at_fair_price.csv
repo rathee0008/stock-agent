@@ -1,0 +1,17 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+US,BLK,"BlackRock, Inc.",Financial Services,1128.68,0.36,8.82,51.50,53,50,0,25.70,,19.10,61.19,strong_buy,19.70
+US,MSFT,Microsoft Corporation,Technology,531.87,-0.31,39.39,45.70,43,48,0,29.63,34.04,17.70,58.34,strong_buy,12.97
+US,ADBE,Adobe Inc.,Technology,256.73,3.90,21.00,44.10,53,36,0,14.33,61.90,12.90,58.19,hold,6.07
+IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,435.85,-1.46,14.35,43.70,50,38,0,21.36,,21.00,56.76,buy,9.21
+IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1827.50,2.72,17.10,42.70,41,44,0,29.37,19.19,15.60,76.46,buy,-4.20
+US,AMZN,"Amazon.com, Inc.",Consumer Cyclical,262.63,0.07,12.40,39.60,44,36,0,21.13,30.56,19.60,57.41,strong_buy,26.31
+US,META,"Meta Platforms, Inc.",Communication Services,694.25,-1.59,14.54,38.50,37,40,0,26.16,29.85,28.00,46.40,strong_buy,17.81
+US,MA,Mastercard Incorporated,Financial Services,620.42,0.65,17.00,29.50,45,16,0,33.90,241.20,14.10,75.47,strong_buy,8.68
+US,NVDA,NVIDIA Corporation,Technology,216.47,-0.29,3.69,29.30,-5,60,0,27.37,117.21,105.90,40.90,strong_buy,51.85
+US,V,Visa Inc.,Financial Services,406.57,0.91,15.63,27.20,44,12,0,34.60,61.19,14.40,75.60,strong_buy,4.25
+US,INTU,Intuit Inc.,Technology,335.29,2.97,19.10,24.10,11,36,0,20.37,23.60,13.70,65.17,buy,21.36
+IN,HAL.NS,HINDUSTAN AERONAUTICS LTD,Industrials,4847.20,-2.25,5.95,17.10,16,18,0,34.78,,14.40,51.87,buy,15.17
+US,GOOGL,Alphabet Inc.,Communication Services,340.28,-1.13,7.11,5.60,-40,46,0,17.07,48.68,24.20,44.66,strong_buy,26.46
+US,ORCL,Oracle Corporation,Technology,131.14,1.20,9.25,0.90,-48,44,0,20.55,41.19,29.60,42.62,buy,81.00
+US,UBER,"Uber Technologies, Inc.",Technology,68.94,-1.46,0.04,-2.40,-32,24,0,15.12,37.16,12.20,43.46,buy,46.29
+IN,HEROMOTOCO.NS,HERO MOTOCORP LIMITED,Consumer Cyclical,5080.00,-2.87,1.86,-6.40,-29,14,0,18.73,,34.90,44.57,buy,22.29

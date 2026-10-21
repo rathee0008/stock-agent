@@ -1,14 +1,17 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
-US,COP,ConocoPhillips,Energy,144.55,-0.48,20.25,49.60,63,38,0,19.15,14.18,35.50,69.34,buy,4.28
-US,MSFT,Microsoft Corporation,Technology,531.04,-0.46,39.17,45.60,43,48,0,29.57,34.04,17.70,57.75,strong_buy,12.85
-US,SHOP,Shopify Inc.,Technology,174.85,2.22,56.12,40.50,59,24,0,118.11,15.54,33.70,64.47,buy,0.49
-US,CRM,"Salesforce, Inc.",Technology,239.20,-1.34,52.42,39.70,48,32,0,21.88,19.38,10.80,53.96,buy,19.43
-US,PLTR,Palantir Technologies Inc.,Technology,194.65,0.26,57.78,38.00,38,38,0,167.74,38.10,92.80,54.00,buy,6.05
-US,TMO,Thermo Fisher Scientific Inc,Healthcare,682.82,0.51,19.31,37.20,54,22,0,36.79,13.51,10.50,59.81,strong_buy,1.14
-US,ACN,Accenture plc,Technology,240.29,1.42,73.19,35.50,44,28,0,17.72,26.02,6.20,75.96,buy,-6.23
-US,AMGN,Amgen Inc.,Healthcare,434.41,2.23,16.93,35.30,55,18,0,26.98,91.47,9.50,61.54,hold,-9.08
-US,ADBE,Adobe Inc.,Technology,253.93,2.77,19.68,32.20,28,36,0,14.18,61.90,12.90,56.46,hold,7.24
-US,MA,Mastercard Incorporated,Financial Services,621.18,0.78,17.14,29.50,45,16,0,34.17,241.20,14.10,75.72,strong_buy,8.54
-US,V,Visa Inc.,Financial Services,406.77,0.96,15.69,27.20,44,12,0,34.62,61.19,14.40,75.69,strong_buy,4.20
-US,ISRG,"Intuitive Surgical, Inc.",Healthcare,433.99,0.19,30.71,24.70,16,32,0,49.76,17.42,18.50,68.04,buy,10.26
-US,INTU,Intuit Inc.,Technology,334.18,2.63,18.70,23.90,10,36,0,20.29,23.60,13.70,64.74,buy,21.77
+US,CVX,Chevron Corporation,Energy,225.71,0.60,16.09,48.30,45,51,0,21.72,12.23,53.50,70.72,buy,2.20
+US,MSFT,Microsoft Corporation,Technology,531.87,-0.31,39.39,45.70,43,48,0,29.63,34.04,17.70,58.34,strong_buy,12.97
+US,ADBE,Adobe Inc.,Technology,256.73,3.90,21.00,44.10,53,36,0,14.33,61.90,12.90,58.19,hold,6.07
+US,TMO,Thermo Fisher Scientific Inc,Healthcare,687.37,1.18,20.10,43.90,68,22,0,37.00,13.51,10.50,61.26,strong_buy,0.47
+US,COP,ConocoPhillips,Energy,145.95,0.49,21.42,42.90,48,38,0,19.33,14.18,35.50,72.02,buy,3.64
+IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1827.50,2.72,17.10,42.70,41,44,0,29.37,19.19,15.60,76.46,buy,-4.20
+US,CRM,"Salesforce, Inc.",Technology,242.43,-0.01,54.48,42.30,54,32,0,22.18,19.38,10.80,56.99,buy,18.03
+US,SHOP,Shopify Inc.,Technology,173.48,1.41,54.89,40.50,59,24,0,117.22,15.54,33.70,63.62,buy,1.16
+US,PLTR,Palantir Technologies Inc.,Technology,192.60,-0.80,56.12,37.90,38,38,0,166.03,38.10,92.80,52.12,buy,7.18
+US,AMGN,Amgen Inc.,Healthcare,438.94,3.29,18.15,35.70,56,18,0,27.26,91.47,9.50,63.40,hold,-10.02
+US,ACN,Accenture plc,Technology,239.12,0.92,72.35,35.50,44,28,0,17.63,26.02,6.20,75.57,buy,-6.13
+US,KO,Coca-Cola Company (The),Consumer Defensive,93.49,0.07,15.18,29.80,43,18,0,28.08,42.05,6.70,71.88,buy,1.75
+US,MA,Mastercard Incorporated,Financial Services,620.42,0.65,17.00,29.50,45,16,0,33.90,241.20,14.10,75.47,strong_buy,8.68
+US,ISRG,"Intuitive Surgical, Inc.",Healthcare,438.00,1.11,31.92,28.70,25,32,0,52.96,17.42,18.50,69.72,buy,9.33
+US,V,Visa Inc.,Financial Services,406.57,0.91,15.63,27.20,44,12,0,34.60,61.19,14.40,75.60,strong_buy,4.25
+US,INTU,Intuit Inc.,Technology,335.29,2.97,19.10,24.10,11,36,0,20.37,23.60,13.70,65.17,buy,21.36
