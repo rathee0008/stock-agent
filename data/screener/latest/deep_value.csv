@@ -1,18 +1,19 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
-US,MU,"Micron Technology, Inc.",Technology,896.07,-0.98,-9.51,35.40,-8,74,0,12.06,88.26,379.30,37.46,strong_buy,74.16
-US,JPM,JP Morgan Chase & Co.,Financial Services,335.26,0.52,-4.18,19.30,10,28,0,14.06,18.01,10.20,45.50,buy,11.13
-IN,ONGC.NS,OIL AND NATURAL GAS CORP.,Energy,225.35,0.16,-10.54,7.00,-32,42,0,6.51,,25.70,45.72,buy,29.99
-IN,AXISBANK.NS,AXIS BANK LIMITED,Financial Services,1209.40,-2.15,-2.34,6.60,-51,58,0,12.62,13.88,21.10,41.09,strong_buy,31.03
-IN,SBIN.NS,STATE BANK OF INDIA,Financial Services,965.10,-0.88,-5.84,5.00,-30,36,0,10.34,15.18,10.30,46.17,strong_buy,30.08
-IN,COALINDIA.NS,COAL INDIA LTD,Energy,404.90,-1.65,-5.49,3.00,-44,45,0,8.00,,45.10,41.16,buy,16.49
-US,GS,"Goldman Sachs Group, Inc. (The)",Financial Services,884.81,1.03,-17.67,1.40,-38,36,0,12.72,17.75,23.30,37.23,hold,17.33
-US,WFC,Wells Fargo & Company,Financial Services,82.20,0.49,-4.63,0.90,-25,24,0,11.54,12.91,0.40,46.96,buy,18.33
-IN,JSWSTEEL.NS,JSW STEEL LIMITED,Basic Materials,1219.40,-1.76,-3.75,-2.80,-26,18,0,12.03,,9.80,46.46,buy,13.46
-US,BAC,Bank of America Corporation,Financial Services,50.64,0.50,-17.36,-3.10,-36,26,0,12.09,10.73,7.10,24.01,strong_buy,24.68
-IN,HINDALCO.NS,HINDALCO  INDUSTRIES  LTD,Basic Materials,887.60,-1.43,-6.57,-3.90,-49,36,0,12.04,,32.10,35.94,buy,30.19
-IN,VEDL.NS,VEDANTA LIMITED,Basic Materials,234.55,-3.56,-10.58,-10.60,-53,27,0,9.87,,-37.30,32.63,buy,33.83
-IN,BPCL.NS,BHARAT PETROLEUM CORP  LT,Energy,286.00,-2.82,-8.92,-10.90,-55,28,0,7.13,,34.40,36.79,buy,21.54
-US,VZ,Verizon Communications Inc.,Communication Services,44.54,0.88,1.64,-10.90,-24,1,0,11.60,15.84,-0.70,42.62,buy,15.04
-IN,NTPC.NS,NTPC LTD,Utilities,302.20,-2.20,-13.78,-13.00,-37,8,0,10.56,,7.80,29.19,strong_buy,40.91
-US,T,AT&T Inc.,Communication Services,23.42,0.95,2.00,-16.10,-44,9,0,7.73,18.34,2.30,42.40,buy,22.80
-IN,POWERGRID.NS,POWER GRID CORP. LTD.,Utilities,247.00,-1.34,-14.62,-21.20,-58,12,0,14.45,,2.70,34.89,buy,29.05
+US,MU,"Micron Technology, Inc.",Technology,914.90,2.10,-0.66,34.90,-9,74,0,12.30,88.26,379.30,40.65,strong_buy,70.57
+US,JPM,JP Morgan Chase & Co.,Financial Services,333.61,-0.49,-5.55,17.20,5,28,0,13.99,18.01,10.20,43.47,buy,11.68
+IN,ONGC.NS,OIL AND NATURAL GAS CORP.,Energy,225.62,0.28,-10.43,7.10,-32,42,0,6.52,,25.70,46.22,buy,29.83
+IN,AXISBANK.NS,AXIS BANK LIMITED,Financial Services,1210.00,-2.10,-2.29,6.70,-51,58,0,12.63,13.88,21.10,41.20,strong_buy,30.96
+IN,SBIN.NS,STATE BANK OF INDIA,Financial Services,963.00,-1.10,-6.05,4.90,-30,36,0,10.32,15.18,10.30,45.42,strong_buy,30.36
+IN,COALINDIA.NS,COAL INDIA LTD,Energy,407.50,-1.02,-4.88,3.30,-44,45,0,8.05,,45.10,42.90,buy,15.75
+US,GS,"Goldman Sachs Group, Inc. (The)",Financial Services,898.20,1.51,-15.36,2.30,-36,36,0,12.92,17.75,23.30,43.11,hold,15.58
+US,UBER,"Uber Technologies, Inc.",Technology,68.28,-0.96,3.54,2.20,-31,32,0,14.97,37.16,12.20,41.26,buy,47.72
+US,WFC,Wells Fargo & Company,Financial Services,82.29,0.12,-4.65,1.80,-23,24,0,11.56,12.91,0.40,47.31,buy,18.20
+IN,BPCL.NS,BHARAT PETROLEUM CORP  LT,Energy,288.00,-2.14,-8.28,-2.10,-36,28,0,7.18,,34.40,38.32,buy,20.70
+US,BAC,Bank of America Corporation,Financial Services,50.92,0.54,-17.95,-2.30,-34,26,0,12.15,10.73,7.10,26.56,strong_buy,24.00
+IN,JSWSTEEL.NS,JSW STEEL LIMITED,Basic Materials,1222.90,-1.48,-3.47,-2.70,-26,18,0,12.07,,9.80,47.17,buy,13.14
+IN,HINDALCO.NS,HINDALCO  INDUSTRIES  LTD,Basic Materials,892.85,-0.84,-6.02,-3.60,-48,36,0,12.11,,32.10,37.00,buy,29.42
+IN,POWERGRID.NS,POWER GRID CORP. LTD.,Utilities,252.15,0.72,-12.84,-9.30,-33,12,0,14.75,,2.70,42.00,buy,26.42
+IN,VEDL.NS,VEDANTA LIMITED,Basic Materials,236.85,-2.61,-9.70,-10.30,-52,27,0,9.96,,-37.30,33.74,buy,32.53
+IN,NTPC.NS,NTPC LTD,Utilities,303.00,-1.94,-13.55,-12.90,-36,8,0,10.58,,7.80,29.73,strong_buy,40.54
+US,T,AT&T Inc.,Communication Services,21.82,-6.85,-9.59,-18.90,-50,9,0,7.20,18.34,2.30,31.28,buy,31.84
+US,VZ,Verizon Communications Inc.,Communication Services,43.12,-3.20,-7.04,-23.00,-50,1,0,11.23,15.84,-0.70,36.54,buy,18.85

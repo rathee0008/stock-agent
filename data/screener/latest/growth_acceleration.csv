@@ -1,11 +1,15 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
-US,XOM,ExxonMobil Holdings Corporation,Energy,177.86,-0.24,13.37,49.50,60,40,0,22.89,12.58,44.10,69.86,buy,0.87
-US,CVX,Chevron Corporation,Energy,225.71,0.60,16.09,48.30,45,51,0,21.72,12.23,53.50,70.72,buy,2.20
-IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,435.85,-1.46,14.35,43.70,50,38,0,21.36,,21.00,56.76,buy,9.21
-US,COP,ConocoPhillips,Energy,145.95,0.49,21.42,42.90,48,38,0,19.33,14.18,35.50,72.02,buy,3.64
-US,SHOP,Shopify Inc.,Technology,173.48,1.41,54.89,40.50,59,24,0,117.22,15.54,33.70,63.62,buy,1.16
-US,LLY,Eli Lilly and Company,Healthcare,1283.66,3.49,8.25,39.20,52,28,0,43.09,102.29,47.70,69.77,buy,3.71
-US,META,"Meta Platforms, Inc.",Communication Services,694.25,-1.59,14.54,38.50,37,40,0,26.16,29.85,28.00,46.40,strong_buy,17.81
-US,PLTR,Palantir Technologies Inc.,Technology,192.60,-0.80,56.12,37.90,38,38,0,166.03,38.10,92.80,52.12,buy,7.18
-IN,PERSISTENT.NS,PERSISTENT SYSTEMS LTD,Technology,5813.00,2.16,14.01,28.00,48,10,0,50.85,22.92,30.30,58.79,hold,-1.12
-IN,DIVISLAB.NS,DIVI S LABORATORIES LTD,Healthcare,9083.00,-0.04,22.97,16.80,11,22,0,82.41,,27.80,45.07,hold,-5.63
+US,XOM,ExxonMobil Holdings Corporation,Energy,177.60,-0.15,13.16,49.10,59,40,0,22.86,12.58,44.10,69.10,buy,1.02
+US,CVX,Chevron Corporation,Energy,226.27,0.25,16.16,48.40,45,51,0,21.78,12.23,53.50,71.24,buy,1.94
+IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,437.80,-1.02,14.86,44.00,51,38,0,21.46,,21.00,58.48,buy,8.73
+US,SHOP,Shopify Inc.,Technology,177.79,2.48,56.30,43.30,65,24,0,120.03,15.54,33.70,66.37,buy,-1.29
+US,COP,ConocoPhillips,Energy,145.94,-0.01,21.35,43.00,49,38,0,19.33,14.18,35.50,71.99,buy,3.65
+US,LLY,Eli Lilly and Company,Healthcare,1266.60,-1.33,5.90,41.20,56,28,0,42.53,102.29,47.70,64.96,buy,5.11
+US,TXN,Texas Instruments Incorporated,Technology,287.21,3.39,2.73,40.90,35,46,0,43.72,35.18,22.80,57.88,buy,15.28
+US,PLTR,Palantir Technologies Inc.,Technology,199.51,3.59,62.31,40.60,44,38,0,172.00,38.10,92.80,57.66,buy,3.47
+US,META,"Meta Platforms, Inc.",Communication Services,711.68,2.51,19.57,40.20,41,40,0,26.81,29.85,28.00,51.13,strong_buy,14.92
+US,NVDA,NVIDIA Corporation,Technology,220.56,1.89,6.63,32.50,2,60,0,27.89,117.21,105.90,46.28,strong_buy,49.04
+IN,PERSISTENT.NS,PERSISTENT SYSTEMS LTD,Technology,5858.50,2.96,14.90,28.40,49,10,0,51.25,22.92,30.30,60.21,hold,-1.89
+IN,DIVISLAB.NS,DIVI S LABORATORIES LTD,Healthcare,9190.00,1.13,24.42,28.30,35,22,0,83.39,,27.80,48.83,hold,-6.73
+US,ISRG,"Intuitive Surgical, Inc.",Healthcare,430.15,-1.79,27.45,12.80,14,12,0,52.01,17.93,21.70,62.77,buy,11.33
+IN,HEROMOTOCO.NS,HERO MOTOCORP LIMITED,Consumer Cyclical,5153.50,-1.46,3.34,-3.30,-23,14,0,19.00,,34.90,48.12,buy,20.54
