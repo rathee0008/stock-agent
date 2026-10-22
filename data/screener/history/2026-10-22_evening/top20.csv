@@ -1,0 +1,21 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+US,CVX,Chevron Corporation,Energy,223.87,-1.29,17.82,54.70,59,51,0,21.55,12.23,53.50,65.32,buy,3.04
+US,COP,ConocoPhillips,Energy,144.16,-1.04,24.73,48.90,61,38,0,19.09,14.18,35.50,66.76,buy,4.93
+US,BLK,"BlackRock, Inc.",Financial Services,1138.48,-0.97,7.19,48.50,47,50,0,25.97,,19.10,61.59,strong_buy,18.67
+US,XOM,ExxonMobil Holdings Corporation,Energy,175.58,-1.41,13.45,45.40,51,40,0,22.60,12.58,44.10,62.98,buy,2.18
+IN,ICICIBANK.NS,ICICI BANK LTD.,Financial Services,1398.50,0.97,-2.52,45.10,40,50,0,18.08,16.49,15.80,58.67,strong_buy,26.48
+IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,437.00,-0.18,14.00,43.90,50,38,0,21.42,,21.00,57.70,buy,8.92
+US,MSFT,Microsoft Corporation,Technology,524.47,-1.59,34.79,43.10,38,48,0,29.22,34.04,17.70,52.65,strong_buy,14.73
+US,ADBE,Adobe Inc.,Technology,269.07,5.49,13.17,42.90,60,28,0,15.03,61.90,12.90,64.68,hold,1.21
+IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1829.10,-0.31,17.57,42.80,42,44,0,29.40,19.19,15.60,75.86,buy,-4.28
+US,CRM,"Salesforce, Inc.",Technology,248.77,2.89,43.30,42.60,55,32,0,22.76,19.38,10.80,61.65,buy,15.02
+US,ACN,Accenture plc,Technology,249.09,3.68,61.68,41.20,56,28,0,18.37,26.02,6.20,78.89,buy,-8.84
+US,PLTR,Palantir Technologies Inc.,Technology,198.21,-1.74,50.70,39.90,42,38,0,170.83,38.10,92.80,55.77,buy,4.14
+US,AAPL,Apple Inc.,Technology,345.14,0.33,2.44,39.40,59,22,0,39.57,148.75,16.40,61.85,buy,-4.86
+US,AMGN,Amgen Inc.,Healthcare,449.08,2.45,19.35,35.40,55,18,0,27.88,91.47,9.50,67.29,hold,-11.89
+US,MU,"Micron Technology, Inc.",Technology,868.92,-4.90,-3.47,35.00,-9,74,0,11.68,88.26,379.30,35.77,strong_buy,79.60
+US,TXN,Texas Instruments Incorporated,Technology,279.04,-1.97,-0.13,34.90,22,46,0,36.19,35.18,22.80,49.95,buy,20.81
+IN,BHARTIARTL.NS,BHARTI AIRTEL LIMITED,Communication Services,1895.00,0.17,-1.86,33.20,48,20,0,39.61,20.15,18.40,59.17,strong_buy,22.30
+US,LLY,Eli Lilly and Company,Healthcare,1312.51,3.29,9.60,32.70,38,28,0,44.06,102.29,47.70,71.36,buy,1.45
+US,TMO,Thermo Fisher Scientific Inc,Healthcare,683.41,-1.53,22.14,32.20,53,14,0,36.05,13.38,9.10,58.00,strong_buy,6.52
+US,ABBV,AbbVie Inc.,Healthcare,283.79,-0.35,10.46,32.20,50,16,0,80.17,,10.20,62.91,buy,-0.10

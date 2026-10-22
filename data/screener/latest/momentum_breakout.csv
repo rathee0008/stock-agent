@@ -1,22 +1,17 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
-US,CVX,Chevron Corporation,Energy,226.78,0.47,16.42,48.40,46,51,0,21.83,12.23,53.50,71.70,buy,1.71
-US,BLK,"BlackRock, Inc.",Financial Services,1149.60,1.85,8.90,46.20,42,50,0,26.17,,19.10,65.50,strong_buy,17.52
-US,MSFT,Microsoft Corporation,Technology,532.95,0.20,39.63,45.80,43,48,0,29.69,34.04,17.70,58.93,strong_buy,12.91
-IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,437.80,0.00,14.20,44.00,51,38,0,21.46,,21.00,58.48,buy,8.73
-US,TMO,Thermo Fisher Scientific Inc,Healthcare,694.02,0.97,22.13,43.60,68,22,0,36.99,13.51,10.50,63.33,strong_buy,1.83
-US,COP,ConocoPhillips,Energy,145.67,-0.19,21.13,42.90,48,38,0,19.29,14.18,35.50,71.20,buy,3.84
-US,CRM,"Salesforce, Inc.",Technology,241.78,-0.27,47.73,42.50,54,32,0,22.12,19.38,10.80,56.31,buy,18.35
-IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1795.60,-2.13,15.41,42.20,40,44,0,28.86,19.19,15.60,70.55,buy,-2.50
-US,XOM,ExxonMobil Holdings Corporation,Energy,178.09,0.13,13.48,42.20,45,40,0,22.92,12.58,44.10,70.16,buy,0.74
-US,BRK-B,Berkshire Hathaway Inc. New,Financial Services,538.99,-0.15,8.90,41.50,41,42,0,13.56,12.12,10.00,77.80,buy,1.61
-US,ACN,Accenture plc,Technology,240.26,0.48,63.45,41.20,56,28,0,17.72,26.02,6.20,75.98,buy,-5.49
-US,PLTR,Palantir Technologies Inc.,Technology,201.72,4.74,64.11,40.80,44,38,0,173.90,38.10,92.80,59.16,buy,2.33
-US,SHOP,Shopify Inc.,Technology,174.29,0.47,53.22,40.50,59,24,0,117.76,15.54,33.70,64.17,buy,0.69
-US,AMZN,"Amazon.com, Inc.",Consumer Cyclical,262.37,-0.10,13.04,40.20,45,36,0,21.11,30.56,19.60,57.10,strong_buy,26.43
-IN,HCLTECH.NS,HCL TECHNOLOGIES LTD,Technology,1409.00,-1.07,13.20,37.60,46,30,0,20.84,24.65,2.20,69.70,hold,-9.89
-US,AMGN,Amgen Inc.,Healthcare,438.34,-0.14,16.57,37.40,59,18,0,27.23,91.47,9.50,62.97,hold,-9.73
-US,KO,Coca-Cola Company (The),Consumer Defensive,92.68,-0.87,12.68,36.50,57,18,0,27.83,42.05,6.70,66.22,buy,2.64
-US,ADBE,Adobe Inc.,Technology,255.06,-0.65,13.30,36.00,36,36,0,14.24,61.90,12.90,56.74,hold,6.76
-US,ABBV,AbbVie Inc.,Healthcare,284.80,-1.48,9.81,35.30,57,16,0,80.45,,10.20,64.42,buy,-0.46
-IN,TCS.NS,TATA CONSULTANCY SERV LT,Technology,2502.20,-1.06,11.56,31.40,33,30,0,17.55,45.57,11.20,72.55,buy,-4.47
-US,MA,Mastercard Incorporated,Financial Services,622.62,0.35,15.37,30.00,46,16,0,34.25,241.20,14.10,76.24,strong_buy,8.40
+US,CVX,Chevron Corporation,Energy,223.87,-1.29,17.82,54.70,59,51,0,21.55,12.23,53.50,65.32,buy,3.04
+US,COP,ConocoPhillips,Energy,144.16,-1.04,24.73,48.90,61,38,0,19.09,14.18,35.50,66.76,buy,4.93
+US,XOM,ExxonMobil Holdings Corporation,Energy,175.58,-1.41,13.45,45.40,51,40,0,22.60,12.58,44.10,62.98,buy,2.18
+IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,437.00,-0.18,14.00,43.90,50,38,0,21.42,,21.00,57.70,buy,8.92
+US,ADBE,Adobe Inc.,Technology,269.07,5.49,13.17,42.90,60,28,0,15.03,61.90,12.90,64.68,hold,1.21
+IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1829.10,-0.31,17.57,42.80,42,44,0,29.40,19.19,15.60,75.86,buy,-4.28
+US,CRM,"Salesforce, Inc.",Technology,248.77,2.89,43.30,42.60,55,32,0,22.76,19.38,10.80,61.65,buy,15.02
+US,PLTR,Palantir Technologies Inc.,Technology,198.21,-1.74,50.70,39.90,42,38,0,170.83,38.10,92.80,55.77,buy,4.14
+US,AMGN,Amgen Inc.,Healthcare,449.08,2.45,19.35,35.40,55,18,0,27.88,91.47,9.50,67.29,hold,-11.89
+US,LLY,Eli Lilly and Company,Healthcare,1312.51,3.29,9.60,32.70,38,28,0,44.06,102.29,47.70,71.36,buy,1.45
+US,ABBV,AbbVie Inc.,Healthcare,283.79,-0.35,10.46,32.20,50,16,0,80.17,,10.20,62.91,buy,-0.10
+US,TMO,Thermo Fisher Scientific Inc,Healthcare,683.41,-1.53,22.14,32.20,53,14,0,36.05,13.38,9.10,58.00,strong_buy,6.52
+US,SHOP,Shopify Inc.,Technology,170.22,-2.34,34.16,32.00,41,24,0,115.01,15.54,33.70,59.30,buy,3.10
+IN,TCS.NS,TATA CONSULTANCY SERV LT,Technology,2506.90,-0.87,11.77,31.50,33,30,0,17.57,45.57,11.20,73.15,buy,-4.34
+IN,HCLTECH.NS,HCL TECHNOLOGIES LTD,Technology,1421.70,-0.18,14.22,31.00,32,30,0,21.03,24.65,2.20,72.71,hold,-10.69
+US,KO,Coca-Cola Company (The),Consumer Defensive,94.62,2.10,12.56,30.00,43,18,0,28.42,42.05,6.70,71.94,buy,0.53
