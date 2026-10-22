@@ -1,27 +1,26 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
-IN,ICICIBANK.NS,ICICI BANK LTD.,Financial Services,1385.00,0.29,-3.87,44.90,39,50,0,17.90,16.49,15.80,55.74,strong_buy,27.62
-US,ADBE,Adobe Inc.,Technology,256.48,-0.10,13.94,44.70,55,36,0,14.32,61.90,12.90,57.97,hold,6.17
-US,ACN,Accenture plc,Technology,241.23,0.88,64.11,41.20,56,28,0,17.78,26.02,6.20,76.31,buy,-6.95
-US,MU,"Micron Technology, Inc.",Technology,914.90,2.10,-0.66,34.90,-9,74,0,12.30,88.26,379.30,40.65,strong_buy,70.57
-IN,TCS.NS,TATA CONSULTANCY SERV LT,Technology,2529.00,2.77,14.52,29.00,28,30,0,17.73,45.57,11.20,76.09,buy,-5.49
-IN,INFY.NS,INFOSYS LIMITED,Technology,1168.00,3.30,11.02,18.80,4,32,0,15.91,32.00,2.90,67.05,buy,1.31
-US,JPM,JP Morgan Chase & Co.,Financial Services,333.61,-0.49,-5.55,17.20,5,28,0,13.99,18.01,10.20,43.47,buy,11.68
-IN,WIPRO.NS,WIPRO LTD,Technology,189.17,3.86,8.44,13.20,-9,33,0,14.86,15.94,9.10,72.86,hold,-6.84
-US,GOOGL,Alphabet Inc.,Communication Services,333.58,-1.97,4.33,8.60,-34,46,0,16.74,48.68,24.20,39.42,strong_buy,29.01
-IN,ONGC.NS,OIL AND NATURAL GAS CORP.,Energy,225.62,0.28,-10.43,7.10,-32,42,0,6.52,,25.70,46.22,buy,29.83
-US,BKNG,Booking Holdings Inc. Common St,Consumer Cyclical,158.36,-3.39,-10.76,6.90,-35,44,0,17.56,,8.10,39.16,buy,47.39
-IN,SBIN.NS,STATE BANK OF INDIA,Financial Services,963.00,-1.10,-6.05,4.90,-30,36,0,10.32,15.18,10.30,45.42,strong_buy,30.36
-IN,COALINDIA.NS,COAL INDIA LTD,Energy,407.50,-1.02,-4.88,3.30,-44,45,0,8.05,,45.10,42.90,buy,15.75
-US,PEP,"Pepsico, Inc.",Consumer Defensive,134.93,0.68,-1.25,2.70,-2,7,0,16.97,52.19,5.60,61.72,hold,4.94
-US,GS,"Goldman Sachs Group, Inc. (The)",Financial Services,898.20,1.51,-15.36,2.30,-36,36,0,12.92,17.75,23.30,43.11,hold,15.58
-US,UBER,"Uber Technologies, Inc.",Technology,68.28,-0.96,3.54,2.20,-31,32,0,14.97,37.16,12.20,41.26,buy,47.72
-IN,BPCL.NS,BHARAT PETROLEUM CORP  LT,Energy,288.00,-2.14,-8.28,-2.10,-36,28,0,7.18,,34.40,38.32,buy,20.70
-IN,JSWSTEEL.NS,JSW STEEL LIMITED,Basic Materials,1222.90,-1.48,-3.47,-2.70,-26,18,0,12.07,,9.80,47.17,buy,13.14
-IN,HINDALCO.NS,HINDALCO  INDUSTRIES  LTD,Basic Materials,892.85,-0.84,-6.02,-3.60,-48,36,0,12.11,,32.10,37.00,buy,29.42
-US,LOW,"Lowe's Companies, Inc.",Consumer Cyclical,196.27,-1.14,-5.48,-4.90,-24,12,0,16.59,,8.30,55.47,buy,28.77
-IN,M&M.NS,MAHINDRA & MAHINDRA LTD,Consumer Cyclical,2889.00,-0.62,-9.02,-8.20,-35,16,0,17.59,,27.50,43.50,strong_buy,42.46
-IN,POWERGRID.NS,POWER GRID CORP. LTD.,Utilities,252.15,0.72,-12.84,-9.30,-33,12,0,14.75,,2.70,42.00,buy,26.42
-IN,VEDL.NS,VEDANTA LIMITED,Basic Materials,236.85,-2.61,-9.70,-10.30,-52,27,0,9.96,,-37.30,33.74,buy,32.53
-IN,SHRIRAMFIN.NS,SHRIRAM FINANCE LIMITED,Financial Services,904.95,-2.33,-14.53,-11.30,-58,30,0,15.98,18.50,42.80,35.65,strong_buy,32.42
-IN,NTPC.NS,NTPC LTD,Utilities,303.00,-1.94,-13.55,-12.90,-36,8,0,10.58,,7.80,29.73,strong_buy,40.54
-US,T,AT&T Inc.,Communication Services,21.82,-6.85,-9.59,-18.90,-50,9,0,7.20,18.34,2.30,31.28,buy,31.84
+US,ACN,Accenture plc,Technology,240.26,0.48,63.45,41.20,56,28,0,17.72,26.02,6.20,75.98,buy,-5.49
+US,ADBE,Adobe Inc.,Technology,255.06,-0.65,13.30,36.00,36,36,0,14.24,61.90,12.90,56.74,hold,6.76
+US,MU,"Micron Technology, Inc.",Technology,913.67,1.96,-0.79,34.90,-9,74,0,12.29,88.26,379.30,40.45,strong_buy,70.80
+IN,TCS.NS,TATA CONSULTANCY SERV LT,Technology,2502.20,-1.06,11.56,31.40,33,30,0,17.55,45.57,11.20,72.55,buy,-4.47
+IN,INFY.NS,INFOSYS LIMITED,Technology,1148.00,-1.71,9.60,21.30,9,32,0,15.64,32.00,2.90,62.65,buy,3.08
+US,JPM,JP Morgan Chase & Co.,Financial Services,335.19,-0.02,-5.10,19.80,10,28,0,14.06,18.01,10.20,45.41,buy,11.15
+IN,WIPRO.NS,WIPRO LTD,Technology,189.65,0.25,8.48,13.50,-9,33,0,14.90,15.94,9.10,73.18,hold,-7.08
+US,GOOGL,Alphabet Inc.,Communication Services,334.76,-1.62,4.70,8.70,-33,46,0,16.80,48.68,24.20,40.25,strong_buy,28.55
+US,BKNG,Booking Holdings Inc. Common St,Consumer Cyclical,158.38,-3.38,-10.75,6.90,-35,44,0,17.56,,8.10,39.19,buy,47.10
+IN,ONGC.NS,OIL AND NATURAL GAS CORP.,Energy,225.25,-0.16,-10.75,6.70,-33,42,0,6.51,,25.70,45.60,buy,30.05
+IN,SBIN.NS,STATE BANK OF INDIA,Financial Services,966.10,0.32,-4.59,5.30,-29,36,0,10.35,15.18,10.30,46.80,strong_buy,29.95
+US,GS,"Goldman Sachs Group, Inc. (The)",Financial Services,904.72,2.25,-14.75,5.00,-30,36,0,12.72,17.75,23.30,45.59,hold,14.75
+IN,COALINDIA.NS,COAL INDIA LTD,Energy,397.65,-2.42,-6.88,4.90,-40,45,0,7.85,,45.10,36.60,buy,18.61
+US,PEP,"Pepsico, Inc.",Consumer Defensive,134.70,0.51,-1.42,2.60,-2,7,0,16.94,52.19,5.60,61.25,hold,5.12
+US,UBER,"Uber Technologies, Inc.",Technology,67.62,-1.91,2.55,-1.00,-38,32,0,14.83,37.16,12.20,39.31,buy,49.15
+IN,JSWSTEEL.NS,JSW STEEL LIMITED,Basic Materials,1215.40,-2.09,-4.07,-2.90,-26,18,0,11.99,,9.80,45.67,buy,13.84
+IN,HINDALCO.NS,HINDALCO  INDUSTRIES  LTD,Basic Materials,886.50,-1.55,-6.68,-3.90,-49,36,0,11.92,,32.10,35.73,buy,30.14
+US,LOW,"Lowe's Companies, Inc.",Consumer Cyclical,196.56,-0.99,-5.34,-4.80,-24,12,0,16.62,,8.30,55.92,buy,28.58
+IN,M&M.NS,MAHINDRA & MAHINDRA LTD,Consumer Cyclical,2849.80,-1.36,-11.76,-8.80,-37,16,0,17.35,,27.50,40.20,strong_buy,44.42
+IN,SHRIRAMFIN.NS,SHRIRAM FINANCE LIMITED,Financial Services,896.30,-0.96,-12.62,-8.90,-53,30,0,15.83,18.50,42.80,34.38,strong_buy,33.70
+IN,VEDL.NS,VEDANTA LIMITED,Basic Materials,232.45,-1.86,-12.15,-10.40,-52,27,0,9.78,,-37.30,31.54,buy,35.04
+IN,NTPC.NS,NTPC LTD,Utilities,300.80,-0.73,-13.71,-13.30,-37,8,0,10.51,,7.80,28.17,strong_buy,41.56
+IN,BPCL.NS,BHARAT PETROLEUM CORP  LT,Energy,285.85,-0.75,-7.75,-14.50,-62,28,0,7.13,,34.40,36.56,buy,21.61
+IN,POWERGRID.NS,POWER GRID CORP. LTD.,Utilities,247.25,-1.94,-14.68,-15.40,-46,12,0,14.46,,2.70,36.20,buy,28.92
+US,T,AT&T Inc.,Communication Services,21.91,-6.45,-9.20,-17.80,-58,18,0,11.72,18.34,2.30,31.77,buy,30.47

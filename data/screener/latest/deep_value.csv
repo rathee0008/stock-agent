@@ -1,19 +1,19 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
-US,MU,"Micron Technology, Inc.",Technology,914.90,2.10,-0.66,34.90,-9,74,0,12.30,88.26,379.30,40.65,strong_buy,70.57
-US,JPM,JP Morgan Chase & Co.,Financial Services,333.61,-0.49,-5.55,17.20,5,28,0,13.99,18.01,10.20,43.47,buy,11.68
-IN,ONGC.NS,OIL AND NATURAL GAS CORP.,Energy,225.62,0.28,-10.43,7.10,-32,42,0,6.52,,25.70,46.22,buy,29.83
-IN,AXISBANK.NS,AXIS BANK LIMITED,Financial Services,1210.00,-2.10,-2.29,6.70,-51,58,0,12.63,13.88,21.10,41.20,strong_buy,30.96
-IN,SBIN.NS,STATE BANK OF INDIA,Financial Services,963.00,-1.10,-6.05,4.90,-30,36,0,10.32,15.18,10.30,45.42,strong_buy,30.36
-IN,COALINDIA.NS,COAL INDIA LTD,Energy,407.50,-1.02,-4.88,3.30,-44,45,0,8.05,,45.10,42.90,buy,15.75
-US,GS,"Goldman Sachs Group, Inc. (The)",Financial Services,898.20,1.51,-15.36,2.30,-36,36,0,12.92,17.75,23.30,43.11,hold,15.58
-US,UBER,"Uber Technologies, Inc.",Technology,68.28,-0.96,3.54,2.20,-31,32,0,14.97,37.16,12.20,41.26,buy,47.72
-US,WFC,Wells Fargo & Company,Financial Services,82.29,0.12,-4.65,1.80,-23,24,0,11.56,12.91,0.40,47.31,buy,18.20
-IN,BPCL.NS,BHARAT PETROLEUM CORP  LT,Energy,288.00,-2.14,-8.28,-2.10,-36,28,0,7.18,,34.40,38.32,buy,20.70
-US,BAC,Bank of America Corporation,Financial Services,50.92,0.54,-17.95,-2.30,-34,26,0,12.15,10.73,7.10,26.56,strong_buy,24.00
-IN,JSWSTEEL.NS,JSW STEEL LIMITED,Basic Materials,1222.90,-1.48,-3.47,-2.70,-26,18,0,12.07,,9.80,47.17,buy,13.14
-IN,HINDALCO.NS,HINDALCO  INDUSTRIES  LTD,Basic Materials,892.85,-0.84,-6.02,-3.60,-48,36,0,12.11,,32.10,37.00,buy,29.42
-IN,POWERGRID.NS,POWER GRID CORP. LTD.,Utilities,252.15,0.72,-12.84,-9.30,-33,12,0,14.75,,2.70,42.00,buy,26.42
-IN,VEDL.NS,VEDANTA LIMITED,Basic Materials,236.85,-2.61,-9.70,-10.30,-52,27,0,9.96,,-37.30,33.74,buy,32.53
-IN,NTPC.NS,NTPC LTD,Utilities,303.00,-1.94,-13.55,-12.90,-36,8,0,10.58,,7.80,29.73,strong_buy,40.54
-US,T,AT&T Inc.,Communication Services,21.82,-6.85,-9.59,-18.90,-50,9,0,7.20,18.34,2.30,31.28,buy,31.84
-US,VZ,Verizon Communications Inc.,Communication Services,43.12,-3.20,-7.04,-23.00,-50,1,0,11.23,15.84,-0.70,36.54,buy,18.85
+US,MU,"Micron Technology, Inc.",Technology,913.67,1.96,-0.79,34.90,-9,74,0,12.29,88.26,379.30,40.45,strong_buy,70.80
+US,JPM,JP Morgan Chase & Co.,Financial Services,335.19,-0.02,-5.10,19.80,10,28,0,14.06,18.01,10.20,45.41,buy,11.15
+IN,AXISBANK.NS,AXIS BANK LIMITED,Financial Services,1207.30,-0.22,-1.28,9.50,-45,58,0,12.60,13.88,21.10,40.66,strong_buy,31.26
+IN,ONGC.NS,OIL AND NATURAL GAS CORP.,Energy,225.25,-0.16,-10.75,6.70,-33,42,0,6.51,,25.70,45.60,buy,30.05
+IN,SBIN.NS,STATE BANK OF INDIA,Financial Services,966.10,0.32,-4.59,5.30,-29,36,0,10.35,15.18,10.30,46.80,strong_buy,29.95
+US,GS,"Goldman Sachs Group, Inc. (The)",Financial Services,904.72,2.25,-14.75,5.00,-30,36,0,12.72,17.75,23.30,45.59,hold,14.75
+IN,COALINDIA.NS,COAL INDIA LTD,Energy,397.65,-2.42,-6.88,4.90,-40,45,0,7.85,,45.10,36.60,buy,18.61
+US,WFC,Wells Fargo & Company,Financial Services,82.42,0.27,-4.51,1.90,-23,24,0,11.62,12.91,0.40,47.77,buy,18.02
+US,UBER,"Uber Technologies, Inc.",Technology,67.62,-1.91,2.55,-1.00,-38,32,0,14.83,37.16,12.20,39.31,buy,49.15
+US,BAC,Bank of America Corporation,Financial Services,50.78,0.28,-18.16,-2.40,-34,26,0,12.12,10.73,7.10,25.33,strong_buy,24.33
+IN,JSWSTEEL.NS,JSW STEEL LIMITED,Basic Materials,1215.40,-2.09,-4.07,-2.90,-26,18,0,11.99,,9.80,45.67,buy,13.84
+IN,HINDALCO.NS,HINDALCO  INDUSTRIES  LTD,Basic Materials,886.50,-1.55,-6.68,-3.90,-49,36,0,11.92,,32.10,35.73,buy,30.14
+IN,VEDL.NS,VEDANTA LIMITED,Basic Materials,232.45,-1.86,-12.15,-10.40,-52,27,0,9.78,,-37.30,31.54,buy,35.04
+IN,NTPC.NS,NTPC LTD,Utilities,300.80,-0.73,-13.71,-13.30,-37,8,0,10.51,,7.80,28.17,strong_buy,41.56
+US,VZ,Verizon Communications Inc.,Communication Services,43.56,-2.20,-6.08,-14.10,-31,1,0,11.34,15.84,-0.70,38.25,buy,17.63
+IN,BPCL.NS,BHARAT PETROLEUM CORP  LT,Energy,285.85,-0.75,-7.75,-14.50,-62,28,0,7.13,,34.40,36.56,buy,21.61
+IN,POWERGRID.NS,POWER GRID CORP. LTD.,Utilities,247.25,-1.94,-14.68,-15.40,-46,12,0,14.46,,2.70,36.20,buy,28.92
+US,T,AT&T Inc.,Communication Services,21.91,-6.45,-9.20,-17.80,-58,18,0,11.72,18.34,2.30,31.77,buy,30.47

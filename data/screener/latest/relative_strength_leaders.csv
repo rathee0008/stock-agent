@@ -1,15 +1,15 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
-US,CVX,Chevron Corporation,Energy,226.27,0.25,16.16,48.40,45,51,0,21.78,12.23,53.50,71.24,buy,1.94
-US,MSFT,Microsoft Corporation,Technology,531.75,-0.02,39.31,45.80,43,48,0,29.62,34.04,17.70,58.25,strong_buy,13.00
-US,SHOP,Shopify Inc.,Technology,177.79,2.48,56.30,43.30,65,24,0,120.03,15.54,33.70,66.37,buy,-1.29
-US,COP,ConocoPhillips,Energy,145.94,-0.01,21.35,43.00,49,38,0,19.33,14.18,35.50,71.99,buy,3.65
-IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1834.70,3.13,17.56,42.80,41,44,0,29.49,19.19,15.60,76.82,buy,-4.58
-US,CRM,"Salesforce, Inc.",Technology,243.10,0.28,48.54,42.50,54,32,0,22.25,19.38,10.80,57.53,buy,17.70
-US,ACN,Accenture plc,Technology,241.23,0.88,64.11,41.20,56,28,0,17.78,26.02,6.20,76.31,buy,-6.95
-US,PLTR,Palantir Technologies Inc.,Technology,199.51,3.59,62.31,40.60,44,38,0,172.00,38.10,92.80,57.66,buy,3.47
-US,META,"Meta Platforms, Inc.",Communication Services,711.68,2.51,19.57,40.20,41,40,0,26.81,29.85,28.00,51.13,strong_buy,14.92
-US,TMO,Thermo Fisher Scientific Inc,Healthcare,700.96,1.98,23.35,40.20,61,22,0,37.73,13.51,10.50,65.27,strong_buy,-1.48
-US,AMGN,Amgen Inc.,Healthcare,435.28,-0.83,15.75,34.40,53,18,0,27.05,91.47,9.50,60.84,hold,-9.26
-US,MA,Mastercard Incorporated,Financial Services,623.72,0.53,15.58,30.10,46,16,0,34.08,241.20,14.10,76.60,strong_buy,8.10
-IN,HCLTECH.NS,HCL TECHNOLOGIES LTD,Technology,1424.20,3.21,15.11,28.80,28,30,0,21.07,24.65,2.20,73.33,hold,-10.85
-US,V,Visa Inc.,Financial Services,409.17,0.64,15.02,27.90,46,12,0,34.81,61.19,14.40,76.83,strong_buy,3.59
+US,CVX,Chevron Corporation,Energy,226.78,0.47,16.42,48.40,46,51,0,21.83,12.23,53.50,71.70,buy,1.71
+US,MSFT,Microsoft Corporation,Technology,532.95,0.20,39.63,45.80,43,48,0,29.69,34.04,17.70,58.93,strong_buy,12.91
+US,TMO,Thermo Fisher Scientific Inc,Healthcare,694.02,0.97,22.13,43.60,68,22,0,36.99,13.51,10.50,63.33,strong_buy,1.83
+US,COP,ConocoPhillips,Energy,145.67,-0.19,21.13,42.90,48,38,0,19.29,14.18,35.50,71.20,buy,3.84
+US,CRM,"Salesforce, Inc.",Technology,241.78,-0.27,47.73,42.50,54,32,0,22.12,19.38,10.80,56.31,buy,18.35
+IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1795.60,-2.13,15.41,42.20,40,44,0,28.86,19.19,15.60,70.55,buy,-2.50
+US,ACN,Accenture plc,Technology,240.26,0.48,63.45,41.20,56,28,0,17.72,26.02,6.20,75.98,buy,-5.49
+US,PLTR,Palantir Technologies Inc.,Technology,201.72,4.74,64.11,40.80,44,38,0,173.90,38.10,92.80,59.16,buy,2.33
+US,SHOP,Shopify Inc.,Technology,174.29,0.47,53.22,40.50,59,24,0,117.76,15.54,33.70,64.17,buy,0.69
+US,AMGN,Amgen Inc.,Healthcare,438.34,-0.14,16.57,37.40,59,18,0,27.23,91.47,9.50,62.97,hold,-9.73
+US,MA,Mastercard Incorporated,Financial Services,622.62,0.35,15.37,30.00,46,16,0,34.25,241.20,14.10,76.24,strong_buy,8.40
+US,IBM,International Business Machines,Technology,251.46,3.94,17.40,29.30,51,10,0,21.46,34.46,1.10,69.87,buy,-3.33
+IN,PERSISTENT.NS,PERSISTENT SYSTEMS LTD,Technology,5762.00,-1.65,15.20,27.90,48,10,0,50.40,22.92,30.30,55.81,hold,-0.00
+US,PFE,"Pfizer, Inc.",Healthcare,29.85,-0.86,21.64,22.80,58,-8,0,39.28,5.01,2.60,67.73,buy,-1.98
