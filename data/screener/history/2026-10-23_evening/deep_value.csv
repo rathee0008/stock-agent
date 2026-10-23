@@ -1,0 +1,20 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+US,MU,"Micron Technology, Inc.",Technology,886.41,3.49,8.03,35.60,-7,74,0,11.93,88.26,379.30,39.54,strong_buy,76.21
+US,JPM,JP Morgan Chase & Co.,Financial Services,333.07,-1.03,-6.79,17.20,5,28,0,13.97,18.01,10.20,42.87,buy,11.77
+IN,AXISBANK.NS,AXIS BANK LIMITED,Financial Services,1217.50,0.45,-0.80,10.10,-44,58,0,12.70,13.88,21.10,43.38,strong_buy,30.16
+IN,ONGC.NS,OIL AND NATURAL GAS CORP.,Energy,227.50,1.11,-8.55,6.90,-33,42,0,6.58,,25.70,50.04,buy,28.76
+US,NEE,"NextEra Energy, Inc.",Utilities,81.60,-0.37,-8.61,6.60,-4,16,0,14.70,14.06,1.60,60.54,buy,15.91
+US,BAC,Bank of America Corporation,Financial Services,50.87,-0.42,-18.77,6.30,-16,26,0,12.14,10.73,7.10,27.39,strong_buy,23.77
+IN,COALINDIA.NS,COAL INDIA LTD,Energy,397.45,-1.27,-7.01,4.40,-41,45,0,7.95,,45.10,36.28,buy,18.67
+IN,SBIN.NS,STATE BANK OF INDIA,Financial Services,958.60,-1.18,-5.56,3.00,-34,36,0,10.27,15.18,10.30,44.15,strong_buy,30.96
+US,GS,"Goldman Sachs Group, Inc. (The)",Financial Services,885.49,-0.65,-14.31,2.60,-35,36,0,12.73,17.75,23.30,39.93,hold,17.13
+US,WFC,Wells Fargo & Company,Financial Services,82.66,-0.42,-4.85,2.30,-22,24,0,11.66,12.91,0.40,48.67,buy,17.68
+IN,VEDL.NS,VEDANTA LIMITED,Basic Materials,226.50,-3.56,-14.42,-4.30,-39,27,0,9.53,,-37.30,28.73,buy,38.58
+IN,JSWSTEEL.NS,JSW STEEL LIMITED,Basic Materials,1185.50,-2.83,-4.46,-5.90,-33,18,0,11.72,,9.80,39.69,buy,16.71
+US,UBER,"Uber Technologies, Inc.",Technology,67.81,-1.82,-4.14,-6.10,-49,32,0,14.87,37.16,12.20,41.53,buy,48.73
+IN,BPCL.NS,BHARAT PETROLEUM CORP  LT,Energy,281.95,-1.74,-9.09,-8.10,-49,28,0,7.03,,34.40,33.50,buy,23.29
+IN,NTPC.NS,NTPC LTD,Utilities,298.00,-1.52,-14.17,-13.60,-38,8,0,10.42,,7.80,26.20,strong_buy,43.01
+IN,HINDALCO.NS,HINDALCO  INDUSTRIES  LTD,Basic Materials,869.85,-1.78,-7.74,-14.30,-71,36,0,11.80,,32.10,32.29,buy,32.44
+US,VZ,Verizon Communications Inc.,Communication Services,44.42,-1.73,-7.82,-14.80,-32,1,0,11.58,15.84,-0.70,44.34,buy,15.36
+IN,POWERGRID.NS,POWER GRID CORP. LTD.,Utilities,247.40,-0.40,-14.16,-15.40,-46,12,0,14.47,,2.70,36.27,buy,28.84
+US,T,AT&T Inc.,Communication Services,21.47,-5.61,-12.96,-22.20,-48,1,0,11.48,11.61,5.30,33.44,buy,29.53

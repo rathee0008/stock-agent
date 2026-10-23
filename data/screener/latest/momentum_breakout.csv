@@ -1,14 +1,12 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
-IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1794.20,-1.91,15.05,49.30,55,44,0,28.84,19.19,15.60,69.96,buy,-2.42
-US,CVX,Chevron Corporation,Energy,226.68,-0.04,19.31,48.10,45,51,0,21.82,12.23,53.50,71.46,buy,1.76
-US,ADBE,Adobe Inc.,Technology,270.55,6.07,13.80,46.90,68,28,0,15.11,61.90,12.90,65.36,hold,0.65
-US,COP,ConocoPhillips,Energy,145.63,-0.03,26.00,42.40,47,38,0,19.29,14.18,35.50,71.07,buy,3.87
-US,XOM,ExxonMobil Holdings Corporation,Energy,178.23,0.08,15.16,41.90,44,40,0,22.94,12.58,44.10,70.35,buy,0.66
-US,CRM,"Salesforce, Inc.",Technology,250.29,3.52,44.18,39.90,49,32,0,22.13,19.38,10.80,62.64,buy,14.32
-US,AMGN,Amgen Inc.,Healthcare,447.28,2.04,18.88,35.30,55,18,0,27.78,91.47,9.50,66.64,hold,-11.31
-US,ABBV,AbbVie Inc.,Healthcare,285.19,0.14,11.01,35.20,57,16,0,80.56,,10.20,64.75,buy,-0.14
-IN,HCLTECH.NS,HCL TECHNOLOGIES LTD,Technology,1426.00,0.30,12.20,33.10,37,30,0,21.10,24.65,2.20,73.13,hold,-10.96
-US,LLY,Eli Lilly and Company,Healthcare,1306.69,2.83,9.12,32.50,38,28,0,43.86,102.29,47.70,70.72,buy,1.90
-US,SHOP,Shopify Inc.,Technology,168.81,-3.14,33.05,32.00,41,24,0,114.06,15.54,33.70,57.78,buy,4.10
-IN,TCS.NS,TATA CONSULTANCY SERV LT,Technology,2534.40,0.21,13.00,31.90,34,30,0,17.61,45.57,11.20,76.33,buy,-5.38
-US,KO,Coca-Cola Company (The),Consumer Defensive,95.34,2.87,13.41,30.30,44,18,0,28.63,42.05,6.70,73.58,buy,-0.23
+US,CVX,Chevron Corporation,Energy,233.15,2.85,24.29,49.60,48,51,0,22.44,12.23,53.50,76.85,buy,-1.07
+IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1790.00,-2.14,14.78,49.20,55,44,0,28.77,19.19,15.60,69.31,buy,-2.19
+US,XOM,ExxonMobil Holdings Corporation,Energy,183.37,2.88,19.82,43.10,47,40,0,23.60,12.58,44.10,76.27,buy,-2.16
+US,CRM,"Salesforce, Inc.",Technology,245.98,-1.72,35.52,42.40,54,32,0,21.75,19.38,10.80,58.05,buy,16.33
+US,ACN,Accenture plc,Technology,247.48,-4.35,50.30,41.20,56,28,0,18.27,26.02,6.20,70.93,buy,-8.25
+US,AMGN,Amgen Inc.,Healthcare,443.42,-0.86,12.80,37.80,60,18,0,27.55,91.47,9.50,63.70,hold,-10.54
+US,ABBV,AbbVie Inc.,Healthcare,285.10,-0.03,8.32,35.40,57,16,0,80.54,,10.20,64.60,buy,-0.11
+US,SHOP,Shopify Inc.,Technology,169.58,0.46,30.17,34.60,47,24,0,114.58,15.54,33.70,58.41,buy,3.63
+US,MA,Mastercard Incorporated,Financial Services,621.66,-1.82,10.47,33.20,52,16,0,34.20,241.20,14.10,68.36,strong_buy,8.57
+IN,HCLTECH.NS,HCL TECHNOLOGIES LTD,Technology,1422.20,0.04,11.90,33.00,36,30,0,21.04,24.65,2.20,72.75,hold,-10.72
+IN,TCS.NS,TATA CONSULTANCY SERV LT,Technology,2530.00,0.92,12.23,32.00,34,30,0,17.73,45.57,11.20,74.27,buy,-5.22

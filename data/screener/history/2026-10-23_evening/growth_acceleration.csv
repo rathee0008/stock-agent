@@ -1,0 +1,9 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+US,LLY,Eli Lilly and Company,Healthcare,1282.48,-1.85,5.06,41.30,56,28,0,43.05,102.29,47.70,64.32,buy,3.83
+US,PLTR,Palantir Technologies Inc.,Technology,196.70,0.26,59.23,37.40,37,38,0,174.07,38.10,92.80,54.38,buy,5.04
+US,TXN,Texas Instruments Incorporated,Technology,284.17,1.67,2.56,36.20,25,46,0,36.87,39.72,27.70,54.67,buy,18.54
+US,SHOP,Shopify Inc.,Technology,169.58,0.46,30.17,34.60,47,24,0,114.58,15.54,33.70,58.41,buy,3.63
+IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,430.50,-1.49,11.89,32.50,26,38,0,21.10,,21.00,51.74,buy,10.57
+IN,PERSISTENT.NS,PERSISTENT SYSTEMS LTD,Technology,5727.50,-0.23,10.13,22.90,37,10,0,50.10,22.92,30.30,54.35,hold,0.60
+US,ISRG,"Intuitive Surgical, Inc.",Healthcare,456.42,2.83,26.15,20.00,29,12,0,55.20,17.93,21.70,72.09,buy,5.20
+IN,ETERNAL.NS,ETERNAL LIMITED,Consumer Cyclical,317.40,4.25,13.36,10.90,13,9,0,598.87,1.59,77.60,47.44,buy,19.79
