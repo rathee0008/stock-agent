@@ -1,0 +1,37 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1794.20,-1.91,15.05,49.30,55,44,0,28.84,19.19,15.60,69.96,buy,-2.42
+US,BLK,"BlackRock, Inc.",Financial Services,1137.29,-1.07,7.08,48.40,47,50,0,25.89,,19.10,61.19,strong_buy,18.79
+US,ADBE,Adobe Inc.,Technology,270.55,6.07,13.80,46.90,68,28,0,15.11,61.90,12.90,65.36,hold,0.65
+IN,ICICIBANK.NS,ICICI BANK LTD.,Financial Services,1390.00,-0.61,-2.99,45.20,40,50,0,16.90,16.49,15.80,56.15,strong_buy,27.25
+US,MSFT,Microsoft Corporation,Technology,521.08,-2.23,33.92,43.00,37,48,0,29.03,34.04,17.70,50.50,strong_buy,15.48
+US,CRM,"Salesforce, Inc.",Technology,250.29,3.52,44.18,39.90,49,32,0,22.13,19.38,10.80,62.64,buy,14.32
+US,AAPL,Apple Inc.,Technology,348.22,1.23,3.36,39.70,60,22,0,39.93,148.75,16.40,64.75,buy,-5.71
+US,AMGN,Amgen Inc.,Healthcare,447.28,2.04,18.88,35.30,55,18,0,27.78,91.47,9.50,66.64,hold,-11.31
+IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,431.05,-1.36,12.03,32.60,26,38,0,21.13,,21.00,52.19,buy,10.43
+US,TXN,Texas Instruments Incorporated,Technology,279.50,-1.81,0.03,31.20,15,46,0,36.25,35.18,22.80,50.38,buy,20.52
+US,NVDA,NVIDIA Corporation,Technology,212.21,-4.40,7.99,28.90,-6,60,0,26.83,117.21,105.90,39.06,strong_buy,55.01
+IN,INFY.NS,INFOSYS LIMITED,Technology,1163.55,0.88,11.78,26.50,20,32,0,15.85,32.00,2.90,65.05,buy,1.70
+US,AMZN,"Amazon.com, Inc.",Consumer Cyclical,250.38,-4.57,8.21,24.80,12,36,0,20.14,30.56,19.60,45.11,strong_buy,32.49
+US,META,"Meta Platforms, Inc.",Communication Services,648.85,-6.98,9.26,21.70,1,40,0,22.14,29.85,28.00,36.83,strong_buy,30.00
+US,JPM,JP Morgan Chase & Co.,Financial Services,336.54,0.40,-5.52,20.00,11,28,0,14.12,18.01,10.20,47.57,buy,10.61
+US,CSCO,"Cisco Systems, Inc.",Technology,104.89,-2.21,-8.45,17.10,-4,36,0,31.50,27.32,17.60,37.51,buy,29.81
+IN,HAL.NS,HINDUSTAN AERONAUTICS LTD,Industrials,4754.60,-2.47,3.96,15.90,14,18,0,34.11,,14.40,46.76,buy,17.41
+IN,BHARTIARTL.NS,BHARTI AIRTEL LIMITED,Communication Services,1881.30,-0.72,-0.89,14.50,8,20,0,39.26,20.15,18.40,56.66,strong_buy,23.28
+IN,ADANIPORTS.NS,ADANI PORT & SEZ LTD,Industrials,1704.40,-2.61,-3.61,10.20,-8,26,0,29.09,,18.60,42.74,strong_buy,21.65
+IN,AXISBANK.NS,AXIS BANK LIMITED,Financial Services,1211.90,-0.01,-1.25,9.90,-44,58,0,12.63,13.88,21.10,41.74,strong_buy,30.76
+US,QCOM,QUALCOMM Incorporated,Technology,172.83,-2.88,1.64,8.70,-4,20,0,20.00,33.75,-4.00,44.49,hold,13.29
+IN,ONGC.NS,OIL AND NATURAL GAS CORP.,Energy,225.04,0.02,-9.54,6.60,-33,42,0,6.50,,25.70,45.27,buy,30.17
+IN,COALINDIA.NS,COAL INDIA LTD,Energy,395.70,-1.70,-7.42,4.20,-42,45,0,7.91,,45.10,35.30,buy,19.20
+IN,SBIN.NS,STATE BANK OF INDIA,Financial Services,959.00,-1.13,-5.52,3.00,-34,36,0,10.27,15.18,10.30,44.29,strong_buy,30.91
+US,BKNG,Booking Holdings Inc. Common St,Consumer Cyclical,161.10,1.72,-13.75,2.60,-44,44,0,17.86,,8.10,43.73,buy,44.61
+US,WFC,Wells Fargo & Company,Financial Services,83.01,0.72,-4.88,2.50,-22,24,0,11.63,12.91,0.40,50.00,buy,17.18
+US,GS,"Goldman Sachs Group, Inc. (The)",Financial Services,891.30,-1.48,-14.97,2.40,-35,36,0,12.82,17.75,23.30,41.57,hold,16.37
+IN,EICHERMOT.NS,EICHER MOTORS LTD,Consumer Cyclical,6993.50,-1.28,-8.32,2.40,-33,34,0,33.30,,31.50,39.58,buy,19.03
+US,UBER,"Uber Technologies, Inc.",Technology,69.07,2.14,1.31,1.80,-23,24,0,15.15,37.16,12.20,45.47,buy,46.02
+US,ORCL,Oracle Corporation,Technology,125.54,-2.78,4.70,1.50,-46,44,0,19.68,41.19,29.60,38.39,buy,88.41
+IN,BAJAJ-AUTO.NS,BAJAJ AUTO LIMITED,Consumer Cyclical,10045.00,-1.08,-9.75,0.40,-33,30,0,23.89,,64.00,36.83,buy,16.29
+IN,SUNPHARMA.NS,SUN PHARMACEUTICAL IND L,Healthcare,1743.20,-0.84,-10.20,0.20,-31,28,0,34.58,,10.50,36.32,buy,24.73
+IN,BAJFINANCE.NS,BAJAJ FINANCE LIMITED,Financial Services,924.75,-1.84,-8.69,-3.60,-46,34,0,26.09,19.03,26.70,37.28,buy,25.95
+IN,JSWSTEEL.NS,JSW STEEL LIMITED,Basic Materials,1187.10,-2.70,-4.33,-5.90,-33,18,0,11.74,,9.80,39.96,buy,16.55
+IN,M&M.NS,MAHINDRA & MAHINDRA LTD,Consumer Cyclical,2827.50,-1.28,-10.56,-8.90,-37,16,0,17.22,,27.50,38.33,strong_buy,45.55
+US,NFLX,"Netflix, Inc.",Communication Services,67.05,3.09,-4.76,-9.70,-54,30,0,19.38,53.46,11.80,39.59,buy,26.52

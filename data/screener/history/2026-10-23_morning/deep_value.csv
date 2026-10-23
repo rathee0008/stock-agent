@@ -1,0 +1,18 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+US,MU,"Micron Technology, Inc.",Technology,856.49,-6.26,-4.86,34.80,-9,74,0,11.52,88.26,379.30,34.65,strong_buy,82.36
+US,JPM,JP Morgan Chase & Co.,Financial Services,336.54,0.40,-5.52,20.00,11,28,0,14.12,18.01,10.20,47.57,buy,10.61
+IN,AXISBANK.NS,AXIS BANK LIMITED,Financial Services,1211.90,-0.01,-1.25,9.90,-44,58,0,12.63,13.88,21.10,41.74,strong_buy,30.76
+IN,ONGC.NS,OIL AND NATURAL GAS CORP.,Energy,225.04,0.02,-9.54,6.60,-33,42,0,6.50,,25.70,45.27,buy,30.17
+US,NEE,"NextEra Energy, Inc.",Utilities,81.90,4.62,-7.80,5.20,-5,14,0,14.76,11.68,12.40,62.12,buy,15.48
+IN,COALINDIA.NS,COAL INDIA LTD,Energy,395.70,-1.70,-7.42,4.20,-42,45,0,7.91,,45.10,35.30,buy,19.20
+IN,SBIN.NS,STATE BANK OF INDIA,Financial Services,959.00,-1.13,-5.52,3.00,-34,36,0,10.27,15.18,10.30,44.29,strong_buy,30.91
+US,WFC,Wells Fargo & Company,Financial Services,83.01,0.72,-4.88,2.50,-22,24,0,11.63,12.91,0.40,50.00,buy,17.18
+US,GS,"Goldman Sachs Group, Inc. (The)",Financial Services,891.30,-1.48,-14.97,2.40,-35,36,0,12.82,17.75,23.30,41.57,hold,16.37
+US,BAC,Bank of America Corporation,Financial Services,51.08,0.59,-17.79,-2.10,-34,26,0,12.19,10.73,7.10,28.20,strong_buy,23.25
+IN,VEDL.NS,VEDANTA LIMITED,Basic Materials,225.40,-4.02,-14.83,-4.40,-40,27,0,9.48,,-37.30,28.28,buy,39.26
+IN,JSWSTEEL.NS,JSW STEEL LIMITED,Basic Materials,1187.10,-2.70,-4.33,-5.90,-33,18,0,11.74,,9.80,39.96,buy,16.55
+IN,BPCL.NS,BHARAT PETROLEUM CORP  LT,Energy,280.10,-2.39,-9.69,-8.40,-49,28,0,6.98,,34.40,32.24,buy,24.10
+US,VZ,Verizon Communications Inc.,Communication Services,45.20,3.76,-4.48,-11.30,-25,1,0,11.77,15.84,-0.70,47.89,buy,13.36
+IN,NTPC.NS,NTPC LTD,Utilities,295.20,-2.45,-14.98,-13.80,-38,8,0,10.33,,7.80,24.55,strong_buy,44.37
+IN,HINDALCO.NS,HINDALCO  INDUSTRIES  LTD,Basic Materials,867.70,-2.82,-9.20,-14.20,-71,36,0,11.67,,32.10,32.13,buy,32.77
+IN,POWERGRID.NS,POWER GRID CORP. LTD.,Utilities,244.75,-1.47,-15.08,-24.20,-65,12,0,14.31,,2.70,33.56,buy,30.24
