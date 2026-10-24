@@ -1,41 +1,42 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
 IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1790.00,-2.14,14.78,49.20,55,44,0,28.77,19.19,15.60,69.31,buy,-2.19
-US,ADBE,Adobe Inc.,Technology,264.72,-2.15,6.24,47.80,61,36,0,14.78,61.90,12.90,60.48,hold,2.87
-US,BLK,"BlackRock, Inc.",Financial Services,1125.79,-1.01,2.57,47.70,45,50,0,25.60,,19.10,57.39,strong_buy,20.00
-US,MSFT,Microsoft Corporation,Technology,525.12,0.78,33.50,43.20,38,48,0,29.25,34.04,17.70,52.97,strong_buy,14.59
-US,CRM,"Salesforce, Inc.",Technology,245.98,-1.72,35.52,42.40,54,32,0,21.75,19.38,10.80,58.05,buy,16.33
-US,LLY,Eli Lilly and Company,Healthcare,1282.48,-1.85,5.06,41.30,56,28,0,43.05,102.29,47.70,64.32,buy,3.83
-US,UNP,Union Pacific Corporation,Industrials,292.86,-1.76,-0.54,36.40,44,30,0,22.85,38.75,15.30,61.64,buy,12.27
-US,TXN,Texas Instruments Incorporated,Technology,284.17,1.67,2.56,36.20,25,46,0,36.87,39.72,27.70,54.67,buy,18.54
-US,MU,"Micron Technology, Inc.",Technology,886.41,3.49,8.03,35.60,-7,74,0,11.93,88.26,379.30,39.54,strong_buy,76.21
-US,META,"Meta Platforms, Inc.",Communication Services,645.97,-0.44,8.86,35.00,7,60,0,22.04,32.26,26.10,36.31,strong_buy,30.58
+US,ADBE,Adobe Inc.,Technology,263.82,-2.49,5.88,47.60,61,36,0,14.73,61.90,12.90,59.79,hold,3.22
+US,BLK,"BlackRock, Inc.",Financial Services,1118.25,-1.67,1.89,47.40,44,50,0,25.46,,19.10,55.15,strong_buy,20.81
+US,MSFT,Microsoft Corporation,Technology,524.51,0.66,33.34,43.20,38,48,0,29.22,34.04,17.70,52.61,strong_buy,14.72
+US,CRM,"Salesforce, Inc.",Technology,248.57,-0.69,36.95,42.60,54,32,0,22.74,19.38,10.80,60.73,buy,15.11
+US,TXN,Texas Instruments Incorporated,Technology,284.69,1.86,2.75,38.60,30,46,0,36.92,39.72,27.70,55.11,buy,18.33
+US,LLY,Eli Lilly and Company,Healthcare,1273.46,-2.54,4.33,38.20,50,28,0,42.75,102.29,47.70,62.22,buy,4.56
+US,UNP,Union Pacific Corporation,Industrials,292.87,-1.75,-0.54,36.40,44,30,0,22.84,38.75,15.30,61.66,buy,12.69
+US,MU,"Micron Technology, Inc.",Technology,877.55,2.46,6.95,35.50,-8,74,0,11.81,88.26,379.30,38.17,strong_buy,77.99
+US,META,"Meta Platforms, Inc.",Communication Services,642.62,-0.96,8.29,34.80,6,60,0,21.92,32.26,26.10,35.73,strong_buy,31.24
 IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,430.50,-1.49,11.89,32.50,26,38,0,21.10,,21.00,51.74,buy,10.57
-US,NVDA,NVIDIA Corporation,Technology,212.88,0.32,8.06,29.30,-5,60,0,26.91,117.21,105.90,39.88,strong_buy,54.53
-US,INTU,Intuit Inc.,Technology,347.02,-2.22,10.87,25.50,14,36,0,21.08,23.60,13.70,66.36,buy,17.26
-US,CSCO,"Cisco Systems, Inc.",Technology,106.44,1.48,-7.90,17.40,-4,36,0,31.96,27.32,17.60,41.66,buy,27.92
-US,JPM,JP Morgan Chase & Co.,Financial Services,333.07,-1.03,-6.79,17.20,5,28,0,13.97,18.01,10.20,42.87,buy,11.77
-US,ANET,"Arista Networks, Inc.",Technology,174.76,2.16,2.98,14.60,-12,38,0,59.44,31.48,37.70,35.89,strong_buy,39.38
-US,AMZN,"Amazon.com, Inc.",Consumer Cyclical,249.36,-0.41,8.01,13.30,-12,36,0,20.06,30.56,19.60,44.26,strong_buy,33.03
+IN,TCS.NS,TATA CONSULTANCY SERV LT,Technology,2530.00,0.92,12.23,32.00,34,30,0,17.73,45.57,11.20,74.27,buy,-5.22
+US,NVDA,NVIDIA Corporation,Technology,210.96,-0.59,7.08,28.90,-6,60,0,26.67,117.21,105.90,38.09,strong_buy,55.93
+US,INTU,Intuit Inc.,Technology,343.39,-3.24,9.71,25.10,13,36,0,21.56,23.60,13.70,64.05,buy,18.50
+US,CSCO,"Cisco Systems, Inc.",Technology,106.50,1.53,-7.86,17.40,-3,36,0,31.98,27.32,17.60,41.79,buy,27.85
+US,JPM,JP Morgan Chase & Co.,Financial Services,331.58,-1.47,-7.20,17.00,5,28,0,13.91,18.01,10.20,41.14,buy,12.27
+US,ANET,"Arista Networks, Inc.",Technology,172.37,0.76,1.57,14.00,-13,38,0,54.38,31.48,37.70,33.67,strong_buy,41.32
+US,AMZN,"Amazon.com, Inc.",Consumer Cyclical,248.00,-0.95,7.42,13.00,-13,36,0,19.95,30.56,19.60,43.17,strong_buy,33.76
 IN,ADANIPORTS.NS,ADANI PORT & SEZ LTD,Industrials,1702.70,-2.70,-3.71,10.10,-8,26,0,29.06,,18.60,42.52,strong_buy,21.78
-US,AMAT,"Applied Materials, Inc.",Technology,381.50,1.58,-19.93,8.30,-41,52,0,32.92,41.07,24.80,27.88,strong_buy,64.57
-US,GOOGL,Alphabet Inc.,Communication Services,323.69,-0.16,-3.00,6.90,-37,46,0,16.24,48.68,24.20,33.15,strong_buy,32.57
+US,AMAT,"Applied Materials, Inc.",Technology,377.24,0.44,-20.82,8.20,-41,52,0,32.55,41.07,24.80,26.09,strong_buy,66.43
 IN,ONGC.NS,OIL AND NATURAL GAS CORP.,Energy,227.50,1.11,-8.55,6.90,-33,42,0,6.58,,25.70,50.04,buy,28.76
+US,GOOGL,Alphabet Inc.,Communication Services,320.21,-1.24,-4.05,6.40,-38,46,0,16.07,48.68,24.20,31.29,strong_buy,34.01
 IN,POLYCAB.NS,POLYCAB INDIA LIMITED,Industrials,7440.00,-3.01,-16.47,5.10,-30,36,0,35.45,26.77,52.80,26.72,buy,33.23
-IN,COALINDIA.NS,COAL INDIA LTD,Energy,397.45,-1.27,-7.01,4.40,-41,45,0,7.95,,45.10,36.28,buy,18.67
-US,LRCX,Lam Research Corporation,Technology,231.26,0.48,-14.22,3.80,-41,44,0,34.47,70.12,54.40,25.23,strong_buy,57.41
-IN,EICHERMOT.NS,EICHER MOTORS LTD,Consumer Cyclical,7066.00,-0.26,-7.37,2.80,-32,34,0,33.62,,31.50,41.88,buy,17.81
-US,ORCL,Oracle Corporation,Technology,127.35,1.44,6.16,1.70,-46,44,0,19.96,41.19,29.60,40.49,buy,85.74
-IN,PIDILITIND.NS,PIDILITE INDUSTRIES LTD,Basic Materials,1487.70,0.44,-5.30,1.30,-29,28,0,57.26,,21.30,42.90,buy,19.43
-IN,BAJAJ-AUTO.NS,BAJAJ AUTO LIMITED,Consumer Cyclical,10072.00,-0.82,-9.51,0.50,-33,30,0,23.95,,64.00,37.32,buy,15.97
+IN,COALINDIA.NS,COAL INDIA LTD,Energy,397.45,-1.27,-7.01,4.40,-41,45,0,7.85,,45.10,36.28,buy,18.67
+US,LRCX,Lam Research Corporation,Technology,230.10,-0.02,-14.65,3.70,-42,44,0,39.95,70.12,54.40,24.55,strong_buy,58.21
+IN,EICHERMOT.NS,EICHER MOTORS LTD,Consumer Cyclical,7084.50,-1.20,-8.25,2.90,-32,34,0,33.54,,31.50,42.51,buy,17.68
+US,ORCL,Oracle Corporation,Technology,126.16,0.49,5.17,1.40,-46,44,0,19.77,41.19,29.60,39.13,buy,87.49
+IN,PIDILITIND.NS,PIDILITE INDUSTRIES LTD,Basic Materials,1487.70,0.44,-5.30,1.30,-29,28,0,57.26,,21.30,42.90,none,19.43
+IN,BAJAJ-AUTO.NS,BAJAJ AUTO LIMITED,Consumer Cyclical,10072.00,-0.82,-9.51,0.50,-33,30,0,23.95,,64.00,37.32,buy,15.65
 IN,SUNPHARMA.NS,SUN PHARMACEUTICAL IND L,Healthcare,1748.00,-0.57,-9.95,0.40,-31,28,0,34.68,,10.50,37.16,buy,24.39
 IN,NESTLEIND.NS,NESTLE INDIA LIMITED,Consumer Defensive,1175.00,-1.25,-18.60,-0.90,-40,34,0,55.56,79.86,20.30,26.69,buy,28.78
+IN,SHRIRAMFIN.NS,SHRIRAM FINANCE LIMITED,Financial Services,865.00,-3.98,-13.94,-2.80,-49,38,0,14.42,18.50,42.80,30.16,strong_buy,36.58
 IN,MARUTI.NS,MARUTI SUZUKI INDIA LTD.,Consumer Cyclical,11230.00,0.54,-16.46,-4.80,-46,32,0,24.63,,35.90,34.87,buy,37.05
-IN,TATACONSUM.NS,TATA CONSUMER PRODUCT LTD,Consumer Defensive,963.90,0.43,-11.41,-5.90,-44,28,0,58.35,,11.90,43.59,buy,36.11
-US,AVGO,Broadcom Inc.,Technology,326.40,0.98,-14.31,-5.90,-64,46,0,43.58,44.25,85.50,37.03,strong_buy,62.10
-US,UBER,"Uber Technologies, Inc.",Technology,67.81,-1.82,-4.14,-6.10,-49,32,0,14.87,37.16,12.20,41.53,buy,48.73
-IN,BAJFINANCE.NS,BAJAJ FINANCE LIMITED,Financial Services,928.95,-1.40,-8.28,-6.20,-51,34,0,26.21,19.03,26.70,37.99,buy,25.38
-IN,SHRIRAMFIN.NS,SHRIRAM FINANCE LIMITED,Financial Services,865.00,-3.98,-13.94,-7.00,-49,30,0,15.27,18.50,42.80,30.16,strong_buy,38.53
-IN,BPCL.NS,BHARAT PETROLEUM CORP  LT,Energy,281.95,-1.74,-9.09,-8.10,-49,28,0,7.03,,34.40,33.50,buy,23.29
-US,NFLX,"Netflix, Inc.",Communication Services,66.65,-0.60,-7.93,-10.10,-55,30,0,19.26,53.46,11.80,38.73,buy,27.28
+IN,TATACONSUM.NS,TATA CONSUMER PRODUCT LTD,Consumer Defensive,959.80,-1.12,-13.35,-5.80,-44,28,0,58.35,,11.90,41.84,buy,36.69
+IN,BAJFINANCE.NS,BAJAJ FINANCE LIMITED,Financial Services,928.95,-1.40,-8.28,-6.20,-51,34,0,26.67,19.03,26.70,37.99,buy,25.38
+US,AVGO,Broadcom Inc.,Technology,321.68,-0.48,-15.55,-6.30,-65,46,0,41.08,44.25,85.50,34.18,strong_buy,64.48
+IN,BPCL.NS,BHARAT PETROLEUM CORP  LT,Energy,281.95,-1.74,-9.09,-8.10,-49,28,0,7.62,,34.40,33.50,buy,23.29
+US,UBER,"Uber Technologies, Inc.",Technology,66.70,-3.43,-5.71,-9.60,-56,32,0,14.63,37.16,12.20,38.58,buy,51.21
+US,NFLX,"Netflix, Inc.",Communication Services,65.85,-1.79,-9.03,-10.40,-56,30,0,19.03,53.46,11.80,37.12,buy,28.83
 IN,HINDALCO.NS,HINDALCO  INDUSTRIES  LTD,Basic Materials,869.85,-1.78,-7.74,-14.30,-71,36,0,11.80,,32.10,32.29,buy,32.44
-IN,IRCTC.NS,INDIAN RAIL TOUR CORP LTD,Consumer Cyclical,441.40,-2.19,-10.84,-15.70,-63,26,0,25.34,,18.10,34.53,buy,45.30
+IN,IRCTC.NS,INDIAN RAIL TOUR CORP LTD,Consumer Cyclical,441.40,-2.19,-10.84,-15.70,-63,26,0,25.34,,18.10,34.53,none,45.30

@@ -1,0 +1,22 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+US,META,"Meta Platforms, Inc.",Communication Services,642.62,-0.96,8.29,34.80,6,60,0,21.92,32.26,26.10,35.73,strong_buy,31.24
+US,AMAT,"Applied Materials, Inc.",Technology,377.24,0.44,-20.82,8.20,-41,52,0,32.55,41.07,24.80,26.09,strong_buy,66.43
+US,GOOGL,Alphabet Inc.,Communication Services,320.21,-1.24,-4.05,6.40,-38,46,0,16.07,48.68,24.20,31.29,strong_buy,34.01
+IN,POLYCAB.NS,POLYCAB INDIA LIMITED,Industrials,7440.00,-3.01,-16.47,5.10,-30,36,0,35.45,26.77,52.80,26.72,buy,33.23
+IN,COALINDIA.NS,COAL INDIA LTD,Energy,397.45,-1.27,-7.01,4.40,-41,45,0,7.85,,45.10,36.28,buy,18.67
+US,LRCX,Lam Research Corporation,Technology,230.10,-0.02,-14.65,3.70,-42,44,0,39.95,70.12,54.40,24.55,strong_buy,58.21
+US,GS,"Goldman Sachs Group, Inc. (The)",Financial Services,875.68,-1.75,-15.26,2.10,-36,36,0,12.82,17.75,23.30,37.44,hold,17.75
+IN,BAJAJ-AUTO.NS,BAJAJ AUTO LIMITED,Consumer Cyclical,10072.00,-0.82,-9.51,0.50,-33,30,0,23.95,,64.00,37.32,buy,15.65
+IN,SUNPHARMA.NS,SUN PHARMACEUTICAL IND L,Healthcare,1748.00,-0.57,-9.95,0.40,-31,28,0,34.68,,10.50,37.16,buy,24.39
+US,BAC,Bank of America Corporation,Financial Services,50.56,-1.02,-19.26,-2.40,-34,26,0,12.07,10.73,7.10,26.31,strong_buy,24.51
+IN,SHRIRAMFIN.NS,SHRIRAM FINANCE LIMITED,Financial Services,865.00,-3.98,-13.94,-2.80,-49,38,0,14.42,18.50,42.80,30.16,strong_buy,36.58
+US,BKNG,Booking Holdings Inc. Common St,Consumer Cyclical,155.83,-3.27,-21.82,-2.80,-55,44,0,17.28,,8.10,37.83,buy,49.50
+IN,VEDL.NS,VEDANTA LIMITED,Basic Materials,226.50,-3.56,-14.42,-4.30,-39,27,0,9.53,,-37.30,28.73,buy,38.58
+IN,MARUTI.NS,MARUTI SUZUKI INDIA LTD.,Consumer Cyclical,11230.00,0.54,-16.46,-4.80,-46,32,0,24.63,,35.90,34.87,buy,37.05
+IN,BAJFINANCE.NS,BAJAJ FINANCE LIMITED,Financial Services,928.95,-1.40,-8.28,-6.20,-51,34,0,26.67,19.03,26.70,37.99,buy,25.38
+IN,BPCL.NS,BHARAT PETROLEUM CORP  LT,Energy,281.95,-1.74,-9.09,-8.10,-49,28,0,7.62,,34.40,33.50,buy,23.29
+IN,CHOLAFIN.NS,CHOLAMANDALAM IN & FIN CO,Financial Services,1463.80,-4.38,-15.11,-8.30,-45,24,0,21.65,,34.60,27.15,none,36.67
+US,NFLX,"Netflix, Inc.",Communication Services,65.85,-1.79,-9.03,-10.40,-56,30,0,19.03,53.46,11.80,37.12,buy,28.83
+US,CAT,"Caterpillar, Inc.",Industrials,687.00,-2.42,-18.30,-13.70,-54,22,0,29.57,56.97,24.00,26.75,buy,37.67
+IN,HINDALCO.NS,HINDALCO  INDUSTRIES  LTD,Basic Materials,869.85,-1.78,-7.74,-14.30,-71,36,0,11.80,,32.10,32.29,buy,32.44
+IN,IRCTC.NS,INDIAN RAIL TOUR CORP LTD,Consumer Cyclical,441.40,-2.19,-10.84,-15.70,-63,26,0,25.34,,18.10,34.53,none,45.30

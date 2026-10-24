@@ -1,0 +1,21 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+US,MU,"Micron Technology, Inc.",Technology,877.55,2.46,6.95,35.50,-8,74,0,11.81,88.26,379.30,38.17,strong_buy,77.99
+US,JPM,JP Morgan Chase & Co.,Financial Services,331.58,-1.47,-7.20,17.00,5,28,0,13.91,18.01,10.20,41.14,buy,12.27
+IN,AXISBANK.NS,AXIS BANK LIMITED,Financial Services,1217.50,0.45,-0.80,10.10,-44,58,0,12.70,13.88,21.10,43.38,strong_buy,30.16
+IN,ONGC.NS,OIL AND NATURAL GAS CORP.,Energy,227.50,1.11,-8.55,6.90,-33,42,0,6.58,,25.70,50.04,buy,28.76
+US,NEE,"NextEra Energy, Inc.",Utilities,82.10,0.24,-8.04,6.90,-3,16,0,14.77,14.06,1.60,62.75,buy,15.20
+IN,COALINDIA.NS,COAL INDIA LTD,Energy,397.45,-1.27,-7.01,4.40,-41,45,0,7.85,,45.10,36.28,buy,18.67
+IN,SBIN.NS,STATE BANK OF INDIA,Financial Services,958.60,-1.18,-5.56,3.00,-34,36,0,10.27,15.18,10.30,44.15,strong_buy,30.96
+US,GS,"Goldman Sachs Group, Inc. (The)",Financial Services,875.68,-1.75,-15.26,2.10,-36,36,0,12.82,17.75,23.30,37.44,hold,17.75
+US,WFC,Wells Fargo & Company,Financial Services,82.39,-0.75,-5.16,2.10,-23,24,0,11.54,12.91,0.40,47.70,buy,17.76
+US,BAC,Bank of America Corporation,Financial Services,50.56,-1.02,-19.26,-2.40,-34,26,0,12.07,10.73,7.10,26.31,strong_buy,24.51
+IN,SHRIRAMFIN.NS,SHRIRAM FINANCE LIMITED,Financial Services,865.00,-3.98,-13.94,-2.80,-49,38,0,14.42,18.50,42.80,30.16,strong_buy,36.58
+IN,VEDL.NS,VEDANTA LIMITED,Basic Materials,226.50,-3.56,-14.42,-4.30,-39,27,0,9.53,,-37.30,28.73,buy,38.58
+IN,JSWSTEEL.NS,JSW STEEL LIMITED,Basic Materials,1185.50,-2.83,-4.46,-5.90,-33,18,0,10.19,,9.80,39.69,buy,16.58
+IN,BPCL.NS,BHARAT PETROLEUM CORP  LT,Energy,281.95,-1.74,-9.09,-8.10,-49,28,0,7.62,,34.40,33.50,buy,23.29
+US,UBER,"Uber Technologies, Inc.",Technology,66.70,-3.43,-5.71,-9.60,-56,32,0,14.63,37.16,12.20,38.58,buy,51.21
+IN,NTPC.NS,NTPC LTD,Utilities,298.00,-1.52,-14.17,-13.60,-38,8,0,10.42,,7.80,26.20,strong_buy,43.01
+IN,HINDALCO.NS,HINDALCO  INDUSTRIES  LTD,Basic Materials,869.85,-1.78,-7.74,-14.30,-71,36,0,11.80,,32.10,32.29,buy,32.44
+IN,POWERGRID.NS,POWER GRID CORP. LTD.,Utilities,247.40,-0.40,-14.16,-15.40,-46,12,0,14.47,,2.70,36.27,buy,28.84
+US,VZ,Verizon Communications Inc.,Communication Services,44.66,-1.19,-7.33,-15.90,-35,1,0,11.63,15.84,-0.70,45.37,buy,14.74
+US,T,AT&T Inc.,Communication Services,20.93,-7.96,-15.13,-26.60,-58,1,0,11.19,11.61,5.30,31.14,buy,32.84
