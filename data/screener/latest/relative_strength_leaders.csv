@@ -1,11 +1,11 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
-US,CVX,Chevron Corporation,Energy,233.21,2.88,24.33,49.60,48,51,0,22.45,12.23,53.50,76.89,buy,-0.30
-US,COP,ConocoPhillips,Energy,150.80,3.55,32.16,43.40,50,38,0,19.97,14.18,35.50,76.75,buy,0.31
-US,MSFT,Microsoft Corporation,Technology,524.51,0.66,33.34,43.20,38,48,0,29.22,34.04,17.70,52.61,strong_buy,14.72
-US,XOM,ExxonMobil Holdings Corporation,Energy,183.21,2.79,19.71,43.00,46,40,0,23.58,12.58,44.10,76.12,buy,-2.07
-US,CRM,"Salesforce, Inc.",Technology,248.57,-0.69,36.95,42.60,54,32,0,22.74,19.38,10.80,60.73,buy,15.11
-US,ACN,Accenture plc,Technology,249.37,-3.62,51.45,41.20,56,28,0,18.39,26.02,6.20,72.49,buy,-8.94
-US,PLTR,Palantir Technologies Inc.,Technology,196.75,0.29,59.27,37.40,37,38,0,169.61,38.10,92.80,54.42,buy,5.04
-US,SHOP,Shopify Inc.,Technology,168.68,-0.08,29.47,34.50,46,24,0,113.97,15.54,33.70,57.63,buy,4.55
-US,TMO,Thermo Fisher Scientific Inc,Healthcare,673.82,-0.40,16.90,23.70,35,14,0,35.69,13.38,9.10,53.81,strong_buy,11.44
-US,PFE,"Pfizer, Inc.",Healthcare,30.03,-1.28,18.93,20.20,52,-8,0,39.00,5.01,2.60,65.55,buy,-2.57
+US,ACN,Accenture plc,Technology,244.45,-1.97,41.16,48.20,71,28,0,18.03,26.02,6.20,68.28,buy,-6.73
+US,MSFT,Microsoft Corporation,Technology,530.50,1.14,35.84,45.10,42,48,0,29.56,34.04,17.70,56.13,strong_buy,13.43
+US,CVX,Chevron Corporation,Energy,232.45,-0.33,21.16,44.00,49,40,0,22.37,12.23,53.50,75.10,buy,0.02
+US,COP,ConocoPhillips,Energy,151.57,0.51,28.39,43.60,50,38,0,20.07,14.18,35.50,77.47,buy,-0.20
+US,XOM,ExxonMobil Holdings Corporation,Energy,183.93,0.40,17.34,43.60,48,40,0,23.67,12.58,44.10,76.83,buy,-2.46
+US,CRM,"Salesforce, Inc.",Technology,244.40,-1.68,29.74,42.60,54,32,0,22.37,19.38,10.80,56.23,buy,17.08
+US,PLTR,Palantir Technologies Inc.,Technology,198.92,1.10,61.72,40.20,43,38,0,171.56,38.10,92.80,56.15,buy,3.89
+US,SHOP,Shopify Inc.,Technology,169.33,0.39,31.09,34.80,47,24,0,114.39,15.54,33.70,58.20,buy,4.15
+US,ISRG,"Intuitive Surgical, Inc.",Healthcare,449.70,-0.57,27.36,29.50,49,12,0,54.38,17.93,21.70,68.77,buy,6.36
+US,TMO,Thermo Fisher Scientific Inc,Healthcare,677.30,0.52,17.49,25.70,39,14,0,35.72,13.38,9.10,55.15,strong_buy,10.87

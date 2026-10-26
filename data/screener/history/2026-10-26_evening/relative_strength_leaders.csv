@@ -1,0 +1,11 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+US,ACN,Accenture plc,Technology,244.45,-1.97,41.16,48.20,71,28,0,18.03,26.02,6.20,68.28,buy,-6.73
+US,MSFT,Microsoft Corporation,Technology,530.50,1.14,35.84,45.10,42,48,0,29.56,34.04,17.70,56.13,strong_buy,13.43
+US,CVX,Chevron Corporation,Energy,232.45,-0.33,21.16,44.00,49,40,0,22.37,12.23,53.50,75.10,buy,0.02
+US,COP,ConocoPhillips,Energy,151.57,0.51,28.39,43.60,50,38,0,20.07,14.18,35.50,77.47,buy,-0.20
+US,XOM,ExxonMobil Holdings Corporation,Energy,183.93,0.40,17.34,43.60,48,40,0,23.67,12.58,44.10,76.83,buy,-2.46
+US,CRM,"Salesforce, Inc.",Technology,244.40,-1.68,29.74,42.60,54,32,0,22.37,19.38,10.80,56.23,buy,17.08
+US,PLTR,Palantir Technologies Inc.,Technology,198.92,1.10,61.72,40.20,43,38,0,171.56,38.10,92.80,56.15,buy,3.89
+US,SHOP,Shopify Inc.,Technology,169.33,0.39,31.09,34.80,47,24,0,114.39,15.54,33.70,58.20,buy,4.15
+US,ISRG,"Intuitive Surgical, Inc.",Healthcare,449.70,-0.57,27.36,29.50,49,12,0,54.38,17.93,21.70,68.77,buy,6.36
+US,TMO,Thermo Fisher Scientific Inc,Healthcare,677.30,0.52,17.49,25.70,39,14,0,35.72,13.38,9.10,55.15,strong_buy,10.87
