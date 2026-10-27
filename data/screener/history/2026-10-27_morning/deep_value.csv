@@ -1,0 +1,21 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+US,MU,"Micron Technology, Inc.",Technology,903.70,2.98,22.29,37.70,-3,74,0,12.16,88.26,379.30,42.32,strong_buy,72.84
+IN,JSWSTEEL.NS,JSW STEEL LIMITED,Basic Materials,1247.30,-1.01,0.03,23.40,9,36,0,10.73,31.93,20.70,52.60,buy,12.25
+US,JPM,JP Morgan Chase & Co.,Financial Services,334.04,0.74,-3.10,19.20,9,28,0,14.01,18.01,10.20,45.10,buy,11.44
+IN,AXISBANK.NS,AXIS BANK LIMITED,Financial Services,1213.50,-0.33,-1.14,10.00,-44,58,0,12.67,13.88,21.10,42.46,strong_buy,30.59
+US,NEE,"NextEra Energy, Inc.",Utilities,82.04,-0.07,-7.26,9.60,2,16,0,14.78,14.06,1.60,62.41,buy,15.28
+IN,SHRIRAMFIN.NS,SHRIRAM FINANCE LIMITED,Financial Services,824.35,-0.08,-20.80,8.30,-36,48,0,13.74,14.75,37.90,25.77,strong_buy,36.69
+IN,ONGC.NS,OIL AND NATURAL GAS CORP.,Energy,227.04,-0.61,-4.97,7.50,-31,42,0,6.56,,25.70,49.05,buy,29.02
+US,BAC,Bank of America Corporation,Financial Services,50.52,-0.08,-17.28,5.60,-17,26,0,12.06,10.73,7.10,26.17,strong_buy,24.61
+IN,HDFCBANK.NS,HDFC BANK LTD,Financial Services,680.20,-1.14,-7.51,4.80,-48,52,0,14.87,11.00,80.80,36.50,strong_buy,41.05
+IN,SBIN.NS,STATE BANK OF INDIA,Financial Services,950.65,-1.06,-6.17,2.70,-35,36,0,10.19,15.18,10.30,41.44,strong_buy,32.06
+US,WFC,Wells Fargo & Company,Financial Services,82.65,0.32,-1.45,1.90,-23,24,0,11.58,12.91,0.40,48.76,buy,17.39
+IN,COALINDIA.NS,COAL INDIA LTD,Energy,398.90,-1.51,-2.74,1.60,-47,45,0,7.88,,45.10,39.63,buy,17.87
+US,GS,"Goldman Sachs Group, Inc. (The)",Financial Services,893.28,2.01,-8.92,-2.90,-47,36,0,12.84,17.75,23.30,44.17,buy,15.43
+IN,HINDALCO.NS,HINDALCO  INDUSTRIES  LTD,Basic Materials,885.15,-0.06,-5.47,-4.30,-50,36,0,12.01,,32.10,38.12,buy,30.15
+US,UBER,"Uber Technologies, Inc.",Technology,66.13,-0.85,-7.12,-5.30,-47,32,0,14.50,37.16,12.20,37.12,buy,52.51
+IN,BPCL.NS,BHARAT PETROLEUM CORP  LT,Energy,290.55,0.05,-9.22,-6.70,-33,17,0,7.85,16.17,42.10,44.36,buy,17.62
+IN,POWERGRID.NS,POWER GRID CORP. LTD.,Utilities,252.05,2.04,-11.65,-9.70,-34,12,0,14.73,,2.70,45.41,buy,26.47
+IN,VEDL.NS,VEDANTA LIMITED,Basic Materials,228.00,0.22,-12.09,-14.20,-61,27,0,9.59,,-37.30,30.41,buy,37.67
+IN,NTPC.NS,NTPC LTD,Utilities,302.40,0.80,-12.03,-23.10,-58,8,0,10.56,,7.80,33.99,strong_buy,40.93
+US,T,AT&T Inc.,Communication Services,20.85,-0.38,-12.91,-25.90,-56,1,0,11.15,11.61,5.30,30.80,buy,32.94

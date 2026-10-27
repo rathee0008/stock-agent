@@ -1,0 +1,19 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+US,TXN,Texas Instruments Incorporated,Technology,298.12,4.72,9.89,49.50,53,46,0,38.67,39.72,27.70,64.53,buy,13.00
+IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1791.10,-0.22,9.53,49.10,55,44,0,28.79,19.19,15.60,68.99,buy,-2.25
+US,MSFT,Microsoft Corporation,Technology,532.60,1.54,36.38,45.20,42,48,0,29.22,34.04,17.70,57.24,strong_buy,13.30
+US,CVX,Chevron Corporation,Energy,232.01,-0.51,20.93,43.90,48,40,0,22.33,12.23,53.50,74.10,buy,0.21
+US,XOM,ExxonMobil Holdings Corporation,Energy,184.54,0.73,17.73,43.70,48,40,0,23.75,12.58,44.10,77.39,buy,-2.78
+US,COP,ConocoPhillips,Energy,151.37,0.38,28.21,43.60,50,38,0,20.05,14.18,35.50,77.28,buy,-0.07
+US,CRM,"Salesforce, Inc.",Technology,247.61,-0.39,31.44,42.80,55,32,0,22.65,19.38,10.80,59.63,buy,15.94
+US,ACN,Accenture plc,Technology,247.23,-0.86,42.77,41.20,56,28,0,18.23,26.02,6.20,70.60,buy,-7.08
+US,PLTR,Palantir Technologies Inc.,Technology,198.84,1.06,61.66,40.20,43,38,0,171.41,38.10,92.80,56.09,buy,4.42
+IN,HCLTECH.NS,HCL TECHNOLOGIES LTD,Technology,1409.80,-0.87,8.79,39.50,50,30,0,20.78,24.65,2.20,69.38,hold,-9.94
+IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,442.25,0.34,14.78,39.40,41,38,0,20.49,11.83,20.70,59.89,buy,12.00
+US,AMGN,Amgen Inc.,Healthcare,444.63,1.22,14.70,36.70,58,18,0,27.62,91.47,9.50,63.14,hold,-10.64
+US,ABBV,AbbVie Inc.,Healthcare,286.74,0.39,8.90,35.20,57,16,0,81.00,,10.20,66.15,buy,-0.68
+US,SHOP,Shopify Inc.,Technology,168.18,-0.30,30.20,34.80,47,24,0,113.64,15.54,33.70,57.03,buy,4.86
+IN,DIVISLAB.NS,DIVI S LABORATORIES LTD,Healthcare,9472.50,5.84,27.77,33.50,46,22,0,86.89,,27.80,56.87,hold,-9.31
+US,PG,Procter & Gamble Company (The),Consumer Defensive,159.92,-0.68,9.46,33.10,59,10,0,24.08,29.61,4.00,61.34,buy,8.37
+US,MA,Mastercard Incorporated,Financial Services,613.50,-1.62,8.91,32.30,51,16,0,33.18,241.20,14.10,61.64,strong_buy,10.19
+US,V,Visa Inc.,Financial Services,404.16,-0.92,9.61,30.70,52,12,0,34.40,61.19,14.40,65.27,strong_buy,5.61

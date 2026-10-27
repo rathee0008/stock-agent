@@ -1,0 +1,17 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+US,META,"Meta Platforms, Inc.",Communication Services,630.56,-1.88,7.68,15.50,-35,60,0,21.51,32.26,26.10,33.65,strong_buy,34.09
+US,GOOGL,Alphabet Inc.,Communication Services,316.80,-1.06,-5.91,12.30,-26,46,0,15.90,48.68,24.20,29.54,strong_buy,35.46
+IN,SHRIRAMFIN.NS,SHRIRAM FINANCE LIMITED,Financial Services,824.35,-0.08,-20.80,8.30,-36,48,0,13.74,14.75,37.90,25.77,strong_buy,36.69
+US,LRCX,Lam Research Corporation,Technology,237.50,3.22,-5.88,6.00,-37,44,0,35.39,70.12,54.40,29.06,strong_buy,53.28
+US,BAC,Bank of America Corporation,Financial Services,50.52,-0.08,-17.28,5.60,-17,26,0,12.06,10.73,7.10,26.17,strong_buy,24.61
+IN,HDFCBANK.NS,HDFC BANK LTD,Financial Services,680.20,-1.14,-7.51,4.80,-48,52,0,14.87,11.00,80.80,36.50,strong_buy,41.05
+US,AMAT,"Applied Materials, Inc.",Technology,387.59,2.74,-11.19,2.80,-53,52,0,33.44,41.07,24.80,30.59,strong_buy,61.98
+IN,BAJFINANCE.NS,BAJAJ FINANCE LIMITED,Financial Services,909.05,-1.05,-13.29,-1.00,-40,34,0,26.11,19.03,26.70,34.51,buy,28.16
+US,BKNG,Booking Holdings Inc. Common St,Consumer Cyclical,153.14,-1.73,-23.92,-1.90,-53,44,0,16.98,,8.10,35.22,buy,52.09
+IN,CHOLAFIN.NS,CHOLAMANDALAM IN & FIN CO,Financial Services,1454.50,-0.64,-18.52,-1.90,-31,24,0,21.28,,34.60,26.45,none,37.55
+IN,POLYCAB.NS,POLYCAB INDIA LIMITED,Industrials,7638.00,-1.31,-16.26,-3.80,-49,36,0,34.99,26.77,52.80,36.23,buy,30.89
+US,UBER,"Uber Technologies, Inc.",Technology,66.13,-0.85,-7.12,-5.30,-47,32,0,14.50,37.16,12.20,37.12,buy,52.51
+US,NFLX,"Netflix, Inc.",Communication Services,63.90,-2.96,-13.21,-8.70,-52,30,0,18.47,53.46,11.80,33.46,buy,32.69
+IN,IRCTC.NS,INDIAN RAIL TOUR CORP LTD,Consumer Cyclical,437.70,-0.84,-11.40,-10.10,-51,26,0,24.95,,18.10,32.68,none,46.52
+US,CAT,"Caterpillar, Inc.",Industrials,692.13,0.75,-11.57,-13.10,-53,22,0,29.79,56.97,24.00,28.71,buy,33.92
+IN,VEDL.NS,VEDANTA LIMITED,Basic Materials,228.00,0.22,-12.09,-14.20,-61,27,0,9.59,,-37.30,30.41,buy,37.67

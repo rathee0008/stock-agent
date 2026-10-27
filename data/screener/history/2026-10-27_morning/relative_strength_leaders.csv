@@ -1,0 +1,13 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+US,MSFT,Microsoft Corporation,Technology,532.60,1.54,36.38,45.20,42,48,0,29.22,34.04,17.70,57.24,strong_buy,13.30
+US,CVX,Chevron Corporation,Energy,232.01,-0.51,20.93,43.90,48,40,0,22.33,12.23,53.50,74.10,buy,0.21
+US,XOM,ExxonMobil Holdings Corporation,Energy,184.54,0.73,17.73,43.70,48,40,0,23.75,12.58,44.10,77.39,buy,-2.78
+US,COP,ConocoPhillips,Energy,151.37,0.38,28.21,43.60,50,38,0,20.05,14.18,35.50,77.28,buy,-0.07
+US,CRM,"Salesforce, Inc.",Technology,247.61,-0.39,31.44,42.80,55,32,0,22.65,19.38,10.80,59.63,buy,15.94
+US,ACN,Accenture plc,Technology,247.23,-0.86,42.77,41.20,56,28,0,18.23,26.02,6.20,70.60,buy,-7.08
+US,PLTR,Palantir Technologies Inc.,Technology,198.84,1.06,61.66,40.20,43,38,0,171.41,38.10,92.80,56.09,buy,4.42
+US,SHOP,Shopify Inc.,Technology,168.18,-0.30,30.20,34.80,47,24,0,113.64,15.54,33.70,57.03,buy,4.86
+IN,DIVISLAB.NS,DIVI S LABORATORIES LTD,Healthcare,9472.50,5.84,27.77,33.50,46,22,0,86.89,,27.80,56.87,hold,-9.31
+US,TMO,Thermo Fisher Scientific Inc,Healthcare,684.89,1.64,18.81,28.90,46,14,0,36.12,13.38,9.10,57.80,strong_buy,9.64
+US,QCOM,QUALCOMM Incorporated,Technology,179.60,2.10,15.36,23.60,28,20,0,21.23,33.75,-4.00,51.82,hold,9.30
+US,ISRG,"Intuitive Surgical, Inc.",Healthcare,451.63,-0.15,27.90,22.60,34,12,0,54.68,17.93,21.70,70.30,buy,5.91
