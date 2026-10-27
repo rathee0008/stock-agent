@@ -1,0 +1,22 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+US,MU,"Micron Technology, Inc.",Technology,933.02,3.24,6.67,43.00,8,74,0,12.55,88.26,379.30,46.64,strong_buy,67.40
+IN,JSWSTEEL.NS,JSW STEEL LIMITED,Basic Materials,1252.70,-0.58,0.47,23.60,10,36,0,10.77,31.93,20.70,53.61,buy,11.77
+US,JPM,JP Morgan Chase & Co.,Financial Services,336.08,0.61,-4.21,20.40,12,28,0,14.10,18.01,10.20,48.21,buy,10.77
+IN,ONGC.NS,OIL AND NATURAL GAS CORP.,Energy,229.85,0.62,-3.79,11.70,-22,42,0,6.64,,25.70,54.33,buy,27.01
+IN,AXISBANK.NS,AXIS BANK LIMITED,Financial Services,1205.70,-1.17,-1.45,10.50,-43,58,0,12.58,13.88,21.10,40.77,strong_buy,31.43
+US,NEE,"NextEra Energy, Inc.",Utilities,82.00,-0.04,-6.74,9.60,2,16,0,14.77,14.06,1.60,62.20,buy,15.33
+IN,SHRIRAMFIN.NS,SHRIRAM FINANCE LIMITED,Financial Services,823.60,-0.17,-20.88,8.20,-36,48,0,13.73,14.75,37.90,25.69,strong_buy,36.85
+IN,HDFCBANK.NS,HDFC BANK LTD,Financial Services,680.20,-1.14,-7.51,4.80,-48,52,0,14.87,11.00,80.80,36.50,strong_buy,41.05
+US,BAC,Bank of America Corporation,Financial Services,50.66,0.28,-17.93,3.50,-22,26,0,12.09,10.73,7.10,27.67,strong_buy,24.27
+US,WFC,Wells Fargo & Company,Financial Services,82.64,-0.01,-3.27,2.70,-21,24,0,11.66,12.91,0.40,48.72,buy,17.40
+IN,SBIN.NS,STATE BANK OF INDIA,Financial Services,945.10,-1.63,-6.72,2.40,-35,36,0,10.13,15.18,10.30,39.65,strong_buy,32.83
+IN,COALINDIA.NS,COAL INDIA LTD,Energy,398.00,-1.73,-2.96,1.50,-47,45,0,7.86,,45.10,39.11,buy,18.13
+US,GS,"Goldman Sachs Group, Inc. (The)",Financial Services,912.55,2.16,-10.96,-1.20,-43,36,0,13.12,17.75,23.30,50.46,buy,13.00
+IN,BPCL.NS,BHARAT PETROLEUM CORP  LT,Energy,295.60,1.79,-7.64,-3.60,-27,17,0,7.99,16.17,42.10,49.56,buy,13.37
+IN,HINDALCO.NS,HINDALCO  INDUSTRIES  LTD,Basic Materials,891.20,0.63,-4.83,-4.00,-49,36,0,12.09,,32.10,40.22,buy,29.27
+US,VZ,Verizon Communications Inc.,Communication Services,43.74,1.47,-5.15,-6.50,-34,18,0,11.39,15.79,1.50,42.54,buy,15.81
+IN,VEDL.NS,VEDANTA LIMITED,Basic Materials,225.60,-0.84,-13.01,-7.40,-46,27,0,9.49,,-37.30,28.92,buy,39.14
+US,UBER,"Uber Technologies, Inc.",Technology,66.07,-0.10,-6.12,-7.60,-52,32,0,14.49,37.16,12.20,36.95,buy,52.66
+IN,POWERGRID.NS,POWER GRID CORP. LTD.,Utilities,251.75,1.92,-11.76,-12.10,-39,12,0,14.72,,2.70,44.92,buy,26.62
+IN,NTPC.NS,NTPC LTD,Utilities,301.80,0.60,-12.20,-23.10,-58,8,0,10.54,,7.80,33.00,strong_buy,41.21
+US,T,AT&T Inc.,Communication Services,21.03,0.86,-9.39,-25.00,-54,1,0,11.25,11.61,5.30,32.59,buy,31.80

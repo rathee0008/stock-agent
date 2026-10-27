@@ -1,18 +1,18 @@
-# Screener results — 2026-10-27 morning (IST)
+# Screener results — 2026-10-27 evening (IST)
 
 Universe scored: 124 stocks. Not investment advice.
 
 | Preset | Matches | Top 5 by score |
 |---|---|---|
-| Quality momentum | 30 | TXN, TECHM.NS, BLK, ADBE, MSFT |
-| Quality compounders | 38 | TXN, TECHM.NS, BLK, ADBE, MSFT |
-| GARP (growth at fair price) | 15 | TECHM.NS, BLK, MSFT, MU, UNP |
-| Deep value | 20 | MU, JSWSTEEL.NS, JPM, AXISBANK.NS, NEE |
-| Cheap and profitable | 23 | ADBE, ICICIBANK.NS, TCS.NS, MU, INFY.NS |
-| Momentum breakout | 18 | TXN, TECHM.NS, MSFT, CVX, XOM |
-| Strong technicals | 29 | TXN, TECHM.NS, BLK, ADBE, MSFT |
-| Oversold quality | 16 | META, GOOGL, SHRIRAMFIN.NS, LRCX, BAC |
-| Relative strength leaders | 12 | MSFT, CVX, XOM, COP, CRM |
-| Growth acceleration | 12 | TXN, CVX, PLTR, KOTAKBANK.NS, LLY |
-| Analyst upside | 45 | ICICIBANK.NS, MU, CSCO, NVDA, DLF.NS |
-| Large-cap safety | 45 | TXN, TECHM.NS, BLK, ADBE, MSFT |
+| Quality momentum | 39 | COP, CVX, MSFT, ACN, BLK |
+| Quality compounders | 36 | MSFT, BLK, TXN, TECHM.NS, MU |
+| GARP (growth at fair price) | 16 | MSFT, BLK, TECHM.NS, MU, UNP |
+| Deep value | 21 | MU, JSWSTEEL.NS, JPM, ONGC.NS, AXISBANK.NS |
+| Cheap and profitable | 25 | ACN, ICICIBANK.NS, MU, TCS.NS, ADBE |
+| Momentum breakout | 16 | COP, CVX, MSFT, ACN, XOM |
+| Strong technicals | 31 | COP, CVX, MSFT, ACN, BLK |
+| Oversold quality | 14 | META, SHRIRAMFIN.NS, AMAT, HDFCBANK.NS, BAC |
+| Relative strength leaders | 13 | COP, CVX, MSFT, ACN, XOM |
+| Growth acceleration | 19 | COP, CVX, XOM, TXN, MU |
+| Analyst upside | 45 | ICICIBANK.NS, MU, NVDA, CSCO, DLF.NS |
+| Large-cap safety | 48 | COP, CVX, MSFT, ACN, BLK |

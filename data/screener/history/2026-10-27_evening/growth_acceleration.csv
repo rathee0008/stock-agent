@@ -1,0 +1,20 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+US,COP,ConocoPhillips,Energy,148.40,-1.96,24.67,50.70,65,38,0,19.65,14.18,35.50,68.52,buy,2.08
+US,CVX,Chevron Corporation,Energy,227.99,-1.73,18.55,48.50,55,43,0,21.93,12.23,53.50,65.52,buy,1.98
+US,XOM,ExxonMobil Holdings Corporation,Energy,180.85,-2.00,15.22,46.50,54,40,0,23.27,12.58,44.10,66.81,buy,-0.80
+US,TXN,Texas Instruments Incorporated,Technology,306.00,2.64,9.77,45.90,46,46,0,39.69,39.72,27.70,68.68,buy,10.09
+US,MU,"Micron Technology, Inc.",Technology,933.02,3.24,6.67,43.00,8,74,0,12.55,88.26,379.30,46.64,strong_buy,67.40
+US,LLY,Eli Lilly and Company,Healthcare,1284.77,0.44,11.24,41.10,56,28,0,43.10,102.29,47.70,63.88,buy,3.81
+US,PLTR,Palantir Technologies Inc.,Technology,201.41,1.29,64.74,40.60,43,38,0,172.20,38.10,92.80,58.12,buy,3.75
+IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,442.50,0.40,14.85,39.50,41,38,0,20.51,11.83,20.70,60.04,buy,11.94
+US,AMD,"Advanced Micro Devices, Inc.",Technology,559.97,5.40,15.36,33.70,33,34,0,142.82,10.20,50.10,49.76,strong_buy,13.86
+IN,DIVISLAB.NS,DIVI S LABORATORIES LTD,Healthcare,9505.50,5.03,28.02,33.60,47,22,0,86.25,,27.80,58.30,hold,-9.40
+US,NVDA,NVIDIA Corporation,Technology,218.93,1.36,12.25,33.00,3,60,0,27.68,117.21,105.90,47.33,strong_buy,50.26
+US,SHOP,Shopify Inc.,Technology,166.27,-1.14,35.84,32.10,41,24,0,112.38,15.54,33.70,54.69,buy,6.06
+IN,ETERNAL.NS,ETERNAL LIMITED,Consumer Cyclical,331.00,1.67,7.35,30.40,55,9,0,624.53,1.59,77.60,56.27,buy,15.53
+IN,PERSISTENT.NS,PERSISTENT SYSTEMS LTD,Technology,5832.50,-0.30,7.44,29.80,52,10,0,51.02,22.92,30.30,57.84,hold,-1.21
+US,ISRG,"Intuitive Surgical, Inc.",Healthcare,445.32,-1.40,26.16,28.90,48,12,0,53.85,17.93,21.70,65.19,buy,8.38
+IN,JSWSTEEL.NS,JSW STEEL LIMITED,Basic Materials,1252.70,-0.58,0.47,23.60,10,36,0,10.77,31.93,20.70,53.61,buy,11.77
+US,ANET,"Arista Networks, Inc.",Technology,188.51,6.36,10.23,23.20,6,38,0,59.47,31.48,37.70,47.53,strong_buy,29.22
+US,ORCL,Oracle Corporation,Technology,131.67,4.45,3.22,6.20,-36,44,0,20.63,41.19,29.60,45.85,buy,79.09
+IN,HEROMOTOCO.NS,HERO MOTOCORP LIMITED,Consumer Cyclical,5218.50,0.38,1.25,-2.00,-20,14,0,19.18,,34.90,52.38,buy,19.16

@@ -1,0 +1,15 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+US,META,"Meta Platforms, Inc.",Communication Services,625.06,-0.87,15.96,19.90,-25,60,0,21.33,32.26,26.10,32.71,strong_buy,35.47
+IN,SHRIRAMFIN.NS,SHRIRAM FINANCE LIMITED,Financial Services,823.60,-0.17,-20.88,8.20,-36,48,0,13.73,14.75,37.90,25.69,strong_buy,36.85
+US,AMAT,"Applied Materials, Inc.",Technology,398.94,2.93,-20.49,5.70,-46,52,0,34.41,41.07,24.80,35.25,strong_buy,57.38
+IN,HDFCBANK.NS,HDFC BANK LTD,Financial Services,680.20,-1.14,-7.51,4.80,-48,52,0,14.87,11.00,80.80,36.50,strong_buy,41.05
+US,BAC,Bank of America Corporation,Financial Services,50.66,0.28,-17.93,3.50,-22,26,0,12.09,10.73,7.10,27.67,strong_buy,24.27
+US,GOOGL,Alphabet Inc.,Communication Services,321.45,1.47,-3.66,3.00,-45,46,0,16.13,48.68,24.20,34.89,strong_buy,33.50
+US,LRCX,Lam Research Corporation,Technology,241.03,1.49,-19.04,0.80,-48,44,0,34.77,70.12,54.40,31.18,strong_buy,51.03
+IN,BAJFINANCE.NS,BAJAJ FINANCE LIMITED,Financial Services,912.00,-0.73,-13.01,-0.80,-40,34,0,26.18,19.03,26.70,35.00,buy,27.74
+US,BKNG,Booking Holdings Inc. Common St,Consumer Cyclical,152.12,-0.67,-21.28,-1.90,-53,44,0,16.87,,8.10,34.25,buy,52.99
+IN,POLYCAB.NS,POLYCAB INDIA LIMITED,Industrials,7718.00,-0.27,-15.39,-3.40,-48,36,0,36.78,26.77,52.80,37.86,buy,29.54
+IN,VEDL.NS,VEDANTA LIMITED,Basic Materials,225.60,-0.84,-13.01,-7.40,-46,27,0,9.49,,-37.30,28.92,buy,39.14
+US,UBER,"Uber Technologies, Inc.",Technology,66.07,-0.10,-6.12,-7.60,-52,32,0,14.49,37.16,12.20,36.95,buy,52.66
+US,NFLX,"Netflix, Inc.",Communication Services,62.78,-1.75,-14.20,-9.10,-53,30,0,18.15,53.46,11.80,31.54,buy,35.02
+IN,CHOLAFIN.NS,CHOLAMANDALAM IN & FIN CO,Financial Services,1469.00,1.46,-16.20,-11.40,-51,24,0,21.73,,34.60,30.27,none,36.19
