@@ -1,0 +1,15 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+US,CVX,Chevron Corporation,Energy,230.74,1.10,17.23,51.90,62,43,0,22.20,12.23,53.50,68.46,buy,0.76
+US,COP,ConocoPhillips,Energy,149.56,1.08,24.14,50.50,65,38,0,19.81,14.18,35.50,69.37,buy,1.28
+US,XOM,ExxonMobil Holdings Corporation,Energy,183.25,1.86,17.89,49.90,61,40,0,23.57,12.58,44.10,68.60,buy,-2.10
+US,ACN,Accenture plc,Technology,245.09,4.22,47.72,48.20,71,28,0,18.08,26.02,6.20,65.16,buy,-6.26
+IN,DIVISLAB.NS,DIVI S LABORATORIES LTD,Healthcare,9558.50,0.56,22.79,42.10,65,22,0,86.73,,27.80,59.51,hold,-9.90
+US,MU,"Micron Technology, Inc.",Technology,970.05,4.45,17.86,41.40,5,74,0,13.05,88.26,379.30,51.61,strong_buy,61.01
+US,CRM,"Salesforce, Inc.",Technology,241.39,0.21,31.18,40.60,50,32,0,22.09,19.38,10.80,52.94,buy,18.93
+US,TMO,Thermo Fisher Scientific Inc,Healthcare,702.84,1.42,22.38,38.20,65,14,0,37.07,13.38,9.10,63.54,strong_buy,6.84
+US,PLTR,Palantir Technologies Inc.,Technology,194.23,-2.27,57.83,37.70,37,38,0,167.38,38.10,92.80,51.28,buy,7.59
+US,AMGN,Amgen Inc.,Healthcare,450.60,0.59,16.99,37.10,59,18,0,27.97,91.47,9.50,65.66,hold,-11.82
+US,SHOP,Shopify Inc.,Technology,168.57,1.66,43.89,34.10,46,24,0,113.94,15.54,33.70,56.88,buy,4.87
+US,AMD,"Advanced Micro Devices, Inc.",Technology,570.32,1.79,19.78,33.00,32,34,0,145.52,10.20,50.10,51.99,strong_buy,11.80
+US,QCOM,QUALCOMM Incorporated,Technology,181.46,-1.47,22.93,32.00,46,20,0,21.00,33.75,-4.00,53.11,hold,8.18
+US,ISRG,"Intuitive Surgical, Inc.",Healthcare,447.85,0.44,26.75,29.60,49,12,0,54.15,17.93,21.70,66.44,buy,7.77

@@ -1,13 +1,15 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
-US,CVX,Chevron Corporation,Energy,228.23,-1.63,18.68,48.60,55,43,0,21.97,12.23,53.50,65.98,buy,1.87
-US,ACN,Accenture plc,Technology,235.16,-4.88,44.01,48.20,71,28,0,17.34,26.02,6.20,60.93,buy,-2.31
-US,COP,ConocoPhillips,Energy,147.96,-2.25,24.30,47.80,59,38,0,19.60,14.18,35.50,67.39,buy,2.38
-US,MSFT,Microsoft Corporation,Technology,531.33,-0.24,17.79,45.40,42,48,0,29.60,34.04,17.70,56.31,strong_buy,13.89
-IN,DIVISLAB.NS,DIVI S LABORATORIES LTD,Healthcare,9598.00,0.97,23.30,42.20,65,22,0,87.11,,27.80,60.37,hold,-10.27
-US,CRM,"Salesforce, Inc.",Technology,240.89,-2.71,33.30,40.50,50,32,0,22.04,19.38,10.80,52.49,buy,19.18
-US,PLTR,Palantir Technologies Inc.,Technology,198.73,-0.06,62.55,40.40,43,38,0,171.32,38.10,92.80,55.97,buy,5.15
-US,QCOM,QUALCOMM Incorporated,Technology,184.17,2.54,21.48,37.20,57,20,0,21.32,33.75,-4.00,56.18,hold,6.59
-US,AMGN,Amgen Inc.,Healthcare,447.95,0.75,15.56,37.10,59,18,0,27.82,91.47,9.50,64.54,hold,-11.30
-US,SHOP,Shopify Inc.,Technology,165.81,-1.41,35.47,32.00,41,24,0,112.03,15.54,33.70,54.16,buy,6.61
-US,TMO,Thermo Fisher Scientific Inc,Healthcare,693.02,1.19,20.16,29.30,46,14,0,36.55,13.38,9.10,60.50,strong_buy,8.35
-US,ISRG,"Intuitive Surgical, Inc.",Healthcare,445.88,-1.27,26.32,28.90,48,12,0,53.92,17.93,21.70,65.62,buy,8.24
+US,CVX,Chevron Corporation,Energy,230.74,1.10,17.23,51.90,62,43,0,22.20,12.23,53.50,68.46,buy,0.76
+US,COP,ConocoPhillips,Energy,149.56,1.08,24.14,50.50,65,38,0,19.81,14.18,35.50,69.37,buy,1.28
+US,XOM,ExxonMobil Holdings Corporation,Energy,183.25,1.86,17.89,49.90,61,40,0,23.57,12.58,44.10,68.60,buy,-2.10
+US,ACN,Accenture plc,Technology,245.09,4.22,47.72,48.20,71,28,0,18.08,26.02,6.20,65.16,buy,-6.26
+IN,DIVISLAB.NS,DIVI S LABORATORIES LTD,Healthcare,9558.50,0.56,22.79,42.10,65,22,0,86.73,,27.80,59.51,hold,-9.90
+US,MU,"Micron Technology, Inc.",Technology,970.05,4.45,17.86,41.40,5,74,0,13.05,88.26,379.30,51.61,strong_buy,61.01
+US,CRM,"Salesforce, Inc.",Technology,241.39,0.21,31.18,40.60,50,32,0,22.09,19.38,10.80,52.94,buy,18.93
+US,TMO,Thermo Fisher Scientific Inc,Healthcare,702.84,1.42,22.38,38.20,65,14,0,37.07,13.38,9.10,63.54,strong_buy,6.84
+US,PLTR,Palantir Technologies Inc.,Technology,194.23,-2.27,57.83,37.70,37,38,0,167.38,38.10,92.80,51.28,buy,7.59
+US,AMGN,Amgen Inc.,Healthcare,450.60,0.59,16.99,37.10,59,18,0,27.97,91.47,9.50,65.66,hold,-11.82
+US,SHOP,Shopify Inc.,Technology,168.57,1.66,43.89,34.10,46,24,0,113.94,15.54,33.70,56.88,buy,4.87
+US,AMD,"Advanced Micro Devices, Inc.",Technology,570.32,1.79,19.78,33.00,32,34,0,145.52,10.20,50.10,51.99,strong_buy,11.80
+US,QCOM,QUALCOMM Incorporated,Technology,181.46,-1.47,22.93,32.00,46,20,0,21.00,33.75,-4.00,53.11,hold,8.18
+US,ISRG,"Intuitive Surgical, Inc.",Healthcare,447.85,0.44,26.75,29.60,49,12,0,54.15,17.93,21.70,66.44,buy,7.77
