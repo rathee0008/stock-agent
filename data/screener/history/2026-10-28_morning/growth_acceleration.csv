@@ -1,0 +1,18 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+US,CVX,Chevron Corporation,Energy,228.23,-1.63,18.68,48.60,55,43,0,21.97,12.23,53.50,65.98,buy,1.87
+US,COP,ConocoPhillips,Energy,147.96,-2.25,24.30,47.80,59,38,0,19.60,14.18,35.50,67.39,buy,2.38
+US,TXN,Texas Instruments Incorporated,Technology,308.91,3.62,10.82,46.40,47,46,0,40.07,39.72,27.70,69.98,buy,9.05
+US,XOM,ExxonMobil Holdings Corporation,Energy,179.91,-2.51,14.61,46.30,53,40,0,23.15,12.58,44.10,64.55,buy,-0.28
+US,MU,"Micron Technology, Inc.",Technology,928.76,2.77,6.19,43.00,8,74,0,12.50,88.26,379.30,46.05,strong_buy,68.17
+IN,DIVISLAB.NS,DIVI S LABORATORIES LTD,Healthcare,9598.00,0.97,23.30,42.20,65,22,0,87.11,,27.80,60.37,hold,-10.27
+US,PLTR,Palantir Technologies Inc.,Technology,198.73,-0.06,62.55,40.40,43,38,0,171.32,38.10,92.80,55.97,buy,5.15
+IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,442.10,-0.09,13.30,39.30,41,38,0,20.49,11.83,20.70,59.65,buy,12.04
+US,LLY,Eli Lilly and Company,Healthcare,1281.91,0.22,10.99,38.20,50,28,0,43.03,102.29,47.70,63.46,buy,4.04
+US,AMD,"Advanced Micro Devices, Inc.",Technology,560.26,5.45,15.42,33.70,33,34,0,142.92,10.20,50.10,49.82,strong_buy,13.81
+US,NVDA,NVIDIA Corporation,Technology,217.94,0.90,11.74,32.70,2,60,0,27.55,117.21,105.90,46.29,strong_buy,50.94
+US,SHOP,Shopify Inc.,Technology,165.81,-1.41,35.47,32.00,41,24,0,112.03,15.54,33.70,54.16,buy,6.61
+IN,PERSISTENT.NS,PERSISTENT SYSTEMS LTD,Technology,5849.50,0.29,6.68,29.10,51,10,0,51.17,22.92,30.30,58.46,hold,-1.50
+US,ISRG,"Intuitive Surgical, Inc.",Healthcare,445.88,-1.27,26.32,28.90,48,12,0,53.92,17.93,21.70,65.62,buy,8.24
+IN,HEROMOTOCO.NS,HERO MOTOCORP LIMITED,Consumer Cyclical,5342.50,2.38,3.76,27.20,42,14,0,19.66,,34.90,58.32,buy,16.39
+IN,ETERNAL.NS,ETERNAL LIMITED,Consumer Cyclical,327.95,-0.92,5.18,24.30,41,9,0,618.77,1.59,77.60,53.98,buy,16.61
+US,ANET,"Arista Networks, Inc.",Technology,187.00,5.51,9.34,22.70,6,38,0,58.99,31.48,37.70,46.46,strong_buy,30.26

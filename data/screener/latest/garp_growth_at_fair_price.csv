@@ -1,17 +1,17 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
-US,MSFT,Microsoft Corporation,Technology,534.40,0.34,18.47,48.30,49,48,0,29.77,34.04,17.70,58.22,strong_buy,13.23
-US,BLK,"BlackRock, Inc.",Financial Services,1136.00,0.74,3.43,47.90,46,50,0,25.85,,19.10,59.33,strong_buy,18.93
-IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1811.40,0.91,10.78,45.30,47,44,0,29.11,19.19,15.60,70.88,buy,-3.35
-US,MU,"Micron Technology, Inc.",Technology,933.02,3.24,6.67,43.00,8,74,0,12.55,88.26,379.30,46.64,strong_buy,67.40
-US,UNP,Union Pacific Corporation,Industrials,297.97,0.34,2.94,34.50,46,24,0,23.24,38.75,15.30,66.67,buy,11.09
-US,NVDA,NVIDIA Corporation,Technology,218.93,1.36,12.25,33.00,3,60,0,27.68,117.21,105.90,47.33,strong_buy,50.26
-US,MA,Mastercard Incorporated,Financial Services,610.63,-0.47,5.76,32.10,50,16,0,33.59,241.20,14.10,59.47,strong_buy,10.71
-US,ADBE,Adobe Inc.,Technology,251.49,-2.76,1.45,30.60,25,36,0,14.04,61.90,12.90,50.85,hold,8.28
-US,V,Visa Inc.,Financial Services,401.10,-0.76,9.51,30.30,51,12,0,34.13,61.19,14.40,61.61,strong_buy,6.41
-IN,HAL.NS,HINDUSTAN AERONAUTICS LTD,Industrials,4855.00,1.68,5.54,28.80,41,18,0,34.83,,14.40,52.32,buy,14.98
-IN,JSWSTEEL.NS,JSW STEEL LIMITED,Basic Materials,1252.70,-0.58,0.47,23.60,10,36,0,10.77,31.93,20.70,53.61,buy,11.77
-US,META,"Meta Platforms, Inc.",Communication Services,625.06,-0.87,15.96,19.90,-25,60,0,21.33,32.26,26.10,32.71,strong_buy,35.47
-US,AMZN,"Amazon.com, Inc.",Consumer Cyclical,252.71,1.45,7.31,19.90,2,36,0,20.34,30.56,19.60,48.19,strong_buy,31.47
-US,INTU,Intuit Inc.,Technology,327.61,-3.61,3.84,19.70,1,36,0,19.91,23.60,13.70,54.59,buy,24.47
-US,ORCL,Oracle Corporation,Technology,131.67,4.45,3.22,6.20,-36,44,0,20.63,41.19,29.60,45.85,buy,79.09
-IN,HEROMOTOCO.NS,HERO MOTOCORP LIMITED,Consumer Cyclical,5218.50,0.38,1.25,-2.00,-20,14,0,19.18,,34.90,52.38,buy,19.16
+IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1784.60,-1.48,8.54,48.30,53,44,0,28.69,19.19,15.60,66.23,buy,-1.90
+US,BLK,"BlackRock, Inc.",Financial Services,1136.05,0.74,3.43,47.90,46,50,0,25.87,,19.10,59.34,strong_buy,18.92
+US,MSFT,Microsoft Corporation,Technology,531.33,-0.24,17.79,45.40,42,48,0,29.60,34.04,17.70,56.31,strong_buy,13.89
+US,MU,"Micron Technology, Inc.",Technology,928.76,2.77,6.19,43.00,8,74,0,12.50,88.26,379.30,46.05,strong_buy,68.17
+US,UNP,Union Pacific Corporation,Industrials,299.88,0.98,3.60,34.80,47,24,0,23.39,38.75,15.30,68.32,buy,10.38
+US,NVDA,NVIDIA Corporation,Technology,217.94,0.90,11.74,32.70,2,60,0,27.55,117.21,105.90,46.29,strong_buy,50.94
+US,MA,Mastercard Incorporated,Financial Services,609.85,-0.59,5.63,32.10,50,16,0,33.55,241.20,14.10,58.90,strong_buy,10.85
+US,V,Visa Inc.,Financial Services,401.86,-0.57,9.72,30.40,51,12,0,32.62,61.19,14.40,62.48,strong_buy,6.79
+IN,HAL.NS,HINDUSTAN AERONAUTICS LTD,Industrials,4837.60,-0.36,5.35,28.40,40,18,0,34.71,,14.40,51.35,buy,15.40
+IN,HEROMOTOCO.NS,HERO MOTOCORP LIMITED,Consumer Cyclical,5342.50,2.38,3.76,27.20,42,14,0,19.66,,34.90,58.32,buy,16.39
+US,INTU,Intuit Inc.,Technology,328.45,-3.37,4.10,22.10,7,36,0,19.95,23.60,13.70,55.03,buy,24.15
+IN,ADANIPORTS.NS,ADANI PORT & SEZ LTD,Industrials,1759.60,0.29,2.32,20.80,24,18,0,30.04,,18.60,51.51,strong_buy,17.84
+US,AMZN,"Amazon.com, Inc.",Consumer Cyclical,253.10,1.61,7.47,20.00,2,36,0,20.36,30.56,19.60,48.58,strong_buy,31.34
+US,META,"Meta Platforms, Inc.",Communication Services,620.19,-1.64,15.06,15.80,-34,60,0,21.16,32.26,26.10,31.92,strong_buy,36.54
+US,ADBE,Adobe Inc.,Technology,248.36,-3.97,0.19,15.00,-9,36,0,13.87,61.90,12.90,48.94,hold,9.64
+US,ORCL,Oracle Corporation,Technology,130.53,3.55,2.33,3.60,-42,44,0,20.46,41.19,29.60,44.59,buy,80.65
