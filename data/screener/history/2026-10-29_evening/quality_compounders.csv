@@ -1,0 +1,36 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+US,BLK,"BlackRock, Inc.",Financial Services,1171.97,1.22,4.02,52.10,54,50,0,26.68,,19.10,66.60,strong_buy,15.68
+US,MU,"Micron Technology, Inc.",Technology,938.17,-4.58,13.10,49.90,23,74,0,12.62,88.26,379.30,47.57,strong_buy,66.48
+IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1769.60,-0.39,6.03,48.00,52,44,0,28.44,19.19,15.60,63.81,buy,-1.07
+US,TXN,Texas Instruments Incorporated,Technology,307.71,-0.68,14.37,47.60,49,46,0,39.91,39.72,27.70,68.04,buy,9.47
+US,MSFT,Microsoft Corporation,Technology,523.86,-1.35,7.43,40.90,33,48,0,29.18,34.04,17.70,50.71,strong_buy,15.51
+US,LLY,Eli Lilly and Company,Healthcare,1370.64,6.39,22.23,34.80,42,28,0,46.01,102.29,47.70,74.18,buy,-2.48
+US,NVDA,NVIDIA Corporation,Technology,213.19,-1.02,3.17,29.50,-5,60,0,26.95,117.21,105.90,41.85,strong_buy,54.30
+IN,BAJAJ-AUTO.NS,BAJAJ AUTO LIMITED,Consumer Cyclical,10383.00,-0.97,-9.18,28.30,8,46,0,22.15,35.56,57.40,46.91,buy,15.11
+IN,JSWSTEEL.NS,JSW STEEL LIMITED,Basic Materials,1255.40,1.14,-1.21,23.10,9,36,0,10.79,31.93,20.70,53.94,buy,11.53
+US,INTU,Intuit Inc.,Technology,328.26,0.02,3.10,21.00,4,36,0,19.94,23.60,13.70,54.92,buy,24.22
+US,JPM,JP Morgan Chase & Co.,Financial Services,343.36,1.20,-2.63,20.80,13,28,0,14.41,18.01,10.20,57.82,buy,8.42
+US,META,"Meta Platforms, Inc.",Communication Services,630.87,3.00,6.88,19.60,-26,60,0,21.52,32.26,26.10,37.04,strong_buy,34.48
+US,CRM,"Salesforce, Inc.",Technology,230.91,-4.63,24.18,17.50,1,32,0,21.13,19.38,10.80,43.69,buy,24.33
+US,ANET,"Arista Networks, Inc.",Technology,184.74,-1.06,-0.08,16.80,-7,38,0,58.28,31.48,37.70,44.89,strong_buy,31.85
+US,CSCO,"Cisco Systems, Inc.",Technology,108.52,-1.60,-6.34,15.80,2,28,0,32.58,27.32,17.60,46.55,buy,25.47
+US,ADBE,Adobe Inc.,Technology,246.65,-1.25,-1.87,14.60,-9,36,0,13.76,61.90,12.90,47.81,hold,10.40
+IN,CHOLAFIN.NS,CHOLAMANDALAM IN & FIN CO,Financial Services,1604.20,3.82,-9.56,13.30,-17,40,0,21.98,20.58,64.50,50.68,none,24.71
+US,AMZN,"Amazon.com, Inc.",Consumer Cyclical,245.87,-3.43,-13.43,12.90,-13,36,0,19.78,30.56,19.60,42.24,strong_buy,35.20
+US,ORCL,Oracle Corporation,Technology,137.72,-4.72,-2.91,11.60,-25,44,0,21.58,41.19,29.60,51.29,buy,71.22
+IN,ONGC.NS,OIL AND NATURAL GAS CORP.,Energy,225.79,0.40,-6.54,7.90,-30,42,0,6.53,,25.70,46.98,buy,29.29
+IN,EICHERMOT.NS,EICHER MOTORS LTD,Consumer Cyclical,7238.00,-0.85,-8.52,7.00,-23,34,0,34.44,,31.50,49.83,buy,15.18
+IN,HEROMOTOCO.NS,HERO MOTOCORP LIMITED,Consumer Cyclical,5105.00,-4.09,-4.13,6.20,-32,40,0,17.04,26.93,24.20,46.32,buy,21.81
+US,AMAT,"Applied Materials, Inc.",Technology,424.51,2.05,-18.08,5.10,-48,52,0,36.63,41.07,24.80,44.59,strong_buy,47.90
+US,AVGO,Broadcom Inc.,Technology,344.90,-1.96,-12.07,3.60,-44,46,0,44.04,44.25,85.50,49.01,strong_buy,53.71
+IN,COALINDIA.NS,COAL INDIA LTD,Energy,393.10,0.28,-5.78,1.20,-48,45,0,7.76,,45.10,36.80,buy,19.61
+US,LRCX,Lam Research Corporation,Technology,256.04,0.87,-13.09,0.00,-49,44,0,38.13,70.12,54.40,39.52,strong_buy,42.18
+IN,SUNPHARMA.NS,SUN PHARMACEUTICAL IND L,Healthcare,1761.00,0.20,-12.00,-0.20,-32,28,0,34.94,,10.50,42.48,buy,23.47
+US,GOOGL,Alphabet Inc.,Communication Services,284.64,-12.39,-23.79,-1.20,-56,48,0,14.86,48.68,24.20,22.51,strong_buy,47.53
+IN,BAJFINANCE.NS,BAJAJ FINANCE LIMITED,Financial Services,938.90,2.36,-10.88,-2.50,-44,34,0,27.00,19.03,26.70,43.44,buy,24.08
+IN,HINDALCO.NS,HINDALCO  INDUSTRIES  LTD,Basic Materials,886.30,-0.83,-8.67,-4.40,-50,36,0,12.02,,32.10,39.23,buy,29.98
+US,NFLX,"Netflix, Inc.",Communication Services,61.92,-0.12,-15.57,-7.80,-59,38,0,17.89,53.46,11.80,30.12,buy,36.90
+US,UBER,"Uber Technologies, Inc.",Technology,65.45,0.28,-8.60,-8.00,-53,32,0,14.35,37.16,12.20,35.78,buy,54.10
+IN,POLYCAB.NS,POLYCAB INDIA LIMITED,Industrials,7745.00,0.85,-12.94,-9.00,-60,36,0,36.91,26.77,52.80,39.51,buy,29.09
+IN,IRCTC.NS,INDIAN RAIL TOUR CORP LTD,Consumer Cyclical,444.05,0.30,-9.96,-12.20,-55,26,0,25.49,,18.10,40.17,none,44.43
+IN,NESTLEIND.NS,NESTLE INDIA LIMITED,Consumer Defensive,1188.60,1.76,-21.84,-13.90,-68,34,0,56.20,79.86,20.30,32.51,buy,26.72

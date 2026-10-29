@@ -1,18 +1,17 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
-US,CVX,Chevron Corporation,Energy,229.20,0.43,16.45,55.90,61,51,0,22.06,12.23,53.50,66.98,buy,1.44
-IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,458.30,4.16,17.69,52.80,70,38,0,21.11,11.83,20.70,67.72,buy,8.08
-US,COP,ConocoPhillips,Energy,149.06,0.74,23.72,50.40,64,38,0,19.90,14.18,35.50,68.78,buy,1.62
-US,MU,"Micron Technology, Inc.",Technology,983.23,5.86,19.46,49.90,30,68,0,13.23,88.26,379.30,53.15,strong_buy,58.86
-US,XOM,ExxonMobil Holdings Corporation,Energy,182.02,1.17,17.10,49.60,60,40,0,23.43,12.58,44.10,67.22,buy,-1.43
-US,LLY,Eli Lilly and Company,Healthcare,1288.30,0.50,12.14,42.00,58,28,0,43.25,102.29,47.70,64.45,buy,3.53
-IN,DIVISLAB.NS,DIVI S LABORATORIES LTD,Healthcare,9644.50,0.90,23.10,39.60,59,22,0,88.03,,27.80,61.47,hold,-10.70
-US,TXN,Texas Instruments Incorporated,Technology,309.83,0.30,12.36,38.50,30,46,0,40.19,39.72,27.70,70.39,buy,8.72
-US,PLTR,Palantir Technologies Inc.,Technology,196.81,-0.97,59.93,37.90,38,38,0,169.66,38.10,92.80,53.87,buy,6.18
-US,ORCL,Oracle Corporation,Technology,144.54,10.73,11.30,34.20,23,44,0,22.66,41.19,29.60,57.60,buy,63.14
-US,SHOP,Shopify Inc.,Technology,168.22,1.45,43.59,34.10,45,24,0,113.66,15.54,33.70,56.56,buy,5.08
-US,AMD,"Advanced Micro Devices, Inc.",Technology,578.44,3.24,21.48,33.40,33,34,0,147.56,10.20,50.10,53.62,strong_buy,10.68
-IN,TVSMOTOR.NS,TVS MOTOR COMPANY  LTD,Consumer Cyclical,4285.80,1.08,1.84,31.10,50,14,0,53.21,37.23,39.40,65.65,buy,0.56
-US,ISRG,"Intuitive Surgical, Inc.",Healthcare,444.18,-0.38,25.71,29.40,49,12,0,53.71,17.93,21.70,64.25,buy,8.66
-IN,PERSISTENT.NS,PERSISTENT SYSTEMS LTD,Technology,5879.00,0.53,6.61,29.20,51,10,0,51.56,22.92,30.30,59.59,hold,-2.23
-IN,ETERNAL.NS,ETERNAL LIMITED,Consumer Cyclical,337.35,3.48,8.59,27.50,48,9,0,635.85,1.59,77.60,59.11,buy,13.36
-US,ANET,"Arista Networks, Inc.",Technology,186.72,-0.15,3.53,21.00,2,38,0,58.90,31.48,37.70,46.27,strong_buy,30.46
+US,CVX,Chevron Corporation,Energy,230.40,0.52,19.27,55.70,61,51,0,22.18,12.23,53.50,68.22,buy,0.91
+IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,459.00,4.32,17.87,52.90,70,38,0,21.27,11.83,20.70,68.01,buy,7.91
+US,COP,ConocoPhillips,Energy,149.29,0.16,25.29,50.70,65,38,0,19.77,14.18,35.50,69.08,buy,1.46
+US,MU,"Micron Technology, Inc.",Technology,938.17,-4.58,13.10,49.90,23,74,0,12.62,88.26,379.30,47.57,strong_buy,66.48
+US,XOM,ExxonMobil Holdings Corporation,Energy,182.39,0.20,17.63,49.80,61,40,0,23.47,12.58,44.10,67.68,buy,-1.63
+US,TXN,Texas Instruments Incorporated,Technology,307.71,-0.68,14.37,47.60,49,46,0,39.91,39.72,27.70,68.04,buy,9.47
+IN,DIVISLAB.NS,DIVI S LABORATORIES LTD,Healthcare,9664.00,1.10,23.34,39.60,59,22,0,87.69,,27.80,61.89,hold,-10.88
+IN,ADANIPORTS.NS,ADANI PORT & SEZ LTD,Industrials,1872.00,6.29,12.49,39.30,63,18,0,31.24,15.63,23.70,64.83,strong_buy,11.45
+US,PLTR,Palantir Technologies Inc.,Technology,193.73,-1.57,54.18,37.60,37,38,0,166.97,38.10,92.80,50.59,buy,8.88
+US,LLY,Eli Lilly and Company,Healthcare,1370.64,6.39,22.23,34.80,42,28,0,46.01,102.29,47.70,74.18,buy,-2.48
+US,SHOP,Shopify Inc.,Technology,167.07,-0.68,42.78,34.00,45,24,0,112.89,15.54,33.70,55.08,buy,5.81
+US,AMD,"Advanced Micro Devices, Inc.",Technology,567.04,-1.97,17.00,33.00,32,34,0,144.60,10.20,50.10,51.01,strong_buy,12.90
+IN,TVSMOTOR.NS,TVS MOTOR COMPANY  LTD,Consumer Cyclical,4280.00,0.95,1.70,31.00,50,14,0,53.13,37.23,39.40,65.37,buy,0.70
+US,ISRG,"Intuitive Surgical, Inc.",Healthcare,448.74,1.03,19.53,29.80,50,12,0,54.24,17.93,21.70,66.28,buy,7.55
+IN,PERSISTENT.NS,PERSISTENT SYSTEMS LTD,Technology,5880.00,0.55,6.62,29.20,51,10,0,51.43,22.92,30.30,59.62,hold,-2.25
+IN,ETERNAL.NS,ETERNAL LIMITED,Consumer Cyclical,337.85,3.63,8.76,27.60,48,9,0,637.45,1.59,77.60,59.36,buy,13.19

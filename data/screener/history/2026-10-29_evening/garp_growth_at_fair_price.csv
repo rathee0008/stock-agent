@@ -1,0 +1,12 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+US,BLK,"BlackRock, Inc.",Financial Services,1171.97,1.22,4.02,52.10,54,50,0,26.68,,19.10,66.60,strong_buy,15.68
+US,MU,"Micron Technology, Inc.",Technology,938.17,-4.58,13.10,49.90,23,74,0,12.62,88.26,379.30,47.57,strong_buy,66.48
+IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1769.60,-0.39,6.03,48.00,52,44,0,28.44,19.19,15.60,63.81,buy,-1.07
+US,MSFT,Microsoft Corporation,Technology,523.86,-1.35,7.43,40.90,33,48,0,29.18,34.04,17.70,50.71,strong_buy,15.51
+US,V,Visa Inc.,Financial Services,409.89,2.32,12.09,39.70,60,22,0,33.27,63.51,13.20,67.32,strong_buy,7.46
+IN,ADANIPORTS.NS,ADANI PORT & SEZ LTD,Industrials,1872.00,6.29,12.49,39.30,63,18,0,31.24,15.63,23.70,64.83,strong_buy,11.45
+US,UNP,Union Pacific Corporation,Industrials,299.52,0.58,2.85,34.80,47,24,0,23.35,38.75,15.30,66.23,buy,10.51
+US,NVDA,NVIDIA Corporation,Technology,213.19,-1.02,3.17,29.50,-5,60,0,26.95,117.21,105.90,41.85,strong_buy,54.30
+IN,HAL.NS,HINDUSTAN AERONAUTICS LTD,Industrials,4869.90,0.41,6.30,28.80,41,18,0,34.94,,14.40,53.12,buy,14.63
+US,INTU,Intuit Inc.,Technology,328.26,0.02,3.10,21.00,4,36,0,19.94,23.60,13.70,54.92,buy,24.22
+US,META,"Meta Platforms, Inc.",Communication Services,630.87,3.00,6.88,19.60,-26,60,0,21.52,32.26,26.10,37.04,strong_buy,34.48

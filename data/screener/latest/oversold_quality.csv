@@ -1,7 +1,10 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
-US,META,"Meta Platforms, Inc.",Communication Services,612.49,-1.24,10.02,13.40,-39,60,0,20.90,32.26,26.10,30.66,strong_buy,38.51
-US,BAC,Bank of America Corporation,Financial Services,50.85,0.34,-17.92,3.60,-22,26,0,12.14,10.73,7.10,29.75,strong_buy,23.80
-US,NFLX,"Netflix, Inc.",Communication Services,61.99,-0.85,-13.55,-5.30,-54,38,0,17.92,53.46,11.80,30.25,buy,36.74
-IN,SHRIRAMFIN.NS,SHRIRAM FINANCE LIMITED,Financial Services,839.05,0.78,-18.32,-5.80,-66,48,0,14.00,14.75,37.90,30.29,strong_buy,34.33
-US,UBER,"Uber Technologies, Inc.",Technology,65.27,-0.78,-7.23,-8.20,-53,32,0,14.31,37.16,12.20,34.88,buy,54.52
-US,BKNG,Booking Holdings Inc. Common St,Consumer Cyclical,147.94,-1.47,-23.31,-10.90,-73,44,0,16.40,,8.10,30.67,buy,57.30
+US,META,"Meta Platforms, Inc.",Communication Services,630.87,3.00,6.88,19.60,-26,60,0,21.52,32.26,26.10,37.04,strong_buy,34.48
+IN,COALINDIA.NS,COAL INDIA LTD,Energy,393.10,0.28,-5.78,1.20,-48,45,0,7.76,,45.10,36.80,buy,19.61
+US,GOOGL,Alphabet Inc.,Communication Services,284.64,-12.39,-23.79,-1.20,-56,48,0,14.86,48.68,24.20,22.51,strong_buy,47.53
+US,BAC,Bank of America Corporation,Financial Services,51.64,1.55,-17.35,-2.90,-35,26,0,12.32,10.73,7.10,37.80,strong_buy,21.91
+IN,SHRIRAMFIN.NS,SHRIRAM FINANCE LIMITED,Financial Services,841.10,1.03,-18.12,-5.70,-66,48,0,14.02,14.75,37.90,30.88,strong_buy,34.01
+US,NFLX,"Netflix, Inc.",Communication Services,61.92,-0.12,-15.57,-7.80,-59,38,0,17.89,53.46,11.80,30.12,buy,36.90
+US,UBER,"Uber Technologies, Inc.",Technology,65.45,0.28,-8.60,-8.00,-53,32,0,14.35,37.16,12.20,35.78,buy,54.10
+US,BKNG,Booking Holdings Inc. Common St,Consumer Cyclical,149.64,1.15,-22.35,-10.10,-71,44,0,16.58,,8.10,33.81,buy,55.52
+US,CAT,"Caterpillar, Inc.",Industrials,656.16,-8.02,-20.95,-17.80,-62,22,0,28.24,56.97,24.00,27.24,buy,41.26
