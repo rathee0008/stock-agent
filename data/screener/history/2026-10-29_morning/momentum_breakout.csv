@@ -1,0 +1,19 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+US,CVX,Chevron Corporation,Energy,229.20,0.43,16.45,55.90,61,51,0,22.06,12.23,53.50,66.98,buy,1.44
+IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,458.30,4.16,17.69,52.80,70,38,0,21.11,11.83,20.70,67.72,buy,8.08
+US,COP,ConocoPhillips,Energy,149.06,0.74,23.72,50.40,64,38,0,19.90,14.18,35.50,68.78,buy,1.62
+US,XOM,ExxonMobil Holdings Corporation,Energy,182.02,1.17,17.10,49.60,60,40,0,23.43,12.58,44.10,67.22,buy,-1.43
+US,ACN,Accenture plc,Technology,243.40,3.50,46.70,48.20,71,28,0,17.95,26.02,6.20,64.50,buy,-5.61
+US,MSFT,Microsoft Corporation,Technology,531.01,-0.06,14.26,44.40,40,48,0,29.58,34.04,17.70,56.06,strong_buy,13.96
+US,LLY,Eli Lilly and Company,Healthcare,1288.30,0.50,12.14,42.00,58,28,0,43.25,102.29,47.70,64.45,buy,3.53
+IN,DIVISLAB.NS,DIVI S LABORATORIES LTD,Healthcare,9644.50,0.90,23.10,39.60,59,22,0,88.03,,27.80,61.47,hold,-10.70
+IN,ADANIPORTS.NS,ADANI PORT & SEZ LTD,Industrials,1864.30,5.85,12.03,39.00,63,18,0,31.11,,18.60,64.16,strong_buy,11.91
+US,TXN,Texas Instruments Incorporated,Technology,309.83,0.30,12.36,38.50,30,46,0,40.19,39.72,27.70,70.39,buy,8.72
+US,TMO,Thermo Fisher Scientific Inc,Healthcare,704.15,1.61,22.61,38.30,66,14,0,37.14,13.38,9.10,63.90,strong_buy,6.64
+US,AMGN,Amgen Inc.,Healthcare,451.83,0.87,17.31,37.20,59,18,0,28.06,91.47,9.50,66.15,hold,-12.06
+US,V,Visa Inc.,Financial Services,400.60,-0.31,9.41,35.80,51,22,0,32.52,63.51,13.20,60.94,strong_buy,9.10
+US,ABBV,AbbVie Inc.,Healthcare,285.99,-0.14,13.97,35.60,58,16,0,80.79,,10.20,64.72,buy,-0.98
+US,IBM,International Business Machines,Technology,253.22,1.19,13.22,35.30,53,20,0,21.87,34.77,4.70,68.16,buy,1.58
+US,ORCL,Oracle Corporation,Technology,144.54,10.73,11.30,34.20,23,44,0,22.66,41.19,29.60,57.60,buy,63.14
+US,SHOP,Shopify Inc.,Technology,168.22,1.45,43.59,34.10,45,24,0,113.66,15.54,33.70,56.56,buy,5.08
+US,PG,Procter & Gamble Company (The),Consumer Defensive,158.26,-0.61,9.53,33.20,59,10,0,23.83,29.61,4.00,57.78,buy,9.51

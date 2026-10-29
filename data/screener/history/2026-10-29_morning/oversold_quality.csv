@@ -1,0 +1,7 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+US,META,"Meta Platforms, Inc.",Communication Services,612.49,-1.24,10.02,13.40,-39,60,0,20.90,32.26,26.10,30.66,strong_buy,38.51
+US,BAC,Bank of America Corporation,Financial Services,50.85,0.34,-17.92,3.60,-22,26,0,12.14,10.73,7.10,29.75,strong_buy,23.80
+US,NFLX,"Netflix, Inc.",Communication Services,61.99,-0.85,-13.55,-5.30,-54,38,0,17.92,53.46,11.80,30.25,buy,36.74
+IN,SHRIRAMFIN.NS,SHRIRAM FINANCE LIMITED,Financial Services,839.05,0.78,-18.32,-5.80,-66,48,0,14.00,14.75,37.90,30.29,strong_buy,34.33
+US,UBER,"Uber Technologies, Inc.",Technology,65.27,-0.78,-7.23,-8.20,-53,32,0,14.31,37.16,12.20,34.88,buy,54.52
+US,BKNG,Booking Holdings Inc. Common St,Consumer Cyclical,147.94,-1.47,-23.31,-10.90,-73,44,0,16.40,,8.10,30.67,buy,57.30
