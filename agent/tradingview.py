@@ -75,3 +75,95 @@ def widget_html(
       </script>
     </div>
     """
+
+
+# ---------------------------------------------------------------------------
+# Index dashboard helpers (pages/14_📈_Index_Charts.py)
+# ---------------------------------------------------------------------------
+# TradingView's free embed only accepts its "basic studies". Unknown ids are
+# ignored by the widget, so a long list degrades gracefully rather than erroring.
+STUDY_CATALOG: dict[str, dict[str, str]] = {
+    "Trend": {
+        "SMA": "MASimple@tv-basicstudies",
+        "EMA": "MAExp@tv-basicstudies",
+        "VWMA": "VWMA@tv-basicstudies",
+        "Bollinger Bands": "BB@tv-basicstudies",
+        "Ichimoku Cloud": "IchimokuCloud@tv-basicstudies",
+        "Parabolic SAR": "PSAR@tv-basicstudies",
+        "Keltner Channels": "KLTNR@tv-basicstudies",
+        "Donchian Channels": "DONCH@tv-basicstudies",
+        "Envelope": "Envelope@tv-basicstudies",
+        "Pivot Points": "PivotPointsStandard@tv-basicstudies",
+        "ZigZag": "ZigZag@tv-basicstudies",
+    },
+    "Momentum": {
+        "RSI": "RSI@tv-basicstudies",
+        "MACD": "MACD@tv-basicstudies",
+        "Stochastic": "Stochastic@tv-basicstudies",
+        "Stochastic RSI": "StochasticRSI@tv-basicstudies",
+        "CCI": "CCI@tv-basicstudies",
+        "Williams %R": "WilliamR@tv-basicstudies",
+        "Momentum": "MOM@tv-basicstudies",
+        "ROC": "ROC@tv-basicstudies",
+        "TRIX": "TRIX@tv-basicstudies",
+        "Awesome Oscillator": "AwesomeOscillator@tv-basicstudies",
+        "Ultimate Oscillator": "UltimateOsc@tv-basicstudies",
+    },
+    "Trend strength": {
+        "ADX": "ADX@tv-basicstudies",
+        "Directional Movement": "DM@tv-basicstudies",
+        "Aroon": "AROON@tv-basicstudies",
+        "Efficiency Ratio": "EfficiencyRatio@tv-basicstudies",
+    },
+    "Volatility": {
+        "ATR": "ATR@tv-basicstudies",
+        "Historical Volatility": "HV@tv-basicstudies",
+    },
+    "Volume": {
+        "Volume": "Volume@tv-basicstudies",
+        "VWAP": "VWAP@tv-basicstudies",
+        "OBV": "OBV@tv-basicstudies",
+        "Money Flow Index": "MF@tv-basicstudies",
+        "Chaikin Money Flow": "CMF@tv-basicstudies",
+        "Chaikin Oscillator": "ChaikinOscillator@tv-basicstudies",
+        "Accum/Distribution": "ACCD@tv-basicstudies",
+    },
+}
+
+DEFAULT_STUDY_NAMES = ["SMA", "EMA", "Bollinger Bands", "RSI", "MACD", "Volume"]
+
+
+def all_study_names() -> list[str]:
+    return [name for group in STUDY_CATALOG.values() for name in group]
+
+
+def study_ids(names: list[str]) -> list[str]:
+    """Map display names (see ``STUDY_CATALOG``) to TradingView study ids, in order."""
+    lookup = {n: sid for group in STUDY_CATALOG.values() for n, sid in group.items()}
+    return [lookup[n] for n in names if n in lookup]
+
+
+def technical_gauge_html(symbol: str, interval: str = "1D", theme: str = "dark",
+                         height: int = 450) -> str:
+    """TradingView's 'Technical Analysis' gauge: buy/sell/neutral summary of
+    ~11 oscillators and ~15 moving averages for ``symbol``."""
+    config = {
+        "interval": interval,
+        "width": "100%",
+        "isTransparent": True,
+        "height": height,
+        "symbol": symbol,
+        "showIntervalTabs": True,
+        "displayMode": "single",
+        "locale": "en",
+        "colorTheme": theme,
+    }
+    return f"""
+    <div class="tradingview-widget-container" style="height:{height}px;width:100%;">
+      <div class="tradingview-widget-container__widget"></div>
+      <script type="text/javascript"
+        src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
+        {json.dumps(config)}
+      </script>
+    </div>
+    """
