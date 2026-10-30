@@ -1,17 +1,12 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
-US,CVX,Chevron Corporation,Energy,231.46,0.99,19.82,51.60,61,43,0,22.28,12.23,53.50,69.25,buy,0.45
-US,COP,ConocoPhillips,Energy,150.03,0.65,25.91,50.70,65,38,0,19.87,14.18,35.50,69.99,buy,0.97
-US,XOM,ExxonMobil Holdings Corporation,Energy,183.29,0.70,18.21,50.00,61,40,0,23.59,12.58,44.10,68.74,buy,-2.12
-US,ACN,Accenture plc,Technology,247.22,1.57,49.14,48.20,71,28,0,18.23,26.02,6.20,66.05,buy,-7.07
-IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,461.30,0.50,18.19,46.30,56,38,0,21.38,11.83,20.70,69.00,buy,7.37
-IN,DIVISLAB.NS,DIVI S LABORATORIES LTD,Healthcare,9799.00,1.40,21.64,41.00,62,22,0,89.89,,27.80,64.74,hold,-12.11
-US,TXN,Texas Instruments Incorporated,Technology,312.94,1.00,16.32,38.60,30,46,0,40.59,39.72,27.70,71.82,buy,7.64
-US,AMGN,Amgen Inc.,Healthcare,460.73,1.97,21.61,38.10,61,18,0,28.62,91.47,9.50,69.58,hold,-13.76
-US,PLTR,Palantir Technologies Inc.,Technology,196.42,-0.20,56.32,37.80,38,38,0,169.33,38.10,92.80,53.43,buy,7.39
-US,ABBV,AbbVie Inc.,Healthcare,290.79,1.68,18.64,36.70,60,16,0,82.14,,10.20,69.44,buy,-2.62
-US,TMO,Thermo Fisher Scientific Inc,Healthcare,709.18,0.71,23.54,35.90,61,14,0,37.40,13.38,9.10,65.36,strong_buy,6.05
-US,QCOM,QUALCOMM Incorporated,Technology,185.41,1.33,22.33,33.30,48,20,0,21.46,33.75,-4.00,57.12,hold,5.87
-US,AMD,"Advanced Micro Devices, Inc.",Technology,566.42,-2.08,16.87,33.00,32,34,0,144.49,10.20,50.10,50.87,strong_buy,13.03
-US,LLY,Eli Lilly and Company,Healthcare,1373.70,6.63,22.50,32.20,51,16,0,46.11,,38.60,74.44,buy,0.29
-US,SHOP,Shopify Inc.,Technology,166.89,-0.79,42.63,31.60,40,24,0,112.76,15.54,33.70,54.85,buy,5.92
-US,ISRG,"Intuitive Surgical, Inc.",Healthcare,448.76,1.03,19.54,29.80,50,12,0,54.26,17.93,21.70,66.29,buy,7.55
+IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,461.60,0.57,18.27,46.40,56,38,0,21.39,11.83,20.70,69.12,buy,7.30
+US,CVX,Chevron Corporation,Energy,235.01,1.53,23.43,45.20,48,43,0,22.62,12.23,53.50,72.45,buy,-1.07
+IN,DIVISLAB.NS,DIVI S LABORATORIES LTD,Healthcare,9780.00,1.20,21.40,43.80,68,22,0,88.74,,27.80,64.36,hold,-11.94
+US,COP,ConocoPhillips,Energy,153.25,2.15,29.94,43.60,50,38,0,20.30,14.18,35.50,73.65,buy,-1.15
+US,XOM,ExxonMobil Holdings Corporation,Energy,186.39,1.69,21.06,43.40,47,40,0,23.99,12.58,44.10,72.15,buy,-3.75
+US,ACN,Accenture plc,Technology,260.06,5.20,52.59,41.20,56,28,0,19.18,26.02,6.20,70.69,buy,-11.66
+US,TMO,Thermo Fisher Scientific Inc,Healthcare,698.60,-1.49,23.70,35.90,61,14,0,36.85,13.38,9.10,59.90,strong_buy,7.66
+US,ABBV,AbbVie Inc.,Healthcare,296.10,1.83,21.45,30.90,48,16,0,83.61,,10.20,73.63,buy,-4.36
+US,AMGN,Amgen Inc.,Healthcare,471.68,2.38,20.94,29.90,43,18,0,29.30,91.47,9.50,73.18,hold,-15.77
+US,LLY,Eli Lilly and Company,Healthcare,1420.54,3.41,27.33,29.20,44,16,0,47.69,,38.60,78.08,buy,-3.01
+US,PFE,"Pfizer, Inc.",Healthcare,30.56,2.04,20.27,24.30,61,-8,0,40.21,5.01,2.60,66.83,buy,-4.26
