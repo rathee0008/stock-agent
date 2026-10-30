@@ -35,6 +35,26 @@ def batch_history(syms: list[str], period: str = "1y", min_rows: int = 60) -> di
     return out
 
 
+def market_caps(syms: list[str]) -> dict[str, float]:
+    """{symbol: market cap in local currency} via Yahoo fast_info (missing symbols are omitted)."""
+    def one(sym: str) -> tuple[str, float | None]:
+        try:
+            fi = yf.Ticker(sym).fast_info
+            for key in ("market_cap", "marketCap"):
+                try:
+                    v = fi[key]
+                except Exception:  # noqa: BLE001
+                    continue
+                if v and float(v) > 0:
+                    return sym, float(v)
+        except Exception:  # noqa: BLE001
+            pass
+        return sym, None
+
+    with cf.ThreadPoolExecutor(max_workers=8) as ex:
+        return {s: v for s, v in ex.map(one, syms) if v}
+
+
 def live_prices(syms: list[str]) -> dict[str, tuple[float, float]]:
     """{symbol: (last price, previous close)} from 5-minute bars (Yahoo, ~15 min delayed).
 
