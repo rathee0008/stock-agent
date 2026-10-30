@@ -1,7 +1,9 @@
 """Index charts: NIFTY (India) and NASDAQ (US) with a full indicator set.
 
 NSE symbols are blocked in TradingView's free embed, so NSE indices default to the built-in chart
-(Yahoo data, indicators computed in agent/indexchart.py). SENSEX and the US indices use TradingView.
+(Yahoo data, indicators computed in agent/indexchart.py). The free embed also blocks most index symbols
+(IXIC, NDX, SPX, DJI, VIX, futures), so those default to the built-in chart too. Tested working on
+TradingView: BSE:SENSEX and ETFs (QQQ, SPY).
 """
 
 import sys
@@ -27,13 +29,14 @@ INDIA = {
     "INDIA VIX": ("NSE:INDIAVIX", "^INDIAVIX", False),
 }
 US = {
-    "NASDAQ Composite": ("NASDAQ:IXIC", "^IXIC", True),
-    "NASDAQ 100": ("NASDAQ:NDX", "^NDX", True),
     "QQQ (NASDAQ-100 ETF)": ("NASDAQ:QQQ", "QQQ", True),
-    "NASDAQ 100 E-mini futures": ("CME_MINI:NQ1!", "NQ=F", True),
-    "S&P 500": ("SP:SPX", "^GSPC", True),
-    "Dow Jones": ("DJ:DJI", "^DJI", True),
-    "VIX": ("CBOE:VIX", "^VIX", True),
+    "NASDAQ Composite": ("NASDAQ:IXIC", "^IXIC", False),
+    "NASDAQ 100": ("NASDAQ:NDX", "^NDX", False),
+    "NASDAQ 100 E-mini futures": ("CME_MINI:NQ1!", "NQ=F", False),
+    "SPY (S&P 500 ETF)": ("AMEX:SPY", "SPY", True),
+    "S&P 500": ("SP:SPX", "^GSPC", False),
+    "Dow Jones": ("DJ:DJI", "^DJI", False),
+    "VIX": ("CBOE:VIX", "^VIX", False),
 }
 # label -> (TradingView chart interval, gauge interval)
 TIMEFRAMES = {
@@ -71,8 +74,8 @@ if st.sidebar.button("Reload charts", use_container_width=True):
 
 ui.hero(
     "Index Charts",
-    "NIFTY and NASDAQ charts with a full indicator set. NSE indices use the built-in chart because "
-    "TradingView's free embed does not allow NSE symbols; SENSEX and the US indices use live TradingView.",
+    "NIFTY and NASDAQ charts with a full indicator set. TradingView's free embed blocks NSE and most index "
+    "symbols, so those open on the built-in chart; SENSEX, QQQ and SPY use live TradingView.",
     pills=[("LIVE", "up"), ("NSE / BSE", "flat"), ("NASDAQ", "flat")],
 )
 
@@ -126,7 +129,7 @@ def builtin_chart(label: str, yahoo_symbol: str, market: str, indicators: list[s
 def tradingview_chart(label: str, symbol: str, blocked: bool, market_note: str) -> None:
     interval, gauge_interval = TIMEFRAMES[tf]
     if blocked:
-        st.warning("TradingView's free embed refuses NSE symbols, so this will likely show 'only available on "
+        st.warning("TradingView's free embed refuses this symbol, so it will likely show 'only available on "
                    "TradingView'. Use the built-in chart, or open it on tradingview.com.")
     components.html(
         tv.widget_html(symbol, theme=theme, height=height, interval=interval, studies=tv.study_ids(tv_chosen)),

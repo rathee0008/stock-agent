@@ -1,7 +1,7 @@
 """Built-in index chart: candlesticks plus a full indicator set, computed locally.
 
-Why this exists: TradingView's free embed refuses every ``NSE:`` symbol (NIFTY,
-BANKNIFTY, ...) with "only available on TradingView", so the India tab cannot rely
+Why this exists: TradingView's free embed refuses NSE and most index symbols (NIFTY,
+BANKNIFTY, IXIC, SPX, ...) with "only available on TradingView", so those cannot rely
 on it. This module draws the same kind of chart from Yahoo data we already fetch
 (~15 min delayed), with every indicator computed here in pandas.
 """
