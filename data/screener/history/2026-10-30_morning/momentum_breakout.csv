@@ -1,0 +1,20 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+US,CVX,Chevron Corporation,Energy,231.46,0.99,19.82,51.60,61,43,0,22.28,12.23,53.50,69.25,buy,0.45
+US,COP,ConocoPhillips,Energy,150.03,0.65,25.91,50.70,65,38,0,19.87,14.18,35.50,69.99,buy,0.97
+US,XOM,ExxonMobil Holdings Corporation,Energy,183.29,0.70,18.21,50.00,61,40,0,23.59,12.58,44.10,68.74,buy,-2.12
+IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1793.60,1.36,8.62,48.50,53,44,0,28.71,19.19,15.60,66.04,buy,-2.39
+US,ACN,Accenture plc,Technology,247.22,1.57,49.14,48.20,71,28,0,18.23,26.02,6.20,66.05,buy,-7.07
+IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,461.30,0.50,18.19,46.30,56,38,0,21.38,11.83,20.70,69.00,buy,7.37
+IN,DIVISLAB.NS,DIVI S LABORATORIES LTD,Healthcare,9799.00,1.40,21.64,41.00,62,22,0,89.89,,27.80,64.74,hold,-12.11
+US,MSFT,Microsoft Corporation,Technology,530.14,-0.16,8.71,39.90,31,48,0,27.67,34.04,17.70,55.35,strong_buy,14.14
+US,V,Visa Inc.,Financial Services,410.54,2.48,12.27,39.80,60,22,0,33.32,63.51,13.20,67.69,strong_buy,7.44
+US,TXN,Texas Instruments Incorporated,Technology,312.94,1.00,16.32,38.60,30,46,0,40.59,39.72,27.70,71.82,buy,7.64
+US,AMGN,Amgen Inc.,Healthcare,460.73,1.97,21.61,38.10,61,18,0,28.62,91.47,9.50,69.58,hold,-13.76
+US,ABBV,AbbVie Inc.,Healthcare,290.79,1.68,18.64,36.70,60,16,0,82.14,,10.20,69.44,buy,-2.62
+US,MA,Mastercard Incorporated,Financial Services,635.70,4.16,11.34,36.60,60,16,0,34.97,241.20,14.10,69.88,strong_buy,6.35
+US,TMO,Thermo Fisher Scientific Inc,Healthcare,709.18,0.71,23.54,35.90,61,14,0,37.40,13.38,9.10,65.36,strong_buy,6.05
+US,PG,Procter & Gamble Company (The),Consumer Defensive,160.59,1.47,10.77,34.10,61,10,0,24.19,29.61,4.00,61.28,buy,8.13
+US,QCOM,QUALCOMM Incorporated,Technology,185.41,1.33,22.33,33.30,48,20,0,21.46,33.75,-4.00,57.12,hold,5.87
+US,AAPL,Apple Inc.,Technology,348.91,1.48,14.99,32.80,45,22,0,40.01,148.75,16.40,61.39,buy,-4.74
+US,LLY,Eli Lilly and Company,Healthcare,1373.70,6.63,22.50,32.20,51,16,0,46.11,,38.60,74.44,buy,0.29
+IN,PERSISTENT.NS,PERSISTENT SYSTEMS LTD,Technology,6019.00,2.36,8.47,30.50,54,10,0,52.94,22.92,30.30,64.48,hold,-4.51

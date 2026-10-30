@@ -1,21 +1,21 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
-US,CVX,Chevron Corporation,Energy,230.40,0.52,19.27,55.70,61,51,0,22.18,12.23,53.50,68.22,buy,0.91
-IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,459.00,4.32,17.87,52.90,70,38,0,21.27,11.83,20.70,68.01,buy,7.91
-US,BLK,"BlackRock, Inc.",Financial Services,1171.97,1.22,4.02,52.10,54,50,0,26.68,,19.10,66.60,strong_buy,15.68
-US,COP,ConocoPhillips,Energy,149.29,0.16,25.29,50.70,65,38,0,19.77,14.18,35.50,69.08,buy,1.46
-US,MU,"Micron Technology, Inc.",Technology,938.17,-4.58,13.10,49.90,23,74,0,12.62,88.26,379.30,47.57,strong_buy,66.48
-US,XOM,ExxonMobil Holdings Corporation,Energy,182.39,0.20,17.63,49.80,61,40,0,23.47,12.58,44.10,67.68,buy,-1.63
-US,BRK-B,Berkshire Hathaway Inc. New,Financial Services,545.47,0.95,6.30,48.30,55,42,0,13.72,12.12,10.00,68.63,buy,1.87
-US,ACN,Accenture plc,Technology,245.31,0.78,47.99,48.20,71,28,0,18.09,26.02,6.20,65.30,buy,-6.35
-IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1769.60,-0.39,6.03,48.00,52,44,0,28.44,19.19,15.60,63.81,buy,-1.07
-US,TXN,Texas Instruments Incorporated,Technology,307.71,-0.68,14.37,47.60,49,46,0,39.91,39.72,27.70,68.04,buy,9.47
-IN,ICICIBANK.NS,ICICI BANK LTD.,Financial Services,1386.60,0.65,-3.30,44.10,37,50,0,17.03,16.49,15.80,54.03,strong_buy,27.56
-US,AAPL,Apple Inc.,Technology,349.76,1.72,15.27,41.30,63,22,0,40.11,148.75,16.40,62.15,buy,-4.97
-US,MSFT,Microsoft Corporation,Technology,523.86,-1.35,7.43,40.90,33,48,0,29.18,34.04,17.70,50.71,strong_buy,15.51
-US,V,Visa Inc.,Financial Services,409.89,2.32,12.09,39.70,60,22,0,33.27,63.51,13.20,67.32,strong_buy,7.46
-IN,HCLTECH.NS,HCL TECHNOLOGIES LTD,Technology,1403.90,0.24,3.79,39.60,50,30,0,20.77,24.65,2.20,66.48,hold,-9.56
-IN,DIVISLAB.NS,DIVI S LABORATORIES LTD,Healthcare,9664.00,1.10,23.34,39.60,59,22,0,87.69,,27.80,61.89,hold,-10.88
-IN,ADANIPORTS.NS,ADANI PORT & SEZ LTD,Industrials,1872.00,6.29,12.49,39.30,63,18,0,31.24,15.63,23.70,64.83,strong_buy,11.45
-US,AMGN,Amgen Inc.,Healthcare,458.57,1.49,21.03,37.90,60,18,0,28.48,91.47,9.50,68.81,hold,-13.36
-US,PLTR,Palantir Technologies Inc.,Technology,193.73,-1.57,54.18,37.60,37,38,0,166.97,38.10,92.80,50.59,buy,8.88
-IN,TCS.NS,TATA CONSULTANCY SERV LT,Technology,2478.00,0.73,1.90,37.50,46,30,0,17.37,45.57,11.20,65.45,buy,-3.23
+US,BLK,"BlackRock, Inc.",Financial Services,1176.24,1.59,4.40,52.30,55,50,0,27.21,,19.10,67.32,strong_buy,15.26
+US,CVX,Chevron Corporation,Energy,231.46,0.99,19.82,51.60,61,43,0,22.28,12.23,53.50,69.25,buy,0.45
+US,COP,ConocoPhillips,Energy,150.03,0.65,25.91,50.70,65,38,0,19.87,14.18,35.50,69.99,buy,0.97
+US,XOM,ExxonMobil Holdings Corporation,Energy,183.29,0.70,18.21,50.00,61,40,0,23.59,12.58,44.10,68.74,buy,-2.12
+US,MU,"Micron Technology, Inc.",Technology,934.27,-4.98,12.63,49.70,22,74,0,12.57,88.26,379.30,47.15,strong_buy,67.18
+IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1793.60,1.36,8.62,48.50,53,44,0,28.71,19.19,15.60,66.04,buy,-2.39
+US,ACN,Accenture plc,Technology,247.22,1.57,49.14,48.20,71,28,0,18.23,26.02,6.20,66.05,buy,-7.07
+IN,ICICIBANK.NS,ICICI BANK LTD.,Financial Services,1395.70,0.66,-2.77,47.10,44,50,0,17.14,16.49,15.80,56.38,strong_buy,26.73
+IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,461.30,0.50,18.19,46.30,56,38,0,21.38,11.83,20.70,69.00,buy,7.37
+US,BRK-B,Berkshire Hathaway Inc. New,Financial Services,541.96,0.30,5.62,45.20,49,42,0,13.63,12.12,10.00,66.44,buy,2.53
+IN,DIVISLAB.NS,DIVI S LABORATORIES LTD,Healthcare,9799.00,1.40,21.64,41.00,62,22,0,89.89,,27.80,64.74,hold,-12.11
+US,MSFT,Microsoft Corporation,Technology,530.14,-0.16,8.71,39.90,31,48,0,27.67,34.04,17.70,55.35,strong_buy,14.14
+US,V,Visa Inc.,Financial Services,410.54,2.48,12.27,39.80,60,22,0,33.32,63.51,13.20,67.69,strong_buy,7.44
+US,TXN,Texas Instruments Incorporated,Technology,312.94,1.00,16.32,38.60,30,46,0,40.59,39.72,27.70,71.82,buy,7.64
+US,AMGN,Amgen Inc.,Healthcare,460.73,1.97,21.61,38.10,61,18,0,28.62,91.47,9.50,69.58,hold,-13.76
+US,PLTR,Palantir Technologies Inc.,Technology,196.42,-0.20,56.32,37.80,38,38,0,169.33,38.10,92.80,53.43,buy,7.39
+IN,TCS.NS,TATA CONSULTANCY SERV LT,Technology,2509.90,1.29,6.10,37.80,47,30,0,17.59,45.57,11.20,67.66,buy,-4.46
+US,ABBV,AbbVie Inc.,Healthcare,290.79,1.68,18.64,36.70,60,16,0,82.14,,10.20,69.44,buy,-2.62
+US,MA,Mastercard Incorporated,Financial Services,635.70,4.16,11.34,36.60,60,16,0,34.97,241.20,14.10,69.88,strong_buy,6.35
+US,TMO,Thermo Fisher Scientific Inc,Healthcare,709.18,0.71,23.54,35.90,61,14,0,37.40,13.38,9.10,65.36,strong_buy,6.05

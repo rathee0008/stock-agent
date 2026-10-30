@@ -1,0 +1,11 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+US,META,"Meta Platforms, Inc.",Communication Services,624.52,1.96,5.81,19.10,-27,60,0,21.31,32.26,26.10,34.97,strong_buy,35.84
+IN,SHRIRAMFIN.NS,SHRIRAM FINANCE LIMITED,Financial Services,823.45,-2.10,-21.33,0.80,-52,48,0,13.72,14.75,37.90,28.63,strong_buy,36.88
+US,GOOGL,Alphabet Inc.,Communication Services,283.82,-12.64,-24.01,-1.20,-57,48,0,14.82,48.68,24.20,22.32,strong_buy,47.95
+US,BAC,Bank of America Corporation,Financial Services,51.14,0.57,-18.15,-3.30,-36,26,0,12.21,10.73,7.10,32.94,strong_buy,23.10
+IN,COALINDIA.NS,COAL INDIA LTD,Energy,390.10,-0.76,-5.81,-5.00,-58,42,0,7.21,,45.10,35.07,buy,20.53
+US,NFLX,"Netflix, Inc.",Communication Services,62.05,0.10,-15.38,-7.70,-59,38,0,17.93,53.46,11.80,30.49,buy,36.60
+US,UBER,"Uber Technologies, Inc.",Technology,65.74,0.72,-8.20,-7.80,-52,32,0,14.42,37.16,12.20,37.18,buy,53.42
+US,BKNG,Booking Holdings Inc. Common St,Consumer Cyclical,150.43,1.68,-21.94,-9.90,-70,44,0,16.68,,8.10,35.17,buy,54.70
+IN,IRCTC.NS,INDIAN RAIL TOUR CORP LTD,Consumer Cyclical,435.65,-1.89,-11.06,-12.70,-56,26,0,25.01,,18.10,35.62,none,47.21
+US,CAT,"Caterpillar, Inc.",Industrials,647.39,-9.25,-22.00,-17.90,-63,22,0,27.87,56.97,24.00,26.23,buy,41.75
