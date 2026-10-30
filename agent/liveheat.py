@@ -57,31 +57,43 @@ def squarify(values: list[float], x: float, y: float, w: float, h: float) -> lis
     return [rects[k] for k in range(n)]
 
 
-def layout(df: pd.DataFrame) -> list[dict]:
-    """Tiles with percent coordinates: [{sym, sector, x, y, w, h, hdr}], plus sector boxes (sym=None)."""
+def layout(df: pd.DataFrame, weights: list[float] | None = None) -> list[dict]:
+    """Tiles with percent coordinates: [{sym, sector, x, y, w, h}], plus sector boxes (sym=None).
+
+    ``weights`` is one positive number per row of ``df`` (tile area); None means equal weight.
+    """
+    w_of = dict(zip(df["Symbol"], weights)) if weights is not None else {}
     groups = {s: g for s, g in df.groupby("Sector")}
     names = list(groups)
-    boxes = squarify([float(len(groups[s])) for s in names], 0, 0, 100, 100)
+    boxes = squarify([float(sum(w_of.get(x, 1.0) for x in groups[s]["Symbol"])) for s in names], 0, 0, 100, 100)
     out: list[dict] = []
     for name, (bx, by, bw, bh) in zip(names, boxes):
         out.append({"sector": name, "sym": None, "x": bx, "y": by, "w": bw, "h": bh})
         g = groups[name]
         pad = 0.35
         ih = min(3.2, bh * 0.2)           # header strip for the sector label (percent of full height)
-        rects = squarify([1.0] * len(g), bx + pad, by + ih, max(bw - 2 * pad, 0.1), max(bh - ih - pad, 0.1))
+        rects = squarify([float(w_of.get(x, 1.0)) for x in g["Symbol"]], bx + pad, by + ih,
+                         max(bw - 2 * pad, 0.1), max(bh - ih - pad, 0.1))
         for sym, (x, y, w, h) in zip(g["Symbol"], rects):
             out.append({"sector": name, "sym": sym, "x": x, "y": y, "w": w, "h": h})
     return out
 
 
 def build_html(df: pd.DataFrame, prev: dict[str, float] | None, limit: float, height: int = 560,
-               subtitle: str = "") -> str:
-    """HTML for one frame. ``prev`` maps Symbol -> previous Change %, or None on the first draw."""
-    tiles = layout(df)
+               subtitle: str = "", *, weights: list[float] | None = None,
+               palette: tuple[str, str] = ("#19D27A", "#FF3B4E"), highlight: set[str] | None = None,
+               min_move: float = 0.0, size_label: str = "Equal weight") -> str:
+    """HTML for one frame. ``prev`` maps Symbol -> previous Change %, or None on the first draw.
+
+    ``weights`` sets tile area, ``palette`` is (rising, falling) hex, ``highlight`` outlines
+    those symbols, and tiles moving less than ``min_move`` % are dimmed.
+    """
+    tiles = layout(df, weights)
     cur = dict(zip(df["Symbol"], df["Change %"].astype(float)))
     price = dict(zip(df["Symbol"], df["Price"].astype(float)))
     ysym = dict(zip(df["Symbol"], df["Y"])) if "Y" in df.columns else {}
     trend = dict(zip(df["Symbol"], df["Trend"])) if "Trend" in df.columns else {}
+    rows = {r["Symbol"]: r for r in df.to_dict("records")}
     data = []
     for t in tiles:
         d = {k: (round(v, 3) if isinstance(v, float) else v) for k, v in t.items()}
@@ -92,11 +104,20 @@ def build_html(df: pd.DataFrame, prev: dict[str, float] | None, limit: float, he
             if "Trend" in df.columns:
                 trd = trend[t["sym"]]
                 d["tr"] = [round(float(v), 2) for v in trd][-30:] if trd is not None and len(trd) else []
+            row = rows[t["sym"]]
+            for src, key in (("MCapTxt", "mc"), ("VolX", "vx"), ("Pos52", "p52"), ("Flags", "fl"), ("Change1D", "d1")):
+                if src in df.columns:
+                    v = row[src]
+                    d[key] = (round(float(v), 2) if isinstance(v, (int, float)) and v == v else
+                              (v if isinstance(v, str) else None))
             if "Y" in df.columns:
                 d["ys"] = ysym[t["sym"]]
                 d["prev"] = round(price[t["sym"]] / (1 + cur[t["sym"]] / 100), 4) if cur[t["sym"]] > -99 else None
         data.append(d)
-    payload = json.dumps({"tiles": data, "limit": float(limit)})
+    from .heatmetrics import hex_rgb
+
+    payload = json.dumps({"tiles": data, "limit": float(limit), "up": hex_rgb(palette[0]), "dn": hex_rgb(palette[1]),
+                          "hl": sorted(highlight or []), "minMove": float(min_move), "size": size_label})
     return _TEMPLATE.replace("__DATA__", payload).replace("__H__", str(height)).replace(
         "__SUB__", html.escape(subtitle))
 
@@ -117,14 +138,14 @@ html,body{margin:0;background:#0A0B0D;font-family:ui-monospace,Menlo,Consolas,mo
 .t b{font-size:clamp(8px,1.15vw,14px);font-weight:600;white-space:nowrap}
 .t i{font-style:normal;font-size:clamp(8px,1vw,12px);opacity:.95}
 .t u{text-decoration:none;font-size:clamp(7px,.8vw,10px);opacity:.7}
-#srh{display:grid;grid-template-columns:34px minmax(110px,1.6fr) 70px 90px minmax(120px,2fr) 80px;gap:8px;padding:14px 10px 6px;color:#7d8490;font-size:10px;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid #22252c}
+#srh{display:grid;grid-template-columns:34px minmax(110px,1.6fr) 70px 90px minmax(120px,2fr) 150px;gap:8px;padding:14px 10px 6px;color:#7d8490;font-size:10px;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid #22252c}
 #sr{position:relative}
-.sr{position:absolute;left:0;right:0;height:32px;display:grid;grid-template-columns:34px minmax(110px,1.6fr) 70px 90px minmax(120px,2fr) 80px;gap:8px;align-items:center;padding:0 10px;
+.sr{position:absolute;left:0;right:0;height:32px;display:grid;grid-template-columns:34px minmax(110px,1.6fr) 70px 90px minmax(120px,2fr) 150px;gap:8px;align-items:center;padding:0 10px;
   box-sizing:border-box;border:1px solid #1b1e24;background:#111317;border-radius:6px;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
 .sr .n{color:#9aa0aa;font-weight:700}.sr .mv{font-size:10px;margin-left:3px}.sr b{font-size:12px}
 .sr .trk{height:8px;background:#1b1e24;border-radius:4px;position:relative;overflow:hidden}
 .sr .trk i{position:absolute;top:0;bottom:0;transition:left .5s,width .5s,background-color .5s}
-.sr .v{text-align:right;font-weight:700}.up{color:#19d27a}.dn{color:#ff6b6b}
+.sr .v{text-align:right;font-weight:700}.up{color:var(--up)}.dn{color:var(--dn)}
 #dh{display:flex;align-items:center;gap:12px;padding:18px 2px 8px;color:#7d8490;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
 #dsel{background:#111317;color:#e8e8ea;border:1px solid #2a2e36;border-radius:6px;padding:6px 10px;font-family:inherit;font-size:12px}
 #dhd,.dr{display:grid;grid-template-columns:34px minmax(90px,1.2fr) 90px minmax(120px,2fr) 80px 110px;gap:8px;align-items:center;padding:0 10px;box-sizing:border-box}
@@ -135,23 +156,32 @@ html,body{margin:0;background:#0A0B0D;font-family:ui-monospace,Menlo,Consolas,mo
 .dr .trk{height:8px;background:#1b1e24;border-radius:4px;position:relative;overflow:hidden}
 .dr .trk i{position:absolute;top:0;bottom:0;transition:left .5s,width .5s,background-color .5s}
 .dr .v{text-align:right;font-weight:700}.dr svg{display:block}
-#leg{display:flex;align-items:center;gap:6px;font-size:11px;color:#7d8490;padding:6px 2px}
-#bar{flex:0 0 200px;height:8px;border-radius:4px;background:linear-gradient(90deg,#ff3b4e,#7a1f2a 30%,#1b1e24 50%,#14683e 70%,#19d27a)}
+.t.dim{opacity:.35}.t.hl{box-shadow:inset 0 0 0 2px #fff;z-index:2}.t{cursor:pointer}
+.t s{text-decoration:none;position:absolute;top:1px;right:3px;font-size:9px;opacity:.9}
+#pz{background:#111317;color:#e8e8ea;border:1px solid #2a2e36;border-radius:6px;padding:2px 10px;font-family:inherit;font-size:11px;cursor:pointer}
+#pz.on{border-color:#ffb020;color:#ffb020}
+#leg{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:11px;color:#7d8490;padding:6px 2px}
+#bar{flex:0 0 200px;height:8px;border-radius:4px}
 </style></head><body>
-<div id="top"><span><span id="dot"></span><b id="st">connecting…</b></span><span id="tk"></span><span id="adv"></span><span id="avg"></span><span>__SUB__</span></div>
+<div id="top"><span><span id="dot"></span><b id="st">connecting…</b></span><button id="pz" title="Freeze the map so you can read it; ticks keep arriving">⏸ Pause</button><span id="tk"></span><span id="adv"></span><span id="avg"></span><span>__SUB__</span></div>
 <div id="map"></div>
-<div id="leg"><span>falling</span><div id="bar"></div><span>rising</span><span style="margin-left:12px">brighter = bigger move · each tick flashes the tile</span></div>
-<div id="srh"><span>#</span><span>Sector (live ranking)</span><span>Stocks</span><span>Up / down</span><span>Average move today</span><span style="text-align:right">Avg</span></div>
+<div id="leg"><span>falling</span><div id="bar"></div><span>rising</span><span id="lim" style="margin-left:8px"></span><span style="margin-left:12px">⚡ volume ≥2× avg · ▲/▼ within 2% of 52-wk high/low · white outline = your tickers · click a tile to drill in</span></div>
+<div id="srh"><span>#</span><span>Sector (live ranking)</span><span>Stocks</span><span>Up / down</span><span>Average move today</span><span style="text-align:right">Avg · vs market</span></div>
 <div id="sr"></div>
 <div id="dh"><span>Drill into a sector</span><select id="dsel"></select><span id="dnote"></span></div>
 <div id="dhd"><span>#</span><span>Stock</span><span>Price</span><span>Move today</span><span style="text-align:right">Change</span><span>30-day trend + live</span></div>
 <div id="dl"></div>
 <script>
 const D=__DATA__, LIM=D.limit||2, map=document.getElementById('map');
-const N=[27,30,36], UP=[25,210,122], DN=[255,59,78];
+const N=[27,30,36], UP=D.up||[25,210,122], DN=D.dn||[255,59,78];
+const UPH='rgb('+UP.join(',')+')', DNH='rgb('+DN.join(',')+')';
+const root=document.documentElement.style;root.setProperty('--up',UPH);root.setProperty('--dn',DNH);
 function col(v){const a=Math.min(Math.abs(v)/LIM,1), c=v>=0?UP:DN, k=Math.pow(a,.75);
   return 'rgb('+[0,1,2].map(i=>Math.round(N[i]+(c[i]-N[i])*k)).join(',')+')';}
 const fmt=v=>(v>=0?'+':'')+v.toFixed(2)+'%';
+const HL=new Set(D.hl||[]),MIN=D.minMove||0;
+const tip=o=>{const t=o.t;return t.sym+'  '+t.sector+'\nprice '+Number(o.px).toFixed(2)+'   today '+fmt(o.d1!=null?o.d1:o.pct)+(o.d1!=null&&Math.abs(o.d1-o.pct)>0.005?'   window '+fmt(o.pct):'')
+  +(t.mc?'\nmarket cap '+t.mc:'')+(t.vx!=null?'\nvolume '+t.vx.toFixed(1)+'x 20-day avg':'')+(t.p52!=null?'\n52-wk range position '+Math.round(t.p52)+'%':'')+'\n'+o.ticks+' live ticks  ·  size: '+D.size;};
 const bySym={}, secEls={}, secMembers={}, all=[];
 for(const t of D.tiles){
   const e=document.createElement('div');
@@ -159,14 +189,17 @@ for(const t of D.tiles){
   if(t.sym===null){e.className='sec';const l=document.createElement('div');l.className='sl';
     l.innerHTML=t.sector+'<em></em>';e.appendChild(l);map.appendChild(e);secEls[t.sector]=l.querySelector('em');continue;}
   e.className='t';
-  e.innerHTML='<b>'+t.sym+'</b><i></i><u></u>';
+  e.innerHTML='<b>'+t.sym+'</b><i></i><u></u>'+(t.fl?'<s>'+t.fl+'</s>':'');
+  if(HL.has(t.sym))e.classList.add('hl');
   const o={e,i:e.querySelector('i'),u:e.querySelector('u'),t,pct:t.old,px:t.px,prev:t.prev,ticks:0};
-  o.i.textContent=fmt(t.old);o.u.textContent=t.px;e.style.backgroundColor=col(t.old);
+  o.i.textContent=fmt(t.old);o.u.textContent=t.px;e.style.backgroundColor=col(t.old);o.d1=t.d1;e.title=tip(o);
+  e.classList.toggle('dim',MIN>0&&Math.abs(t.old)<MIN);
+  e.addEventListener('click',()=>{dsel.value=t.sector;drUpdate(true,true);document.getElementById('dh').scrollIntoView({behavior:'smooth',block:'start'});});
   map.appendChild(e);all.push(o);(secMembers[t.sector]=secMembers[t.sector]||[]).push(o);
   if(t.ys)bySym[t.ys]=o;
 }
 // animate Python's previous snapshot -> current once
-requestAnimationFrame(()=>requestAnimationFrame(()=>{for(const o of all){o.pct=o.t.new;o.e.style.backgroundColor=col(o.pct);o.i.textContent=fmt(o.pct);}summary();}));
+requestAnimationFrame(()=>requestAnimationFrame(()=>{for(const o of all){o.pct=o.t.new;o.e.style.backgroundColor=col(o.pct);o.i.textContent=fmt(o.pct);o.e.classList.toggle('dim',MIN>0&&Math.abs(o.pct)<MIN);o.e.title=tip(o);}summary();}));
 const SRH=36,srEl=document.getElementById('sr'),srRows={};let srInit=null;
 srEl.style.height=(Object.keys(secMembers).length*SRH+6)+'px';
 for(const s of Object.keys(secMembers)){const e=document.createElement('div');e.className='sr';
@@ -176,13 +209,14 @@ for(const s of Object.keys(secMembers)){const e=document.createElement('div');e.
 function srUpdate(first){
   const list=Object.keys(secMembers).map(s=>{const m=secMembers[s];return {s,a:m.reduce((x,o)=>x+o.pct,0)/m.length,up:m.filter(o=>o.pct>0).length,dn:m.filter(o=>o.pct<0).length};}).sort((x,y)=>y.a-x.a);
   const mx=Math.max(1,...list.map(x=>Math.abs(x.a)));
+  const mAvg=all.reduce((x,o)=>x+o.pct,0)/all.length;
   if(!srInit){srInit={};list.forEach((x,i)=>srInit[x.s]=i);}
   list.forEach((x,i)=>{const r=srRows[x.s];r.e.style.transform='translateY('+(i*SRH)+'px)';
     const mv=srInit[x.s]-i;r.n.innerHTML=(i+1)+(mv>0?'<span class="mv up">▲'+mv+'</span>':mv<0?'<span class="mv dn">▼'+(-mv)+'</span>':'');
     r.ud.innerHTML='<span class="up">'+x.up+'↑</span> <span class="dn">'+x.dn+'↓</span>';
     const w=Math.min(Math.abs(x.a)/mx,1)*50;r.bar.style.left=x.a>=0?'50%':(50-w)+'%';r.bar.style.width=w+'%';
-    r.bar.style.backgroundColor=x.a>=0?'#19d27a':'#ff6b6b';
-    r.v.textContent=fmt(x.a);r.v.className='v '+(x.a>=0?'up':'dn');
+    r.bar.style.backgroundColor=x.a>=0?UPH:DNH;
+    const rs=x.a-mAvg;r.v.innerHTML=fmt(x.a)+' <span class="mv '+(rs>=0?'up':'dn')+'">'+(rs>=0?'+':'')+rs.toFixed(2)+' vs mkt</span>';r.v.className='v '+(x.a>=0?'up':'dn');
     if(r.last!==null&&Math.abs(x.a-r.last)>=0.005&&!first)r.e.animate([{backgroundColor:x.a>r.last?'#17472f':'#4a1c24'},{backgroundColor:'#111317'}],{duration:900});
     r.last=x.a;});
 }
@@ -195,7 +229,7 @@ function spark(o){const tr=(o.t.tr||[]).slice();if(!tr.length)return '';tr[tr.le
   const mn=Math.min(...tr),mx=Math.max(...tr),w=100,h=22,rg=(mx-mn)||1;
   const pts=tr.map((v,i)=>(i/(tr.length-1||1)*w).toFixed(1)+','+(h-2-(v-mn)/rg*(h-4)).toFixed(1)).join(' ');
   const up=tr[tr.length-1]>=tr[0];
-  return '<svg width="'+w+'" height="'+h+'"><polyline fill="none" stroke="'+(up?'#19d27a':'#ff6b6b')+'" stroke-width="1.5" points="'+pts+'"/></svg>';}
+  return '<svg width="'+w+'" height="'+h+'"><polyline fill="none" stroke="'+(up?UPH:DNH)+'" stroke-width="1.5" points="'+pts+'"/></svg>';}
 function drUpdate(first,reset){
   const sec=dsel.value;if(sec!==dSector||reset){dSector=sec;dInit=null;}
   const m=secMembers[sec].slice().sort((a,b)=>b.pct-a.pct);
@@ -205,7 +239,7 @@ function drUpdate(first,reset){
   m.forEach((o,i)=>{const d=o.dr;d.e.classList.remove('out');d.e.style.transform='translateY('+(i*DRH)+'px)';
     const mv=dInit[o.t.sym]-i;d.n.innerHTML=(i+1)+(mv>0?'<span class="mv up">▲'+mv+'</span>':mv<0?'<span class="mv dn">▼'+(-mv)+'</span>':'');
     d.p.textContent=Number(o.px).toFixed(2);const w=Math.min(Math.abs(o.pct)/mx,1)*50;
-    d.bar.style.left=o.pct>=0?'50%':(50-w)+'%';d.bar.style.width=w+'%';d.bar.style.backgroundColor=o.pct>=0?'#19d27a':'#ff6b6b';
+    d.bar.style.left=o.pct>=0?'50%':(50-w)+'%';d.bar.style.width=w+'%';d.bar.style.backgroundColor=o.pct>=0?UPH:DNH;
     d.v.textContent=fmt(o.pct);d.v.className='v '+(o.pct>=0?'up':'dn');d.sp.innerHTML=spark(o);
     if(d.last!==null&&d.lastpx!==o.px&&!first)d.e.animate([{backgroundColor:o.px>d.lastpx?'#17472f':'#4a1c24'},{backgroundColor:'#111317'}],{duration:900});
     d.last=o.pct;d.lastpx=o.px;});
@@ -220,8 +254,10 @@ function summary(){
   document.getElementById('avg').innerHTML='market avg <b>'+fmt(sum/all.length)+'</b>';
   srUpdate(false);drUpdate(false,false);
   for(const s in secMembers){const m=secMembers[s],a=m.reduce((x,o)=>x+o.pct,0)/m.length,el=secEls[s];
-    el.textContent=fmt(a);el.style.color=a>=0?'#19d27a':'#ff6b6b';}
+    el.textContent=fmt(a);el.style.color=a>=0?UPH:DNH;}
 }
+document.getElementById('bar').style.background='linear-gradient(90deg,'+DNH+',rgb(27,30,36),'+UPH+')';
+document.getElementById('lim').textContent='full colour at ±'+LIM+'%';
 fit();summary();addEventListener('resize',fit);
 // ---- live ticks straight from Yahoo's websocket (runs in your browser, so it is real-time) ----
 function b64(s){const bin=atob(s),u=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)u[i]=bin.charCodeAt(i);return u;}
@@ -244,21 +280,23 @@ function connect(){
   ws.onclose=()=>{setSt('reconnecting…',false);setTimeout(connect,Math.min(15000,1000*(++retry)));};
   ws.onerror=()=>{try{ws.close();}catch(e){}};
 }
-function flash(e,up){e.animate([{filter:'brightness(2.3)',boxShadow:'inset 0 0 0 2px '+(up?'#5dffa0':'#ff6b6b')},
+function flash(e,up){e.animate([{filter:'brightness(2.3)',boxShadow:'inset 0 0 0 2px '+(up?'#5dffa0':DNH)},
   {filter:'brightness(1)',boxShadow:'inset 0 0 0 0 transparent'}],{duration:900,easing:'ease-out'});}
+let paused=false;const pz=document.getElementById('pz');
+pz.onclick=()=>{paused=!paused;pz.textContent=paused?'▶ Resume':'⏸ Pause';pz.className=paused?'on':'';if(!paused)setSt('LIVE',true);};
 function frame(){
-  const ks=Object.keys(pending);
+  const ks=paused?[]:Object.keys(pending);
   for(const k of ks){const r=pending[k],o=bySym[k];delete pending[k];
     const prev=r.prev>0?r.prev:o.prev;let pct=prev>0?(r.price/prev-1)*100:(r.chg!=null?r.chg:o.pct);
     if(r.prev>0)o.prev=r.prev;
     const oldpx=o.px,moved=r.price!==oldpx;
-    o.px=r.price;o.pct=pct;o.ticks++;
+    o.px=r.price;o.pct=pct;o.d1=pct;o.ticks++;
     o.i.textContent=fmt(pct);o.u.textContent=r.price.toFixed(2);o.e.style.backgroundColor=col(pct);
-    o.e.title=k+'  '+r.price.toFixed(2)+'  '+fmt(pct)+'  ('+o.ticks+' ticks)';
+    o.e.title=tip(o);o.e.classList.toggle('dim',MIN>0&&Math.abs(pct)<MIN);
     if(moved)flash(o.e,r.price>oldpx);}
   if(ks.length){summary();document.getElementById('tk').innerHTML='last tick <b>'+new Date().toLocaleTimeString()+'</b>';}
   const now=Date.now();recent=recent.filter(t=>now-t<10000);
-  if(ws&&ws.readyState===1&&ticks>0)setSt('LIVE · '+recent.length+' ticks / 10s',true);
+  if(paused)setSt('PAUSED',false);else if(ws&&ws.readyState===1&&ticks>0){setSt('LIVE',true);document.getElementById('st').title=recent.length+' ticks in the last 10s';}
   requestAnimationFrame(frame);
 }
 connect();requestAnimationFrame(frame);
