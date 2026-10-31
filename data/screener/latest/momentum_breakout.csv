@@ -1,17 +1,17 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
 IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1790.80,1.20,8.45,48.40,53,44,0,28.78,19.19,15.60,65.79,buy,-2.24
+US,XOM,ExxonMobil Holdings Corporation,Energy,187.25,2.16,21.62,47.40,56,40,0,19.26,12.58,44.10,72.97,buy,-4.19
 IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,461.60,0.57,18.27,46.40,56,38,0,21.39,11.83,20.70,69.12,buy,7.30
-US,CVX,Chevron Corporation,Energy,235.01,1.53,23.43,45.20,48,43,0,22.62,12.23,53.50,72.45,buy,-1.07
+US,CVX,Chevron Corporation,Energy,235.52,1.75,23.70,45.30,48,43,0,22.67,12.23,53.50,72.85,buy,-1.28
+US,ACN,Accenture plc,Technology,258.24,4.46,51.52,44.90,64,28,0,19.04,26.02,6.20,70.11,buy,-11.04
 IN,DIVISLAB.NS,DIVI S LABORATORIES LTD,Healthcare,9780.00,1.20,21.40,43.80,68,22,0,88.74,,27.80,64.36,hold,-11.94
-US,COP,ConocoPhillips,Energy,153.25,2.15,29.94,43.60,50,38,0,20.30,14.18,35.50,73.65,buy,-1.15
-US,XOM,ExxonMobil Holdings Corporation,Energy,186.39,1.69,21.06,43.40,47,40,0,23.99,12.58,44.10,72.15,buy,-3.75
-US,ACN,Accenture plc,Technology,260.06,5.20,52.59,41.20,56,28,0,19.18,26.02,6.20,70.69,buy,-11.66
-US,V,Visa Inc.,Financial Services,414.52,0.97,12.16,40.10,61,22,0,33.65,63.51,13.20,69.93,strong_buy,6.41
-US,TMO,Thermo Fisher Scientific Inc,Healthcare,698.60,-1.49,23.70,35.90,61,14,0,36.85,13.38,9.10,59.90,strong_buy,7.66
-US,PG,Procter & Gamble Company (The),Consumer Defensive,163.15,1.59,10.23,35.00,63,10,0,24.57,29.61,4.00,64.74,buy,6.44
-US,SPGI,S&P Global Inc.,Financial Services,468.30,1.66,13.52,34.90,52,20,0,27.97,17.88,6.80,77.84,strong_buy,11.94
-US,IBM,International Business Machines,Technology,256.61,-0.65,9.12,34.80,52,20,0,21.89,34.77,4.70,68.96,buy,0.24
-US,AAPL,Apple Inc.,Technology,347.34,-0.45,12.27,33.10,46,22,0,39.84,148.75,16.40,59.02,buy,-4.31
-US,KO,Coca-Cola Company (The),Consumer Defensive,94.46,1.77,9.13,31.10,57,8,0,27.87,40.59,7.40,63.51,buy,3.26
-US,ABBV,AbbVie Inc.,Healthcare,296.10,1.83,21.45,30.90,48,16,0,83.61,,10.20,73.63,buy,-4.36
+US,COP,ConocoPhillips,Energy,154.03,2.67,30.60,43.60,50,38,0,20.40,14.18,35.50,74.41,buy,-1.65
+US,V,Visa Inc.,Financial Services,413.59,0.74,11.91,40.00,60,22,0,33.57,63.51,13.20,69.44,strong_buy,6.66
+US,TMO,Thermo Fisher Scientific Inc,Healthcare,697.00,-1.72,23.42,35.80,60,14,0,36.76,13.38,9.10,59.15,strong_buy,7.91
+US,SPGI,S&P Global Inc.,Financial Services,466.55,1.28,13.09,34.70,51,20,0,27.87,17.88,6.80,77.29,strong_buy,12.36
+US,PG,Procter & Gamble Company (The),Consumer Defensive,161.57,0.61,9.16,34.50,62,10,0,24.33,29.61,4.00,62.68,buy,7.48
+US,LLY,Eli Lilly and Company,Healthcare,1417.54,3.19,27.06,32.90,52,16,0,46.01,,38.60,77.88,buy,-1.45
+US,AMGN,Amgen Inc.,Healthcare,466.01,1.15,19.48,32.30,48,18,0,28.94,91.47,9.50,71.43,hold,-14.74
+US,KO,Coca-Cola Company (The),Consumer Defensive,94.08,1.36,8.69,31.00,57,8,0,27.75,40.59,7.40,62.48,buy,3.68
 IN,PERSISTENT.NS,PERSISTENT SYSTEMS LTD,Technology,6048.00,2.86,8.99,30.70,54,10,0,52.90,22.92,30.30,65.35,hold,-4.96
+US,ABBV,AbbVie Inc.,Healthcare,294.89,1.41,20.96,30.70,47,16,0,83.30,,10.20,72.78,buy,-3.97

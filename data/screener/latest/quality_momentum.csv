@@ -1,27 +1,26 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
 IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1790.80,1.20,8.45,48.40,53,44,0,28.78,19.19,15.60,65.79,buy,-2.24
-US,BRK-B,Berkshire Hathaway Inc. New,Financial Services,546.72,0.88,5.70,48.30,55,42,0,13.75,12.12,10.00,69.55,buy,1.64
-US,BLK,"BlackRock, Inc.",Financial Services,1148.12,-2.39,1.50,47.60,45,50,0,26.14,,19.10,58.34,strong_buy,18.09
+US,BLK,"BlackRock, Inc.",Financial Services,1147.54,-2.44,1.45,47.60,45,50,0,26.13,,19.10,58.18,strong_buy,18.40
 IN,ICICIBANK.NS,ICICI BANK LTD.,Financial Services,1398.00,0.82,-2.61,47.10,44,50,0,17.17,16.49,15.80,56.93,strong_buy,26.52
-US,TXN,Texas Instruments Incorporated,Technology,298.28,-4.68,5.17,46.30,47,46,0,38.69,39.72,27.70,57.70,buy,12.93
-US,ACN,Accenture plc,Technology,260.06,5.20,52.59,41.20,56,28,0,19.18,26.02,6.20,70.69,buy,-11.66
+US,BRK-B,Berkshire Hathaway Inc. New,Financial Services,542.49,0.10,4.89,45.10,49,42,0,13.64,12.12,10.00,66.82,buy,2.43
+US,ACN,Accenture plc,Technology,258.24,4.46,51.52,44.90,64,28,0,19.04,26.02,6.20,70.11,buy,-11.04
+US,TXN,Texas Instruments Incorporated,Technology,300.84,-3.87,6.07,43.00,40,46,0,39.02,39.72,27.70,59.75,buy,11.97
 IN,HCLTECH.NS,HCL TECHNOLOGIES LTD,Technology,1428.10,1.72,6.03,40.60,52,30,0,21.13,24.65,2.20,69.86,hold,-11.09
-US,V,Visa Inc.,Financial Services,414.52,0.97,12.16,40.10,61,22,0,33.65,63.51,13.20,69.93,strong_buy,6.41
-US,MSFT,Microsoft Corporation,Technology,521.86,-1.56,5.89,40.00,31,48,0,27.24,34.22,18.80,48.98,strong_buy,20.29
+US,V,Visa Inc.,Financial Services,413.59,0.74,11.91,40.00,60,22,0,33.57,63.51,13.20,69.44,strong_buy,6.66
 IN,TCS.NS,TATA CONSULTANCY SERV LT,Technology,2502.60,0.99,5.79,37.70,46,30,0,17.54,45.57,11.20,67.18,buy,-4.18
-US,TMO,Thermo Fisher Scientific Inc,Healthcare,698.60,-1.49,23.70,35.90,61,14,0,36.85,13.38,9.10,59.90,strong_buy,7.66
-US,UNP,Union Pacific Corporation,Industrials,303.70,0.59,2.48,35.70,49,24,0,23.69,38.75,15.30,69.76,buy,9.12
-US,PG,Procter & Gamble Company (The),Consumer Defensive,163.15,1.59,10.23,35.00,63,10,0,24.57,29.61,4.00,64.74,buy,6.44
-US,IBM,International Business Machines,Technology,256.61,-0.65,9.12,34.80,52,20,0,21.89,34.77,4.70,68.96,buy,0.24
-US,AAPL,Apple Inc.,Technology,347.34,-0.45,12.27,33.10,46,22,0,39.84,148.75,16.40,59.02,buy,-4.31
-IN,BHARTIARTL.NS,BHARTI AIRTEL LIMITED,Communication Services,1973.70,0.08,0.09,31.60,45,20,0,41.26,20.15,18.40,65.37,strong_buy,17.51
-US,ADBE,Adobe Inc.,Technology,251.54,1.38,-2.31,30.10,24,36,0,14.04,61.90,12.90,51.16,hold,8.26
-US,MA,Mastercard Incorporated,Financial Services,636.12,0.07,11.39,29.70,45,16,0,34.99,231.37,14.00,70.02,strong_buy,7.04
+US,MSFT,Microsoft Corporation,Technology,521.91,-1.55,5.90,36.20,23,48,0,26.82,34.22,18.80,49.02,strong_buy,20.65
+US,TMO,Thermo Fisher Scientific Inc,Healthcare,697.00,-1.72,23.42,35.80,60,14,0,36.76,13.38,9.10,59.15,strong_buy,7.91
+US,UNP,Union Pacific Corporation,Industrials,304.00,0.69,2.58,35.80,49,24,0,23.71,38.75,15.30,69.99,buy,9.02
+US,PG,Procter & Gamble Company (The),Consumer Defensive,161.57,0.61,9.16,34.50,62,10,0,24.33,29.61,4.00,62.68,buy,7.48
+US,AMGN,Amgen Inc.,Healthcare,466.01,1.15,19.48,32.30,48,18,0,28.94,91.47,9.50,71.43,hold,-14.74
+IN,BHARTIARTL.NS,BHARTI AIRTEL LIMITED,Communication Services,1973.70,0.08,0.09,31.60,45,20,0,41.22,20.15,18.40,65.37,strong_buy,17.51
+US,MA,Mastercard Incorporated,Financial Services,638.01,0.36,11.72,29.80,45,16,0,34.96,231.37,14.00,70.64,strong_buy,7.65
 IN,HAL.NS,HINDUSTAN AERONAUTICS LTD,Industrials,4853.70,-0.33,4.46,29.30,42,18,0,34.82,,14.40,52.09,buy,15.01
-IN,BAJAJ-AUTO.NS,BAJAJ AUTO LIMITED,Consumer Cyclical,10350.00,-0.32,-10.16,28.20,8,46,0,22.08,35.56,57.40,46.09,buy,15.83
+US,AAPL,Apple Inc.,Technology,344.63,-1.23,11.39,29.00,37,22,0,39.52,148.75,16.40,55.35,buy,-3.55
+IN,BAJAJ-AUTO.NS,BAJAJ AUTO LIMITED,Consumer Cyclical,10350.00,-0.32,-10.16,28.20,8,46,0,22.08,35.56,57.40,46.09,buy,15.93
+US,IBM,International Business Machines,Technology,257.81,-0.18,9.64,28.00,37,20,0,22.00,34.77,4.70,70.89,buy,0.58
 IN,ADANIPORTS.NS,ADANI PORT & SEZ LTD,Industrials,1850.00,-1.18,9.05,25.10,33,18,0,30.87,15.63,23.70,61.28,strong_buy,14.24
-US,INTU,Intuit Inc.,Technology,342.02,3.27,5.69,24.10,11,36,0,20.78,23.60,13.70,61.19,buy,19.22
+US,INTU,Intuit Inc.,Technology,341.09,2.99,5.40,24.00,11,36,0,20.72,23.60,13.70,60.82,buy,19.55
 IN,INFY.NS,INFOSYS LIMITED,Technology,1185.00,3.36,4.86,23.50,14,32,0,15.78,29.95,1.40,64.36,buy,1.27
 IN,JSWSTEEL.NS,JSW STEEL LIMITED,Basic Materials,1246.00,-0.75,-1.89,22.70,8,36,0,10.71,31.93,20.70,51.96,buy,12.37
-US,JPM,JP Morgan Chase & Co.,Financial Services,338.53,-1.47,-5.31,20.50,12,28,0,14.20,18.01,10.20,50.85,buy,10.26
-US,WFC,Wells Fargo & Company,Financial Services,83.59,-1.44,-5.43,17.80,11,24,0,11.79,12.91,0.40,51.90,buy,16.07
+US,JPM,JP Morgan Chase & Co.,Financial Services,337.04,-1.90,-5.73,20.30,12,28,0,14.14,18.01,10.20,49.05,buy,10.75

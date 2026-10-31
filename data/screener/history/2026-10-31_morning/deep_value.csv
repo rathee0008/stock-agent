@@ -1,0 +1,20 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+US,MU,"Micron Technology, Inc.",Technology,884.74,-5.30,-0.89,34.10,-11,74,0,11.90,88.26,379.30,41.98,strong_buy,76.54
+IN,JSWSTEEL.NS,JSW STEEL LIMITED,Basic Materials,1246.00,-0.75,-1.89,22.70,8,36,0,10.71,31.93,20.70,51.96,buy,12.37
+US,JPM,JP Morgan Chase & Co.,Financial Services,337.04,-1.90,-5.73,20.30,12,28,0,14.14,18.01,10.20,49.05,buy,10.75
+IN,AXISBANK.NS,AXIS BANK LIMITED,Financial Services,1217.00,-0.65,-1.02,11.30,-41,58,0,12.70,13.88,21.10,44.65,strong_buy,30.21
+IN,COALINDIA.NS,COAL INDIA LTD,Energy,389.00,-1.04,-6.07,8.70,-58,68,0,7.19,28.33,74.00,34.48,buy,20.16
+IN,ONGC.NS,OIL AND NATURAL GAS CORP.,Energy,225.39,-0.18,-7.07,7.70,-31,42,0,6.51,,25.70,46.28,buy,29.60
+IN,SBIN.NS,STATE BANK OF INDIA,Financial Services,961.85,-1.03,-6.38,5.90,-28,36,0,10.31,15.18,10.30,47.35,none,30.52
+US,BAC,Bank of America Corporation,Financial Services,50.01,-2.21,-20.49,2.90,-23,26,0,11.94,10.73,7.10,27.67,strong_buy,25.66
+US,WFC,Wells Fargo & Company,Financial Services,83.40,-1.66,-5.65,2.70,-21,24,0,11.97,12.91,0.40,51.14,buy,16.33
+IN,SHRIRAMFIN.NS,SHRIRAM FINANCE LIMITED,Financial Services,823.15,-2.13,-21.36,0.80,-52,48,0,13.72,14.75,37.90,28.59,strong_buy,36.93
+US,VZ,Verizon Communications Inc.,Communication Services,44.73,2.45,-4.59,-1.60,-27,21,0,11.41,15.79,1.50,48.72,buy,13.23
+US,GS,"Goldman Sachs Group, Inc. (The)",Financial Services,894.55,-3.58,-15.05,-1.90,-44,36,0,12.86,17.75,23.30,44.93,buy,15.27
+IN,HINDALCO.NS,HINDALCO  INDUSTRIES  LTD,Basic Materials,884.70,-0.18,-9.21,-4.50,-50,36,0,12.00,,32.10,38.81,buy,30.22
+IN,NTPC.NS,NTPC LTD,Utilities,316.25,1.85,-8.93,-6.80,-24,8,0,11.05,,7.80,53.18,strong_buy,34.76
+IN,BPCL.NS,BHARAT PETROLEUM CORP  LT,Energy,284.90,-1.49,-10.90,-7.00,-34,17,0,7.70,16.17,42.10,41.18,buy,17.38
+US,GOOGL,Alphabet Inc.,Communication Services,279.84,-1.40,-25.90,-7.80,-64,42,0,14.61,44.29,24.70,21.38,strong_buy,45.28
+US,UBER,"Uber Technologies, Inc.",Technology,65.25,-0.75,-9.36,-8.30,-54,32,0,14.31,37.16,12.20,35.76,buy,54.57
+IN,VEDL.NS,VEDANTA LIMITED,Basic Materials,237.90,1.43,-9.97,-9.60,-58,33,0,8.34,48.20,-34.20,41.95,buy,28.21
+US,T,AT&T Inc.,Communication Services,21.41,2.34,-8.43,-24.00,-52,1,0,11.45,11.61,5.30,38.09,buy,29.46

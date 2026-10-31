@@ -1,0 +1,21 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1790.80,1.20,8.45,48.40,53,44,0,28.78,19.19,15.60,65.79,buy,-2.24
+US,BLK,"BlackRock, Inc.",Financial Services,1147.54,-2.44,1.45,47.60,45,50,0,26.13,,19.10,58.18,strong_buy,18.40
+US,XOM,ExxonMobil Holdings Corporation,Energy,187.25,2.16,21.62,47.40,56,40,0,19.26,12.58,44.10,72.97,buy,-4.19
+IN,ICICIBANK.NS,ICICI BANK LTD.,Financial Services,1398.00,0.82,-2.61,47.10,44,50,0,17.17,16.49,15.80,56.93,strong_buy,26.52
+IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,461.60,0.57,18.27,46.40,56,38,0,21.39,11.83,20.70,69.12,buy,7.30
+US,CVX,Chevron Corporation,Energy,235.52,1.75,23.70,45.30,48,43,0,22.67,12.23,53.50,72.85,buy,-1.28
+US,BRK-B,Berkshire Hathaway Inc. New,Financial Services,542.49,0.10,4.89,45.10,49,42,0,13.64,12.12,10.00,66.82,buy,2.43
+US,ACN,Accenture plc,Technology,258.24,4.46,51.52,44.90,64,28,0,19.04,26.02,6.20,70.11,buy,-11.04
+IN,DIVISLAB.NS,DIVI S LABORATORIES LTD,Healthcare,9780.00,1.20,21.40,43.80,68,22,0,88.74,,27.80,64.36,hold,-11.94
+US,COP,ConocoPhillips,Energy,154.03,2.67,30.60,43.60,50,38,0,20.40,14.18,35.50,74.41,buy,-1.65
+US,TXN,Texas Instruments Incorporated,Technology,300.84,-3.87,6.07,43.00,40,46,0,39.02,39.72,27.70,59.75,buy,11.97
+IN,TRENT.NS,TRENT LTD,Consumer Cyclical,3017.30,5.44,0.38,42.20,60,26,0,84.87,27.06,22.50,61.86,buy,12.25
+IN,HCLTECH.NS,HCL TECHNOLOGIES LTD,Technology,1428.10,1.72,6.03,40.60,52,30,0,21.13,24.65,2.20,69.86,hold,-11.09
+US,V,Visa Inc.,Financial Services,413.59,0.74,11.91,40.00,60,22,0,33.57,63.51,13.20,69.44,strong_buy,6.66
+IN,TCS.NS,TATA CONSULTANCY SERV LT,Technology,2502.60,0.99,5.79,37.70,46,30,0,17.54,45.57,11.20,67.18,buy,-4.18
+US,MSFT,Microsoft Corporation,Technology,521.91,-1.55,5.90,36.20,23,48,0,26.82,34.22,18.80,49.02,strong_buy,20.65
+US,TMO,Thermo Fisher Scientific Inc,Healthcare,697.00,-1.72,23.42,35.80,60,14,0,36.76,13.38,9.10,59.15,strong_buy,7.91
+US,UNP,Union Pacific Corporation,Industrials,304.00,0.69,2.58,35.80,49,24,0,23.71,38.75,15.30,69.99,buy,9.02
+US,SPGI,S&P Global Inc.,Financial Services,466.55,1.28,13.09,34.70,51,20,0,27.87,17.88,6.80,77.29,strong_buy,12.36
+US,PG,Procter & Gamble Company (The),Consumer Defensive,161.57,0.61,9.16,34.50,62,10,0,24.33,29.61,4.00,62.68,buy,7.48
