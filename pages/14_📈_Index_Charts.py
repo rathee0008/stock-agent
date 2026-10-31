@@ -1,4 +1,4 @@
-"""Index charts: NIFTY (India) and NASDAQ (US) with a full indicator set.
+"""Index charts: NIFTY (India), NASDAQ (US), Nikkei (Japan) and KOSPI (South Korea) with a full indicator set.
 
 NSE symbols are blocked in TradingView's free embed, so NSE indices default to the built-in chart
 (Yahoo data, indicators computed in agent/indexchart.py). The free embed also blocks most index symbols
@@ -38,6 +38,16 @@ US = {
     "Dow Jones": ("DJ:DJI", "^DJI", False),
     "VIX": ("CBOE:VIX", "^VIX", False),
 }
+# Local indices use the built-in chart (Yahoo data); the US-listed country ETFs work in TradingView's free embed.
+JAPAN = {
+    "Nikkei 225": ("TVC:NI225", "^N225", False),
+    "EWJ (iShares MSCI Japan ETF)": ("AMEX:EWJ", "EWJ", True),
+}
+KOREA = {
+    "KOSPI": ("KRX:KOSPI", "^KS11", False),
+    "KOSDAQ": ("KRX:KOSDAQ", "^KQ11", False),
+    "EWY (iShares MSCI South Korea ETF)": ("AMEX:EWY", "EWY", True),
+}
 # label -> (TradingView chart interval, gauge interval)
 TIMEFRAMES = {
     "1 min": ("1", "1m"), "5 min": ("5", "5m"), "15 min": ("15", "15m"),
@@ -74,9 +84,10 @@ if st.sidebar.button("Reload charts", use_container_width=True):
 
 ui.hero(
     "Index Charts",
-    "NIFTY and NASDAQ charts with a full indicator set. TradingView's free embed blocks NSE and most index "
-    "symbols, so those open on the built-in chart; SENSEX, QQQ and SPY use live TradingView.",
-    pills=[("LIVE", "up"), ("NSE / BSE", "flat"), ("NASDAQ", "flat")],
+    "NIFTY, NASDAQ, Nikkei and KOSPI charts with a full indicator set. TradingView's free embed blocks NSE and "
+    "most index symbols, so those open on the built-in chart; SENSEX and the US-listed ETFs (QQQ, SPY, EWJ, EWY) "
+    "use live TradingView.",
+    pills=[("LIVE", "up"), ("NSE / BSE", "flat"), ("NASDAQ", "flat"), ("TSE", "flat"), ("KRX", "flat")],
 )
 
 
@@ -158,10 +169,17 @@ def section(options: dict, key: str, market: str, market_note: str) -> None:
         tradingview_chart(label, tv_symbol, not tv_ok, market_note)
 
 
-india_tab, us_tab = st.tabs(["🇮🇳 India · NIFTY", "🇺🇸 US · NASDAQ"])
+india_tab, us_tab, japan_tab, korea_tab = st.tabs(
+    ["🇮🇳 India · NIFTY", "🇺🇸 US · NASDAQ", "🇯🇵 Japan · Nikkei", "🇰🇷 South Korea · KOSPI"])
 with india_tab:
     section(INDIA, "in", "IN", "NSE session is 9:15 to 15:30 IST, Monday to Friday.")
 with us_tab:
     section(US, "us", "US", "US cash session is 9:30 to 16:00 ET; futures trade nearly around the clock.")
+with japan_tab:
+    section(JAPAN, "jp", "JP", "Tokyo session is 9:00 to 11:30 and 12:30 to 15:30 JST, Monday to Friday "
+                               "(EWJ trades on US hours, in USD).")
+with korea_tab:
+    section(KOREA, "kr", "KR", "KRX session is 9:00 to 15:30 KST, Monday to Friday "
+                               "(EWY trades on US hours, in USD).")
 
 ui.footer()

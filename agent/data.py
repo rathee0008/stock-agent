@@ -19,7 +19,10 @@ from . import fallback as _fallback
 from . import log as _log
 from . import nse_live as _nse
 
-Market = Literal["IN", "US"]
+Market = Literal["IN", "US", "JP", "KR"]
+
+# Quote currency for the index-chart-only markets (IN/US keep their own handling).
+_MARKET_CCY = {"IN": "INR", "US": "USD", "JP": "JPY", "KR": "KRW"}
 
 # A few common aliases so users can type the obvious thing.
 _ALIASES_IN = {
@@ -67,6 +70,10 @@ def normalize_ticker(raw: str, market: Market = "IN") -> str:
         if s.startswith("^"):
             return s
         return _ALIASES_US.get(s, s)
+
+    if market in ("JP", "KR"):
+        # Used for index charts: callers pass full Yahoo symbols (^N225, ^KS11, EWJ, 7203.T, 005930.KS).
+        return s
 
     if s.startswith("^") or s.endswith((".NS", ".BO")):
         return s
@@ -389,6 +396,30 @@ def _us_market_state() -> str:
     return "CLOSED"
 
 
+def _asia_market_state(utc_hours: float, open_min: int, close_min: int,
+                       lunch: tuple[int, int] | None = None) -> str:
+    """Clock-based state for a Mon-Fri cash session in a fixed-offset zone (no DST in Japan/Korea)."""
+    now = _dt.datetime.now(_dt.timezone(_dt.timedelta(hours=utc_hours)))
+    if now.weekday() >= 5:
+        return "CLOSED"
+    mins = now.hour * 60 + now.minute
+    if mins < open_min or mins > close_min:
+        return "CLOSED"
+    if lunch and lunch[0] <= mins < lunch[1]:
+        return "CLOSED"
+    return "REGULAR"
+
+
+def _jp_market_state() -> str:
+    """TSE: 09:00-11:30 and 12:30-15:30 JST, Mon-Fri (holidays not modelled)."""
+    return _asia_market_state(9, 9 * 60, 15 * 60 + 30, lunch=(11 * 60 + 30, 12 * 60 + 30))
+
+
+def _kr_market_state() -> str:
+    """KRX: 09:00-15:30 KST, Mon-Fri (holidays not modelled)."""
+    return _asia_market_state(9, 9 * 60, 15 * 60 + 30)
+
+
 def _fetch_live_yahoo(
     raw_ticker: str, interval: str = "5m", period: str = "1d", market: Market = "IN"
 ) -> LiveQuote:
@@ -447,9 +478,9 @@ def _fetch_live_yahoo(
             f"No live data for '{symbol}' ({err}). Yahoo may be rate-limiting."
         )
 
-    market_state = (
-        _us_market_state() if market == "US" else _in_market_state()
-    )
+    market_state = {
+        "US": _us_market_state, "JP": _jp_market_state, "KR": _kr_market_state,
+    }.get(market, _in_market_state)()
 
     day_hi = pick("day_high", "dayHigh")
     day_lo = pick("day_low", "dayLow")
@@ -463,7 +494,7 @@ def _fetch_live_yahoo(
     return LiveQuote(
         symbol=symbol,
         name=symbol,
-        currency=fi.get("currency") or ("USD" if market == "US" else "INR"),
+        currency=fi.get("currency") or _MARKET_CCY.get(market, "INR"),
         price=price or 0.0,
         prev_close=prev_close or 0.0,
         day_open=pick("open", "regularMarketOpen"),
