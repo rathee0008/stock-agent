@@ -16,7 +16,7 @@ import pandas as pd
 import streamlit as st
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from agent import livemarkets as LM, theme as T, ui  # noqa: E402
+from agent import livemarkets as LM, livequotes as LV, theme as T, ui  # noqa: E402
 
 ui.setup("Live Markets", "💹")
 C = T.C
@@ -27,6 +27,8 @@ T.sidebar_head("Live")
 live_on = st.sidebar.toggle("Auto-refresh", value=True)
 refresh = st.sidebar.select_slider("Refresh every (seconds)", options=[5, 10, 15, 30, 60], value=10)
 groups = st.sidebar.multiselect("Sections", LM.GROUPS, default=LM.GROUPS)
+rank_live_only = st.sidebar.toggle("Rank live feeds only", value=True,
+                                   help="Leave out closed markets so the ranking only shows what is moving now.")
 if st.sidebar.button("Refresh now", use_container_width=True):
     st.cache_data.clear()
     st.rerun()
@@ -83,6 +85,52 @@ def _spark(values: list[float], colour: str) -> str:
             f'vector-effect="non-scaling-stroke"/></svg>')
 
 
+def _flip(key: str) -> int:
+    """Counter that alternates the flash animation name so back-to-back ticks replay."""
+    st.session_state[key] = st.session_state.get(key, 0) + 1
+    return st.session_state[key]
+
+
+def _ranking(df: pd.DataFrame) -> None:
+    """One leaderboard across every selected section, sorted by live % move, with rank-change badges."""
+    pool = df[(df["group"].isin(groups)) & (df["kind"] == "price") & df["move"].notna()]
+    note = ""
+    if rank_live_only:
+        live_rows = pool[pool["live"]]
+        if live_rows.empty and not pool.empty:
+            note = "No feed is live right now, so every instrument is ranked on its last close."
+        else:
+            pool = live_rows
+    if pool.empty:
+        ui.empty_note("<b>Nothing to rank yet.</b> No instrument in the selected sections has a move to rank.")
+        return
+    pool = pool.sort_values("move", ascending=False).reset_index(drop=True)
+    syms = list(pool["symbol"])
+    moves = LV.rank_moves(st.session_state.get("lm_rank_prev", []), syms)
+    st.session_state["lm_rank_prev"] = syms
+    flip = _flip("lm_rank_flip")
+    mx = max(float(pool["move"].abs().max()), 0.01)
+    rows = []
+    for i, (_, r) in enumerate(pool.iterrows(), 1):
+        mv = float(r["move"])
+        col = T.tone_color(T.sign_tone(mv))
+        rm = moves.get(r["symbol"])
+        rfl = ui.flash_cls(1 if rm == "new" else rm, flip)
+        fl = ui.flash_cls(r["tick"], flip)
+        st_txt = '<span style="color:var(--up,#0ecb81)">● LIVE</span>' if r["live"] else "○ CLOSED"
+        rows.append(
+            f'<tr><td class="{rfl}"><span class="rk">{i:02d}</span>{ui._rank_badge(rm)}<b>{_e(r["label"])}</b></td>'
+            f'<td class="dim">{_e(r["group"])}</td><td class="{fl}">{_num(r["price"], r["dp"])}</td>'
+            f'<td class="chg {fl}" style="color:{col}"><span class="bar" style="width:{abs(mv) / mx * 46:.0f}px;'
+            f'background:{col}"></span>{_signed(mv, 2, "%")}</td><td class="dim">{st_txt}</td></tr>')
+    ui.table_title(f"Live ranking · {len(pool)} instruments by % move", "amber")
+    st.markdown('<div class="ttw"><table class="tt"><thead><tr><th>Instrument</th><th>Section</th><th>Price</th>'
+                '<th>Move</th><th>Feed</th></tr></thead><tbody>' + "".join(rows) + "</tbody></table></div>",
+                unsafe_allow_html=True)
+    st.caption((note + " " if note else "") + "Ranked by % move vs previous close. ▲/▼ shows places gained or lost "
+               "since the last refresh. Treasury yields move in basis points, so they are not ranked against % moves.")
+
+
 def _card(r: pd.Series, tick: float) -> str:
     move = r["move"]
     tone = T.sign_tone(None if pd.isna(move) else float(move))
@@ -106,7 +154,7 @@ def _card(r: pd.Series, tick: float) -> str:
 ui.hero(
     "Live Markets",
     "Indian, US and world indices, Bitcoin, crude oil, gold, silver, the US dollar index, USD/INR and US "
-    "Treasury yields on one page. Each card refreshes on its own and flashes green or red when the price ticks.",
+    "Treasury yields on one page. A live ranking orders every instrument by its move, and each card flashes green or red when the price ticks.",
     pills=[("LIVE" if live_on else "PAUSED", "up" if live_on else "flat"),
            ("Yahoo Finance", "amber"), ("Times in IST", "flat")],
 )
@@ -135,6 +183,8 @@ def live_panel() -> None:
         ("Rising", str(up), "vs previous close", "up"),
         ("Falling", str(down), "vs previous close", "down"),
     ])
+
+    _ranking(df)
 
     for group in LM.GROUPS:
         if group not in groups:
