@@ -16,7 +16,7 @@ import pandas as pd
 import streamlit as st
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from agent import livemarkets as LM, livequotes as LV, theme as T, ui  # noqa: E402
+from agent import livemarkets as LM, livequotes as LV, theme as T, ticker, ui  # noqa: E402
 
 ui.setup("Live Markets", "💹")
 C = T.C
@@ -174,6 +174,8 @@ def live_panel() -> None:
     prev_px = st.session_state.get("lm_prev", {})
     df = df.assign(tick=[(p - prev_px[s]) if s in prev_px else 0.0 for s, p in zip(df["symbol"], df["price"])])
     st.session_state["lm_prev"] = dict(zip(df["symbol"], df["price"]))
+
+    ticker.render(df[df["group"].isin(groups)].to_dict("records"))
 
     moved = df.dropna(subset=["move"])
     up, down = int((moved["move"] > 0).sum()), int((moved["move"] < 0).sum())

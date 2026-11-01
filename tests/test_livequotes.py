@@ -37,3 +37,13 @@ def test_rank_moves_up_down_new_and_first_poll():
     assert LV.rank_moves([], ["A", "B"]) == {}
     assert LV.rank_moves(["A", "B", "C"], ["A", "B", "C"]) == {}
     assert LV.rank_moves(["A", "B", "C"], ["C", "A", "D"]) == {"C": 2, "A": -1, "D": "new"}
+
+
+def test_ticker_html_is_safe_and_drops_unpriced_rows():
+    from agent import ticker
+
+    rows = [{"symbol": "A</script>", "label": 'X"<b>', "price": 1.5, "prev": 1.0, "move": 50.0},
+            {"symbol": "B", "label": "B", "price": float("nan"), "prev": None, "move": None}]
+    h = ticker.build_html(rows)
+    assert h.count("</script>") == 1          # the one closing our own script, none smuggled in via data
+    assert '"s": "B"' not in h and '"s":"B"' not in h

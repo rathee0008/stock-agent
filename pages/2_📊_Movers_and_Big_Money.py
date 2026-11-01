@@ -10,7 +10,7 @@ import streamlit as st
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from agent import (bigmoney, cache, flows, livemarkets as LM, livequotes as LV, market, screener,  # noqa: E402
-                   theme as T, ui, why)
+                   theme as T, ticker, ui, why)
 
 ui.setup("Movers and Big Money", "📊")
 IST = ZoneInfo("Asia/Kolkata")
@@ -80,9 +80,8 @@ def _llm(items_key: str, items: list):
 
 
 @st.cache_data(ttl=5, show_spinner=False)
-def _live_idx() -> list[dict]:
-    df = LM.fetch_snapshot([LM.Instrument("Strip", n, s) for n, s in market.INDICES])
-    return [{"name": r.label, "price": r.price, "chg_pct": r.move} for r in df.itertuples()]
+def _live_idx() -> pd.DataFrame:
+    return LM.fetch_snapshot([LM.Instrument("Strip", n, s) for n, s in market.INDICES])
 
 
 @st.cache_data(ttl=5, show_spinner=False)
@@ -97,15 +96,15 @@ def _flip(key: str) -> int:
 
 
 def _strip_panel() -> None:
+    """Index strip as the browser-side ticker tape: scrolls and rolls numbers between polls, BTC-style streaming."""
     try:
-        quotes = _live_idx()
+        df = _live_idx()
     except Exception:  # noqa: BLE001
-        quotes = []
-    quotes = quotes or _idx(cache.both_bucket(0.5))
-    cur = {q["name"]: q["price"] for q in quotes}
-    tk = LV.ticks(st.session_state.get("mv_strip_prev", {}), cur)
-    st.session_state["mv_strip_prev"] = cur
-    ui.market_strip(quotes, tk, _flip("mv_strip_flip"))
+        df = pd.DataFrame()
+    if df.empty:
+        ui.market_strip(_idx(cache.both_bucket(0.5)))
+        return
+    ticker.render(df.to_dict("records"))
 
 
 def _movers_live(flag: str, full: pd.DataFrame, why_map: dict, dmap: dict, sec_avg: dict, live: bool) -> None:
