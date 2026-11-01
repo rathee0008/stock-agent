@@ -25,7 +25,7 @@ def main() -> None:
     try:
         a = analyze_stock(args.ticker, period=args.period, market=args.market)
     except (LookupError, ValueError) as exc:
-        raise SystemExit(f"error: {exc}")
+        raise SystemExit(f"error: {exc}") from exc
 
     if args.json:
         drop = {"history", "intraday", "info"}

@@ -7,7 +7,6 @@ returns a deterministic template instead so the app always has narrative text.
 from __future__ import annotations
 
 import json
-from dataclasses import asdict
 from typing import Any
 
 from . import config, log

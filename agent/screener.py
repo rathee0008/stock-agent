@@ -167,7 +167,6 @@ def rank(market: str, w: tuple[float, float, float] = (0.40, 0.45, 0.15),
         tot = sum(ws.values()) or 1
         score = (t.score * ws["t"] + f.score * ws["f"] + n.score * ws["n"]) / tot
         close = hist[s]["Close"]
-        m = f.metrics or {}
         rows.append({
             "Symbol": s, "Name": info.get("shortName") or s, "Sector": info.get("sector") or smap.get(s, "—"),
             "Price": close.iloc[-1], "Day %": (close.iloc[-1] / close.iloc[-2] - 1) * 100,

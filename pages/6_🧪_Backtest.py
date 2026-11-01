@@ -9,7 +9,7 @@ import plotly.graph_objects as go
 import streamlit as st
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from agent import backtest as BT, cache, screener, theme as T, ui, universe  # noqa: E402
+from agent import backtest as BT, screener, theme as T, ui, universe  # noqa: E402
 
 ui.setup("Backtest", "🧪")
 C = T.C

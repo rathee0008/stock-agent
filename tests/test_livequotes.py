@@ -97,3 +97,13 @@ def test_ticker_js_has_cleanup_and_stale_price_guard():
               ticker.tile_driver_html()):
         assert "pagehide" in h
     assert "tape_prev2" in ticker.build_html([{"symbol": "A", "label": "A", "price": 1.0, "prev": 1.0, "move": 0.0}])
+
+
+def test_liveheat_crypto_flag_controls_price_decimals():
+    import pandas as pd
+
+    from agent import liveheat
+
+    df = pd.DataFrame({"Symbol": ["BTC-USD"], "Sector": ["x"], "Price": [5.5], "Change %": [1.0]})
+    on, off = (liveheat.build_html(df, None, 5.0, crypto=c) for c in (True, False))
+    assert "const CRYPTO=true;" in on and "const CRYPTO=false;" in off and "__CRYPTO__" not in on

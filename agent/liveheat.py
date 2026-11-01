@@ -82,7 +82,7 @@ def layout(df: pd.DataFrame, weights: list[float] | None = None) -> list[dict]:
 def build_html(df: pd.DataFrame, prev: dict[str, float] | None, limit: float, height: int = 560,
                subtitle: str = "", *, weights: list[float] | None = None,
                palette: tuple[str, str] = ("#19D27A", "#FF3B4E"), highlight: set[str] | None = None,
-               min_move: float = 0.0, size_label: str = "Equal weight") -> str:
+               min_move: float = 0.0, size_label: str = "Equal weight", crypto: bool = False) -> str:
     """HTML for one frame. ``prev`` maps Symbol -> previous Change %, or None on the first draw.
 
     ``weights`` sets tile area, ``palette`` is (rising, falling) hex, ``highlight`` outlines
@@ -118,7 +118,7 @@ def build_html(df: pd.DataFrame, prev: dict[str, float] | None, limit: float, he
 
     payload = json.dumps({"tiles": data, "limit": float(limit), "up": hex_rgb(palette[0]), "dn": hex_rgb(palette[1]),
                           "hl": sorted(highlight or []), "minMove": float(min_move), "size": size_label})
-    return _TEMPLATE.replace("__DATA__", payload).replace("__H__", str(height)).replace(
+    return _TEMPLATE.replace("__CRYPTO__", "true" if crypto else "false").replace("__DATA__", payload).replace("__H__", str(height)).replace(
         "__SUB__", html.escape(subtitle))
 
 
@@ -179,7 +179,7 @@ const root=document.documentElement.style;root.setProperty('--up',UPH);root.setP
 function col(v){const a=Math.min(Math.abs(v)/LIM,1), c=v>=0?UP:DN, k=Math.pow(a,.75);
   return 'rgb('+[0,1,2].map(i=>Math.round(N[i]+(c[i]-N[i])*k)).join(',')+')';}
 const fmt=v=>(v>=0?'+':'')+v.toFixed(2)+'%';
-const pf=v=>{v=Number(v);if(v>=1)return v.toFixed(2);if(!(v>0))return '0';const d=Math.min(12,Math.max(4,3-Math.floor(Math.log10(v))));return v.toFixed(d)};
+const CRYPTO=__CRYPTO__;const pf=v=>{v=Number(v);if(CRYPTO&&v>=1&&v<10)return v.toFixed(4);if(v>=1)return v.toFixed(2);if(!(v>0))return '0';const d=Math.min(12,Math.max(4,3-Math.floor(Math.log10(v))));return v.toFixed(d)};
 const HL=new Set(D.hl||[]),MIN=D.minMove||0;
 const tip=o=>{const t=o.t;return t.sym+'  '+t.sector+'\nprice '+pf(o.px)+'   today '+fmt(o.d1!=null?o.d1:o.pct)+(o.d1!=null&&Math.abs(o.d1-o.pct)>0.005?'   window '+fmt(o.pct):'')
   +(t.mc?'\nmarket cap '+t.mc:'')+(t.vx!=null?'\nvolume '+t.vx.toFixed(1)+'x 20-day avg':'')+(t.p52!=null?'\n52-wk range position '+Math.round(t.p52)+'%':'')+'\n'+o.ticks+' live ticks  ·  size: '+D.size;};

@@ -8,7 +8,6 @@ from __future__ import annotations
 
 import concurrent.futures as cf
 import email.utils
-import os
 import threading
 import time
 import urllib.parse

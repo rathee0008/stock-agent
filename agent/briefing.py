@@ -10,7 +10,6 @@ from __future__ import annotations
 import datetime as _dt
 import json
 
-import pandas as pd
 
 from . import bigmoney, config, log, market as _market, screener
 from . import technical as _tech

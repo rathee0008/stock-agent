@@ -231,7 +231,7 @@ def _view(mkt: str, live: bool) -> None:
         n_sec, max_n = int(df["Sector"].nunique()), int(df.groupby("Sector").size().max())
         components.html(
             liveheat.build_html(df, None, lim, height, "Prices stream from Yahoo; they are exchange-delayed where Yahoo says so.",
-                                weights=wts, palette=(UP, DN), highlight=hl, min_move=dim_below, size_label=size_mode),
+                                weights=wts, palette=(UP, DN), highlight=hl, min_move=dim_below, size_label=size_mode, crypto=crypto),
             height=height + 80 + 36 * n_sec + 110 + 36 * max_n + 150)
     else:
         st.plotly_chart(_static_map(df, mkt, lim, height, wts, dim_below, hl), use_container_width=True,
