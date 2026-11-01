@@ -1,15 +1,19 @@
 """Top gainers/losers with the reasons they moved, and where big money is flowing (US + India)."""
 
 import sys
+from datetime import datetime
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 import pandas as pd
 import streamlit as st
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from agent import bigmoney, cache, flows, market, screener, theme as T, ui, why  # noqa: E402
+from agent import (bigmoney, cache, flows, livemarkets as LM, livequotes as LV, market, screener,  # noqa: E402
+                   theme as T, ui, why)
 
 ui.setup("Movers and Big Money", "📊")
+IST = ZoneInfo("Asia/Kolkata")
 
 # ---------------------------------------------------------------- sidebar
 ui.sidebar_brand()
@@ -19,6 +23,10 @@ T.sidebar_head("Explain moves")
 want_news = st.sidebar.checkbox("Look up a headline for each mover", value=True)
 want_llm = st.sidebar.checkbox("Claude one-line explanations", value=False,
                                help="Needs ANTHROPIC_API_KEY. One batched call per market.")
+T.sidebar_head("Live ticker")
+live_on = st.sidebar.toggle("Live price animation", value=True,
+                            help="While a market is open, prices re-poll and flash green or red on each tick.")
+refresh = st.sidebar.select_slider("Poll every (seconds)", options=[5, 10, 15, 30, 60], value=10)
 T.sidebar_head("Data")
 if st.sidebar.button("Refresh", use_container_width=True):
     st.cache_data.clear()
@@ -71,6 +79,60 @@ def _llm(items_key: str, items: list):
     return why.claude_summary(items)
 
 
+@st.cache_data(ttl=5, show_spinner=False)
+def _live_idx() -> list[dict]:
+    df = LM.fetch_snapshot([LM.Instrument("Strip", n, s) for n, s in market.INDICES])
+    return [{"name": r.label, "price": r.price, "chg_pct": r.move} for r in df.itertuples()]
+
+
+@st.cache_data(ttl=5, show_spinner=False)
+def _live_px(syms: tuple) -> dict:
+    return LV.fetch_prices(list(syms))
+
+
+def _flip(key: str) -> int:
+    """Counter that alternates the flash animation name so back-to-back ticks replay."""
+    st.session_state[key] = st.session_state.get(key, 0) + 1
+    return st.session_state[key]
+
+
+def _strip_panel() -> None:
+    try:
+        quotes = _live_idx()
+    except Exception:  # noqa: BLE001
+        quotes = []
+    quotes = quotes or _idx(cache.both_bucket(0.5))
+    cur = {q["name"]: q["price"] for q in quotes}
+    tk = LV.ticks(st.session_state.get("mv_strip_prev", {}), cur)
+    st.session_state["mv_strip_prev"] = cur
+    ui.market_strip(quotes, tk, _flip("mv_strip_flip"))
+
+
+def _movers_tables(flag: str, g: pd.DataFrame, l: pd.DataFrame, live: bool) -> None:
+    tk, flip = {}, 0
+    if live:
+        px = _live_px(tuple(g["Symbol"]) + tuple(l["Symbol"]))
+        if px:
+            key = f"mv_prev_{flag}"
+            tk = LV.ticks(st.session_state.get(key, {}), px)
+            st.session_state[key] = px
+            g, l = LV.apply_live(g, px), LV.apply_live(l, px)
+            flip = _flip(f"mv_flip_{flag}")
+    stamp = datetime.now(IST).strftime("%H:%M:%S")
+    if live and tk:
+        ui.live_bar(True, f"LIVE · updated {stamp} IST · every {refresh}s · NSE prices may lag ~15 min")
+    elif live:
+        ui.live_bar(False, "Live prices unavailable right now · showing last close, will retry")
+    else:
+        ui.live_bar(False, "MARKET CLOSED · showing last close" if cache.state(flag) == "CLOSED"
+                    else "Live animation off · showing last close")
+    ui.table_title("Top gainers", "up")
+    ui.movers_table(g, flag, tk, flip)
+    st.markdown("<div style='height:.5rem'></div>", unsafe_allow_html=True)
+    ui.table_title("Top losers", "down")
+    ui.movers_table(l, flag, tk, flip)
+
+
 # ---------------------------------------------------------------- header
 ui.hero(
     "Movers & Big Money",
@@ -78,7 +140,11 @@ ui.hero(
     "delivery %, gaps, 52-week position, sector, exchange deals and the newest headline.",
     pills=[("Last close vs previous", "amber"), ("Delayed data", "flat")],
 )
-ui.market_strip(_idx(cache.both_bucket(0.5)))
+strip_live = live_on and (cache.state("IN") != "CLOSED" or cache.state("US") != "CLOSED")
+if strip_live:
+    st.fragment(run_every=refresh)(_strip_panel)()
+else:
+    ui.market_strip(_idx(cache.both_bucket(0.5)))
 
 tab_in, tab_us, tab_flow, tab_ins = st.tabs(["🇮🇳 INDIA", "🇺🇸 UNITED STATES", "🏦 FLOWS (INDIA)", "🕵️ INSIDERS (FORM 4)"])
 
@@ -133,11 +199,8 @@ def _market_tab(flag: str) -> None:
     T.kpi(k[2], "Unusual volume", f"{unusual}", "movers trading ≥1.5× avg", "amber")
     T.kpi(k[3], "Breadth", f"{adv} / {len(full) - adv}", "advancers / decliners", T.sign_tone(adv - (len(full) - adv)))
     st.markdown("<div style='height:.7rem'></div>", unsafe_allow_html=True)
-    ui.table_title("Top gainers", "up")
-    ui.movers_table(g, flag)
-    st.markdown("<div style='height:.5rem'></div>", unsafe_allow_html=True)
-    ui.table_title("Top losers", "down")
-    ui.movers_table(l, flag)
+    is_live = live_on and cache.state(flag) != "CLOSED"
+    st.fragment(run_every=refresh if is_live else None)(_movers_tables)(flag, g, l, is_live)
     if flag == "IN" and "Delivery %" in g and not (g["Delivery %"].notna().any() or l["Delivery %"].notna().any()):
         st.caption("Delivery % unavailable: NSE's bhavcopy could not be reached from this host.")
     T.rule("Big investments & deals in the news")

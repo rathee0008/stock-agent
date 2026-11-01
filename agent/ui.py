@@ -53,6 +53,18 @@ table.tt .bar{display:inline-block;height:4px;border-radius:2px;vertical-align:m
 table.tt .rk{color:var(--faint);margin-right:.6rem;font-size:.68rem}
 table.tt .dim{color:var(--dim)}
 table.tt .wrap{white-space:normal;text-align:left;min-width:220px}
+.lv-bar{display:flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;
+font-weight:700;color:var(--dim);margin:.1rem 0 .45rem}
+.lv-dot{width:7px;height:7px;border-radius:50%;background:var(--faint);display:inline-block}
+.lv-bar.on{color:#0ecb81}.lv-bar.on .lv-dot{background:#0ecb81;animation:lvpulse 1.4s ease-out infinite}
+@keyframes lvpulse{0%{box-shadow:0 0 0 0 rgba(14,203,129,.6)}100%{box-shadow:0 0 0 7px rgba(14,203,129,0)}}
+.fua{animation:fua 1.1s ease-out}.fub{animation:fub 1.1s ease-out}
+.fda{animation:fda 1.1s ease-out}.fdb{animation:fdb 1.1s ease-out}
+@keyframes fua{0%{background:rgba(14,203,129,.35)}100%{background:transparent}}
+@keyframes fub{0%{background:rgba(14,203,129,.35)}100%{background:transparent}}
+@keyframes fda{0%{background:rgba(246,70,93,.35)}100%{background:transparent}}
+@keyframes fdb{0%{background:rgba(246,70,93,.35)}100%{background:transparent}}
+@media (prefers-reduced-motion:reduce){.fua,.fub,.fda,.fdb,.lv-dot{animation:none!important}}
 .tt-title{display:flex;align-items:center;gap:.55rem;margin:.2rem 0 .45rem;font-size:.7rem;letter-spacing:.16em;
 text-transform:uppercase;font-weight:700;color:var(--dim)}
 .tt-title i{width:8px;height:8px;border-radius:50%;display:inline-block}
@@ -259,15 +271,31 @@ def hero(title: str, subtitle: str = "", pills: list[tuple[str, str]] | None = N
     )
 
 
-def market_strip(quotes: list[dict]) -> None:
-    """Index / macro strip. quotes: [{name, price, chg_pct}]; hides itself if empty."""
+def flash_cls(tick: float | None, flip: int = 0) -> str:
+    """CSS class that flashes green/red for an up/down tick. ``flip`` alternates between two identical
+    animations so a second tick in a row replays instead of being ignored by the browser."""
+    if not tick:
+        return ""
+    return ("fu" if tick > 0 else "fd") + ("a" if flip % 2 == 0 else "b")
+
+
+def live_bar(on: bool, text: str) -> None:
+    """Small status line with a pulsing dot when the feed is live."""
+    st.markdown(f'<div class="lv-bar{" on" if on else ""}"><span class="lv-dot"></span>{_e(text)}</div>',
+                unsafe_allow_html=True)
+
+
+def market_strip(quotes: list[dict], ticks: dict[str, float] | None = None, flip: int = 0) -> None:
+    """Index / macro strip. quotes: [{name, price, chg_pct}]; hides itself if empty.
+    ``ticks`` (name -> price change since last poll) makes a cell flash green/red."""
     cells = []
     for q in quotes or []:
         ch = q.get("chg_pct")
         col = T.tone_color(T.sign_tone(ch))
         arrow = "▲" if (ch or 0) > 0 else "▼" if (ch or 0) < 0 else "•"
+        fl = flash_cls((ticks or {}).get(q["name"]), flip)
         cells.append(
-            f'<div class="mcell"><div class="n">{_e(q["name"])}</div>'
+            f'<div class="mcell {fl}"><div class="n">{_e(q["name"])}</div>'
             f'<div class="p">{_px(q.get("price"))}</div>'
             f'<div class="c" style="color:{col}">{arrow} {_pct(ch)}</div></div>'
         )
@@ -295,8 +323,10 @@ def symlink(sym, market: str | None = None) -> str:
     return f'<a class="symlink" href="{_e(analyze_href(sym, market))}" target="_self">{_e(short_sym(sym))}</a>'
 
 
-def movers_table(df: pd.DataFrame, market: str | None = None) -> None:
-    """Gainers/losers table. Optional columns: ``Delivery %`` and ``Why`` (list of tags or str)."""
+def movers_table(df: pd.DataFrame, market: str | None = None, ticks: dict[str, float] | None = None,
+                 flip: int = 0) -> None:
+    """Gainers/losers table. Optional columns: ``Delivery %`` and ``Why`` (list of tags or str).
+    ``ticks`` (symbol -> price change since last poll) flashes that row's price and change cells."""
     if df is None or df.empty:
         st.markdown('<div class="empty">No data returned.</div>', unsafe_allow_html=True)
         return
@@ -311,10 +341,11 @@ def movers_table(df: pd.DataFrame, market: str | None = None) -> None:
         vv = r.get("Vol vs 5d avg")
         vcol = C["amber"] if _ok(vv) and float(vv) >= 1.5 else C["dim"]
         vtxt = f"{float(vv):.1f}x" if _ok(vv) else "—"
+        fl = flash_cls((ticks or {}).get(r["Symbol"]), flip)
         cells = (
             f'<td><span class="rk">{i:02d}</span><b>{symlink(r["Symbol"], market)}</b></td>'
-            f'<td>{_px(r["Price"])}</td>'
-            f'<td class="chg" style="color:{col}"><span class="bar" style="width:{w:.0f}px;background:{col}"></span>{_pct(ch)}</td>'
+            f'<td class="{fl}">{_px(r["Price"])}</td>'
+            f'<td class="chg {fl}" style="color:{col}"><span class="bar" style="width:{w:.0f}px;background:{col}"></span>{_pct(ch)}</td>'
             f'<td style="color:{vcol}">{vtxt}</td>'
         )
         if has_deliv:
