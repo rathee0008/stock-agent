@@ -1,4 +1,4 @@
-"""Static sector map for the screener universes (used by the heatmap; no Yahoo info calls)."""
+"""Static sector map for the screener universes and the crypto category map (used by the heatmap; no Yahoo info calls)."""
 
 _IN = {
     "Financials": "HDFCBANK ICICIBANK SBIN KOTAKBANK AXISBANK BAJFINANCE BAJAJFINSV INDUSINDBK SBILIFE HDFCLIFE SHRIRAMFIN CHOLAFIN",
@@ -20,10 +20,19 @@ _US = {
     "Energy & Utilities": "XOM CVX COP NEE LIN",
     "Industrials": "GE CAT UNP DE",
 }
+_CRYPTO = {
+    "Bitcoin & store of value": "BTC LTC BCH XMR ETC",
+    "Smart-contract platforms": "ETH SOL ADA AVAX DOT NEAR ATOM ICP ALGO HBAR",
+    "Exchange & payments": "BNB XRP TRX XLM",
+    "DeFi & infrastructure": "LINK UNI AAVE MKR FIL GRT",
+    "Meme coins": "DOGE SHIB",
+}
 
 
 def sector_map(market: str) -> dict[str, str]:
-    """Return {Yahoo symbol: sector} for 'IN' (.NS suffix) or 'US'."""
+    """Return {Yahoo symbol: sector} for 'IN' (.NS suffix), 'US' or 'CRYPTO' (-USD pairs, grouped by category)."""
+    if market == "CRYPTO":
+        return {f"{s}-USD": sec for sec, names in _CRYPTO.items() for s in names.split()}
     src = _IN if market == "IN" else _US
     suffix = ".NS" if market == "IN" else ""
     return {f"{s}{suffix}": sec for sec, names in src.items() for s in names.split()}

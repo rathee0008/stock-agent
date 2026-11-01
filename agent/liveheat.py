@@ -100,7 +100,7 @@ def build_html(df: pd.DataFrame, prev: dict[str, float] | None, limit: float, he
         if t["sym"]:
             d["new"] = round(cur[t["sym"]], 3)
             d["old"] = round((prev or {}).get(t["sym"], cur[t["sym"]]), 3)
-            d["px"] = round(price[t["sym"]], 2)
+            d["px"] = round(price[t["sym"]], 2 if price[t["sym"]] >= 1 else 8)
             if "Trend" in df.columns:
                 trd = trend[t["sym"]]
                 d["tr"] = [round(float(v), 2) for v in trd][-30:] if trd is not None and len(trd) else []
@@ -179,8 +179,9 @@ const root=document.documentElement.style;root.setProperty('--up',UPH);root.setP
 function col(v){const a=Math.min(Math.abs(v)/LIM,1), c=v>=0?UP:DN, k=Math.pow(a,.75);
   return 'rgb('+[0,1,2].map(i=>Math.round(N[i]+(c[i]-N[i])*k)).join(',')+')';}
 const fmt=v=>(v>=0?'+':'')+v.toFixed(2)+'%';
+const pf=v=>{v=Number(v);return v>=1?v.toFixed(2):(v>0?String(+v.toFixed(6)):'0')};
 const HL=new Set(D.hl||[]),MIN=D.minMove||0;
-const tip=o=>{const t=o.t;return t.sym+'  '+t.sector+'\nprice '+Number(o.px).toFixed(2)+'   today '+fmt(o.d1!=null?o.d1:o.pct)+(o.d1!=null&&Math.abs(o.d1-o.pct)>0.005?'   window '+fmt(o.pct):'')
+const tip=o=>{const t=o.t;return t.sym+'  '+t.sector+'\nprice '+pf(o.px)+'   today '+fmt(o.d1!=null?o.d1:o.pct)+(o.d1!=null&&Math.abs(o.d1-o.pct)>0.005?'   window '+fmt(o.pct):'')
   +(t.mc?'\nmarket cap '+t.mc:'')+(t.vx!=null?'\nvolume '+t.vx.toFixed(1)+'x 20-day avg':'')+(t.p52!=null?'\n52-wk range position '+Math.round(t.p52)+'%':'')+'\n'+o.ticks+' live ticks  ·  size: '+D.size;};
 const bySym={}, secEls={}, secMembers={}, all=[];
 for(const t of D.tiles){
@@ -192,7 +193,7 @@ for(const t of D.tiles){
   e.innerHTML='<b>'+t.sym+'</b><i></i><u></u>'+(t.fl?'<s>'+t.fl+'</s>':'');
   if(HL.has(t.sym))e.classList.add('hl');
   const o={e,i:e.querySelector('i'),u:e.querySelector('u'),t,pct:t.old,px:t.px,prev:t.prev,ticks:0};
-  o.i.textContent=fmt(t.old);o.u.textContent=t.px;e.style.backgroundColor=col(t.old);o.d1=t.d1;e.title=tip(o);
+  o.i.textContent=fmt(t.old);o.u.textContent=pf(t.px);e.style.backgroundColor=col(t.old);o.d1=t.d1;e.title=tip(o);
   e.classList.toggle('dim',MIN>0&&Math.abs(t.old)<MIN);
   e.addEventListener('click',()=>{dsel.value=t.sector;drUpdate(true,true);document.getElementById('dh').scrollIntoView({behavior:'smooth',block:'start'});});
   map.appendChild(e);all.push(o);(secMembers[t.sector]=secMembers[t.sector]||[]).push(o);
@@ -238,7 +239,7 @@ function drUpdate(first,reset){
   for(const o of all)if(!inSec.has(o)){o.dr.e.classList.add('out');}
   m.forEach((o,i)=>{const d=o.dr;d.e.classList.remove('out');d.e.style.transform='translateY('+(i*DRH)+'px)';
     const mv=dInit[o.t.sym]-i;d.n.innerHTML=(i+1)+(mv>0?'<span class="mv up">▲'+mv+'</span>':mv<0?'<span class="mv dn">▼'+(-mv)+'</span>':'');
-    d.p.textContent=Number(o.px).toFixed(2);const w=Math.min(Math.abs(o.pct)/mx,1)*50;
+    d.p.textContent=pf(o.px);const w=Math.min(Math.abs(o.pct)/mx,1)*50;
     d.bar.style.left=o.pct>=0?'50%':(50-w)+'%';d.bar.style.width=w+'%';d.bar.style.backgroundColor=o.pct>=0?UPH:DNH;
     d.v.textContent=fmt(o.pct);d.v.className='v '+(o.pct>=0?'up':'dn');d.sp.innerHTML=spark(o);
     if(d.last!==null&&d.lastpx!==o.px&&!first)d.e.animate([{backgroundColor:o.px>d.lastpx?'#17472f':'#4a1c24'},{backgroundColor:'#111317'}],{duration:900});
@@ -291,7 +292,7 @@ function frame(){
     if(r.prev>0)o.prev=r.prev;
     const oldpx=o.px,moved=r.price!==oldpx;
     o.px=r.price;o.pct=pct;o.d1=pct;o.ticks++;
-    o.i.textContent=fmt(pct);o.u.textContent=r.price.toFixed(2);o.e.style.backgroundColor=col(pct);
+    o.i.textContent=fmt(pct);o.u.textContent=pf(r.price);o.e.style.backgroundColor=col(pct);
     o.e.title=tip(o);o.e.classList.toggle('dim',MIN>0&&Math.abs(pct)<MIN);
     if(moved)flash(o.e,r.price>oldpx);}
   if(ks.length){summary();document.getElementById('tk').innerHTML='last tick <b>'+new Date().toLocaleTimeString()+'</b>';}

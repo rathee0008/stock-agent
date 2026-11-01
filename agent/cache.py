@@ -32,6 +32,8 @@ CLOSED_TTL = 3 * 3600   # data cannot change when the market is shut
 
 
 def state(market: str) -> str:
+    if market == "CRYPTO":
+        return "REGULAR"   # 24/7
     return _us_market_state() if market == "US" else _in_market_state()
 
 

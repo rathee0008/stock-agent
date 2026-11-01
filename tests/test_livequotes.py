@@ -56,3 +56,20 @@ def test_tile_driver_is_static_and_covers_binance_crypto():
     assert h == ticker.tile_driver_html()                       # no per-poll data => iframe/socket stay alive
     assert all(f'"{y}": "{b}"' in h for y, b in ticker.BINANCE_STREAMS.items())   # "@trade" is appended in the JS
     assert set(ticker.BINANCE_STREAMS) <= {i.symbol for i in LM.INSTRUMENTS}
+
+
+def test_crypto_sector_map_and_display_helpers():
+    from agent import heatmetrics as H, sectors
+
+    m = sectors.sector_map("CRYPTO")
+    assert m["BTC-USD"] == "Bitcoin & store of value" and all(k.endswith("-USD") for k in m)
+    assert len(set(m)) == len(m) and len(set(m.values())) >= 4
+    assert ui.short_sym("BTC-USD") == "BTC" and ui.short_sym("RELIANCE.NS") == "RELIANCE" and ui.short_sym("BRK-B") == "BRK-B"
+    assert set(H.SPANS_CRYPTO) == set(H.SPANS)                       # same selector labels for every market
+    assert H.fmt_price(77802.0) == "77,802.00" and H.fmt_price(1.2507) == "1.25" and H.fmt_price(0.000012) == "0.000012"
+
+
+def test_crypto_market_never_closes_for_cache_ttl():
+    from agent import cache
+
+    assert cache.state("CRYPTO") == "REGULAR" and cache.ttl_for("CRYPTO") == cache.OPEN_TTL

@@ -15,6 +15,18 @@ SPANS: dict[str, int | None] = {
     "1 day": 1, "1 week": 5, "1 month": 21, "3 months": 63, "6 months": 126, "YTD": None,
 }
 
+# Crypto trades every day, so its daily bars are calendar days, not sessions.
+SPANS_CRYPTO: dict[str, int | None] = {
+    "1 day": 1, "1 week": 7, "1 month": 30, "3 months": 90, "6 months": 180, "YTD": None,
+}
+
+
+def fmt_price(v: float) -> str:
+    """Price with enough decimals to be useful for both BTC (77,802.00) and SHIB (0.000012)."""
+    v = float(v)
+    return f"{v:,.2f}" if abs(v) >= 1 else f"{v:.6f}".rstrip("0").rstrip(".") if v else "0"
+
+
 SIZE_MODES = ("Equal", "Market cap", "Traded value")
 
 # (rising, falling) tile colours. The colour-blind pair avoids red/green entirely.

@@ -76,7 +76,8 @@ def _base_price(c: pd.Series, lookback: int | None) -> float | None:
 @st.cache_data(ttl=6 * 3600, show_spinner=False)
 def _load(market: str, span_name: str, b: int) -> pd.DataFrame:
     """``b`` is a market-hours-aware cache bucket (short while open, long when closed)."""
-    lookback = H.SPANS[span_name]
+    crypto = market == "CRYPTO"
+    lookback = (H.SPANS_CRYPTO if crypto else H.SPANS)[span_name]
     smap = sectors.sector_map(market)
     hist = screener.batch_history(list(smap), period="1y", min_rows=(lookback or 20) + 2)
     caps = _mcaps(market)
@@ -93,8 +94,8 @@ def _load(market: str, span_name: str, b: int) -> pd.DataFrame:
         if len(vol) > 21:
             avg = float(vol.iloc[-21:-1].mean())
             vol_x = float(vol.iloc[-1]) / avg if avg > 0 else None
-            value = last * avg
-        yr = c.tail(252)
+            value = avg if crypto else last * avg   # Yahoo's crypto volume is already in US$
+        yr = c.tail(365 if crypto else 252)
         hi, lo = float(yr.max()), float(yr.min())
         pos = (last - lo) / (hi - lo) * 100 if hi > lo else None
         near_hi, near_lo = last >= hi * (1 - H.NEAR_52W), last <= lo * (1 + H.NEAR_52W)
@@ -128,7 +129,7 @@ def _static_map(df: pd.DataFrame, mkt: str, lim: float, height: int, wts: list[f
             colors.append(H.tile_color(pct, lim, UP, DN, dim=dim_below > 0 and abs(pct) < dim_below))
             text.append(f"{pct:+.1f}%")
             bits = [f"<b>{r['Symbol']}</b> · {sec}", f"{span}: <b>{pct:+.2f}%</b>   today: {r['1D %']:+.2f}%",
-                    f"Price {r['Price']:,.2f}   Market cap {r['MCapTxt']}"]
+                    f"Price {H.fmt_price(r['Price'])}   Market cap {r['MCapTxt']}"]
             if pd.notna(r["VolX"]):
                 bits.append(f"Volume {r['VolX']:.1f}× 20-day average" + ("  ⚡ spike" if r["VolX"] >= H.VOL_SPIKE else ""))
             if pd.notna(r["Pos52"]):
@@ -158,14 +159,16 @@ def _legend(lim: float) -> None:
 
 ui.hero(
     "Sector Heatmap",
-    "Large-cap stocks grouped by sector. Colour = move over the chosen window; tile size = equal, market cap or traded "
+    "Large-cap stocks (and major crypto coins) grouped by sector or category. Colour = move over the chosen window; tile size = equal, market cap or traded "
     "value (sidebar). Use it to see where money is rotating.",
     pills=[("Delayed data", "amber"), (size_mode, "flat"), ("Live mode available", "flat")],
 )
 
 
 def _view(mkt: str, live: bool) -> None:
-    _M = "IN" if mkt == "India" else "US"
+    _M = {"India": "IN", "United States": "US", "Crypto": "CRYPTO"}[mkt]
+    crypto = _M == "CRYPTO"
+    unit = "coins" if crypto else "stocks"
     with st.spinner("Loading prices…"):
         df = _load(_M, span, cache.bucket(_M, 3))
         if live:
@@ -204,10 +207,14 @@ def _view(mkt: str, live: bool) -> None:
     T.kpi(k[0], "Leading sector", str(best), f"{sec.loc[best, 'mean']:+.2f}% avg", "up", small=True)
     T.kpi(k[1], "Lagging sector", str(worst), f"{sec.loc[worst, 'mean']:+.2f}% avg", "down", small=True)
     T.kpi(k[2], "Advancers / decliners", f"{int((df['Change %'] > 0).sum())} / {int((df['Change %'] < 0).sum())}",
-          f"of {len(df)} stocks", "flat")
+          f"of {len(df)} {unit}", "flat")
     T.kpi(k[3], "Market average", f"{mkt_avg:+.2f}%", win, T.sign_tone(mkt_avg))
     st.markdown("<div style='height:.4rem'></div>", unsafe_allow_html=True)
 
+    if crypto:
+        st.caption("Crypto trades 24/7, so there is no closing bell: “today” is the move since the previous UTC-day "
+                   "close, and week/month windows count calendar days. Traded value is Yahoo's 24-hour US$ volume. "
+                   "Coins Yahoo does not return simply do not appear.")
     asof = (f"Prices as of {datetime.now().strftime('%d %b %Y, %H:%M')} (live, exchange-delayed where Yahoo says so)"
             if live else f"Data as of last close, {df['AsOf'].iloc[0]}")
     st.caption(f"{asof} · window: {win} · tile size: {size_mode}"
@@ -270,7 +277,7 @@ def _view(mkt: str, live: bool) -> None:
                 sub[["Symbol", "Price", "Change %", "1D %", "VolX", "Pos52", "Trend"]],
                 use_container_width=True, hide_index=True,
                 column_config={
-                    "Price": st.column_config.NumberColumn(format="%.2f"),
+                    "Price": st.column_config.NumberColumn(format="%.6g" if crypto else "%.2f"),
                     "Change %": st.column_config.NumberColumn(format="%+.2f"),
                     "1D %": st.column_config.NumberColumn(format="%+.2f"),
                     "VolX": st.column_config.NumberColumn("Volume ×avg", format="%.1f×"),
@@ -278,8 +285,9 @@ def _view(mkt: str, live: bool) -> None:
                     "Trend": st.column_config.LineChartColumn("30-day trend"),
                 },
             )
-            who = st.selectbox("Open a stock in Analyze", list(sub["Symbol"]), key=f"open_{_M}_{pick}")
-            st.markdown(f"[Open {who} in Analyze →](/?s={who}&m={_M})")
+            if not crypto:  # the Analyze page covers listed stocks only
+                who = st.selectbox("Open a stock in Analyze", list(sub["Symbol"]), key=f"open_{_M}_{pick}")
+                st.markdown(f"[Open {who} in Analyze →](/?s={who}&m={_M})")
     else:
         st.caption("Live ticks stream straight to your browser (no page refresh). The summary cards above are a "
                    "snapshot from when you switched Live on; the map's own header updates tick by tick. "
@@ -290,7 +298,7 @@ def _view(mkt: str, live: bool) -> None:
 
 c_m, c_l = st.columns([2, 1])
 with c_m:
-    mkt = st.radio("Market", ["India", "United States"], horizontal=True, label_visibility="collapsed")
+    mkt = st.radio("Market", ["India", "United States", "Crypto"], horizontal=True, label_visibility="collapsed")
 with c_l:
     live = st.toggle("Live", value=False, help="Stream live price ticks into the map (today vs previous close).")
 _view(mkt, live)

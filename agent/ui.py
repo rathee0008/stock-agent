@@ -188,7 +188,7 @@ def _ok(v) -> bool:
 
 
 def short_sym(s) -> str:
-    return re.sub(r"\.(NS|BO)$", "", str(s))
+    return re.sub(r"\.(NS|BO)$|-USD$", "", str(s))
 
 
 def _px(v, nd: int = 2) -> str:
