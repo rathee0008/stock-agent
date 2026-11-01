@@ -109,6 +109,83 @@ if(byS[BTC]){
 </script></body></html>"""
 
 
+# Yahoo symbol -> Binance spot trade stream. These are the only instruments with a public browser-readable
+# real-time feed; Yahoo itself blocks cross-origin browser requests, so everything else updates per poll.
+BINANCE_STREAMS = {"BTC-USD": "btcusdt", "ETH-USD": "ethusdt", "SOL-USD": "solusdt",
+                   "BNB-USD": "bnbusdt", "XRP-USD": "xrpusdt"}
+
+_DRIVER = """<!doctype html><html><body style="margin:0"><script>
+(function(){
+var MAP=%(map)s, UP="%(up)s", DN="%(down)s", DIM="%(dim)s";
+var P; try{P=window.parent.document}catch(e){return}          // cards live in the page; update them in place
+var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+var state={}, bySream={}, scheduled=false;
+Object.keys(MAP).forEach(function(s){bySream[MAP[s]+"@trade"]=s});
+function fmt(v,dp){return Number(v).toLocaleString("en-US",{minimumFractionDigits:dp,maximumFractionDigits:dp})}
+function sgn(v,dp){return (v>=0?"+":"-")+Math.abs(v).toLocaleString("en-US",{minimumFractionDigits:dp,maximumFractionDigits:dp})}
+function pts(a){var lo=Math.min.apply(null,a),hi=Math.max.apply(null,a),sp=(hi-lo)||1;
+  return a.map(function(v,i){return (i*120/(a.length-1)).toFixed(1)+","+(28-(v-lo)/sp*26).toFixed(1)}).join(" ")}
+function card(sym){return P.querySelector('.lm-card[data-sym="'+sym+'"]')}
+function apply(sym,flash,from){
+  var c=card(sym),s=state[sym]; if(!c||!s)return;
+  var prev=parseFloat(c.getAttribute("data-prev")),dp=parseInt(c.getAttribute("data-dp")||"2",10);
+  var m=prev>0?(s.p/prev-1)*100:null, col=m==null||m===0?DIM:(m>0?UP:DN);
+  var px=c.querySelector(".lm-px"),chg=c.querySelector(".lm-chg"),st=c.querySelector(".lm-st"),poly=c.querySelector(".lm-spark polyline");
+  if(px)px.textContent=fmt(s.p,dp);
+  if(chg&&m!=null){chg.textContent=(m>0?"\u25B2 ":m<0?"\u25BC ":"\u2022 ")+sgn(s.p-prev,dp)+" ("+sgn(m,2)+"%%)";chg.style.color=col}
+  c.classList.remove("up","down"); if(m!=null&&m!==0)c.classList.add(m>0?"up":"down");
+  if(st){st.className="lm-st live";st.textContent="\u25CF STREAMING"}
+  if(poly&&s.series.length>1){poly.setAttribute("points",pts(s.series));poly.setAttribute("stroke",col)}
+  c.setAttribute("data-live","1");
+  if(flash&&!reduce&&from!=null&&s.p!==from){c.classList.remove("flash-up","flash-down");void c.offsetWidth;c.classList.add(s.p>from?"flash-up":"flash-down")}
+}
+function seed(sym){
+  var c=card(sym); if(!c||state[sym].series.length)return;
+  try{state[sym].series=JSON.parse(c.getAttribute("data-spark")||"[]")}catch(e){}
+}
+function onTrade(sym,p){
+  var s=state[sym]||(state[sym]={p:p,series:[],t:0}); var from=s.p; s.p=p; seed(sym);
+  var now=Date.now(); if(now-s.t>2500){s.t=now;s.series.push(p);if(s.series.length>60)s.series.shift()}
+  else if(s.series.length){s.series[s.series.length-1]=p}
+  apply(sym,true,from);
+}
+// cards are rebuilt on every Streamlit poll: re-apply the streamed state to any fresh card
+new MutationObserver(function(){
+  if(scheduled)return; scheduled=true;
+  requestAnimationFrame(function(){scheduled=false;
+    P.querySelectorAll('.lm-card[data-sym]').forEach(function(c){
+      var sym=c.getAttribute("data-sym"); if(state[sym]&&c.getAttribute("data-live")!=="1"){seed(sym);apply(sym,false)}})})
+}).observe(P.body,{childList:true,subtree:true});
+(function connect(){
+  try{
+    var q=Object.keys(MAP).map(function(s){return MAP[s]+"@trade"}).join("/");
+    var w=new WebSocket("wss://stream.binance.com:9443/stream?streams="+q), last={};
+    w.onmessage=function(ev){
+      var m=JSON.parse(ev.data),sym=bySream[m.stream]; if(!sym)return;
+      var t=performance.now(); if(last[sym]&&t-last[sym]<250)return; last[sym]=t;
+      var p=parseFloat(m.data.p); if(p>0)onTrade(sym,p);
+    };
+    w.onclose=function(){setTimeout(connect,4000)}; w.onerror=function(){try{w.close()}catch(e){}};
+  }catch(e){}
+})();
+})();
+</script></body></html>"""
+
+
+def tile_driver_html() -> str:
+    """Static (data-free) HTML for a zero-height component that streams live trades into the Live Markets cards.
+
+    It carries no per-poll data, so the HTML never changes and Streamlit keeps the same iframe (and socket) alive
+    across refreshes."""
+    return _DRIVER % {"map": json.dumps(BINANCE_STREAMS), "up": C["up"], "down": C["down"], "dim": C["dim"]}
+
+
+def render_tile_driver() -> None:
+    import streamlit.components.v1 as components
+
+    components.html(tile_driver_html(), height=0)
+
+
 def _clean(v):
     """JSON-safe number: NaN/inf become null."""
     if v is None:
@@ -149,4 +226,4 @@ def render(rows: list[dict]) -> None:
     components.html(build_html(rows), height=44)
 
 
-__all__ = ["build_html", "items_from_rows", "render", "_html"]
+__all__ = ["build_html", "items_from_rows", "render", "render_tile_driver", "tile_driver_html", "_html"]

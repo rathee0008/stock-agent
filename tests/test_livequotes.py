@@ -47,3 +47,12 @@ def test_ticker_html_is_safe_and_drops_unpriced_rows():
     h = ticker.build_html(rows)
     assert h.count("</script>") == 1          # the one closing our own script, none smuggled in via data
     assert '"s": "B"' not in h and '"s":"B"' not in h
+
+
+def test_tile_driver_is_static_and_covers_binance_crypto():
+    from agent import livemarkets as LM, ticker
+
+    h = ticker.tile_driver_html()
+    assert h == ticker.tile_driver_html()                       # no per-poll data => iframe/socket stay alive
+    assert all(f"{s}@trade" in h for s in ticker.BINANCE_STREAMS.values())
+    assert set(ticker.BINANCE_STREAMS) <= {i.symbol for i in LM.INSTRUMENTS}

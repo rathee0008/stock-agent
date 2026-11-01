@@ -1,4 +1,4 @@
-"""Live markets: stock indices, Bitcoin, crude oil, gold, silver, US dollar index, USD/INR and US Treasury
+"""Live markets: stock indices, Bitcoin and other major coins, crude oil, gold, silver, US dollar index, USD/INR and US Treasury
 yields on one page, auto-refreshing, with a sparkline and tick-by-tick flash on every instrument.
 
 Data is Yahoo Finance (agent/livemarkets.py). Crypto, FX and futures stream close to real time; NSE/BSE and
@@ -7,6 +7,7 @@ never assumed: a closed market shows CLOSED and its last close.
 """
 
 import html as _html
+import json
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -143,7 +144,10 @@ def _card(r: pd.Series, tick: float) -> str:
     status = ('<span class="lm-st live">● LIVE</span>' if r["live"]
               else '<span class="lm-st">○ CLOSED</span>')
     foot = f'{_e(r["symbol"])} · {when:%d %b %H:%M} IST'
-    return (f'<div class="lm-card {tone}{flash}" title="Last bar {when:%d %b %Y %H:%M:%S} IST · prev close '
+    prev_attr = "" if pd.isna(r["prev"]) else f'{float(r["prev"]):.10g}'
+    spark_attr = _e(json.dumps([round(float(v), 6) for v in r["spark"]]))
+    return (f'<div class="lm-card {tone}{flash}" data-sym="{_e(r["symbol"])}" data-prev="{prev_attr}" '
+            f'data-dp="{int(r["dp"])}" data-spark="{spark_attr}" title="Last bar {when:%d %b %Y %H:%M:%S} IST · prev close '
             f'{_e(_num(r["prev"], r["dp"]) if pd.notna(r["prev"]) else "n/a")}">'
             f'<div class="lm-top"><span class="lm-name">{_e(r["label"])}</span>{status}</div>'
             f'<div class="lm-px">{_num(r["price"], r["dp"])}</div>'
@@ -153,11 +157,14 @@ def _card(r: pd.Series, tick: float) -> str:
 
 ui.hero(
     "Live Markets",
-    "Indian, US and world indices, Bitcoin, crude oil, gold, silver, the US dollar index, USD/INR and US "
+    "Indian, US and world indices, Bitcoin and other major coins, crude oil, gold, silver, the US dollar index, USD/INR and US "
     "Treasury yields on one page. A live ranking orders every instrument by its move, and each card flashes green or red when the price ticks.",
     pills=[("LIVE" if live_on else "PAUSED", "up" if live_on else "flat"),
            ("Yahoo Finance", "amber"), ("Times in IST", "flat")],
 )
+
+
+ticker.render_tile_driver()  # streams real crypto trades into the cards between polls, no rerun needed
 
 
 @st.fragment(run_every=refresh if live_on else None)
