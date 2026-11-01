@@ -139,6 +139,41 @@ function apply(sym,flash,from){
   c.setAttribute("data-live","1");
   if(flash&&!reduce&&from!=null&&s.p!==from){c.classList.remove("flash-up","flash-down");void c.offsetWidth;c.classList.add(s.p>from?"flash-up":"flash-down")}
 }
+var rflip=0;
+function rflash(el,up){if(reduce||!el)return;rflip++;el.classList.remove("fua","fub","fda","fdb");void el.offsetWidth;el.classList.add((up?"fu":"fd")+(rflip%%2===0?"a":"b"))}
+function badge(td,mv){
+  var old=td.querySelector(".rm"); if(old)old.remove(); if(!mv)return;
+  var b=P.createElement("span"); b.className="rm "+(mv==="new"?"new":(mv>0?"up":"dn"));
+  b.textContent=mv==="new"?"NEW":(mv>0?"▲":"▼")+Math.abs(mv);
+  var rk=td.querySelector(".rk"); if(rk)rk.parentNode.insertBefore(b,rk.nextSibling);
+}
+function applyRow(sym,flash,from){
+  var r=P.querySelector('tr.rk-row[data-sym="'+sym+'"]'),s=state[sym]; if(!r||!s)return;
+  var prev=parseFloat(r.getAttribute("data-prev")),dp=parseInt(r.getAttribute("data-dp")||"2",10);
+  if(!(prev>0))return;
+  var m=(s.p/prev-1)*100, col=m===0?DIM:(m>0?UP:DN);
+  var px=r.querySelector(".rk-px"),mv=r.querySelector(".rk-mv"),fd=r.querySelector(".rk-feed");
+  r.setAttribute("data-m",m); r.setAttribute("data-live","1");
+  if(px)px.textContent=fmt(s.p,dp);
+  if(mv){mv.style.color=col;var bar=mv.querySelector(".bar");if(bar)bar.style.background=col;
+    if(mv.lastChild)mv.lastChild.textContent=sgn(m,2)+"%%"}
+  if(fd){fd.textContent="● STREAMING";fd.style.color=UP}
+  if(flash&&from!=null&&s.p!==from){rflash(px,s.p>from);rflash(mv,s.p>from)}
+}
+function resort(){
+  var rows=[].slice.call(P.querySelectorAll("tr.rk-row[data-m]")); if(rows.length<2)return;
+  var key=function(r){return parseFloat(r.getAttribute("data-m"))};
+  var sorted=rows.slice().sort(function(a,b){return key(b)-key(a)});
+  var mx=Math.max.apply(null,rows.map(function(r){return Math.abs(key(r))}).concat([0.01]));
+  rows.forEach(function(r){var bar=r.querySelector(".rk-mv .bar");if(bar)bar.style.width=(Math.abs(key(r))/mx*46).toFixed(0)+"px"});
+  if(!sorted.some(function(r,i){return r!==rows[i]}))return;
+  var tb=rows[0].parentNode;
+  sorted.forEach(function(r,i){
+    var from=rows.indexOf(r); tb.appendChild(r);
+    var td=r.firstElementChild,rk=td&&td.querySelector(".rk"); if(rk)rk.textContent=(i<9?"0":"")+(i+1);
+    if(from!==i){badge(td,from-i);rflash(td,from>i)}
+  });
+}
 function seed(sym){
   var c=card(sym); if(!c||state[sym].series.length)return;
   try{state[sym].series=JSON.parse(c.getAttribute("data-spark")||"[]")}catch(e){}
@@ -147,14 +182,18 @@ function onTrade(sym,p){
   var s=state[sym]||(state[sym]={p:p,series:[],t:0}); var from=s.p; s.p=p; seed(sym);
   var now=Date.now(); if(now-s.t>2500){s.t=now;s.series.push(p);if(s.series.length>60)s.series.shift()}
   else if(s.series.length){s.series[s.series.length-1]=p}
-  apply(sym,true,from);
+  apply(sym,true,from); applyRow(sym,true,from); resort();
 }
 // cards are rebuilt on every Streamlit poll: re-apply the streamed state to any fresh card
 new MutationObserver(function(){
   if(scheduled)return; scheduled=true;
   requestAnimationFrame(function(){scheduled=false;
     P.querySelectorAll('.lm-card[data-sym]').forEach(function(c){
-      var sym=c.getAttribute("data-sym"); if(state[sym]&&c.getAttribute("data-live")!=="1"){seed(sym);apply(sym,false)}})})
+      var sym=c.getAttribute("data-sym"); if(state[sym]&&c.getAttribute("data-live")!=="1"){seed(sym);apply(sym,false)}});
+    var fresh=false;
+    P.querySelectorAll("tr.rk-row[data-sym]").forEach(function(r){
+      var sym=r.getAttribute("data-sym"); if(state[sym]&&r.getAttribute("data-live")!=="1"){applyRow(sym,false);fresh=true}});
+    if(fresh)resort()})
 }).observe(P.body,{childList:true,subtree:true});
 (function connect(){
   try{

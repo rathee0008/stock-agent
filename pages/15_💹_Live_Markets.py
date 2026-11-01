@@ -119,11 +119,14 @@ def _ranking(df: pd.DataFrame) -> None:
         rfl = ui.flash_cls(1 if rm == "new" else rm, flip)
         fl = ui.flash_cls(r["tick"], flip)
         st_txt = '<span style="color:var(--up,#0ecb81)">● LIVE</span>' if r["live"] else "○ CLOSED"
+        prev_attr = "" if pd.isna(r["prev"]) else f'{float(r["prev"]):.10g}'
         rows.append(
-            f'<tr><td class="{rfl}"><span class="rk">{i:02d}</span>{ui._rank_badge(rm)}<b>{_e(r["label"])}</b></td>'
-            f'<td class="dim">{_e(r["group"])}</td><td class="{fl}">{_num(r["price"], r["dp"])}</td>'
-            f'<td class="chg {fl}" style="color:{col}"><span class="bar" style="width:{abs(mv) / mx * 46:.0f}px;'
-            f'background:{col}"></span>{_signed(mv, 2, "%")}</td><td class="dim">{st_txt}</td></tr>')
+            f'<tr class="rk-row" data-sym="{_e(r["symbol"])}" data-m="{mv:.10g}" data-prev="{prev_attr}" '
+            f'data-dp="{int(r["dp"])}"><td class="{rfl}"><span class="rk">{i:02d}</span>{ui._rank_badge(rm)}'
+            f'<b>{_e(r["label"])}</b></td><td class="dim">{_e(r["group"])}</td>'
+            f'<td class="rk-px {fl}">{_num(r["price"], r["dp"])}</td>'
+            f'<td class="chg rk-mv {fl}" style="color:{col}"><span class="bar" style="width:{abs(mv) / mx * 46:.0f}px;'
+            f'background:{col}"></span>{_signed(mv, 2, "%")}</td><td class="dim rk-feed">{st_txt}</td></tr>')
     ui.table_title(f"Live ranking · {len(pool)} instruments by % move", "amber")
     st.markdown('<div class="ttw"><table class="tt"><thead><tr><th>Instrument</th><th>Section</th><th>Price</th>'
                 '<th>Move</th><th>Feed</th></tr></thead><tbody>' + "".join(rows) + "</tbody></table></div>",
