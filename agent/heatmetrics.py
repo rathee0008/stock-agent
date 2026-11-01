@@ -24,7 +24,11 @@ SPANS_CRYPTO: dict[str, int | None] = {
 def fmt_price(v: float) -> str:
     """Price with enough decimals to be useful for both BTC (77,802.00) and SHIB (0.000012)."""
     v = float(v)
-    return f"{v:,.2f}" if abs(v) >= 1 else f"{v:.6f}".rstrip("0").rstrip(".") if v else "0"
+    if abs(v) >= 1:
+        return f"{v:,.2f}"
+    if v <= 0:
+        return "0"
+    return f"{v:.{min(12, max(4, 3 - math.floor(math.log10(v))))}f}"   # 4 significant digits for sub-$1 prices
 
 
 SIZE_MODES = ("Equal", "Market cap", "Traded value")

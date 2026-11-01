@@ -66,7 +66,7 @@ def test_crypto_sector_map_and_display_helpers():
     assert len(set(m)) == len(m) and len(set(m.values())) >= 4 and "UNI7083-USD" in m
     assert ui.short_sym("BTC-USD") == "BTC" and ui.short_sym("UNI7083-USD") == "UNI" and ui.short_sym("RELIANCE.NS") == "RELIANCE" and ui.short_sym("BRK-B") == "BRK-B"
     assert set(H.SPANS_CRYPTO) == set(H.SPANS)                       # same selector labels for every market
-    assert H.fmt_price(77802.0) == "77,802.00" and H.fmt_price(1.2507) == "1.25" and H.fmt_price(0.000012) == "0.000012"
+    assert H.fmt_price(77802.0) == "77,802.00" and H.fmt_price(1.2507) == "1.25" and H.fmt_price(0.000012) == "0.00001200" and H.fmt_price(0.5) == "0.5000"
 
 
 def test_crypto_market_never_closes_for_cache_ttl():
