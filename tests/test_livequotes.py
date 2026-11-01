@@ -54,5 +54,5 @@ def test_tile_driver_is_static_and_covers_binance_crypto():
 
     h = ticker.tile_driver_html()
     assert h == ticker.tile_driver_html()                       # no per-poll data => iframe/socket stay alive
-    assert all(f"{s}@trade" in h for s in ticker.BINANCE_STREAMS.values())
+    assert all(f'"{y}": "{b}"' in h for y, b in ticker.BINANCE_STREAMS.items())   # "@trade" is appended in the JS
     assert set(ticker.BINANCE_STREAMS) <= {i.symbol for i in LM.INSTRUMENTS}
