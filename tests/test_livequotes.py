@@ -31,3 +31,9 @@ def test_flash_cls_alternates_so_repeat_ticks_replay():
     assert ui.flash_cls(0.0) == "" and ui.flash_cls(None) == ""
     assert ui.flash_cls(1.0, 0) == "fua" and ui.flash_cls(1.0, 1) == "fub"
     assert ui.flash_cls(-1.0, 0) == "fda" and ui.flash_cls(-1.0, 1) == "fdb"
+
+
+def test_rank_moves_up_down_new_and_first_poll():
+    assert LV.rank_moves([], ["A", "B"]) == {}
+    assert LV.rank_moves(["A", "B", "C"], ["A", "B", "C"]) == {}
+    assert LV.rank_moves(["A", "B", "C"], ["C", "A", "D"]) == {"C": 2, "A": -1, "D": "new"}

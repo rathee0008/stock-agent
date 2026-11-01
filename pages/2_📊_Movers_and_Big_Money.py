@@ -108,29 +108,57 @@ def _strip_panel() -> None:
     ui.market_strip(quotes, tk, _flip("mv_strip_flip"))
 
 
-def _movers_tables(flag: str, g: pd.DataFrame, l: pd.DataFrame, live: bool) -> None:
-    tk, flip = {}, 0
+def _movers_live(flag: str, full: pd.DataFrame, why_map: dict, dmap: dict, sec_avg: dict, live: bool) -> None:
+    """KPI tiles + gainers/losers, re-ranked from live prices for the whole universe on every poll."""
+    px, tk, flip = {}, {}, 0
     if live:
-        px = _live_px(tuple(g["Symbol"]) + tuple(l["Symbol"]))
+        px = _live_px(tuple(full["Symbol"]))
         if px:
             key = f"mv_prev_{flag}"
             tk = LV.ticks(st.session_state.get(key, {}), px)
             st.session_state[key] = px
-            g, l = LV.apply_live(g, px), LV.apply_live(l, px)
             flip = _flip(f"mv_flip_{flag}")
+    cur = LV.apply_live(full, px) if px else full
+    cur = cur.sort_values("Change %", ascending=False).reset_index(drop=True)
+    g, l = screener.split_movers(cur)
+    moves = {}
+    for side, df in (("g", g), ("l", l)):
+        key = f"mv_rank_{flag}_{side}"
+        moves[side] = LV.rank_moves(st.session_state.get(key, []), list(df["Symbol"])) if px else {}
+        if px:
+            st.session_state[key] = list(df["Symbol"])
+    enriched = []
+    for df in (g, l):
+        df = df.copy()
+        df["Delivery %"] = df["Symbol"].map(dmap)
+        df["Why"] = [why_map[s] if s in why_map else why.explain(r.to_dict(), sec_avg)
+                     for s, (_, r) in zip(df["Symbol"], df.iterrows())]
+        enriched.append(df)
+    g, l = enriched
+
     stamp = datetime.now(IST).strftime("%H:%M:%S")
     if live and tk:
-        ui.live_bar(True, f"LIVE · updated {stamp} IST · every {refresh}s · NSE prices may lag ~15 min")
+        ui.live_bar(True, f"LIVE RANKING · updated {stamp} IST · every {refresh}s · NSE prices may lag ~15 min")
     elif live:
         ui.live_bar(False, "Live prices unavailable right now · showing last close, will retry")
     else:
         ui.live_bar(False, "MARKET CLOSED · showing last close" if cache.state(flag) == "CLOSED"
                     else "Live animation off · showing last close")
+
+    k = st.columns(4)
+    bg, bl = g.iloc[0], l.iloc[0]
+    unusual = int(sum((x["Vol vs 5d avg"] >= 1.5).sum() for x in (g, l)))
+    adv = int((cur["Change %"] > 0).sum())
+    T.kpi(k[0], "Top gainer", ui.short_sym(bg["Symbol"]), f"{bg['Change %']:+.2f}%", "up")
+    T.kpi(k[1], "Top loser", ui.short_sym(bl["Symbol"]), f"{bl['Change %']:+.2f}%", "down")
+    T.kpi(k[2], "Unusual volume", f"{unusual}", "movers trading ≥1.5× avg", "amber")
+    T.kpi(k[3], "Breadth", f"{adv} / {len(cur) - adv}", "advancers / decliners", T.sign_tone(adv - (len(cur) - adv)))
+    st.markdown("<div style='height:.7rem'></div>", unsafe_allow_html=True)
     ui.table_title("Top gainers", "up")
-    ui.movers_table(g, flag, tk, flip)
+    ui.movers_table(g, flag, tk, flip, moves["g"])
     st.markdown("<div style='height:.5rem'></div>", unsafe_allow_html=True)
     ui.table_title("Top losers", "down")
-    ui.movers_table(l, flag, tk, flip)
+    ui.movers_table(l, flag, tk, flip, moves["l"])
 
 
 # ---------------------------------------------------------------- header
@@ -189,19 +217,14 @@ def _market_tab(flag: str) -> None:
         return
     g, l = screener.split_movers(full)
     g, l = _enrich(flag, g, l, full)
-    both = [g, l]
-    k = st.columns(4)
-    bg, bl = g.iloc[0], l.iloc[0]
-    unusual = int(sum((x["Vol vs 5d avg"] >= 1.5).sum() for x in both))
-    adv = int((full["Change %"] > 0).sum())
-    T.kpi(k[0], "Top gainer", ui.short_sym(bg["Symbol"]), f"{bg['Change %']:+.2f}%", "up")
-    T.kpi(k[1], "Top loser", ui.short_sym(bl["Symbol"]), f"{bl['Change %']:+.2f}%", "down")
-    T.kpi(k[2], "Unusual volume", f"{unusual}", "movers trading ≥1.5× avg", "amber")
-    T.kpi(k[3], "Breadth", f"{adv} / {len(full) - adv}", "advancers / decliners", T.sign_tone(adv - (len(full) - adv)))
-    st.markdown("<div style='height:.7rem'></div>", unsafe_allow_html=True)
+    b = cache.bucket(flag)
+    dl = _delivery(b) if flag == "IN" else pd.DataFrame()
+    dmap = dict(zip(dl["Symbol"], dl["Delivery %"])) if not dl.empty else {}
+    why_map = {**dict(zip(g["Symbol"], g["Why"])), **dict(zip(l["Symbol"], l["Why"]))}
     is_live = live_on and cache.state(flag) != "CLOSED"
-    st.fragment(run_every=refresh if is_live else None)(_movers_tables)(flag, g, l, is_live)
-    if flag == "IN" and "Delivery %" in g and not (g["Delivery %"].notna().any() or l["Delivery %"].notna().any()):
+    st.fragment(run_every=refresh if is_live else None)(_movers_live)(
+        flag, full, why_map, dmap, screener.sector_averages(full), is_live)
+    if flag == "IN" and not dmap:
         st.caption("Delivery % unavailable: NSE's bhavcopy could not be reached from this host.")
     T.rule("Big investments & deals in the news")
     ui.feed(_deals(flag, days, cache.bucket(flag, 5)), empty="No deal headlines found.")

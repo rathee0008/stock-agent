@@ -52,6 +52,24 @@ def apply_live(df: pd.DataFrame, live: dict[str, float]) -> pd.DataFrame:
     return out
 
 
+def rank_moves(prev: list[str], cur: list[str]) -> dict[str, int | str]:
+    """Places gained since the previous poll for each symbol in ``cur`` (positive = moved up the list).
+
+    A symbol absent from ``prev`` is reported as ``"new"``. Returns {} when there is no previous poll, so the
+    first render shows no badges. Unmoved symbols are omitted.
+    """
+    if not prev:
+        return {}
+    old = {s: i for i, s in enumerate(prev)}
+    out: dict[str, int | str] = {}
+    for i, s in enumerate(cur):
+        if s not in old:
+            out[s] = "new"
+        elif old[s] != i:
+            out[s] = old[s] - i
+    return out
+
+
 def ticks(prev: dict[str, float], cur: dict[str, float]) -> dict[str, float]:
     """Signed price change since the previous poll, per symbol (0 for unchanged or first sight)."""
     return {s: (p - prev[s]) if s in prev else 0.0 for s, p in cur.items()}

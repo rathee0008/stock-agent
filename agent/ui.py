@@ -58,6 +58,8 @@ font-weight:700;color:var(--dim);margin:.1rem 0 .45rem}
 .lv-dot{width:7px;height:7px;border-radius:50%;background:var(--faint);display:inline-block}
 .lv-bar.on{color:#0ecb81}.lv-bar.on .lv-dot{background:#0ecb81;animation:lvpulse 1.4s ease-out infinite}
 @keyframes lvpulse{0%{box-shadow:0 0 0 0 rgba(14,203,129,.6)}100%{box-shadow:0 0 0 7px rgba(14,203,129,0)}}
+table.tt .rm{display:inline-block;min-width:2.1rem;margin-right:.45rem;font-size:.6rem;font-weight:700;letter-spacing:.04em}
+table.tt .rm.up{color:#0ecb81}table.tt .rm.dn{color:#f6465d}table.tt .rm.new{color:var(--amber,#f0b90b)}
 .fua{animation:fua 1.1s ease-out}.fub{animation:fub 1.1s ease-out}
 .fda{animation:fda 1.1s ease-out}.fdb{animation:fdb 1.1s ease-out}
 @keyframes fua{0%{background:rgba(14,203,129,.35)}100%{background:transparent}}
@@ -323,10 +325,20 @@ def symlink(sym, market: str | None = None) -> str:
     return f'<a class="symlink" href="{_e(analyze_href(sym, market))}" target="_self">{_e(short_sym(sym))}</a>'
 
 
+def _rank_badge(move) -> str:
+    """▲n / ▼n for places gained / lost since the last poll, NEW for a stock that just entered the list."""
+    if move == "new":
+        return '<span class="rm new">NEW</span>'
+    if not move:
+        return ""
+    return f'<span class="rm {"up" if move > 0 else "dn"}">{"▲" if move > 0 else "▼"}{abs(int(move))}</span>'
+
+
 def movers_table(df: pd.DataFrame, market: str | None = None, ticks: dict[str, float] | None = None,
-                 flip: int = 0) -> None:
+                 flip: int = 0, rank_move: dict | None = None) -> None:
     """Gainers/losers table. Optional columns: ``Delivery %`` and ``Why`` (list of tags or str).
-    ``ticks`` (symbol -> price change since last poll) flashes that row's price and change cells."""
+    ``ticks`` (symbol -> price change since last poll) flashes that row's price and change cells.
+    ``rank_move`` (symbol -> places gained since last poll, or "new") shows a rank-change badge."""
     if df is None or df.empty:
         st.markdown('<div class="empty">No data returned.</div>', unsafe_allow_html=True)
         return
@@ -342,8 +354,10 @@ def movers_table(df: pd.DataFrame, market: str | None = None, ticks: dict[str, f
         vcol = C["amber"] if _ok(vv) and float(vv) >= 1.5 else C["dim"]
         vtxt = f"{float(vv):.1f}x" if _ok(vv) else "—"
         fl = flash_cls((ticks or {}).get(r["Symbol"]), flip)
+        rm = (rank_move or {}).get(r["Symbol"])
+        rfl = flash_cls(1 if rm == "new" else rm, flip)
         cells = (
-            f'<td><span class="rk">{i:02d}</span><b>{symlink(r["Symbol"], market)}</b></td>'
+            f'<td class="{rfl}"><span class="rk">{i:02d}</span>{_rank_badge(rm)}<b>{symlink(r["Symbol"], market)}</b></td>'
             f'<td class="{fl}">{_px(r["Price"])}</td>'
             f'<td class="chg {fl}" style="color:{col}"><span class="bar" style="width:{w:.0f}px;background:{col}"></span>{_pct(ch)}</td>'
             f'<td style="color:{vcol}">{vtxt}</td>'
