@@ -3,6 +3,7 @@
 import sys
 import time
 from datetime import datetime
+from zoneinfo import ZoneInfo
 from pathlib import Path
 
 import pandas as pd
@@ -215,7 +216,7 @@ def _view(mkt: str, live: bool) -> None:
         st.caption("Crypto trades 24/7, so there is no closing bell: “today” is the move since the previous UTC-day "
                    "close, and week/month windows count calendar days. Traded value is Yahoo's 24-hour US$ volume. "
                    "Coins Yahoo does not return simply do not appear.")
-    asof = (f"Prices as of {datetime.now().strftime('%d %b %Y, %H:%M')} (live, exchange-delayed where Yahoo says so)"
+    asof = (f"Prices as of {datetime.now(ZoneInfo('Asia/Kolkata')).strftime('%d %b %Y, %H:%M')} IST (live, exchange-delayed where Yahoo says so)"
             if live else f"Data as of last close, {df['AsOf'].iloc[0]}")
     st.caption(f"{asof} · window: {win} · tile size: {size_mode}"
                + (" · market caps are cached for 12h" if size_mode == "Market cap" else ""))

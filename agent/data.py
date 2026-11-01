@@ -378,10 +378,16 @@ def _in_market_state() -> str:
     return "CLOSED"
 
 
+def _us_now() -> "_dt.datetime":
+    """Current New York time, DST-aware."""
+    from zoneinfo import ZoneInfo
+    return _dt.datetime.now(ZoneInfo("America/New_York"))
+
+
 def _us_market_state() -> str:
     """NYSE/NASDAQ regular session is 09:30-16:00 ET, Mon-Fri, with a
     04:00-09:30 pre-market and 16:00-20:00 post-market window."""
-    et = _dt.datetime.now(_dt.timezone(_dt.timedelta(hours=-5)))  # approx. ET (no DST table)
+    et = _us_now()
     mins = et.hour * 60 + et.minute
     if et.weekday() >= 5:
         return "CLOSED"

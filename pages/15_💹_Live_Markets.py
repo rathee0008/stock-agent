@@ -167,7 +167,8 @@ ui.hero(
 )
 
 
-ticker.render_tile_driver()  # streams real crypto trades into the cards between polls, no rerun needed
+if live_on:
+    ticker.render_tile_driver()  # streams real crypto trades into the cards between polls, no rerun needed
 
 
 @st.fragment(run_every=refresh if live_on else None)

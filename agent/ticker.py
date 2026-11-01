@@ -70,10 +70,10 @@ function paint(sym,price,doFlash,prevPrice){
   });
 }
 // 1) roll from the previous poll's price to the new one
-var store={}; try{store=JSON.parse(localStorage.getItem("tape_prev")||"{}")}catch(e){}
-var now={};
+var store={}; try{store=JSON.parse(localStorage.getItem("tape_prev2")||"{}")}catch(e){}
+var now={}, T0=Date.now();
 D.forEach(function(it){
-  now[it.s]=it.p; var from=store[it.s];
+  now[it.s]=[it.p,T0]; var e=store[it.s], from=(e&&T0-e[1]<60000)?e[0]:null;   // only roll from a recent price
   if(from==null||from===it.p||reduce)return;
   var t0=performance.now(), dur=900;
   (function step(t){
@@ -81,27 +81,31 @@ D.forEach(function(it){
     paint(it.s,v,false); if(k<1)requestAnimationFrame(step); else{paint(it.s,it.p,true,from)}
   })(t0);
 });
-try{localStorage.setItem("tape_prev",JSON.stringify(Object.assign(store,now)))}catch(e){}
+try{localStorage.setItem("tape_prev2",JSON.stringify(Object.assign(store,now)))}catch(e){}
 // 2) continuous scroll from the wall clock (survives data refreshes)
 if(!reduce){
-  var W=0;
+  var W=0, nf=0, dead=false;
+  window.addEventListener("pagehide",function(){dead=true});
   (function frame(){
-    if(!W)W=track.scrollWidth/2;
+    if(dead)return;
+    if(!W||(++nf%%120===0))W=track.scrollWidth/2;
     if(W>0){track.style.transform="translateX("+(-((Date.now()/1000*SPEED)%%W))+"px)"}
     requestAnimationFrame(frame);
   })();
 }
 // 3) Bitcoin streams real trades between polls
 if(byS[BTC]){
+  var gone=false;
   (function connect(){
     try{
       var w=new WebSocket("wss://stream.binance.com:9443/ws/btcusdt@trade"),last=0,prev=byS[BTC].p;
+      window.addEventListener("pagehide",function(){gone=true;try{w.close()}catch(e){}});
       w.onmessage=function(ev){
         var t=performance.now(); if(t-last<300)return; last=t;
         var p=parseFloat(JSON.parse(ev.data).p); if(!(p>0))return;
         paint(BTC,p,true,prev); prev=p;
       };
-      w.onclose=function(){setTimeout(connect,4000)}; w.onerror=function(){try{w.close()}catch(e){}};
+      w.onclose=function(){if(!gone)setTimeout(connect,4000)}; w.onerror=function(){try{w.close()}catch(e){}};
     }catch(e){}
   })();
 }
@@ -185,7 +189,8 @@ function onTrade(sym,p){
   apply(sym,true,from); applyRow(sym,true,from); resort();
 }
 // cards are rebuilt on every Streamlit poll: re-apply the streamed state to any fresh card
-new MutationObserver(function(){
+var gone=false, ws=null;
+var mo=new MutationObserver(function(){
   if(scheduled)return; scheduled=true;
   requestAnimationFrame(function(){scheduled=false;
     P.querySelectorAll('.lm-card[data-sym]').forEach(function(c){
@@ -194,17 +199,19 @@ new MutationObserver(function(){
     P.querySelectorAll("tr.rk-row[data-sym]").forEach(function(r){
       var sym=r.getAttribute("data-sym"); if(state[sym]&&r.getAttribute("data-live")!=="1"){applyRow(sym,false);fresh=true}});
     if(fresh)resort()})
-}).observe(P.body,{childList:true,subtree:true});
+});
+mo.observe(P.body,{childList:true,subtree:true});
+window.addEventListener("pagehide",function(){gone=true;mo.disconnect();try{ws&&ws.close()}catch(e){}});
 (function connect(){
   try{
     var q=Object.keys(MAP).map(function(s){return MAP[s]+"@trade"}).join("/");
-    var w=new WebSocket("wss://stream.binance.com:9443/stream?streams="+q), last={};
+    var w=new WebSocket("wss://stream.binance.com:9443/stream?streams="+q), last={}; ws=w;
     w.onmessage=function(ev){
       var m=JSON.parse(ev.data),sym=bySream[m.stream]; if(!sym)return;
       var t=performance.now(); if(last[sym]&&t-last[sym]<250)return; last[sym]=t;
       var p=parseFloat(m.data.p); if(p>0)onTrade(sym,p);
     };
-    w.onclose=function(){setTimeout(connect,4000)}; w.onerror=function(){try{w.close()}catch(e){}};
+    w.onclose=function(){if(!gone)setTimeout(connect,4000)}; w.onerror=function(){try{w.close()}catch(e){}};
   }catch(e){}
 })();
 })();

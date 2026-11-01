@@ -6,6 +6,7 @@ Run:  streamlit run app.py
 from __future__ import annotations
 
 import datetime as dt
+import html
 import os
 
 import pandas as pd
@@ -716,13 +717,15 @@ with tab_news:
     rows = []
     for h in a["news"]["headlines"]:
         colour = _dot[h["sentiment"]]
-        title = h["title"].replace("<", "&lt;")
-        link = h.get("link")
-        title_html = (f'<a href="{link}" target="_blank">{title}</a>'
+        title = html.escape(str(h["title"]))
+        link = str(h.get("link") or "")
+        if not link.lower().startswith(("http://", "https://")):
+            link = ""
+        title_html = (f'<a href="{html.escape(link, quote=True)}" target="_blank" rel="noopener noreferrer">{title}</a>'
                       if link else f'<span style="color:{C["text"]}">{title}</span>')
         rows.append(
             f'<div class="hl"><span class="hl-dot" style="color:{colour}">●</span>'
-            f'<div>{title_html}<div class="hl-src">{h.get("publisher","")}</div></div></div>'
+            f'<div>{title_html}<div class="hl-src">{html.escape(str(h.get("publisher") or ""))}</div></div></div>'
         )
     st.markdown("".join(rows), unsafe_allow_html=True)
     st.caption("Headline tone is a keyword heuristic — treat as a rough tilt only.")

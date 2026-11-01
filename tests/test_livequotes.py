@@ -73,3 +73,27 @@ def test_crypto_market_never_closes_for_cache_ttl():
     from agent import cache
 
     assert cache.state("CRYPTO") == "REGULAR" and cache.ttl_for("CRYPTO") == cache.OPEN_TTL
+
+
+def test_us_market_state_uses_new_york_time_with_dst(monkeypatch):
+    import datetime as dt
+    from zoneinfo import ZoneInfo
+
+    from agent import data
+
+    ny = ZoneInfo("America/New_York")
+    # 10:00 ET on a summer Monday (EDT, UTC-4) and a winter Monday (EST, UTC-5) must both be REGULAR
+    for d in (dt.datetime(2026, 7, 6, 10, 0, tzinfo=ny), dt.datetime(2026, 12, 7, 10, 0, tzinfo=ny)):
+        monkeypatch.setattr(data, "_us_now", lambda d=d: d)
+        assert data._us_market_state() == "REGULAR"
+    monkeypatch.setattr(data, "_us_now", lambda: dt.datetime(2026, 7, 6, 8, 0, tzinfo=ny))
+    assert data._us_market_state() == "PRE"
+
+
+def test_ticker_js_has_cleanup_and_stale_price_guard():
+    from agent import ticker
+
+    for h in (ticker.build_html([{"symbol": "BTC-USD", "label": "BTC", "price": 1.0, "prev": 1.0, "move": 0.0}]),
+              ticker.tile_driver_html()):
+        assert "pagehide" in h
+    assert "tape_prev2" in ticker.build_html([{"symbol": "A", "label": "A", "price": 1.0, "prev": 1.0, "move": 0.0}])
