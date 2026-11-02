@@ -1,18 +1,18 @@
-# Screener results — 2026-10-31 morning (IST)
+# Screener results — 2026-11-03 evening (IST)
 
-Universe scored: 122 stocks. Not investment advice.
+Universe scored: 121 stocks. Not investment advice.
 
 | Preset | Matches | Top 5 by score |
 |---|---|---|
-| Quality momentum | 25 | TECHM.NS, BLK, ICICIBANK.NS, BRK-B, ACN |
-| Quality compounders | 37 | TECHM.NS, BLK, TXN, MSFT, MU |
-| GARP (growth at fair price) | 10 | TECHM.NS, BLK, V, MSFT, UNP |
-| Deep value | 19 | MU, JSWSTEEL.NS, JPM, AXISBANK.NS, COALINDIA.NS |
-| Cheap and profitable | 25 | ICICIBANK.NS, TCS.NS, MU, WIPRO.NS, INFY.NS |
-| Momentum breakout | 16 | TECHM.NS, XOM, KOTAKBANK.NS, CVX, ACN |
-| Strong technicals | 27 | TECHM.NS, BLK, XOM, ICICIBANK.NS, KOTAKBANK.NS |
-| Oversold quality | 13 | NVDA, META, COALINDIA.NS, BAC, AMAT |
-| Relative strength leaders | 11 | XOM, KOTAKBANK.NS, CVX, ACN, DIVISLAB.NS |
-| Growth acceleration | 11 | XOM, KOTAKBANK.NS, CVX, DIVISLAB.NS, COP |
-| Analyst upside | 41 | ICICIBANK.NS, MSFT, MU, NVDA, CRM |
-| Large-cap safety | 46 | TECHM.NS, BLK, ICICIBANK.NS, BRK-B, TXN |
+| Quality momentum | 25 | BLK, TECHM.NS, COP, ICICIBANK.NS, XOM |
+| Quality compounders | 40 | BLK, TECHM.NS, TXN, ABBV, CVX |
+| GARP (growth at fair price) | 12 | BLK, TECHM.NS, XOM, CVX, V |
+| Deep value | 18 | MU, WFC, JSWSTEEL.NS, AXISBANK.NS, COALINDIA.NS |
+| Cheap and profitable | 22 | ICICIBANK.NS, CVX, TCS.NS, MU, WIPRO.NS |
+| Momentum breakout | 15 | TECHM.NS, COP, XOM, KOTAKBANK.NS, TXN |
+| Strong technicals | 26 | BLK, TECHM.NS, COP, ICICIBANK.NS, XOM |
+| Oversold quality | 14 | MU, CSCO, META, NVDA, COALINDIA.NS |
+| Relative strength leaders | 13 | COP, XOM, KOTAKBANK.NS, ABBV, DIVISLAB.NS |
+| Growth acceleration | 11 | COP, XOM, KOTAKBANK.NS, TXN, DIVISLAB.NS |
+| Analyst upside | 40 | ICICIBANK.NS, MU, MSFT, CRM, CSCO |
+| Large-cap safety | 48 | BLK, TECHM.NS, COP, ICICIBANK.NS, XOM |

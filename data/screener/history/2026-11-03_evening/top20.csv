@@ -1,0 +1,21 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+US,BLK,"BlackRock, Inc.",Financial Services,1167.62,1.75,3.00,48.60,47,50,0,26.58,,19.10,62.06,strong_buy,16.37
+IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1790.80,1.20,8.45,48.40,53,44,0,28.72,19.19,15.60,65.79,buy,-2.24
+US,COP,ConocoPhillips,Energy,147.57,-4.19,28.28,47.60,58,38,0,19.55,14.18,35.50,59.24,buy,2.65
+IN,ICICIBANK.NS,ICICI BANK LTD.,Financial Services,1398.00,0.82,-2.61,47.10,44,50,0,17.04,16.49,15.80,56.93,strong_buy,26.52
+US,XOM,ExxonMobil Holdings Corporation,Energy,180.80,-3.44,19.24,46.60,54,40,0,18.60,15.53,32.60,58.99,buy,-0.60
+IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,461.60,0.57,18.27,46.40,56,38,0,21.24,11.83,20.70,69.12,buy,7.30
+US,TXN,Texas Instruments Incorporated,Technology,302.76,0.64,9.01,45.50,45,46,0,39.28,39.72,27.70,60.87,buy,11.27
+US,ABBV,AbbVie Inc.,Healthcare,289.00,-2.00,17.38,44.70,55,36,0,49.66,,10.30,62.24,buy,3.29
+IN,DIVISLAB.NS,DIVI S LABORATORIES LTD,Healthcare,9780.00,1.20,21.40,43.80,68,22,0,90.24,,27.80,64.36,hold,-11.94
+IN,TRENT.NS,TRENT LTD,Consumer Cyclical,3017.30,5.44,0.38,42.20,60,26,0,89.81,27.06,21.90,61.86,buy,12.40
+US,BRK-B,Berkshire Hathaway Inc. New,Financial Services,554.82,2.27,6.93,41.90,42,42,0,13.95,12.12,10.00,74.11,buy,0.15
+US,ACN,Accenture plc,Technology,261.83,1.39,53.36,41.20,56,28,0,19.31,26.02,6.20,71.31,buy,-12.26
+US,CVX,Chevron Corporation,Energy,228.29,-3.07,22.47,40.80,55,28,0,16.77,,34.80,59.48,buy,2.54
+IN,HCLTECH.NS,HCL TECHNOLOGIES LTD,Technology,1428.10,1.72,6.03,40.60,52,30,0,21.22,24.65,2.20,69.86,hold,-11.09
+IN,TCS.NS,TATA CONSULTANCY SERV LT,Technology,2502.60,0.99,5.79,37.70,46,30,0,17.54,45.57,11.20,67.18,buy,-4.18
+US,LLY,Eli Lilly and Company,Healthcare,1417.49,-0.00,21.17,35.50,44,28,0,46.01,86.02,38.60,77.87,buy,0.25
+US,PG,Procter & Gamble Company (The),Consumer Defensive,164.19,1.62,11.85,35.40,64,10,0,24.72,29.61,4.00,66.20,buy,5.76
+US,MU,"Micron Technology, Inc.",Technology,831.97,-5.96,-6.85,34.80,-9,74,0,11.20,88.26,379.30,37.29,strong_buy,87.74
+US,IBM,International Business Machines,Technology,253.67,-1.61,7.52,34.00,50,20,0,21.65,34.77,4.70,64.25,buy,2.22
+US,V,Visa Inc.,Financial Services,426.14,3.03,15.63,33.80,47,22,0,34.57,63.51,13.20,75.34,strong_buy,3.52

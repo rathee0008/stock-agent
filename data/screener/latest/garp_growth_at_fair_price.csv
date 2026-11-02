@@ -1,11 +1,13 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
-IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1790.80,1.20,8.45,48.40,53,44,0,28.78,19.19,15.60,65.79,buy,-2.24
-US,BLK,"BlackRock, Inc.",Financial Services,1147.54,-2.44,1.45,47.60,45,50,0,26.13,,19.10,58.18,strong_buy,18.40
-US,V,Visa Inc.,Financial Services,413.59,0.74,11.91,40.00,60,22,0,33.57,63.51,13.20,69.44,strong_buy,6.66
-US,MSFT,Microsoft Corporation,Technology,521.91,-1.55,5.90,36.20,23,48,0,26.82,34.22,18.80,49.02,strong_buy,20.65
-US,UNP,Union Pacific Corporation,Industrials,304.00,0.69,2.58,35.80,49,24,0,23.71,38.75,15.30,69.99,buy,9.02
-US,MA,Mastercard Incorporated,Financial Services,638.01,0.36,11.72,29.80,45,16,0,34.96,231.37,14.00,70.64,strong_buy,7.65
-IN,HAL.NS,HINDUSTAN AERONAUTICS LTD,Industrials,4853.70,-0.33,4.46,29.30,42,18,0,34.82,,14.40,52.09,buy,15.01
-IN,ADANIPORTS.NS,ADANI PORT & SEZ LTD,Industrials,1850.00,-1.18,9.05,25.10,33,18,0,30.87,15.63,23.70,61.28,strong_buy,14.24
-US,INTU,Intuit Inc.,Technology,341.09,2.99,5.40,24.00,11,36,0,20.72,23.60,13.70,60.82,buy,19.55
-US,META,"Meta Platforms, Inc.",Communication Services,614.99,-1.53,4.60,17.50,-30,60,0,20.98,32.26,26.10,33.21,strong_buy,37.95
+US,BLK,"BlackRock, Inc.",Financial Services,1167.62,1.75,3.00,48.60,47,50,0,26.58,,19.10,62.06,strong_buy,16.37
+IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1790.80,1.20,8.45,48.40,53,44,0,28.72,19.19,15.60,65.79,buy,-2.24
+US,XOM,ExxonMobil Holdings Corporation,Energy,180.80,-3.44,19.24,46.60,54,40,0,18.60,15.53,32.60,58.99,buy,-0.60
+US,CVX,Chevron Corporation,Energy,228.29,-3.07,22.47,40.80,55,28,0,16.77,,34.80,59.48,buy,2.54
+US,V,Visa Inc.,Financial Services,426.14,3.03,15.63,33.80,47,22,0,34.57,63.51,13.20,75.34,strong_buy,3.52
+US,UNP,Union Pacific Corporation,Industrials,307.41,1.12,4.02,31.70,40,24,0,23.98,38.75,15.30,72.59,buy,7.80
+IN,HAL.NS,HINDUSTAN AERONAUTICS LTD,Industrials,4853.70,-0.33,4.46,29.30,42,18,0,34.83,,14.40,52.09,buy,15.01
+US,MSFT,Microsoft Corporation,Technology,509.73,-2.33,4.57,28.10,6,48,0,26.61,34.22,18.80,41.46,strong_buy,24.24
+US,MA,Mastercard Incorporated,Financial Services,659.08,3.30,15.53,27.80,41,16,0,34.48,231.37,14.00,76.45,strong_buy,6.51
+IN,ADANIPORTS.NS,ADANI PORT & SEZ LTD,Industrials,1850.00,-1.18,9.05,25.10,33,18,0,30.94,15.63,23.70,61.28,strong_buy,15.15
+US,INTU,Intuit Inc.,Technology,353.59,3.66,7.82,24.60,12,36,0,21.48,23.60,13.70,65.61,buy,15.32
+US,META,"Meta Platforms, Inc.",Communication Services,609.39,-0.91,3.50,11.40,-43,60,0,20.79,32.26,26.10,32.19,strong_buy,39.22
