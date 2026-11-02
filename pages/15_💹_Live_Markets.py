@@ -128,9 +128,10 @@ def _ranking(df: pd.DataFrame) -> None:
             f'<td class="chg rk-mv {fl}" style="color:{col}"><span class="bar" style="width:{abs(mv) / mx * 46:.0f}px;'
             f'background:{col}"></span>{_signed(mv, 2, "%")}</td><td class="dim rk-feed">{st_txt}</td></tr>')
     ui.table_title(f"Live ranking · {len(pool)} instruments by % move", "amber")
-    st.markdown('<div class="ttw"><table class="tt"><thead><tr><th>Instrument</th><th>Section</th><th>Price</th>'
-                '<th>Move</th><th>Feed</th></tr></thead><tbody>' + "".join(rows) + "</tbody></table></div>",
-                unsafe_allow_html=True)
+    # st.html (not st.markdown): the browser-side tile driver reorders these rows and edits their cells, so React
+    # must not own the individual nodes or the next refresh raises "removeChild ... not a child of this node".
+    st.html('<div class="ttw"><table class="tt"><thead><tr><th>Instrument</th><th>Section</th><th>Price</th>'
+            '<th>Move</th><th>Feed</th></tr></thead><tbody>' + "".join(rows) + "</tbody></table></div>")
     st.caption((note + " " if note else "") + "Ranked by % move vs previous close. ▲/▼ shows places gained or lost "
                "since the last refresh. Treasury yields move in basis points, so they are not ranked against % moves.")
 
@@ -207,7 +208,7 @@ def live_panel() -> None:
             continue
         ui.table_title(group.upper(), "amber")
         cards = "".join(_card(r, r["tick"]) for _, r in part.iterrows())
-        st.markdown(f'<div class="lm-grid">{cards}</div>', unsafe_allow_html=True)
+        st.html(f'<div class="lm-grid">{cards}</div>')
 
     missing = [x.label for x in LM.INSTRUMENTS if x.symbol not in set(df["symbol"]) and x.group in groups]
     if missing:
