@@ -128,3 +128,65 @@ def tile_color(v: float, lim: float, up: str, dn: str, dim: bool = False) -> str
     if dim:  # fade toward the page background so small moves recede
         rgb = [round(c * 0.4 + b * 0.6) for c, b in zip(rgb, _BG)]
     return f"rgb({rgb[0]},{rgb[1]},{rgb[2]})"
+
+
+FILTER_MODES = ("All", "Gainers only", "Losers only", "Volume spikes (⚡)", "Near 52-week high (▲)",
+                "Near 52-week low (▼)")
+
+
+def apply_filters(df: pd.DataFrame, mode: str = "All", top_n: int | None = None,
+                  search: str = "", only: set[str] | None = None) -> pd.DataFrame:
+    """Quick filters for the map. ``top_n`` keeps the N largest market caps; ``search`` is a substring
+    match on the symbol; ``only`` restricts to a ticker set (e.g. a watchlist)."""
+    out = df
+    if mode == "Gainers only":
+        out = out[out["Change %"] > 0]
+    elif mode == "Losers only":
+        out = out[out["Change %"] < 0]
+    elif mode.startswith("Volume spikes"):
+        out = out[out["VolX"].fillna(0) >= VOL_SPIKE]
+    elif mode.startswith("Near 52-week high"):
+        out = out[out["Pos52"].fillna(-1) >= 100 * (1 - NEAR_52W)]
+    elif mode.startswith("Near 52-week low"):
+        out = out[out["Pos52"].fillna(101) <= 100 * NEAR_52W]
+    if top_n and "MCap" in out.columns and out["MCap"].notna().any():
+        out = out.sort_values("MCap", ascending=False, na_position="last").head(int(top_n))
+    q = search.strip().upper()
+    if q:
+        out = out[out["Symbol"].str.upper().str.contains(q, regex=False)]
+    if only:
+        out = out[out["Symbol"].str.upper().isin({s.upper() for s in only})]
+    return out.reset_index(drop=True)
+
+
+def top_movers(df: pd.DataFrame, n: int = 5) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """(top ``n`` gainers, top ``n`` losers) by ``Change %``; losers only include negative moves."""
+    s = df.dropna(subset=["Change %"]).sort_values("Change %", ascending=False)
+    gain = s[s["Change %"] > 0].head(n)
+    lose = s[s["Change %"] < 0].sort_values("Change %").head(n)
+    return gain.reset_index(drop=True), lose.reset_index(drop=True)
+
+
+def momentum_matrix(by_span: dict[str, pd.DataFrame]) -> pd.DataFrame:
+    """Sector x window table of average % change, rows ordered by the longest window's strength.
+
+    ``by_span`` maps a window label to a frame with ``Sector`` and ``Change %``. Adds a ``Trend``
+    column: 'Accelerating' when the short window beats the long one (money flowing in now),
+    'Fading' when the reverse, so rotation is visible at a glance.
+    """
+    cols = {}
+    for label, d in by_span.items():
+        if d is not None and len(d):
+            cols[label] = d.groupby("Sector")["Change %"].mean()
+    if not cols:
+        return pd.DataFrame()
+    m = pd.DataFrame(cols)
+    labels = list(m.columns)
+    if len(labels) >= 2:
+        short, long_ = m[labels[0]], m[labels[-1]]
+        m["Momentum"] = [
+            "Accelerating" if s > l and s > 0 else "Fading" if s < l and l > 0 else "Weak" if s < 0 else "Steady"
+            for s, l in zip(short, long_)
+        ]
+        m = m.sort_values(labels[-1], ascending=False)
+    return m

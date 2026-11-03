@@ -66,3 +66,36 @@ def test_build_html_payload():
                       Trend=[[1.0, 2.0]] * 4)
     html = liveheat.build_html(df, None, 3.0, weights=[4, 1, 1, 1], highlight={"A"}, min_move=1.0, size_label="Market cap")
     assert '"hl": ["A"]' in html and '"minMove": 1.0' in html and '"mc": "$1T"' in html
+
+
+def _full():
+    return pd.DataFrame({
+        "Symbol": ["AAA", "BBB", "CCC", "DDD"], "Sector": ["X", "X", "Y", "Y"], "Change %": [2.0, -1.0, 3.0, -4.0],
+        "MCap": [400.0, 300.0, 200.0, 100.0], "VolX": [2.5, 1.0, None, 3.0], "Pos52": [99.0, 50.0, 1.0, None],
+    })
+
+
+def test_apply_filters():
+    df = _full()
+    assert list(H.apply_filters(df, "Gainers only")["Symbol"]) == ["AAA", "CCC"]
+    assert list(H.apply_filters(df, "Losers only")["Symbol"]) == ["BBB", "DDD"]
+    assert list(H.apply_filters(df, "Volume spikes (⚡)")["Symbol"]) == ["AAA", "DDD"]
+    assert list(H.apply_filters(df, "Near 52-week high (▲)")["Symbol"]) == ["AAA"]
+    assert list(H.apply_filters(df, "Near 52-week low (▼)")["Symbol"]) == ["CCC"]
+    assert list(H.apply_filters(df, top_n=2)["Symbol"]) == ["AAA", "BBB"]
+    assert list(H.apply_filters(df, search="cc")["Symbol"]) == ["CCC"]
+    assert list(H.apply_filters(df, only={"ddd", "aaa"})["Symbol"]) == ["AAA", "DDD"]
+
+
+def test_top_movers():
+    g, l = H.top_movers(_full(), 1)
+    assert list(g["Symbol"]) == ["CCC"] and list(l["Symbol"]) == ["DDD"]
+
+
+def test_momentum_matrix():
+    one = pd.DataFrame({"Sector": ["X", "Y"], "Change %": [2.0, -1.0]})
+    month = pd.DataFrame({"Sector": ["X", "Y"], "Change %": [1.0, 5.0]})
+    m = H.momentum_matrix({"1 day": one, "1 month": month})
+    assert list(m.index) == ["Y", "X"]                       # ordered by the longest window
+    assert m.loc["X", "Momentum"] == "Accelerating" and m.loc["Y", "Momentum"] == "Fading"
+    assert H.momentum_matrix({}).empty
