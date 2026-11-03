@@ -12,6 +12,11 @@ Rule types
   score_above / score_below   value = composite score (-100..100)
   composite_flip              fires when the composite label changes (no value)
 
+Sector rules (symbol = sector name as on the Sector Heatmap, e.g. "Financials", "IT", "Metals & Materials"; market IN / US / CRYPTO)
+  sector_pct_move             value = |average day change %| of the sector's stocks
+  sector_breadth_above        value = % of the sector's stocks that are up today (e.g. 80)
+  sector_breadth_below        value = % up today (e.g. 20 = broad selling)
+
 ``evaluate`` is a pure function over snapshots, so it is unit-tested without network.
 """
 
@@ -30,7 +35,9 @@ import requests
 from . import config, log
 
 RULE_TYPES = ["price_above", "price_below", "pct_move", "rsi_above", "rsi_below",
-              "volume_spike", "score_above", "score_below", "composite_flip"]
+              "volume_spike", "score_above", "score_below", "composite_flip",
+              "sector_pct_move", "sector_breadth_above", "sector_breadth_below"]
+SECTOR_RULES = {"sector_pct_move", "sector_breadth_above", "sector_breadth_below"}
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG_PATH = ROOT / "alerts.json"
 STATE_PATH = ROOT / ".cache" / "alert_state.json"
@@ -99,6 +106,13 @@ def _check(rule: Rule, snap: dict, prev_label: str | None) -> str | None:
         return f"composite score {score:+.0f} is above {v:g}"
     if t == "score_below" and score is not None and v is not None and score <= v:
         return f"composite score {score:+.0f} is below {v:g}"
+    sp, br, n = snap.get("sector_pct"), snap.get("breadth"), snap.get("n")
+    if t == "sector_pct_move" and sp is not None and v is not None and abs(sp) >= v:
+        return f"sector average {sp:+.2f}% today (limit ±{v:g}%, {n} stocks)"
+    if t == "sector_breadth_above" and br is not None and v is not None and br >= v:
+        return f"{br:.0f}% of the sector is up today (limit {v:g}%, {n} stocks)"
+    if t == "sector_breadth_below" and br is not None and v is not None and br <= v:
+        return f"only {br:.0f}% of the sector is up today (limit {v:g}%, {n} stocks)"
     if t == "composite_flip" and label and prev_label and label != prev_label:
         return f"composite call changed: {prev_label} → {label}"
     return None
@@ -140,13 +154,39 @@ def snapshot(symbol: str, market: str = "IN") -> dict[str, Any]:
             "currency": a["currency"], "name": a["name"]}
 
 
-def snapshots_for(rules: list[Rule], fn: Callable[[str, str], dict] = snapshot) -> dict[str, dict]:
+def sector_stats(market: str, prices: dict[str, tuple[float, float]] | None = None) -> dict[str, dict]:
+    """{SECTOR (upper-case): {sector_pct, breadth, n}} from today's move of each stock vs its previous close.
+
+    ``prices`` is ``{yahoo symbol: (last, previous close)}``; fetched live when omitted.
+    """
+    from . import screener, sectors
+
+    smap = sectors.sector_map(market)
+    if prices is None:
+        prices = screener.live_prices(list(smap))
+    moves: dict[str, list[float]] = {}
+    for sym, (px, prev) in prices.items():
+        if sym in smap and prev:
+            moves.setdefault(smap[sym].upper(), []).append((px / prev - 1) * 100)
+    return {sec: {"sector_pct": sum(v) / len(v), "breadth": 100 * sum(1 for x in v if x > 0) / len(v), "n": len(v)}
+            for sec, v in moves.items() if v}
+
+
+def snapshots_for(rules: list[Rule], fn: Callable[[str, str], dict] = snapshot,
+                  sector_fn: Callable[[str], dict[str, dict]] = sector_stats) -> dict[str, dict]:
     out: dict[str, dict] = {}
+    sector_cache: dict[str, dict[str, dict]] = {}
     for r in rules:
         sk = f"{r.market}:{r.symbol}"
         if sk in out:
             continue
         try:
+            if r.type in SECTOR_RULES:               # one fetch per market covers every sector rule
+                if r.market not in sector_cache:
+                    sector_cache[r.market] = sector_fn(r.market)
+                if r.symbol in sector_cache[r.market]:
+                    out[sk] = sector_cache[r.market][r.symbol]
+                continue
             out[sk] = fn(r.symbol, r.market)
         except Exception as exc:  # noqa: BLE001 - one bad symbol must not stop the run
             log.record(f"alerts:{sk}", exc)

@@ -325,3 +325,21 @@ def test_live_prices_uses_prev_day_close(monkeypatch):
     raw = pd.concat({"AAA.NS": pd.DataFrame({"Close": [100.0, 110.0, 111.0, 121.0]}, index=idx)}, axis=1)
     monkeypatch.setattr(screener.yf, "download", lambda *a, **k: raw)
     assert screener.live_prices(["AAA.NS"]) == {"AAA.NS": (121.0, 110.0)}
+
+
+def test_sector_alert_rules():
+    rules = [alerts.Rule.from_dict(d) for d in [
+        {"symbol": "financials", "market": "IN", "type": "sector_pct_move", "value": 2},
+        {"symbol": "Financials", "market": "IN", "type": "sector_breadth_above", "value": 80},
+        {"symbol": "Financials", "market": "IN", "type": "sector_breadth_below", "value": 20}]]
+    snaps = alerts.snapshots_for(rules, sector_fn=lambda m: alerts.sector_stats(m, {
+        "HDFCBANK.NS": (102.0, 100.0), "ICICIBANK.NS": (103.0, 100.0), "SBIN.NS": (101.0, 100.0)}))
+    assert snaps["IN:FINANCIALS"]["breadth"] == 100.0 and snaps["IN:FINANCIALS"]["n"] == 3
+    ev, _ = alerts.evaluate(rules, snaps, None, NOW)
+    assert {e["rule"].split(":")[2] for e in ev} == {"sector_pct_move", "sector_breadth_above"}
+    assert "sector average +2.00%" in [e for e in ev if "pct_move" in e["rule"]][0]["message"]
+
+
+def test_sector_rule_unknown_sector_is_skipped():
+    r = [alerts.Rule.from_dict({"symbol": "Nope", "market": "IN", "type": "sector_pct_move", "value": 1})]
+    assert alerts.snapshots_for(r, sector_fn=lambda m: {}) == {}
