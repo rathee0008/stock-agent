@@ -189,13 +189,22 @@ def _view(mkt: str, live: bool) -> None:
                               help="Fades tiles whose move is below this size so the real movers stand out.")
         hl_text = o3.text_input("Highlight tickers", value=st.session_state.get("wl_last", ""),
                                 help="Comma-separated. Prefilled from your Watchlist if you opened it this session.")
+        f1, f2, f3, f4 = st.columns([1.3, 1, 1, 1])
+        f_mode = f1.selectbox("Quick filter", list(H.FILTER_MODES))
+        f_top = f2.selectbox("Size tier", ["All", "Top 20 by market cap", "Top 50 by market cap"],
+                             help="Keeps only the largest companies, so the map shows what moves the index.")
+        f_search = f3.text_input("Search ticker", help="Substring match, e.g. 'BANK' or 'TA'.")
+        f_only = f4.checkbox("Only my highlighted tickers", help="Show just the tickers in the highlight box (e.g. your watchlist).")
         h_choice = st.radio("Map height", ["Compact", "Standard", "Tall"], index=1, horizontal=True)
     height = {"Compact": 460, "Standard": 560, "Tall": 760}[h_choice]
     hl = H.parse_tickers(hl_text)
     if pick_secs:
         df = df[df["Sector"].isin(pick_secs)].reset_index(drop=True)
+    df = H.apply_filters(df, f_mode, {"All": None, "Top 20 by market cap": 20, "Top 50 by market cap": 50}[f_top],
+                         f_search, hl if (f_only and hl) else None)
     if df.empty:
-        ui.empty_note("<b>No sectors selected.</b> Pick at least one in Display options.")
+        ui.empty_note("<b>Nothing to show.</b> No sectors selected, or the filters in Display options match no "
+                      f"{unit}.")
         return
 
     mkt_avg = float(df["Change %"].mean())
@@ -211,6 +220,18 @@ def _view(mkt: str, live: bool) -> None:
           f"of {len(df)} {unit}", "flat")
     T.kpi(k[3], "Market average", f"{mkt_avg:+.2f}%", win, T.sign_tone(mkt_avg))
     st.markdown("<div style='height:.4rem'></div>", unsafe_allow_html=True)
+
+    gain, lose = H.top_movers(df, 5)
+    if len(gain) or len(lose):
+        def _chips(frame: pd.DataFrame, tone: str) -> str:
+            col = T.tone_color(tone)
+            return "".join(
+                f'<span style="display:inline-block;margin:2px 6px 2px 0;padding:2px 8px;border-radius:10px;'
+                f'background:#14171c;border:1px solid #23272f;font:12px monospace;color:{col}">'
+                f'{ui._e(r["Symbol"])} {r["Change %"]:+.1f}%</span>' for _, r in frame.iterrows())
+        st.markdown(f'<div style="font-size:12px;color:#9aa0aa">Top gainers {_chips(gain, "up")}'
+                    f'&nbsp;&nbsp;Top losers {_chips(lose, "down")}</div>', unsafe_allow_html=True)
+        st.markdown("<div style='height:.3rem'></div>", unsafe_allow_html=True)
 
     if crypto:
         st.caption("Crypto trades 24/7, so there is no closing bell: “today” is the move since the previous UTC-day "
@@ -260,6 +281,32 @@ def _view(mkt: str, live: bool) -> None:
         )
         st.caption("“vs market” is the sector's average minus the all-stock average, in percentage points: "
                    "positive means the sector is outperforming the rest of this universe.")
+
+        T.rule("Sector rotation: momentum across windows")
+        spans_cmp = [x for x in ("1 day", "1 week", "1 month", "3 months") if x in H.SPANS]
+        by_span = {}
+        for sp_name in spans_cmp:
+            d_ = _load(_M, sp_name, cache.bucket(_M, 3))
+            if len(d_) and pick_secs:
+                d_ = d_[d_["Sector"].isin(pick_secs)]
+            by_span[sp_name] = d_
+        mm = H.momentum_matrix(by_span)
+        if len(mm):
+            lim_m = max(2.0, float(mm[spans_cmp].abs().stack().quantile(0.9)))
+            shown = mm.reset_index().rename(columns={"index": "Sector"})
+            if "Sector" not in shown.columns:
+                shown = shown.rename(columns={shown.columns[0]: "Sector"})
+            sty = shown.style.format({c: "{:+.2f}%" for c in spans_cmp}).background_gradient(
+                cmap="RdYlGn", subset=spans_cmp, vmin=-lim_m, vmax=lim_m)
+            st.dataframe(sty, use_container_width=True, hide_index=True)
+            st.caption("Average move per sector over each window. “Accelerating” = the short window is beating the "
+                       "longer one while positive (money flowing in now); “Fading” = a longer-term winner that is "
+                       "losing steam; “Weak” = down in the short window.")
+
+        st.download_button("Download this view as CSV",
+                           df.drop(columns=["Trend", "Y", "Flags", "MCapTxt", "Change1D"], errors="ignore")
+                             .to_csv(index=False).encode("utf-8"),
+                           file_name=f"sector_heatmap_{_M}_{span.replace(' ', '')}.csv", mime="text/csv")
 
         T.rule("Drill into a sector")
         pick = st.selectbox("Sector", list(sec.index), label_visibility="collapsed")
