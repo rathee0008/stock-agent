@@ -12,7 +12,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from agent import cache, heatmetrics as H, liveheat, screener, sectors, theme as T, ui  # noqa: E402
+from agent import cache, flows, heatmetrics as H, liveheat, screener, sectors, theme as T, ui  # noqa: E402
 
 ui.setup("Sector Heatmap", "🗺️")
 C = T.C
@@ -75,6 +75,12 @@ def _base_price(c: pd.Series, lookback: int | None) -> float | None:
         prior = c[c.index.year < c.index[-1].year]
         return float(prior.iloc[-1]) if len(prior) else float(c.iloc[0])
     return float(c.iloc[-1 - lookback]) if len(c) > lookback else None
+
+
+@st.cache_data(ttl=3 * 3600, show_spinner=False)
+def _fiidii(b: int) -> pd.DataFrame:
+    """FII / DII cash-market net flows (NSE, provisional). Empty when NSE refuses the host."""
+    return flows.fii_dii()
 
 
 @st.cache_data(ttl=6 * 3600, show_spinner=False)
@@ -245,6 +251,23 @@ def _view(mkt: str, live: bool) -> None:
                 f'{ui._e(r["Symbol"])} {r["Change %"]:+.1f}%</span>' for _, r in frame.iterrows())
         st.markdown(f'<div style="font-size:12px;color:#9aa0aa">Top gainers {_chips(gain, "up")}'
                     f'&nbsp;&nbsp;Top losers {_chips(lose, "down")}</div>', unsafe_allow_html=True)
+        st.markdown("<div style='height:.3rem'></div>", unsafe_allow_html=True)
+
+    if _M == "IN":
+        fd = _fiidii(cache.bucket("IN", 5))
+        if fd.empty:
+            st.caption("FII / DII flows: unavailable right now (NSE blocks some hosts).")
+        else:
+            def _flow_chip(r: pd.Series) -> str:
+                col = T.tone_color(T.sign_tone(r["Net (Cr)"]))
+                return (f'<span style="display:inline-block;margin:2px 6px 2px 0;padding:2px 8px;border-radius:10px;'
+                        f'background:#14171c;border:1px solid #23272f;font:12px monospace;color:{col}">'
+                        f'{ui._e(str(r["Category"]).split()[0])} net ₹{r["Net (Cr)"]:+,.0f} Cr</span>')
+            st.markdown('<div style="font-size:12px;color:#9aa0aa">FII / DII cash market, '
+                        f'{ui._e(str(fd["Date"].iloc[0]))} '
+                        + "".join(_flow_chip(r) for _, r in fd.iterrows())
+                        + ' <span style="color:#6b7280">provisional, market-wide (NSE does not split flows by sector)</span></div>',
+                        unsafe_allow_html=True)
         st.markdown("<div style='height:.3rem'></div>", unsafe_allow_html=True)
 
     if crypto:
