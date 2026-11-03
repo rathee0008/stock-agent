@@ -333,8 +333,9 @@ def _view(mkt: str, live: bool) -> None:
             shown = mm.reset_index().rename(columns={"index": "Sector"})
             if "Sector" not in shown.columns:
                 shown = shown.rename(columns={shown.columns[0]: "Sector"})
-            sty = shown.style.format({c: "{:+.2f}%" for c in spans_cmp}).background_gradient(
-                cmap="RdYlGn", subset=spans_cmp, vmin=-lim_m, vmax=lim_m)
+            def _cell(v):   # same palette as the map; no matplotlib dependency
+                return f"background-color:{H.tile_color(float(v), lim_m, UP, DN)};color:#fff" if pd.notna(v) else ""
+            sty = shown.style.format({c: "{:+.2f}%" for c in spans_cmp}).map(_cell, subset=spans_cmp)
             st.dataframe(sty, use_container_width=True, hide_index=True)
             st.caption("Average move per sector over each window. “Accelerating” = the short window is beating the "
                        "longer one while positive (money flowing in now); “Fading” = a longer-term winner that is "

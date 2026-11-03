@@ -14,6 +14,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 os.environ.pop("ANTHROPIC_API_KEY", None)
+sys.modules["matplotlib"] = None   # not in requirements.txt: a page that needs it would crash on Streamlit Cloud
 os.environ["STOCK_AGENT_CACHE"] = "/tmp/stock_agent_smoke_cache"
 
 from tests import fake_market  # noqa: E402
