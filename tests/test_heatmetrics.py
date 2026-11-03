@@ -99,3 +99,20 @@ def test_momentum_matrix():
     assert list(m.index) == ["Y", "X"]                       # ordered by the longest window
     assert m.loc["X", "Momentum"] == "Accelerating" and m.loc["Y", "Momentum"] == "Fading"
     assert H.momentum_matrix({}).empty
+
+
+def test_rrg_quadrants():
+    import numpy as np
+    idx = pd.date_range("2026-01-01", periods=60, freq="B")
+    t = np.arange(60)
+    closes = pd.DataFrame({
+        "UP1": 100 * (1.01 ** t), "UP2": 100 * (1.01 ** t),          # rising faster than the market
+        "FLAT1": 100.0 + 0 * t, "FLAT2": 100.0 + 0 * t,               # flat
+    }, index=idx)
+    sec = {"UP1": "Up", "UP2": "Up", "FLAT1": "Flat", "FLAT2": "Flat"}
+    r = H.rrg(closes, sec)
+    assert set(r) == {"Up", "Flat"}
+    assert r["Up"]["ratio"].iloc[-1] > 100 and r["Flat"]["ratio"].iloc[-1] < 100
+    assert r["Up"]["Quadrant"].iloc[-1] in {"Leading", "Weakening"}
+    assert len(r["Up"]) == 5
+    assert H.rrg(closes.head(10), sec) == {}                          # not enough history

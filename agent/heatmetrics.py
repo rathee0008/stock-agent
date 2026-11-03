@@ -190,3 +190,34 @@ def momentum_matrix(by_span: dict[str, pd.DataFrame]) -> pd.DataFrame:
         ]
         m = m.sort_values(labels[-1], ascending=False)
     return m
+
+
+def rrg(closes: pd.DataFrame, sector_of: dict[str, str], window: int = 20, mom: int = 5,
+        trail: int = 5) -> dict[str, pd.DataFrame]:
+    """Relative-rotation data per sector (equal-weighted sector index vs the all-stock index).
+
+    ``ratio`` is relative strength vs its own ``window``-day average, scaled so 100 = in line;
+    ``momentum`` is how that ratio changed over ``mom`` days (100 = flat). Returns the last
+    ``trail`` points per sector with a ``Quadrant`` column: Leading / Weakening / Lagging / Improving.
+    """
+    c = closes.ffill().dropna(axis=1, how="all")
+    cols = [s for s in c.columns if s in sector_of]
+    if len(c) < window + mom + trail or len(cols) < 2:
+        return {}
+    norm = c[cols] / c[cols].bfill().iloc[0]
+    market = norm.mean(axis=1)
+    out: dict[str, pd.DataFrame] = {}
+    for sec in sorted({sector_of[s] for s in cols}):
+        members = [s for s in cols if sector_of[s] == sec]
+        rs = norm[members].mean(axis=1) / market
+        ratio = 100 * rs / rs.rolling(window).mean()
+        momentum = 100 + (ratio / ratio.shift(mom) - 1) * 100
+        d = pd.DataFrame({"ratio": ratio, "momentum": momentum}).dropna().tail(trail)
+        if d.empty:
+            continue
+        d["Quadrant"] = [
+            "Leading" if r >= 100 and m >= 100 else "Weakening" if r >= 100 else "Improving" if m >= 100 else "Lagging"
+            for r, m in zip(d["ratio"], d["momentum"])
+        ]
+        out[sec] = d
+    return out

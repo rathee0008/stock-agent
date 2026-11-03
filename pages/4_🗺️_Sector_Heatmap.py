@@ -25,6 +25,9 @@ size_mode = st.sidebar.radio("Tile size", list(H.SIZE_MODES), horizontal=True,
                              help="Equal: every stock the same size (shows breadth). Market cap: bigger companies get "
                                   "bigger tiles (shows what moves the index). Traded value: price x average volume, "
                                   "i.e. where the money actually trades.")
+back = st.sidebar.slider("Replay: sessions back", 0, 60, 0,
+                         help="Step the map back in time: 0 = latest close, 5 = how it looked a week ago. "
+                              "Ignored in Live mode.")
 T.sidebar_head("Colours")
 pal_name = st.sidebar.selectbox("Palette", list(H.PALETTES))
 _default_scale = {"1 day": "±3%", "1 week": "±5%"}.get(span, "±10%")
@@ -75,15 +78,26 @@ def _base_price(c: pd.Series, lookback: int | None) -> float | None:
 
 
 @st.cache_data(ttl=6 * 3600, show_spinner=False)
-def _load(market: str, span_name: str, b: int) -> pd.DataFrame:
-    """``b`` is a market-hours-aware cache bucket (short while open, long when closed)."""
+def _hist(market: str, b: int) -> dict:
+    """One year of daily bars for the whole universe, shared by the map, rotation table and RRG."""
+    return screener.batch_history(list(sectors.sector_map(market)), period="1y", min_rows=30)
+
+
+@st.cache_data(ttl=6 * 3600, show_spinner=False)
+def _load(market: str, span_name: str, b: int, back: int = 0) -> pd.DataFrame:
+    """``b`` is a market-hours-aware cache bucket (short while open, long when closed).
+    ``back`` replays the map that many sessions ago."""
     crypto = market == "CRYPTO"
     lookback = (H.SPANS_CRYPTO if crypto else H.SPANS)[span_name]
     smap = sectors.sector_map(market)
-    hist = screener.batch_history(list(smap), period="1y", min_rows=(lookback or 20) + 2)
+    hist = _hist(market, b)
     caps = _mcaps(market)
     rows = []
     for s, df in hist.items():
+        if back:
+            df = df.iloc[:-back]
+            if len(df) < 30:
+                continue
         c = df["Close"].dropna()
         base = _base_price(c, lookback)
         if base is None or len(c) < 2:
@@ -171,7 +185,7 @@ def _view(mkt: str, live: bool) -> None:
     crypto = _M == "CRYPTO"
     unit = "coins" if crypto else "stocks"
     with st.spinner("Loading prices…"):
-        df = _load(_M, span, cache.bucket(_M, 3))
+        df = _load(_M, span, cache.bucket(_M, 3), 0 if live else back)
         if live:
             df = _apply_live(df, _M, int(time.time() // 60))
             df["Change %"] = df["1D %"]   # live mode is always "today vs previous close"
@@ -238,7 +252,7 @@ def _view(mkt: str, live: bool) -> None:
                    "close, and week/month windows count calendar days. Traded value is Yahoo's 24-hour US$ volume. "
                    "Coins Yahoo does not return simply do not appear.")
     asof = (f"Prices as of {datetime.now(ZoneInfo('Asia/Kolkata')).strftime('%d %b %Y, %H:%M')} IST (live, exchange-delayed where Yahoo says so)"
-            if live else f"Data as of last close, {df['AsOf'].iloc[0]}")
+            if live else f"Data as of {'last close' if not back else f'{back} sessions back'}, {df['AsOf'].iloc[0]}")
     st.caption(f"{asof} · window: {win} · tile size: {size_mode}"
                + (" · market caps are cached for 12h" if size_mode == "Market cap" else ""))
 
@@ -286,7 +300,7 @@ def _view(mkt: str, live: bool) -> None:
         spans_cmp = [x for x in ("1 day", "1 week", "1 month", "3 months") if x in H.SPANS]
         by_span = {}
         for sp_name in spans_cmp:
-            d_ = _load(_M, sp_name, cache.bucket(_M, 3))
+            d_ = _load(_M, sp_name, cache.bucket(_M, 3), back)
             if len(d_) and pick_secs:
                 d_ = d_[d_["Sector"].isin(pick_secs)]
             by_span[sp_name] = d_
@@ -307,6 +321,41 @@ def _view(mkt: str, live: bool) -> None:
                            df.drop(columns=["Trend", "Y", "Flags", "MCapTxt", "Change1D"], errors="ignore")
                              .to_csv(index=False).encode("utf-8"),
                            file_name=f"sector_heatmap_{_M}_{span.replace(' ', '')}.csv", mime="text/csv")
+
+        T.rule("Relative rotation graph (RRG)")
+        smap_ = sectors.sector_map(_M)
+        hist_ = _hist(_M, cache.bucket(_M, 3))
+        closes_ = pd.DataFrame({k: (v["Close"].iloc[:-back] if back else v["Close"]) for k, v in hist_.items()
+                                if k in smap_}).sort_index()
+        if pick_secs:
+            closes_ = closes_[[k for k in closes_.columns if smap_[k] in pick_secs]]
+        rr = H.rrg(closes_, smap_)
+        if rr:
+            qcol = {"Leading": "#19D27A", "Weakening": "#FFC247", "Lagging": "#FF3B4E", "Improving": "#3B9DFF"}
+            fig = go.Figure()
+            for name, d in rr.items():
+                last = d.iloc[-1]
+                fig.add_trace(go.Scatter(x=d["ratio"], y=d["momentum"], mode="lines+markers", name=name,
+                                         line=dict(color=qcol[last["Quadrant"]], width=1.5),
+                                         marker=dict(size=[4] * (len(d) - 1) + [11], color=qcol[last["Quadrant"]]),
+                                         hovertemplate=name + "<br>strength %{x:.1f} · momentum %{y:.1f}<extra></extra>",
+                                         showlegend=False))
+                fig.add_annotation(x=last["ratio"], y=last["momentum"], text=name, showarrow=False, yshift=14,
+                                   font=dict(size=10, color=qcol[last["Quadrant"]]))
+            fig.add_vline(x=100, line_color="#444", line_width=1)
+            fig.add_hline(y=100, line_color="#444", line_width=1)
+            for txt, xa, ya, xan, yan in (("LEADING", "right", "top", 1, 1), ("WEAKENING", "right", "bottom", 1, 0),
+                                          ("LAGGING", "left", "bottom", 0, 0), ("IMPROVING", "left", "top", 0, 1)):
+                fig.add_annotation(xref="paper", yref="paper", x=xan, y=yan, text=txt, showarrow=False,
+                                   xanchor=xa, yanchor=ya, font=dict(size=11, color="#555"))
+            fig.update_layout(height=460, margin=dict(l=8, r=8, t=8, b=8), xaxis_title="Relative strength vs market (100 = in line)",
+                              yaxis_title="Momentum (100 = flat)")
+            st.plotly_chart(T.style_axes(fig), use_container_width=True, config={"displaylogo": False})
+            st.caption("Each sector's equal-weighted index vs the all-stock average. Right = outperforming, up = "
+                       "improving. Sectors normally circle clockwise: Improving → Leading → Weakening → Lagging. "
+                       "The big dot is today, the tail is the last 5 sessions.")
+        else:
+            st.caption("Not enough price history to draw the rotation graph for this selection.")
 
         T.rule("Drill into a sector")
         pick = st.selectbox("Sector", list(sec.index), label_visibility="collapsed")
