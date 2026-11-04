@@ -1,0 +1,11 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+US,ACN,Accenture plc,Technology,265.40,4.26,51.04,42.40,71,28,9,19.57,26.02,6.20,69.88,buy,-13.44
+IN,DIVISLAB.NS,DIVI S LABORATORIES LTD,Healthcare,10037.50,-0.26,19.66,41.80,61,22,51,91.08,,27.80,68.63,hold,-13.39
+US,ABBV,AbbVie Inc.,Healthcare,290.80,1.68,18.19,38.30,48,36,18,49.96,,10.30,62.44,buy,5.37
+US,LLY,Eli Lilly and Company,Healthcare,1422.08,0.90,19.93,34.00,48,28,14,46.15,86.02,38.60,76.90,buy,1.41
+US,SPGI,S&P Global Inc.,Financial Services,482.57,3.55,18.22,31.40,54,20,4,28.82,17.88,6.80,76.03,strong_buy,8.82
+US,AMGN,Amgen Inc.,Healthcare,478.52,3.74,16.44,30.00,48,18,18,29.71,91.47,9.50,73.41,hold,-15.51
+US,TMO,Thermo Fisher Scientific Inc,Healthcare,706.82,1.21,18.99,27.90,49,14,14,37.25,13.38,9.10,60.67,strong_buy,6.41
+US,V,Visa Inc.,Financial Services,432.58,2.89,19.33,26.40,41,22,0,35.11,63.51,13.20,74.38,strong_buy,2.51
+US,MA,Mastercard Incorporated,Financial Services,668.03,3.22,18.67,23.70,41,16,0,34.96,231.37,14.00,73.96,strong_buy,5.95
+US,ISRG,"Intuitive Surgical, Inc.",Healthcare,485.05,10.05,28.05,23.60,40,12,14,58.65,17.93,21.70,73.20,buy,-0.50

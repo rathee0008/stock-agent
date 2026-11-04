@@ -1,0 +1,15 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,459.40,-1.13,14.85,45.00,60,38,27,21.29,11.83,20.70,64.03,buy,7.82
+US,MSFT,Microsoft Corporation,Technology,556.18,6.75,11.24,42.40,38,48,36,29.03,34.22,18.80,64.44,strong_buy,13.83
+US,ACN,Accenture plc,Technology,265.40,4.26,51.04,42.40,71,28,9,19.57,26.02,6.20,69.88,buy,-13.44
+IN,DIVISLAB.NS,DIVI S LABORATORIES LTD,Healthcare,10037.50,-0.26,19.66,41.80,61,22,51,91.08,,27.80,68.63,hold,-13.39
+IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1783.00,-0.34,8.06,41.00,53,44,0,28.66,19.19,15.60,64.07,buy,-1.81
+US,TXN,Texas Instruments Incorporated,Technology,311.25,-0.40,8.80,40.20,47,46,4,40.36,39.72,27.70,64.90,buy,8.23
+IN,DLF.NS,DLF LIMITED,Real Estate,720.00,1.55,10.92,38.80,45,16,90,39.05,10.31,-23.30,68.92,strong_buy,13.80
+US,ABBV,AbbVie Inc.,Healthcare,290.80,1.68,18.19,38.30,48,36,18,49.96,,10.30,62.44,buy,5.37
+US,PG,Procter & Gamble Company (The),Consumer Defensive,167.12,3.12,14.63,36.60,70,10,27,25.17,29.61,4.00,68.22,buy,4.15
+IN,HAL.NS,HINDUSTAN AERONAUTICS LTD,Industrials,5079.10,2.43,9.35,34.70,56,12,45,36.44,,14.40,63.85,buy,9.91
+US,LLY,Eli Lilly and Company,Healthcare,1422.08,0.90,19.93,34.00,48,28,14,46.15,86.02,38.60,76.90,buy,1.41
+US,SPGI,S&P Global Inc.,Financial Services,482.57,3.55,18.22,31.40,54,20,4,28.82,17.88,6.80,76.03,strong_buy,8.82
+IN,PERSISTENT.NS,PERSISTENT SYSTEMS LTD,Technology,6065.00,-0.52,9.87,30.90,52,10,39,53.05,22.92,30.30,64.84,hold,-5.23
+US,AMGN,Amgen Inc.,Healthcare,478.52,3.74,16.44,30.00,48,18,18,29.71,91.47,9.50,73.41,hold,-15.51

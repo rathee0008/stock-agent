@@ -1,23 +1,22 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
-IN,ICICIBANK.NS,ICICI BANK LTD.,Financial Services,1424.10,-0.03,-1.79,40.60,45,44,18,17.03,16.49,15.80,61.92,strong_buy,24.20
+IN,ICICIBANK.NS,ICICI BANK LTD.,Financial Services,1424.10,-0.03,-1.79,44.00,45,50,22,17.49,16.49,15.80,61.92,strong_buy,24.20
 IN,JSWSTEEL.NS,JSW STEEL LIMITED,Basic Materials,1343.00,1.74,0.98,40.40,45,36,0,11.55,31.93,20.70,66.34,buy,4.25
-IN,HEROMOTOCO.NS,HERO MOTOCORP LIMITED,Consumer Cyclical,5399.50,1.88,-5.11,35.10,30,40,34,17.66,26.93,22.50,59.48,buy,12.44
-US,CVX,Chevron Corporation,Energy,225.27,-1.10,19.05,32.20,32,45,-4,16.72,,34.80,54.99,buy,7.28
-US,MU,"Micron Technology, Inc.",Technology,855.10,2.58,-2.99,29.90,-8,74,0,11.50,88.26,379.30,40.35,strong_buy,82.66
+US,CVX,Chevron Corporation,Energy,215.18,-4.48,15.34,35.60,28,45,27,15.80,,34.80,43.13,buy,12.31
+US,MU,"Micron Technology, Inc.",Technology,808.51,-5.45,-7.87,34.10,-10,74,31,10.88,88.26,379.30,36.37,strong_buy,93.18
+US,JPM,JP Morgan Chase & Co.,Financial Services,351.49,4.00,-1.69,29.30,38,28,9,14.74,18.01,10.20,62.82,buy,6.26
 IN,WIPRO.NS,WIPRO LTD,Technology,194.55,-1.74,4.04,26.10,46,25,-22,15.28,15.94,9.10,65.81,hold,-9.42
 IN,TCS.NS,TATA CONSULTANCY SERV LT,Technology,2436.00,-2.52,0.95,25.90,26,30,14,17.08,45.57,11.20,57.46,buy,-1.56
-US,JPM,JP Morgan Chase & Co.,Financial Services,337.98,-0.76,-5.14,18.60,12,28,9,14.18,18.01,10.20,50.00,buy,10.50
+US,XOM,ExxonMobil Holdings Corporation,Energy,167.94,-5.36,9.74,22.40,1,40,27,17.27,15.53,32.60,41.18,buy,9.36
+US,UBER,"Uber Technologies, Inc.",Technology,71.46,7.30,-4.75,21.40,11,24,40,15.67,37.16,12.20,59.33,buy,41.01
 IN,ONGC.NS,OIL AND NATURAL GAS CORP.,Energy,235.00,1.22,-2.16,18.50,-4,42,9,6.79,,25.70,59.88,buy,24.30
 IN,INFY.NS,INFOSYS LIMITED,Technology,1128.20,-1.73,-3.90,15.60,3,32,0,15.02,29.95,1.40,52.76,buy,6.37
-IN,COALINDIA.NS,COAL INDIA LTD,Energy,399.65,-2.05,-3.81,11.80,-48,71,-8,7.38,28.33,64.20,44.72,buy,14.86
-US,BKNG,Booking Holdings Inc. Common St,Consumer Cyclical,155.67,1.25,-24.94,9.40,-31,44,14,17.26,,8.10,45.05,buy,48.59
-IN,BPCL.NS,BHARAT PETROLEUM CORP  LT,Energy,304.70,2.63,-6.61,9.20,1,17,9,8.24,16.17,42.10,58.09,buy,9.65
-IN,VEDL.NS,VEDANTA LIMITED,Basic Materials,257.35,4.23,-7.09,8.90,-23,33,22,9.03,48.20,-34.20,57.76,buy,18.52
-US,PEP,"Pepsico, Inc.",Consumer Defensive,137.27,-2.24,-0.85,8.20,6,7,18,17.27,52.19,5.60,57.95,hold,3.15
+IN,COALINDIA.NS,COAL INDIA LTD,Energy,399.65,-2.05,-3.81,12.90,-48,71,0,7.38,28.33,64.20,44.72,buy,14.86
+IN,VEDL.NS,VEDANTA LIMITED,Basic Materials,257.35,4.23,-7.09,10.10,-23,33,30,9.03,48.20,-34.20,57.76,buy,18.52
+IN,BPCL.NS,BHARAT PETROLEUM CORP  LT,Energy,304.70,2.63,-6.61,9.90,1,17,14,8.24,16.17,42.10,58.09,buy,9.65
 IN,SBIN.NS,STATE BANK OF INDIA,Financial Services,979.00,0.90,-7.20,7.20,-26,36,9,9.99,15.18,10.30,52.91,strong_buy,27.68
+US,PEP,"Pepsico, Inc.",Consumer Defensive,142.88,4.09,2.78,6.70,4,7,14,17.97,52.19,5.60,65.92,hold,-0.90
 IN,HINDALCO.NS,HINDALCO  INDUSTRIES  LTD,Basic Materials,935.80,2.19,-10.02,2.90,-42,36,22,12.70,,32.10,56.15,buy,23.11
-US,GS,"Goldman Sachs Group, Inc. (The)",Financial Services,896.09,-0.29,-13.22,-0.40,-40,36,-4,12.88,17.71,23.30,45.51,buy,15.02
-US,ADBE,Adobe Inc.,Technology,246.14,-2.12,-5.42,-0.60,-42,36,0,13.74,61.90,12.90,47.17,hold,9.00
-US,UBER,"Uber Technologies, Inc.",Technology,66.60,-0.16,-5.49,-2.20,-50,32,22,14.61,37.16,12.20,42.38,buy,51.30
-US,VZ,Verizon Communications Inc.,Communication Services,45.24,0.42,-3.72,-3.20,-37,21,14,11.54,15.79,1.50,51.21,buy,11.96
-US,GOOGL,Alphabet Inc.,Communication Services,280.03,0.37,-21.72,-7.60,-56,34,-4,14.62,44.29,24.70,22.16,strong_buy,42.98
+US,ADBE,Adobe Inc.,Technology,248.77,1.07,-6.20,1.90,-34,36,-4,13.89,61.90,12.90,49.28,hold,7.85
+US,GS,"Goldman Sachs Group, Inc. (The)",Financial Services,929.08,3.68,-10.63,1.90,-37,36,4,13.36,17.71,23.30,55.18,buy,10.93
+US,VZ,Verizon Communications Inc.,Communication Services,46.15,2.00,-1.94,-2.00,-30,21,4,11.77,15.79,1.50,55.52,buy,9.76
+US,GOOGL,Alphabet Inc.,Communication Services,292.31,4.39,-17.50,-14.30,-68,26,9,15.26,44.29,24.70,32.85,strong_buy,36.97

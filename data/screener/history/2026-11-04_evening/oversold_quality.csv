@@ -1,0 +1,8 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+US,MU,"Micron Technology, Inc.",Technology,808.51,-5.45,-7.87,34.10,-10,74,31,10.88,88.26,379.30,36.37,strong_buy,93.18
+US,CSCO,"Cisco Systems, Inc.",Technology,102.49,-0.47,-15.60,12.60,-12,36,9,30.77,27.32,17.60,37.88,buy,32.85
+US,NVDA,NVIDIA Corporation,Technology,204.13,-1.24,-8.85,10.30,-47,60,14,25.80,117.21,105.90,37.23,strong_buy,60.26
+US,AMAT,"Applied Materials, Inc.",Technology,367.11,-3.88,-31.91,0.30,-58,52,0,31.66,41.07,24.80,33.10,strong_buy,70.76
+US,LRCX,Lam Research Corporation,Technology,222.88,-3.40,-28.41,-3.80,-59,44,0,33.21,70.12,54.40,30.36,strong_buy,63.33
+US,CAT,"Caterpillar, Inc.",Industrials,583.53,-6.48,-30.71,-4.20,-56,30,31,22.89,56.14,17.30,21.99,buy,41.11
+US,GOOGL,Alphabet Inc.,Communication Services,292.31,4.39,-17.50,-14.30,-68,26,9,15.26,44.29,24.70,32.85,strong_buy,36.97

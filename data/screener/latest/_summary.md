@@ -1,18 +1,18 @@
-# Screener results — 2026-11-04 morning (IST)
+# Screener results — 2026-11-04 evening (IST)
 
-Universe scored: 121 stocks. Not investment advice.
+Universe scored: 120 stocks. Not investment advice.
 
 | Preset | Matches | Top 5 by score |
 |---|---|---|
-| Quality momentum | 35 | TECHM.NS, ACN, TXN, ICICIBANK.NS, JSWSTEEL.NS |
-| Quality compounders | 40 | TECHM.NS, TXN, BLK, JSWSTEEL.NS, BAJFINANCE.NS |
-| GARP (growth at fair price) | 12 | TECHM.NS, JSWSTEEL.NS, BLK, V, MSFT |
-| Deep value | 16 | MU, WFC, JPM, ONGC.NS, NTPC.NS |
-| Cheap and profitable | 22 | ICICIBANK.NS, JSWSTEEL.NS, HEROMOTOCO.NS, CVX, MU |
-| Momentum breakout | 14 | KOTAKBANK.NS, DIVISLAB.NS, TECHM.NS, ACN, TXN |
-| Strong technicals | 28 | KOTAKBANK.NS, DIVISLAB.NS, TECHM.NS, ACN, TXN |
-| Oversold quality | 8 | CRM, META, AMAT, BAC, LRCX |
-| Relative strength leaders | 9 | DIVISLAB.NS, ACN, ABBV, LLY, COP |
-| Growth acceleration | 14 | KOTAKBANK.NS, DIVISLAB.NS, TXN, JSWSTEEL.NS, COP |
-| Analyst upside | 38 | ICICIBANK.NS, MSFT, MU, BEL.NS, HDFCBANK.NS |
-| Large-cap safety | 58 | TECHM.NS, ACN, ICICIBANK.NS, JSWSTEEL.NS, BLK |
+| Quality momentum | 32 | ICICIBANK.NS, MSFT, ACN, TECHM.NS, JSWSTEEL.NS |
+| Quality compounders | 38 | MSFT, TECHM.NS, JSWSTEEL.NS, TXN, ABBV |
+| GARP (growth at fair price) | 11 | MSFT, TECHM.NS, JSWSTEEL.NS, BLK, CVX |
+| Deep value | 12 | MU, WFC, ONGC.NS, NTPC.NS, COALINDIA.NS |
+| Cheap and profitable | 21 | ICICIBANK.NS, JSWSTEEL.NS, CVX, MU, JPM |
+| Momentum breakout | 14 | KOTAKBANK.NS, MSFT, ACN, DIVISLAB.NS, TECHM.NS |
+| Strong technicals | 25 | KOTAKBANK.NS, ICICIBANK.NS, ACN, MSFT, DIVISLAB.NS |
+| Oversold quality | 7 | MU, CSCO, NVDA, AMAT, LRCX |
+| Relative strength leaders | 10 | ACN, DIVISLAB.NS, ABBV, LLY, SPGI |
+| Growth acceleration | 11 | KOTAKBANK.NS, DIVISLAB.NS, JSWSTEEL.NS, TXN, PERSISTENT.NS |
+| Analyst upside | 37 | ICICIBANK.NS, MU, BEL.NS, HDFCBANK.NS, AMZN |
+| Large-cap safety | 52 | ICICIBANK.NS, ACN, MSFT, TECHM.NS, JSWSTEEL.NS |
