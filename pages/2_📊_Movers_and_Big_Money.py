@@ -26,7 +26,7 @@ want_llm = st.sidebar.checkbox("Claude one-line explanations", value=False,
 T.sidebar_head("Live ticker")
 live_on = st.sidebar.toggle("Live price animation", value=True,
                             help="While a market is open, prices re-poll and flash green or red on each tick.")
-refresh = st.sidebar.select_slider("Poll every (seconds)", options=[5, 10, 15, 30, 60], value=10)
+refresh = st.sidebar.select_slider("Poll every (seconds)", options=[15, 30, 60, 120], value=30)
 T.sidebar_head("Data")
 if st.sidebar.button("Refresh", use_container_width=True):
     st.cache_data.clear()
@@ -79,12 +79,12 @@ def _llm(items_key: str, items: list):
     return why.claude_summary(items)
 
 
-@st.cache_data(ttl=5, show_spinner=False)
+@st.cache_data(ttl=15, show_spinner=False)
 def _live_idx() -> pd.DataFrame:
     return LM.fetch_snapshot([LM.Instrument("Strip", n, s) for n, s in market.INDICES])
 
 
-@st.cache_data(ttl=5, show_spinner=False)
+@st.cache_data(ttl=15, show_spinner=False)
 def _live_px(syms: tuple) -> dict:
     return LV.fetch_prices(list(syms))
 

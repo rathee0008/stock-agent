@@ -20,7 +20,7 @@ ui.sidebar_brand()
 T.sidebar_head("View")
 view = st.sidebar.radio("Chart", ["Treemap", "World map"], horizontal=True)
 T.sidebar_head("Live")
-refresh = st.sidebar.select_slider("Auto-refresh (seconds)", options=[10, 15, 30, 60, 120, 300], value=30)
+refresh = st.sidebar.select_slider("Auto-refresh (seconds)", options=[30, 60, 120, 300], value=60)
 limit = st.sidebar.select_slider("Colour scale ±%", options=[1, 2, 3, 5], value=3)
 
 # country, ISO-3, exchange, index name, Yahoo symbol, region, approx. market cap (US$ trillion)
@@ -114,7 +114,7 @@ def fetch_prices() -> pd.DataFrame:
 
 
 
-@st.cache_data(ttl=10, show_spinner=False)
+@st.cache_data(ttl=30, show_spinner=False)
 def fetch_intraday() -> pd.DataFrame:
     """5-minute bars for the current/last session: sparkline + whether the feed is still ticking."""
     raw = yf.download(list(META["symbol"]), period="1d", interval="5m", group_by="ticker",

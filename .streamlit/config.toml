@@ -12,3 +12,4 @@ showErrorDetails = true
 
 [server]
 runOnSave = false
+fileWatcherType = "poll"

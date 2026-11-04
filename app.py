@@ -108,7 +108,7 @@ live_interval = st.sidebar.selectbox("Candle interval", ["1m", "5m", "15m", "30m
 live_period = st.sidebar.selectbox("Session window", ["1d", "5d"], index=0)
 live_auto = st.sidebar.checkbox("Auto-refresh", value=True)
 live_every = st.sidebar.select_slider(
-    "Refresh every", options=[15, 30, 60, 120, 300], value=60,
+    "Refresh every", options=[30, 60, 120, 300], value=60,
     format_func=lambda s: f"{s}s",
 )
 
@@ -132,7 +132,7 @@ def _run(ticker: str, weights: tuple, period: str, market: str, tuned: bool, buc
     return analyze_stock(ticker, weights=w, period=period, market=market, tuned_technical=tuned)
 
 
-@st.cache_data(show_spinner=False, ttl=20)
+@st.cache_data(show_spinner=False, ttl=30)
 def _live(ticker: str, interval: str, period: str, bucket: int, market: str):
     """Short-TTL live fetch. ``bucket`` (a coarse timestamp) lets the fragment
     force a fresh pull on each auto-refresh while still de-duping rapid reruns.

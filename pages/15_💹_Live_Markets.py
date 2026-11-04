@@ -26,7 +26,7 @@ IST = ZoneInfo("Asia/Kolkata")
 ui.sidebar_brand()
 T.sidebar_head("Live")
 live_on = st.sidebar.toggle("Auto-refresh", value=True)
-refresh = st.sidebar.select_slider("Refresh every (seconds)", options=[5, 10, 15, 30, 60], value=10)
+refresh = st.sidebar.select_slider("Refresh every (seconds)", options=[15, 30, 60, 120], value=30)
 groups = st.sidebar.multiselect("Sections", LM.GROUPS, default=LM.GROUPS)
 rank_live_only = st.sidebar.toggle("Rank live feeds only", value=True,
                                    help="Leave out closed markets so the ranking only shows what is moving now.")
@@ -58,7 +58,7 @@ overflow:hidden;text-overflow:ellipsis}}
 )
 
 
-@st.cache_data(ttl=5, show_spinner=False)
+@st.cache_data(ttl=15, show_spinner=False)
 def snapshot() -> pd.DataFrame:
     return LM.fetch_snapshot()
 

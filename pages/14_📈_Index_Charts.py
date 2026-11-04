@@ -61,7 +61,7 @@ T.sidebar_head("Chart")
 tf = st.sidebar.selectbox("Timeframe", list(TIMEFRAMES), index=5)
 theme = st.sidebar.radio("Theme (TradingView)", ["dark", "light"], horizontal=True)
 height = st.sidebar.slider("Chart height (px)", 450, 950, 720, step=10)
-refresh = st.sidebar.select_slider("Built-in chart refresh (s)", options=[15, 30, 60, 120, 300], value=60)
+refresh = st.sidebar.select_slider("Built-in chart refresh (s)", options=[30, 60, 120, 300], value=60)
 
 T.sidebar_head("Indicators")
 preset = st.sidebar.radio("Preset", ["Essentials", "All indicators", "Custom"], horizontal=True,
