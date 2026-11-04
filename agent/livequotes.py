@@ -17,7 +17,7 @@ def fetch_prices(symbols: list[str]) -> dict[str, float]:
         return {}
     try:
         raw = yf.download(syms, period="1d", interval="1m", auto_adjust=False, progress=False,
-                          threads=True, group_by="ticker")
+                          threads=4, group_by="ticker")
     except Exception:  # noqa: BLE001
         return {}
     out: dict[str, float] = {}

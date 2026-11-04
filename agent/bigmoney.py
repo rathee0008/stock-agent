@@ -45,7 +45,7 @@ def _rss(query: str, market: str, days: int) -> list[dict]:
 
 def deal_headlines(market: str, days: int = 7, limit: int = 40) -> pd.DataFrame:
     rows: list[dict] = []
-    with cf.ThreadPoolExecutor(max_workers=6) as ex:
+    with cf.ThreadPoolExecutor(max_workers=4) as ex:
         for f in [ex.submit(_rss, q, market, days) for q in _QUERIES[market]]:
             try:
                 rows += f.result()
@@ -174,14 +174,14 @@ def us_insiders(days: int = 30) -> pd.DataFrame:
     syms = [s for s in US if "-" not in s]
     _ERRS.clear()
     rows: list[dict] = []
-    with cf.ThreadPoolExecutor(max_workers=6) as ex:
+    with cf.ThreadPoolExecutor(max_workers=4) as ex:
         for f in [ex.submit(_edgar_insider, s, days) for s in syms]:
             try:
                 rows += f.result()
             except Exception as exc:  # noqa: BLE001
                 _ERRS.append(f"EDGAR: {type(exc).__name__}: {exc}"[:160])
     if not rows:
-        with cf.ThreadPoolExecutor(max_workers=8) as ex:
+        with cf.ThreadPoolExecutor(max_workers=4) as ex:
             for f in [ex.submit(_insider, s, days) for s in syms]:
                 try:
                     rows += f.result()
@@ -214,7 +214,7 @@ def headlines_for(symbols: list[str], market: str, names: dict[str, str] | None 
     """Parallel :func:`stock_headline` lookups keyed by Yahoo symbol."""
     out: dict[str, dict] = {}
     names = names or {}
-    with cf.ThreadPoolExecutor(max_workers=6) as ex:
+    with cf.ThreadPoolExecutor(max_workers=4) as ex:
         futs = {ex.submit(stock_headline, names.get(s) or s.replace(".NS", ""), market): s for s in symbols}
         for f in cf.as_completed(futs):
             try:

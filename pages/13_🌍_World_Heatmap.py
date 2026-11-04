@@ -75,7 +75,7 @@ def fetch_prices() -> pd.DataFrame:
         period="7d",
         interval="1d",
         group_by="ticker",
-        threads=True,
+        threads=4,
         progress=False,
         auto_adjust=False,
     )
@@ -118,7 +118,7 @@ def fetch_prices() -> pd.DataFrame:
 def fetch_intraday() -> pd.DataFrame:
     """5-minute bars for the current/last session: sparkline + whether the feed is still ticking."""
     raw = yf.download(list(META["symbol"]), period="1d", interval="5m", group_by="ticker",
-                      threads=True, progress=False, auto_adjust=False)
+                      threads=4, progress=False, auto_adjust=False)
     now = datetime.now(timezone.utc)
     rows = []
     for sym in META["symbol"]:

@@ -16,7 +16,7 @@ def index_quotes() -> list[dict]:
     syms = [s for _, s in INDICES]
     try:
         raw = yf.download(syms, period="5d", interval="1d", auto_adjust=False,
-                          progress=False, threads=True, group_by="ticker")
+                          progress=False, threads=4, group_by="ticker")
     except Exception:  # noqa: BLE001
         return []
     out: list[dict] = []

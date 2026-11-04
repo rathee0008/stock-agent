@@ -98,7 +98,7 @@ def next_earnings(symbols: list[str], today: date | None = None) -> dict[str, da
             return None
 
     out: dict[str, date | None] = {}
-    with cf.ThreadPoolExecutor(max_workers=8) as ex:
+    with cf.ThreadPoolExecutor(max_workers=4) as ex:
         for s, d in zip(symbols, ex.map(one, symbols)):
             out[s] = d
     return out

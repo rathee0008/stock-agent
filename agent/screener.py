@@ -23,7 +23,7 @@ from .universe import symbols
 def batch_history(syms: list[str], period: str = "1y", min_rows: int = 60) -> dict[str, pd.DataFrame]:
     """One Yahoo call for the whole universe (far faster than per-symbol)."""
     raw = yf.download(syms, period=period, interval="1d", auto_adjust=False,
-                      progress=False, threads=True, group_by="ticker")
+                      progress=False, threads=4, group_by="ticker")
     out: dict[str, pd.DataFrame] = {}
     for s in syms:
         try:
@@ -51,7 +51,7 @@ def market_caps(syms: list[str]) -> dict[str, float]:
             pass
         return sym, None
 
-    with cf.ThreadPoolExecutor(max_workers=8) as ex:
+    with cf.ThreadPoolExecutor(max_workers=4) as ex:
         return {s: v for s, v in ex.map(one, syms) if v}
 
 
@@ -62,7 +62,7 @@ def live_prices(syms: list[str]) -> dict[str, tuple[float, float]]:
     change is "today vs yesterday's close" even before the first bar of a new session.
     """
     raw = yf.download(syms, period="5d", interval="5m", auto_adjust=False, progress=False,
-                      threads=True, group_by="ticker", prepost=False)
+                      threads=4, group_by="ticker", prepost=False)
     out: dict[str, tuple[float, float]] = {}
     for s in syms:
         try:
@@ -149,7 +149,7 @@ def rank(market: str, w: tuple[float, float, float] = (0.40, 0.45, 0.15),
             pass
 
     infos: dict[str, tuple[dict, list]] = {}
-    with cf.ThreadPoolExecutor(max_workers=12) as ex:
+    with cf.ThreadPoolExecutor(max_workers=6) as ex:
         futs = {ex.submit(_info_and_news, s): s for s in tech}
         for f in cf.as_completed(futs):
             try:

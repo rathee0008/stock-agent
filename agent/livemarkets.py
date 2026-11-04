@@ -151,7 +151,7 @@ def _meta_row(inst: Instrument, now: datetime) -> dict | None:
 def _download(symbols: list[str], period: str, interval: str):
     try:
         return yf.download(symbols, period=period, interval=interval, auto_adjust=False, progress=False,
-                           threads=True, group_by="ticker")
+                           threads=4, group_by="ticker")
     except Exception:  # noqa: BLE001
         return None
 
