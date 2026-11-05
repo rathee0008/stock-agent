@@ -1,7 +1,13 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
-US,MU,"Micron Technology, Inc.",Technology,795.23,-7.00,-9.38,31.20,-10,74,14,10.70,88.26,379.30,35.38,strong_buy,96.41
-US,NVDA,NVIDIA Corporation,Technology,200.13,-3.17,-10.64,8.30,-49,60,4,25.30,117.21,105.90,34.54,strong_buy,63.47
-US,LRCX,Lam Research Corporation,Technology,221.43,-4.03,-28.88,4.90,-44,44,18,33.00,70.12,54.40,29.99,strong_buy,64.40
-US,AMAT,"Applied Materials, Inc.",Technology,369.40,-3.28,-31.48,-0.30,-58,52,-4,31.87,41.07,24.80,33.52,strong_buy,69.70
-US,CAT,"Caterpillar, Inc.",Industrials,591.30,-5.23,-29.79,-8.10,-64,30,27,23.21,56.14,17.30,22.68,buy,39.25
-US,GOOGL,Alphabet Inc.,Communication Services,288.93,3.18,-18.45,-12.50,-69,26,22,15.09,44.29,24.70,30.21,strong_buy,38.57
+US,MU,"Micron Technology, Inc.",Technology,676.11,-14.98,-21.47,17.40,-38,74,-4,9.11,88.26,379.30,27.99,strong_buy,131.01
+US,CSCO,"Cisco Systems, Inc.",Technology,96.18,-7.17,-21.53,11.50,-44,50,45,28.89,27.32,17.60,30.59,buy,41.57
+US,NVDA,NVIDIA Corporation,Technology,182.20,-8.96,-16.25,11.20,-43,60,9,23.03,117.21,105.90,25.61,strong_buy,79.56
+US,META,"Meta Platforms, Inc.",Communication Services,601.29,-4.56,1.07,9.10,-45,60,0,20.51,32.26,26.10,34.26,strong_buy,41.09
+US,LRCX,Lam Research Corporation,Technology,190.44,-14.00,-37.85,8.90,-38,52,4,28.42,70.12,54.40,23.45,strong_buy,91.16
+US,AMAT,"Applied Materials, Inc.",Technology,326.43,-11.63,-37.48,8.00,-44,60,-9,28.21,41.07,24.80,26.74,strong_buy,92.04
+US,BAC,Bank of America Corporation,Financial Services,50.12,-2.93,-21.52,-0.40,-38,22,31,11.96,10.73,3.40,37.23,strong_buy,24.67
+US,ORCL,Oracle Corporation,Technology,114.61,-7.37,-24.13,-2.90,-58,44,4,17.96,41.19,29.60,37.45,buy,105.45
+US,GOOGL,Alphabet Inc.,Communication Services,282.96,-2.07,-20.85,-5.20,-55,34,9,14.77,44.29,24.70,28.11,strong_buy,41.49
+US,AVGO,Broadcom Inc.,Technology,297.00,-8.75,-29.69,-6.40,-71,46,9,37.94,44.25,85.50,32.78,strong_buy,77.38
+US,CAT,"Caterpillar, Inc.",Industrials,560.84,-5.15,-33.04,-8.90,-56,30,0,22.02,56.14,17.30,20.02,buy,46.82
+US,QCOM,QUALCOMM Incorporated,Technology,155.12,-10.43,-4.35,-12.90,-54,22,-9,12.22,33.75,-4.00,36.73,hold,27.02

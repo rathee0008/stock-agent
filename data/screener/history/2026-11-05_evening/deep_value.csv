@@ -1,0 +1,17 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+IN,AXISBANK.NS,AXIS BANK LIMITED,Financial Services,1280.00,3.90,1.91,32.40,14,58,4,13.36,13.88,21.10,61.53,none,23.80
+IN,SBIN.NS,STATE BANK OF INDIA,Financial Services,1006.40,2.80,-7.24,24.60,6,46,9,10.27,14.67,7.80,60.40,strong_buy,24.21
+US,JPM,JP Morgan Chase & Co.,Financial Services,338.17,-3.96,-6.01,21.70,13,28,27,14.18,18.01,10.20,49.35,buy,10.44
+US,MU,"Micron Technology, Inc.",Technology,676.11,-14.98,-21.47,17.40,-38,74,-4,9.11,88.26,379.30,27.99,strong_buy,131.01
+US,WFC,Wells Fargo & Company,Financial Services,84.38,-3.49,-3.59,17.30,13,24,9,11.90,12.91,0.40,51.84,buy,15.40
+IN,VEDL.NS,VEDANTA LIMITED,Basic Materials,263.80,2.51,-4.07,15.40,0,27,22,9.25,48.20,-34.20,61.73,buy,15.62
+IN,POWERGRID.NS,POWER GRID CORP. LTD.,Utilities,261.15,-0.34,-3.55,9.90,-6,12,45,14.99,15.75,3.00,54.70,buy,20.83
+IN,COALINDIA.NS,COAL INDIA LTD,Energy,394.30,-1.34,-5.13,8.60,-55,71,-8,7.28,28.33,64.20,41.59,buy,16.42
+IN,ONGC.NS,OIL AND NATURAL GAS CORP.,Energy,230.00,-2.13,-3.28,5.60,-37,42,9,6.65,,25.70,51.88,buy,27.00
+IN,NTPC.NS,NTPC LTD,Utilities,316.70,-1.63,-8.20,3.00,-32,24,32,10.33,14.46,21.20,51.55,strong_buy,32.17
+IN,HINDALCO.NS,HINDALCO  INDUSTRIES  LTD,Basic Materials,937.85,0.22,-8.68,2.90,-42,36,22,12.72,,32.10,56.72,buy,22.84
+US,BAC,Bank of America Corporation,Financial Services,50.12,-2.93,-21.52,-0.40,-38,22,31,11.96,10.73,3.40,37.23,strong_buy,24.67
+US,GS,"Goldman Sachs Group, Inc. (The)",Financial Services,864.46,-6.85,-16.44,-2.90,-48,36,0,12.43,17.71,23.30,40.08,buy,19.23
+US,GOOGL,Alphabet Inc.,Communication Services,282.96,-2.07,-20.85,-5.20,-55,34,9,14.77,44.29,24.70,28.11,strong_buy,41.49
+US,T,AT&T Inc.,Communication Services,21.78,-0.21,-9.42,-11.40,-38,1,22,11.65,11.61,5.30,42.52,buy,26.63
+US,QCOM,QUALCOMM Incorporated,Technology,155.12,-10.43,-4.35,-12.90,-54,22,-9,12.22,33.75,-4.00,36.73,hold,27.02

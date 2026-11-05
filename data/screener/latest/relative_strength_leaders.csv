@@ -1,13 +1,9 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
 IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,467.00,1.65,18.53,44.20,59,38,22,21.64,11.83,20.70,67.62,buy,6.06
-US,ACN,Accenture plc,Technology,264.27,3.81,50.39,43.00,71,28,14,19.49,26.02,6.20,69.50,buy,-13.07
-US,ABBV,AbbVie Inc.,Healthcare,294.83,3.09,19.83,37.80,57,30,9,50.66,,10.30,65.68,buy,3.93
 IN,DLF.NS,DLF LIMITED,Real Estate,745.20,3.50,16.07,37.10,41,16,90,40.41,10.31,-23.30,74.45,strong_buy,9.95
 IN,DIVISLAB.NS,DIVI S LABORATORIES LTD,Healthcare,10140.50,1.03,21.46,35.50,45,22,51,92.01,,27.80,70.55,hold,-14.27
-US,LLY,Eli Lilly and Company,Healthcare,1417.99,0.61,19.59,34.60,48,28,18,46.02,86.02,38.60,76.56,buy,1.70
-US,AMGN,Amgen Inc.,Healthcare,478.48,3.73,16.43,32.50,56,18,14,27.74,78.35,8.50,73.40,hold,-15.50
-US,SPGI,S&P Global Inc.,Financial Services,481.69,3.36,18.01,31.40,54,20,4,28.77,17.88,6.80,75.79,strong_buy,9.02
-US,V,Visa Inc.,Financial Services,436.57,3.84,20.43,30.00,42,22,22,35.44,63.51,13.20,75.71,strong_buy,1.57
-US,TMO,Thermo Fisher Scientific Inc,Healthcare,706.16,1.12,18.88,27.20,49,14,9,37.24,13.38,9.10,60.48,strong_buy,6.51
-US,ISRG,"Intuitive Surgical, Inc.",Healthcare,482.10,9.38,27.27,26.70,48,12,14,58.30,17.93,21.70,72.56,buy,0.11
-US,MA,Mastercard Incorporated,Financial Services,672.68,3.94,19.49,25.90,42,16,14,35.20,231.37,14.00,74.91,strong_buy,5.22
+US,ACN,Accenture plc,Technology,266.71,0.92,49.63,35.00,56,28,0,19.67,26.02,6.20,70.35,buy,-13.86
+US,ABBV,AbbVie Inc.,Healthcare,293.71,-0.38,18.45,34.10,48,30,9,50.47,,10.30,64.03,buy,4.33
+US,V,Visa Inc.,Financial Services,426.70,-2.26,18.09,33.60,56,22,9,34.63,63.51,13.20,66.46,strong_buy,3.92
+US,MA,Mastercard Incorporated,Financial Services,660.79,-1.77,17.33,31.70,56,16,14,34.57,231.37,14.00,68.03,strong_buy,7.11
+US,ISRG,"Intuitive Surgical, Inc.",Healthcare,462.33,-4.10,17.53,28.40,51,12,18,55.93,17.93,21.70,61.81,buy,4.39

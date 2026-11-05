@@ -1,17 +1,14 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
 IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,467.00,1.65,18.53,44.20,59,38,22,21.64,11.83,20.70,67.62,buy,6.06
 IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1822.70,2.23,11.67,44.00,60,44,0,29.29,19.19,15.60,68.29,buy,-3.95
-US,ACN,Accenture plc,Technology,264.27,3.81,50.39,43.00,71,28,14,19.49,26.02,6.20,69.50,buy,-13.07
-US,MSFT,Microsoft Corporation,Technology,555.80,6.68,11.16,42.90,46,48,18,29.01,34.22,18.80,64.32,strong_buy,13.91
-US,TXN,Texas Instruments Incorporated,Technology,311.49,-0.32,8.88,39.50,47,46,0,40.40,39.72,27.70,65.12,buy,8.15
-US,ABBV,AbbVie Inc.,Healthcare,294.83,3.09,19.83,37.80,57,30,9,50.66,,10.30,65.68,buy,3.93
-US,PG,Procter & Gamble Company (The),Consumer Defensive,167.32,3.25,14.77,37.30,70,10,31,25.20,29.61,4.00,68.44,buy,4.02
 IN,DLF.NS,DLF LIMITED,Real Estate,745.20,3.50,16.07,37.10,41,16,90,40.41,10.31,-23.30,74.45,strong_buy,9.95
+US,PG,Procter & Gamble Company (The),Consumer Defensive,167.39,0.04,14.31,37.00,71,10,27,25.21,29.61,4.00,68.52,buy,3.97
+US,SPGI,S&P Global Inc.,Financial Services,469.27,-2.58,14.19,35.90,67,20,0,28.03,17.88,6.80,65.77,strong_buy,11.91
+US,LLY,Eli Lilly and Company,Healthcare,1388.54,-2.08,12.71,35.80,56,28,4,45.06,86.02,38.60,68.69,buy,3.86
 IN,DIVISLAB.NS,DIVI S LABORATORIES LTD,Healthcare,10140.50,1.03,21.46,35.50,45,22,51,92.01,,27.80,70.55,hold,-14.27
-US,LLY,Eli Lilly and Company,Healthcare,1417.99,0.61,19.59,34.60,48,28,18,46.02,86.02,38.60,76.56,buy,1.70
-US,AMGN,Amgen Inc.,Healthcare,478.48,3.73,16.43,32.50,56,18,14,27.74,78.35,8.50,73.40,hold,-15.50
-US,KO,Coca-Cola Company (The),Consumer Defensive,95.80,1.05,10.05,32.10,66,8,14,28.26,40.59,7.40,64.87,buy,2.04
-US,SPGI,S&P Global Inc.,Financial Services,481.69,3.36,18.01,31.40,54,20,4,28.77,17.88,6.80,75.79,strong_buy,9.02
+US,ACN,Accenture plc,Technology,266.71,0.92,49.63,35.00,56,28,0,19.67,26.02,6.20,70.35,buy,-13.86
+US,ABBV,AbbVie Inc.,Healthcare,293.71,-0.38,18.45,34.10,48,30,9,50.47,,10.30,64.03,buy,4.33
+US,V,Visa Inc.,Financial Services,426.70,-2.26,18.09,33.60,56,22,9,34.63,63.51,13.20,66.46,strong_buy,3.92
+US,MA,Mastercard Incorporated,Financial Services,660.79,-1.77,17.33,31.70,56,16,14,34.57,231.37,14.00,68.03,strong_buy,7.11
 IN,PERSISTENT.NS,PERSISTENT SYSTEMS LTD,Technology,6109.50,0.73,11.91,31.10,52,10,39,53.44,22.92,30.30,66.41,hold,-5.92
-US,AAPL,Apple Inc.,Technology,349.51,5.31,11.55,31.10,53,12,31,38.92,142.26,11.70,57.78,buy,-4.64
-US,V,Visa Inc.,Financial Services,436.57,3.84,20.43,30.00,42,22,22,35.44,63.51,13.20,75.71,strong_buy,1.57
+US,AMGN,Amgen Inc.,Healthcare,468.89,-2.00,12.39,30.50,54,18,4,27.18,78.35,8.50,65.93,hold,-13.77

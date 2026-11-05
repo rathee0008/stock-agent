@@ -1,0 +1,22 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+IN,JSWSTEEL.NS,JSW STEEL LIMITED,Basic Materials,1355.60,0.94,3.65,43.70,52,36,0,11.66,31.93,20.70,67.83,buy,3.28
+US,CVX,Chevron Corporation,Energy,217.55,0.27,11.62,37.20,36,45,18,15.97,,34.80,45.61,buy,11.09
+US,XOM,ExxonMobil Holdings Corporation,Energy,169.38,0.06,6.00,30.80,27,40,14,17.42,15.53,32.60,42.71,buy,8.43
+IN,TCS.NS,TATA CONSULTANCY SERV LT,Technology,2495.70,2.45,5.17,29.50,35,30,14,17.49,45.57,11.20,62.70,buy,-3.91
+IN,WIPRO.NS,WIPRO LTD,Technology,198.40,1.98,6.60,26.60,47,25,-22,15.59,15.94,9.10,68.83,hold,-11.18
+IN,BPCL.NS,BHARAT PETROLEUM CORP  LT,Energy,317.10,4.07,-2.04,25.90,42,17,9,8.57,16.17,42.10,65.32,buy,5.36
+US,JPM,JP Morgan Chase & Co.,Financial Services,338.17,-3.96,-6.01,21.70,13,28,27,14.18,18.01,10.20,49.35,buy,10.44
+IN,INFY.NS,INFOSYS LIMITED,Technology,1167.40,3.47,0.21,18.50,12,32,-4,15.54,29.95,1.40,58.73,buy,2.80
+US,MU,"Micron Technology, Inc.",Technology,676.11,-14.98,-21.47,17.40,-38,74,-4,9.11,88.26,379.30,27.99,strong_buy,131.01
+IN,VEDL.NS,VEDANTA LIMITED,Basic Materials,263.80,2.51,-4.07,15.40,0,27,22,9.25,48.20,-34.20,61.73,buy,15.62
+US,PEP,"Pepsico, Inc.",Consumer Defensive,143.02,0.42,3.84,12.70,10,7,36,17.99,52.19,5.60,66.14,hold,-1.00
+IN,POWERGRID.NS,POWER GRID CORP. LTD.,Utilities,261.15,-0.34,-3.55,9.90,-6,12,45,14.99,15.75,3.00,54.70,buy,20.83
+IN,COALINDIA.NS,COAL INDIA LTD,Energy,394.30,-1.34,-5.13,8.60,-55,71,-8,7.28,28.33,64.20,41.59,buy,16.42
+IN,ONGC.NS,OIL AND NATURAL GAS CORP.,Energy,230.00,-2.13,-3.28,5.60,-37,42,9,6.65,,25.70,51.88,buy,27.00
+IN,HINDALCO.NS,HINDALCO  INDUSTRIES  LTD,Basic Materials,937.85,0.22,-8.68,2.90,-42,36,22,12.72,,32.10,56.72,buy,22.84
+US,VZ,Verizon Communications Inc.,Communication Services,46.51,0.75,-1.10,1.10,-29,21,22,11.87,15.79,1.50,57.18,buy,8.89
+US,ADBE,Adobe Inc.,Technology,244.85,-1.46,-10.30,0.30,-36,36,-9,13.67,61.90,12.90,46.30,hold,9.58
+US,GS,"Goldman Sachs Group, Inc. (The)",Financial Services,864.46,-6.85,-16.44,-2.90,-48,36,0,12.43,17.71,23.30,40.08,buy,19.23
+US,ORCL,Oracle Corporation,Technology,114.61,-7.37,-24.13,-2.90,-58,44,4,17.96,41.19,29.60,37.45,buy,105.45
+US,GOOGL,Alphabet Inc.,Communication Services,282.96,-2.07,-20.85,-5.20,-55,34,9,14.77,44.29,24.70,28.11,strong_buy,41.49
+US,QCOM,QUALCOMM Incorporated,Technology,155.12,-10.43,-4.35,-12.90,-54,22,-9,12.22,33.75,-4.00,36.73,hold,27.02
