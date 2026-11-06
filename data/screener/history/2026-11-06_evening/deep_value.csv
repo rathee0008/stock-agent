@@ -1,0 +1,20 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+IN,AXISBANK.NS,AXIS BANK LIMITED,Financial Services,1322.90,3.35,6.86,41.90,38,58,4,13.80,13.88,21.10,68.59,none,19.79
+US,COP,ConocoPhillips,Energy,136.86,1.03,8.69,22.10,3,40,18,14.42,14.18,35.50,43.55,buy,10.74
+IN,SBIN.NS,STATE BANK OF INDIA,Financial Services,1018.50,1.20,-7.17,21.60,-1,46,9,10.40,14.67,7.80,63.19,strong_buy,21.55
+IN,ONGC.NS,OIL AND NATURAL GAS CORP.,Energy,231.76,0.77,-2.97,19.40,5,36,9,5.89,,25.70,54.20,buy,26.04
+US,JPM,JP Morgan Chase & Co.,Financial Services,337.24,-0.03,-6.85,17.50,12,28,0,14.15,18.01,10.20,48.63,buy,10.75
+IN,HINDALCO.NS,HINDALCO  INDUSTRIES  LTD,Basic Materials,958.40,2.19,-9.55,17.00,-7,36,22,13.00,,32.10,62.09,buy,20.20
+US,WFC,Wells Fargo & Company,Financial Services,84.21,-0.69,-3.70,16.20,13,24,0,11.88,12.91,0.40,51.20,buy,15.63
+IN,VEDL.NS,VEDANTA LIMITED,Basic Materials,261.75,-0.78,-6.13,15.80,1,27,22,9.18,48.20,-34.20,59.81,buy,16.52
+IN,NTPC.NS,NTPC LTD,Utilities,323.45,2.13,-5.56,15.50,0,24,32,10.55,14.46,21.20,58.15,strong_buy,29.41
+US,MU,"Micron Technology, Inc.",Technology,685.51,4.44,-21.07,15.20,-49,74,9,9.23,88.26,379.30,30.73,strong_buy,127.85
+IN,COALINDIA.NS,COAL INDIA LTD,Energy,400.00,1.45,-3.67,14.40,-41,71,-8,7.39,28.33,64.20,45.93,buy,14.76
+IN,POWERGRID.NS,POWER GRID CORP. LTD.,Utilities,259.90,-0.48,-4.31,7.30,-12,12,45,14.92,15.75,3.00,53.01,buy,20.38
+US,ADBE,Adobe Inc.,Technology,241.62,-1.96,-8.38,-2.20,-44,36,-4,13.49,61.90,12.90,43.85,hold,11.05
+US,GS,"Goldman Sachs Group, Inc. (The)",Financial Services,877.34,0.97,-15.18,-2.30,-46,36,0,12.61,17.71,23.30,43.09,buy,17.48
+US,VZ,Verizon Communications Inc.,Communication Services,45.79,-0.70,-3.12,-2.40,-36,21,18,11.68,15.79,1.50,53.39,buy,10.60
+US,QCOM,QUALCOMM Incorporated,Technology,164.13,4.71,0.89,-3.70,-47,32,4,12.92,52.81,-8.40,43.38,hold,20.05
+US,BAC,Bank of America Corporation,Financial Services,50.00,0.48,-21.88,-5.00,-37,22,0,11.93,10.73,3.40,37.54,strong_buy,24.95
+US,GOOGL,Alphabet Inc.,Communication Services,285.70,1.11,-16.90,-9.90,-70,34,18,14.92,44.29,24.70,30.69,strong_buy,40.14
+US,T,AT&T Inc.,Communication Services,21.64,-0.81,-11.66,-13.90,-39,1,9,11.57,11.61,5.30,41.30,buy,27.47

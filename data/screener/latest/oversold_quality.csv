@@ -1,13 +1,12 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
-US,MU,"Micron Technology, Inc.",Technology,656.39,-17.46,-23.76,17.50,-39,74,0,8.83,88.26,379.30,27.05,strong_buy,137.95
-US,NVDA,NVIDIA Corporation,Technology,181.60,-9.26,-16.52,11.10,-43,60,9,22.96,117.21,105.90,25.39,strong_buy,80.14
-US,META,"Meta Platforms, Inc.",Communication Services,605.08,-3.96,1.71,10.00,-44,60,4,20.64,32.26,26.10,34.94,strong_buy,40.21
-US,LRCX,Lam Research Corporation,Technology,185.20,-16.36,-39.56,9.30,-46,60,4,27.60,70.12,54.40,22.61,strong_buy,96.56
-US,AMAT,"Applied Materials, Inc.",Technology,319.25,-13.58,-38.86,5.90,-46,60,-18,27.55,41.07,24.80,25.87,strong_buy,96.36
-US,CSCO,"Cisco Systems, Inc.",Technology,95.72,-7.62,-21.91,0.70,-53,50,-4,28.74,27.32,17.60,30.14,buy,42.25
-US,BAC,Bank of America Corporation,Financial Services,49.76,-3.62,-22.08,-3.40,-38,22,14,11.88,10.73,3.40,35.82,strong_buy,25.56
-US,ORCL,Oracle Corporation,Technology,115.16,-6.93,-23.76,-3.50,-58,44,0,18.05,41.19,29.60,37.73,buy,104.46
-US,GOOGL,Alphabet Inc.,Communication Services,282.57,-2.20,-20.96,-5.90,-55,34,4,14.76,44.29,24.70,27.98,strong_buy,41.69
-US,AVGO,Broadcom Inc.,Technology,291.53,-10.43,-30.98,-10.20,-79,46,4,37.23,44.25,85.50,31.45,strong_buy,80.70
-US,QCOM,QUALCOMM Incorporated,Technology,156.75,-9.49,-3.34,-12.70,-53,22,-9,12.34,33.75,-4.00,37.51,hold,25.70
-US,CAT,"Caterpillar, Inc.",Industrials,553.64,-6.37,-33.90,-14.80,-64,30,-18,21.73,56.14,17.30,19.48,buy,48.73
+US,CRM,"Salesforce, Inc.",Technology,214.66,-3.48,8.71,19.50,6,32,18,19.64,19.38,10.80,34.32,buy,33.74
+US,CSCO,"Cisco Systems, Inc.",Technology,94.12,-1.67,-21.85,17.60,-33,50,54,28.26,27.32,17.60,28.59,buy,44.67
+US,MU,"Micron Technology, Inc.",Technology,685.51,4.44,-21.07,15.20,-49,74,9,9.23,88.26,379.30,30.73,strong_buy,127.85
+US,NVDA,NVIDIA Corporation,Technology,186.35,2.62,-14.32,8.40,-48,60,4,23.55,117.21,105.90,30.47,strong_buy,75.55
+US,LRCX,Lam Research Corporation,Technology,200.08,8.03,-35.75,7.40,-59,60,27,29.83,70.12,54.40,30.21,strong_buy,81.94
+US,AMAT,"Applied Materials, Inc.",Technology,332.39,4.12,-36.76,0.60,-71,60,14,28.68,41.07,24.80,30.35,strong_buy,88.59
+US,ORCL,Oracle Corporation,Technology,112.58,-2.24,-22.61,-2.30,-59,44,9,17.69,41.19,29.60,36.37,buy,109.15
+US,BAC,Bank of America Corporation,Financial Services,50.00,0.48,-21.88,-5.00,-37,22,0,11.93,10.73,3.40,37.54,strong_buy,24.95
+US,AVGO,Broadcom Inc.,Technology,292.43,0.31,-29.72,-5.70,-71,46,14,37.36,44.25,85.50,31.94,strong_buy,80.15
+US,GOOGL,Alphabet Inc.,Communication Services,285.70,1.11,-16.90,-9.90,-70,34,18,14.92,44.29,24.70,30.69,strong_buy,40.14
+US,CAT,"Caterpillar, Inc.",Industrials,558.65,0.90,-33.76,-10.40,-62,38,-18,21.92,56.14,17.30,21.07,buy,47.39
