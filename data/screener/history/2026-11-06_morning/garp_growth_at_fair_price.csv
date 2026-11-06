@@ -1,0 +1,16 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1831.00,0.46,11.99,44.20,61,44,0,29.43,19.19,15.60,69.10,buy,-4.38
+IN,JSWSTEEL.NS,JSW STEEL LIMITED,Basic Materials,1357.10,0.11,4.43,43.30,52,36,0,11.67,31.93,20.70,68.01,buy,3.17
+IN,ICICIBANK.NS,ICICI BANK LTD.,Financial Services,1571.20,4.75,10.57,40.80,46,50,0,19.30,16.49,15.80,79.65,strong_buy,12.58
+US,BLK,"BlackRock, Inc.",Financial Services,1170.67,-4.39,3.47,38.80,46,42,9,26.65,,19.10,57.11,strong_buy,16.06
+IN,BAJFINANCE.NS,BAJAJ FINANCE LIMITED,Financial Services,1087.75,1.66,0.90,35.00,25,26,90,31.28,19.03,26.70,71.91,buy,7.00
+US,MA,Mastercard Incorporated,Financial Services,655.92,-2.49,16.47,33.50,56,16,27,34.32,231.37,14.00,65.57,strong_buy,7.91
+US,V,Visa Inc.,Financial Services,422.59,-3.20,16.96,33.40,47,22,31,34.30,63.51,13.20,63.25,strong_buy,4.93
+US,MSFT,Microsoft Corporation,Technology,535.93,-3.58,5.90,30.70,23,48,0,27.97,34.22,18.80,54.45,strong_buy,18.14
+IN,ADANIPORTS.NS,ADANI PORT & SEZ LTD,Industrials,1936.60,2.76,14.35,28.60,51,18,0,32.32,15.63,23.70,67.53,strong_buy,10.00
+US,UNP,Union Pacific Corporation,Industrials,297.95,-3.43,1.95,28.20,39,24,14,23.24,38.75,15.30,55.02,buy,11.22
+US,CVX,Chevron Corporation,Energy,212.93,-1.86,9.25,24.80,5,45,18,15.63,,34.80,40.90,buy,13.50
+US,INTU,Intuit Inc.,Technology,354.84,-0.50,6.10,22.90,12,36,14,21.56,23.60,13.70,63.65,buy,14.91
+IN,LT.NS,LARSEN & TOUBRO LTD.,Industrials,4117.70,1.67,1.52,20.90,23,20,18,31.72,17.88,16.90,75.11,buy,9.57
+US,XOM,ExxonMobil Holdings Corporation,Energy,165.30,-2.35,3.45,20.50,6,40,0,17.01,15.53,32.60,38.46,buy,11.11
+US,META,"Meta Platforms, Inc.",Communication Services,605.08,-3.96,1.71,10.00,-44,60,4,20.64,32.26,26.10,34.94,strong_buy,40.21

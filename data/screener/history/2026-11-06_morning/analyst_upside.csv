@@ -1,0 +1,33 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+IN,HDFCBANK.NS,HDFC BANK LTD,Financial Services,788.25,3.72,7.83,34.00,32,44,9,17.23,11.00,80.80,73.93,strong_buy,21.71
+IN,BEL.NS,BHARAT ELECTRONICS LTD,Industrials,396.00,0.23,-1.25,28.50,5,44,45,45.26,26.75,26.50,62.27,strong_buy,23.97
+IN,RELIANCE.NS,RELIANCE INDUSTRIES LTD,Energy,1320.00,0.50,-1.11,26.50,7,36,50,21.75,8.76,29.80,68.19,strong_buy,26.21
+IN,BAJAJFINSV.NS,BAJAJ FINSERV LTD.,Financial Services,1864.70,1.62,-7.18,25.50,21,26,38,28.18,15.22,17.20,68.62,buy,25.49
+IN,M&M.NS,MAHINDRA & MAHINDRA LTD,Consumer Cyclical,3287.20,5.11,-6.13,23.80,30,16,31,19.04,,27.50,75.59,strong_buy,24.24
+IN,SBIN.NS,STATE BANK OF INDIA,Financial Services,1018.50,1.20,-7.17,21.60,-1,46,9,10.40,14.67,7.80,63.19,strong_buy,22.73
+US,PLTR,Palantir Technologies Inc.,Technology,154.99,-9.73,-11.55,20.20,1,38,18,109.15,40.91,95.90,25.42,buy,40.63
+IN,ONGC.NS,OIL AND NATURAL GAS CORP.,Energy,231.76,0.77,-2.97,19.40,5,36,9,5.89,,25.70,54.20,buy,26.04
+US,AMZN,"Amazon.com, Inc.",Consumer Cyclical,260.21,-2.19,-6.43,17.50,23,20,-4,21.04,27.42,12.10,54.97,strong_buy,25.57
+US,MU,"Micron Technology, Inc.",Technology,656.39,-17.46,-23.76,17.50,-39,74,0,8.83,88.26,379.30,27.05,strong_buy,137.95
+US,SHOP,Shopify Inc.,Technology,143.75,-6.06,-7.37,17.30,-1,32,22,88.19,16.83,31.60,38.16,buy,22.95
+IN,HINDALCO.NS,HINDALCO  INDUSTRIES  LTD,Basic Materials,958.40,2.19,-9.55,17.00,-7,36,22,13.00,,32.10,62.09,buy,20.20
+US,CRM,"Salesforce, Inc.",Technology,222.41,-2.07,12.61,16.60,4,32,4,20.35,19.38,10.80,39.23,buy,29.08
+IN,HDFCLIFE.NS,HDFC LIFE INS CO LTD,Financial Services,565.30,3.95,4.69,15.20,14,6,45,59.69,11.26,18.50,65.26,strong_buy,27.13
+US,UNH,UnitedHealth Group Incorporated,Healthcare,395.72,-3.34,-3.19,15.00,25,8,9,22.59,15.77,-0.40,47.22,buy,20.45
+US,TXN,Texas Instruments Incorporated,Technology,278.15,-10.70,-0.82,12.40,-24,46,9,36.08,39.72,27.70,42.92,buy,21.11
+US,NVDA,NVIDIA Corporation,Technology,181.60,-9.26,-16.52,11.10,-43,60,9,22.96,117.21,105.90,25.39,strong_buy,80.14
+US,META,"Meta Platforms, Inc.",Communication Services,605.08,-3.96,1.71,10.00,-44,60,4,20.64,32.26,26.10,34.94,strong_buy,40.21
+US,LRCX,Lam Research Corporation,Technology,185.20,-16.36,-39.56,9.30,-46,60,4,27.60,70.12,54.40,22.61,strong_buy,96.56
+IN,POWERGRID.NS,POWER GRID CORP. LTD.,Utilities,259.90,-0.48,-4.31,7.30,-12,12,45,14.92,15.75,3.00,53.01,buy,20.38
+US,AMAT,"Applied Materials, Inc.",Technology,319.25,-13.58,-38.86,5.90,-46,60,-18,27.55,41.07,24.80,25.87,strong_buy,96.36
+IN,POLYCAB.NS,POLYCAB INDIA LIMITED,Industrials,7871.00,0.28,-14.61,4.90,-45,36,45,37.51,26.77,52.80,45.38,buy,26.09
+US,BKNG,Booking Holdings Inc. Common St,Consumer Cyclical,168.72,-1.32,-20.74,3.90,-18,20,14,18.30,,-1.30,58.43,buy,37.01
+US,CSCO,"Cisco Systems, Inc.",Technology,95.72,-7.62,-21.91,0.70,-53,50,-4,28.74,27.32,17.60,30.14,buy,42.25
+US,AMD,"Advanced Micro Devices, Inc.",Technology,404.40,-17.26,-13.88,-1.20,-38,34,-9,86.41,11.96,44.70,29.75,strong_buy,60.30
+US,NFLX,"Netflix, Inc.",Communication Services,65.56,-1.25,-14.06,-1.40,-34,30,-9,18.95,53.46,11.80,45.12,buy,29.29
+US,BAC,Bank of America Corporation,Financial Services,49.76,-3.62,-22.08,-3.40,-38,22,14,11.88,10.73,3.40,35.82,strong_buy,25.56
+US,ORCL,Oracle Corporation,Technology,115.16,-6.93,-23.76,-3.50,-58,44,0,18.05,41.19,29.60,37.73,buy,104.46
+US,GOOGL,Alphabet Inc.,Communication Services,282.57,-2.20,-20.96,-5.90,-55,34,4,14.76,44.29,24.70,27.98,strong_buy,41.69
+US,ANET,"Arista Networks, Inc.",Technology,159.16,-10.82,-16.90,-5.90,-54,38,-9,42.67,33.52,58.50,35.76,strong_buy,54.20
+US,AVGO,Broadcom Inc.,Technology,291.53,-10.43,-30.98,-10.20,-79,46,4,37.23,44.25,85.50,31.45,strong_buy,80.70
+US,CAT,"Caterpillar, Inc.",Industrials,553.64,-6.37,-33.90,-14.80,-64,30,-18,21.73,56.14,17.30,19.48,buy,48.73
