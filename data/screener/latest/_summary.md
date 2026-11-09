@@ -1,18 +1,18 @@
-# Screener results — 2026-11-07 morning (IST)
+# Screener results — 2026-11-10 evening (IST)
 
-Universe scored: 121 stocks. Not investment advice.
+Universe scored: 119 stocks. Not investment advice.
 
 | Preset | Matches | Top 5 by score |
 |---|---|---|
-| Quality momentum | 38 | TECHM.NS, JSWSTEEL.NS, AXISBANK.NS, ACN, HEROMOTOCO.NS |
-| Quality compounders | 37 | TECHM.NS, JSWSTEEL.NS, HEROMOTOCO.NS, LLY, ABBV |
-| GARP (growth at fair price) | 14 | TECHM.NS, JSWSTEEL.NS, ICICIBANK.NS, V, MA |
-| Deep value | 19 | AXISBANK.NS, COP, ONGC.NS, SBIN.NS, JPM |
-| Cheap and profitable | 21 | JSWSTEEL.NS, TCS.NS, COP, WIPRO.NS, BPCL.NS |
-| Momentum breakout | 14 | TECHM.NS, ACN, V, DIVISLAB.NS, KOTAKBANK.NS |
-| Strong technicals | 29 | TECHM.NS, JSWSTEEL.NS, BLK, AXISBANK.NS, ACN |
-| Oversold quality | 11 | CRM, MU, NVDA, META, CSCO |
-| Relative strength leaders | 8 | ACN, V, DIVISLAB.NS, KOTAKBANK.NS, MA |
-| Growth acceleration | 13 | JSWSTEEL.NS, AXISBANK.NS, DIVISLAB.NS, KOTAKBANK.NS, LLY |
-| Analyst upside | 30 | HDFCBANK.NS, M&M.NS, BEL.NS, RELIANCE.NS, BAJAJFINSV.NS |
-| Large-cap safety | 47 | TECHM.NS, JSWSTEEL.NS, AXISBANK.NS, ACN, HEROMOTOCO.NS |
+| Quality momentum | 40 | MSFT, AXISBANK.NS, JSWSTEEL.NS, BAJFINANCE.NS, SBIN.NS |
+| Quality compounders | 35 | MSFT, JSWSTEEL.NS, BAJFINANCE.NS, LLY, BAJAJ-AUTO.NS |
+| GARP (growth at fair price) | 12 | MSFT, JSWSTEEL.NS, TECHM.NS, V, ADANIPORTS.NS |
+| Deep value | 15 | AXISBANK.NS, SBIN.NS, WFC, COP, ONGC.NS |
+| Cheap and profitable | 19 | JSWSTEEL.NS, JPM, TCS.NS, WIPRO.NS, COP |
+| Momentum breakout | 17 | MSFT, LLY, KOTAKBANK.NS, PG, SPGI |
+| Strong technicals | 32 | BLK, MSFT, AXISBANK.NS, JSWSTEEL.NS, BAJFINANCE.NS |
+| Oversold quality | 5 | CRM, MU, NVDA, CAT, GOOGL |
+| Relative strength leaders | 11 | LLY, KOTAKBANK.NS, PG, ACN, V |
+| Growth acceleration | 14 | AXISBANK.NS, JSWSTEEL.NS, LLY, KOTAKBANK.NS, TRENT.NS |
+| Analyst upside | 30 | AXISBANK.NS, HDFCBANK.NS, META, BEL.NS, RELIANCE.NS |
+| Large-cap safety | 54 | MSFT, AXISBANK.NS, JSWSTEEL.NS, BAJFINANCE.NS, SBIN.NS |

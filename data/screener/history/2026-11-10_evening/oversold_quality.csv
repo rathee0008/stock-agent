@@ -1,0 +1,6 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+US,CRM,"Salesforce, Inc.",Technology,214.90,0.58,11.16,15.00,0,32,4,19.66,19.38,10.80,35.15,buy,33.59
+US,MU,"Micron Technology, Inc.",Technology,733.15,6.25,-19.55,14.90,-53,74,18,9.86,88.26,379.30,36.36,strong_buy,113.04
+US,NVDA,NVIDIA Corporation,Technology,178.67,-4.27,-20.27,9.40,-44,60,0,22.59,117.21,105.90,27.40,strong_buy,82.97
+US,CAT,"Caterpillar, Inc.",Industrials,598.89,7.21,-30.00,-9.30,-71,38,14,23.50,56.14,17.30,32.65,buy,37.49
+US,GOOGL,Alphabet Inc.,Communication Services,288.15,1.18,-16.12,-15.70,-68,26,0,15.05,44.29,24.70,32.88,strong_buy,38.95
