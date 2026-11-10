@@ -1,13 +1,13 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
-US,MSFT,Microsoft Corporation,Technology,545.18,2.75,10.71,44.70,54,48,9,28.45,34.22,18.80,57.46,strong_buy,16.68
+US,MSFT,Microsoft Corporation,Technology,545.18,2.75,10.71,45.40,54,48,14,28.45,34.22,18.80,57.46,strong_buy,16.68
 IN,JSWSTEEL.NS,JSW STEEL LIMITED,Basic Materials,1347.00,-0.74,3.46,44.00,53,36,0,11.58,31.93,20.70,65.33,buy,3.94
 IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1805.00,-1.42,10.06,35.70,36,44,9,29.01,19.19,15.60,63.58,buy,-3.01
-US,V,Visa Inc.,Financial Services,422.41,-0.06,17.52,34.10,54,22,18,34.29,63.51,13.20,63.06,strong_buy,5.67
-IN,ADANIPORTS.NS,ADANI PORT & SEZ LTD,Industrials,1942.70,0.31,15.57,31.30,58,18,0,32.42,15.63,23.70,68.05,strong_buy,10.06
-US,MA,Mastercard Incorporated,Financial Services,655.69,0.46,17.14,30.30,54,16,9,34.31,231.37,14.00,64.80,strong_buy,9.26
-US,META,"Meta Platforms, Inc.",Communication Services,641.37,5.12,10.80,29.40,-1,60,18,21.88,32.26,26.10,46.49,strong_buy,32.54
-US,COP,ConocoPhillips,Energy,134.50,-1.30,5.66,26.00,1,54,9,14.17,17.66,29.30,40.37,buy,13.01
-US,UNP,Union Pacific Corporation,Industrials,297.07,2.38,1.14,24.40,29,24,14,23.17,38.75,15.30,53.49,buy,11.07
+US,V,Visa Inc.,Financial Services,422.16,-0.12,17.46,34.10,54,22,18,34.27,63.51,13.20,62.85,strong_buy,5.98
+IN,ADANIPORTS.NS,ADANI PORT & SEZ LTD,Industrials,1942.70,0.31,15.57,32.60,58,18,9,32.42,15.63,23.70,68.05,strong_buy,10.06
+US,MA,Mastercard Incorporated,Financial Services,655.81,0.48,17.17,31.00,54,16,14,34.32,231.37,14.00,64.84,strong_buy,9.24
+US,META,"Meta Platforms, Inc.",Communication Services,641.37,5.12,10.80,26.70,-1,60,0,21.88,32.26,26.10,46.49,strong_buy,32.54
+US,COP,ConocoPhillips,Energy,134.47,-1.32,5.63,25.30,1,54,4,14.17,17.66,29.30,40.34,buy,13.04
+US,UNP,Union Pacific Corporation,Industrials,297.01,2.36,1.12,23.70,29,24,9,23.17,38.75,15.30,53.44,buy,11.09
 IN,LT.NS,LARSEN & TOUBRO LTD.,Industrials,4185.00,1.63,2.57,22.10,26,20,18,32.24,17.88,16.90,77.73,buy,7.82
-US,XOM,ExxonMobil Holdings Corporation,Energy,164.76,-0.67,3.14,18.70,-3,40,14,16.95,15.53,32.60,38.19,buy,12.31
+US,XOM,ExxonMobil Holdings Corporation,Energy,164.73,-0.69,3.12,18.00,-3,40,9,16.95,15.53,32.60,38.15,buy,12.33
 US,INTU,Intuit Inc.,Technology,338.23,-0.96,1.05,17.40,1,36,4,20.55,23.60,13.70,53.85,buy,20.56
