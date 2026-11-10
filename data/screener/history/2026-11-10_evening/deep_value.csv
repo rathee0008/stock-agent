@@ -1,16 +1,17 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
-IN,AXISBANK.NS,AXIS BANK LIMITED,Financial Services,1310.70,-0.92,5.08,44.30,44,58,4,13.68,13.88,21.10,64.94,strong_buy,20.88
-IN,SBIN.NS,STATE BANK OF INDIA,Financial Services,1042.00,2.31,-2.71,39.50,44,46,9,10.64,14.67,7.80,67.91,strong_buy,18.35
-US,WFC,Wells Fargo & Company,Financial Services,85.50,1.85,-3.86,29.90,44,24,9,12.06,12.91,0.40,55.04,buy,13.90
-US,COP,ConocoPhillips,Energy,134.50,-1.30,5.66,26.00,1,54,9,14.17,17.66,29.30,40.37,buy,13.01
-IN,ONGC.NS,OIL AND NATURAL GAS CORP.,Energy,233.50,0.75,-2.64,25.90,11,39,27,5.94,12.14,25.60,56.44,buy,23.41
-IN,COALINDIA.NS,COAL INDIA LTD,Energy,401.50,0.37,-2.31,22.10,-22,71,-8,7.42,28.33,64.20,47.04,buy,14.33
-IN,HINDALCO.NS,HINDALCO  INDUSTRIES  LTD,Basic Materials,960.00,0.17,-8.92,19.80,-6,42,22,11.07,13.03,38.80,62.48,buy,17.87
-IN,VEDL.NS,VEDANTA LIMITED,Basic Materials,262.00,0.10,-7.63,16.40,2,27,22,9.16,48.20,-34.20,59.97,buy,16.41
+IN,AXISBANK.NS,AXIS BANK LIMITED,Financial Services,1310.70,-0.92,5.08,43.60,44,58,0,13.68,13.88,21.10,64.94,strong_buy,20.88
+IN,SBIN.NS,STATE BANK OF INDIA,Financial Services,1042.00,2.31,-2.71,40.20,44,46,14,10.64,14.67,7.80,67.91,strong_buy,18.35
+US,WFC,Wells Fargo & Company,Financial Services,85.65,0.19,-2.79,27.50,43,24,-4,12.08,12.91,0.40,55.49,buy,13.69
+US,COP,ConocoPhillips,Energy,135.27,0.60,8.64,26.10,-1,54,14,14.25,17.66,29.30,41.82,buy,12.36
+IN,ONGC.NS,OIL AND NATURAL GAS CORP.,Energy,233.50,0.75,-2.64,25.90,11,39,27,5.94,12.14,25.60,56.44,buy,23.19
+IN,COALINDIA.NS,COAL INDIA LTD,Energy,401.50,0.37,-2.31,23.20,-22,71,0,7.42,28.33,64.20,47.04,buy,14.33
+IN,HINDALCO.NS,HINDALCO  INDUSTRIES  LTD,Basic Materials,960.00,0.17,-8.92,21.10,-6,42,31,11.13,13.03,38.80,62.48,buy,17.66
+IN,VEDL.NS,VEDANTA LIMITED,Basic Materials,262.00,0.10,-7.63,17.60,2,27,30,9.19,48.20,-34.20,59.97,buy,16.41
 IN,NTPC.NS,NTPC LTD,Utilities,328.75,1.64,-3.44,16.30,2,24,32,10.73,14.46,21.20,62.47,strong_buy,27.31
-US,MU,"Micron Technology, Inc.",Technology,733.15,6.25,-19.55,14.90,-53,74,18,9.86,88.26,379.30,36.36,strong_buy,113.04
-US,GS,"Goldman Sachs Group, Inc. (The)",Financial Services,906.65,4.72,-12.59,1.30,-39,36,4,13.04,17.71,23.30,50.32,buy,13.68
-US,ADBE,Adobe Inc.,Technology,237.32,-0.83,-8.28,1.20,-44,42,0,13.25,61.90,12.90,40.96,hold,12.47
-IN,POWERGRID.NS,POWER GRID CORP. LTD.,Utilities,257.95,-0.75,-4.50,-0.30,-28,12,36,14.81,15.75,3.00,50.39,buy,20.52
-US,BAC,Bank of America Corporation,Financial Services,50.58,2.34,-21.96,-4.60,-36,22,0,12.07,10.73,3.40,42.39,strong_buy,23.53
-US,T,AT&T Inc.,Communication Services,21.81,0.81,-10.08,-12.30,-35,1,9,11.66,11.61,5.30,43.31,buy,26.52
+US,MU,"Micron Technology, Inc.",Technology,704.87,-3.86,-25.79,12.60,-55,74,9,9.48,88.26,379.30,34.55,strong_buy,121.59
+US,ADBE,Adobe Inc.,Technology,232.39,-2.08,-14.09,1.20,-44,42,0,12.98,61.90,12.90,37.77,hold,14.86
+IN,POWERGRID.NS,POWER GRID CORP. LTD.,Utilities,257.95,-0.75,-4.50,1.00,-28,12,45,14.81,15.75,3.00,50.39,buy,20.52
+US,GS,"Goldman Sachs Group, Inc. (The)",Financial Services,904.06,-0.24,-13.29,-1.60,-39,36,-14,13.00,17.71,23.30,49.75,buy,14.00
+US,GOOGL,Alphabet Inc.,Communication Services,286.20,-0.67,-17.37,-9.40,-69,34,18,14.95,44.29,24.70,32.04,strong_buy,39.89
+US,BAC,Bank of America Corporation,Financial Services,50.62,0.14,-21.02,-13.00,-49,22,-22,12.08,10.73,3.40,42.69,strong_buy,23.42
+US,T,AT&T Inc.,Communication Services,21.84,0.21,-11.13,-13.80,-36,1,0,11.68,11.61,5.30,43.81,buy,26.29
