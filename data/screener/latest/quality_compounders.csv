@@ -2,34 +2,34 @@ Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,
 IN,JSWSTEEL.NS,JSW STEEL LIMITED,Basic Materials,1353.30,0.47,5.45,44.50,54,36,0,11.64,31.93,20.70,66.23,none,3.46
 IN,BAJFINANCE.NS,BAJAJ FINANCE LIMITED,Financial Services,1078.80,1.31,-1.33,42.50,48,26,79,31.02,19.03,26.70,67.58,buy,7.88
 IN,ASIANPAINT.NS,ASIAN PAINTS LIMITED,Basic Materials,2550.30,1.63,-6.77,39.30,39,26,79,50.54,23.02,16.90,65.91,buy,7.83
+US,LLY,Eli Lilly and Company,Healthcare,1427.47,-0.34,20.96,39.20,63,28,9,46.34,86.02,38.60,68.75,buy,1.82
 IN,PIDILITIND.NS,PIDILITE INDUSTRIES LTD,Basic Materials,1574.40,-0.83,-6.61,38.90,42,34,45,59.79,25.66,20.90,61.50,buy,5.35
 IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1788.50,-0.91,8.86,38.00,42,44,9,28.74,19.19,15.60,60.29,buy,-1.87
+US,TXN,Texas Instruments Incorporated,Technology,313.61,4.36,12.17,36.30,36,46,9,40.70,39.72,27.70,60.52,none,7.41
 IN,CHOLAFIN.NS,CHOLAMANDALAM IN & FIN CO,Financial Services,1814.80,1.34,-5.20,36.30,46,40,0,24.87,20.58,32.00,69.85,strong_buy,6.76
 IN,HEROMOTOCO.NS,HERO MOTOCORP LIMITED,Consumer Cyclical,5345.00,-1.21,-8.87,35.20,23,40,54,17.84,26.93,22.50,54.00,buy,13.84
 IN,BAJAJ-AUTO.NS,BAJAJ AUTO LIMITED,Consumer Cyclical,11040.00,0.56,-5.78,35.00,37,40,15,23.55,35.56,57.40,64.02,buy,8.91
-US,LLY,Eli Lilly and Company,Healthcare,1432.29,1.44,18.47,34.30,63,28,-22,46.49,86.02,38.60,69.82,buy,1.47
-US,MSFT,Microsoft Corporation,Technology,533.16,-2.20,7.30,33.30,24,48,14,27.83,34.22,18.80,52.30,strong_buy,19.31
-US,TXN,Texas Instruments Incorporated,Technology,300.52,1.62,9.91,33.10,28,46,9,38.98,39.72,27.70,55.00,none,12.09
-US,ABBV,AbbVie Inc.,Healthcare,293.89,0.20,17.17,32.80,47,30,4,50.50,,10.30,61.87,buy,5.70
+US,ABBV,AbbVie Inc.,Healthcare,292.46,-0.48,17.24,34.90,47,30,18,50.25,,10.30,59.83,buy,6.22
+US,META,"Meta Platforms, Inc.",Communication Services,640.52,-0.14,8.59,34.80,15,60,14,21.87,32.26,26.10,46.27,strong_buy,32.72
+US,MSFT,Microsoft Corporation,Technology,521.38,-2.21,5.24,34.30,28,48,9,27.21,34.22,18.80,47.77,strong_buy,22.01
+US,ANET,"Arista Networks, Inc.",Technology,197.95,6.99,-0.44,32.60,37,38,4,53.05,33.52,58.50,56.91,strong_buy,26.12
+US,MU,"Micron Technology, Inc.",Technology,824.72,13.74,-15.12,31.30,-10,74,14,11.09,88.26,379.30,46.31,strong_buy,89.39
+US,JPM,JP Morgan Chase & Co.,Financial Services,343.67,0.47,-5.28,30.60,38,28,18,14.42,18.01,10.20,53.97,buy,8.67
 IN,BEL.NS,BHARAT ELECTRONICS LTD,Industrials,399.00,1.13,-1.69,30.20,7,44,51,45.60,26.75,26.50,63.64,strong_buy,23.82
 IN,APOLLOHOSP.NS,APOLLO HOSPITALS ENTER. L,Healthcare,8604.00,0.64,-1.67,30.00,42,26,9,55.02,22.53,20.80,60.91,strong_buy,14.06
-US,JPM,JP Morgan Chase & Co.,Financial Services,342.07,-0.00,-5.79,27.30,37,28,0,14.35,18.01,10.20,52.67,buy,9.18
 IN,EICHERMOT.NS,EICHER MOTORS LTD,Consumer Cyclical,7592.00,-0.48,-5.10,26.70,22,28,36,36.13,,31.50,60.32,buy,9.84
-US,META,"Meta Platforms, Inc.",Communication Services,641.39,0.00,7.80,26.00,-1,60,-4,21.88,32.26,26.10,46.50,strong_buy,32.54
+US,AVGO,Broadcom Inc.,Technology,353.13,6.37,-10.14,26.40,2,46,31,45.10,44.25,85.50,56.22,strong_buy,51.06
 IN,COALINDIA.NS,COAL INDIA LTD,Energy,406.30,1.20,-1.53,21.20,-27,71,0,7.50,28.33,64.20,50.55,buy,12.98
-US,ANET,"Arista Networks, Inc.",Technology,185.02,-0.62,-9.13,20.90,8,38,4,49.60,33.52,58.50,50.92,strong_buy,34.93
 IN,IRCTC.NS,INDIAN RAIL TOUR CORP LTD,Consumer Cyclical,472.10,2.64,-8.34,14.80,8,26,0,27.10,,18.10,61.51,none,35.85
-US,MU,"Micron Technology, Inc.",Technology,725.11,-1.10,-23.66,14.60,-54,74,18,9.76,88.26,379.30,35.82,strong_buy,115.40
-US,CRM,"Salesforce, Inc.",Technology,213.48,-0.68,6.01,14.20,0,32,0,19.53,19.38,10.80,34.30,buy,34.48
-US,INTU,Intuit Inc.,Technology,340.44,0.65,-4.98,10.60,-16,36,4,20.68,23.60,13.70,54.90,buy,19.77
-US,NVDA,NVIDIA Corporation,Technology,168.89,-5.47,-25.04,9.90,-46,60,9,21.35,117.21,105.90,23.95,strong_buy,92.89
+US,CRM,"Salesforce, Inc.",Technology,216.93,1.62,10.56,13.80,-1,32,0,19.84,19.38,10.80,38.32,buy,32.34
+US,INTU,Intuit Inc.,Technology,338.27,-0.64,-2.14,12.60,-11,36,4,20.55,23.60,13.70,53.61,buy,20.54
+US,AMAT,"Applied Materials, Inc.",Technology,402.77,8.12,-20.59,8.20,-43,52,14,34.75,41.07,24.80,49.30,strong_buy,54.13
+US,NVDA,NVIDIA Corporation,Technology,176.66,4.60,-21.54,6.40,-58,60,18,22.33,117.21,105.90,31.35,strong_buy,84.41
+US,LRCX,Lam Research Corporation,Technology,240.86,8.31,-27.53,5.50,-48,52,9,35.91,70.12,54.40,46.76,none,50.72
 IN,POLYCAB.NS,POLYCAB INDIA LIMITED,Industrials,7948.00,1.47,-12.90,5.30,-44,36,45,37.87,26.77,52.80,48.79,buy,24.87
-US,CSCO,"Cisco Systems, Inc.",Technology,98.15,-0.51,-13.50,4.70,-51,50,18,29.47,27.32,17.60,37.90,buy,38.12
-US,ADBE,Adobe Inc.,Technology,236.70,-0.26,-12.49,3.20,-43,42,9,13.22,61.90,12.90,40.53,hold,12.76
-US,AVGO,Broadcom Inc.,Technology,331.98,3.91,-20.54,-2.30,-61,46,9,42.40,44.25,85.50,49.40,strong_buy,60.68
-US,AMAT,"Applied Materials, Inc.",Technology,372.53,0.53,-30.31,-3.10,-70,52,9,32.14,41.07,24.80,41.95,strong_buy,66.64
-US,LRCX,Lam Research Corporation,Technology,222.39,0.49,-34.01,-5.00,-71,52,0,33.14,70.12,54.40,39.77,none,63.24
-US,NFLX,"Netflix, Inc.",Communication Services,63.26,-1.08,-19.15,-5.50,-47,30,0,18.28,53.46,11.80,39.85,none,33.99
-US,ORCL,Oracle Corporation,Technology,117.98,-1.51,-24.48,-5.60,-63,44,0,18.49,41.19,29.60,40.71,buy,99.84
-US,CAT,"Caterpillar, Inc.",Industrials,584.57,-2.39,-31.60,-11.50,-71,30,22,22.94,56.14,17.30,30.91,buy,40.86
-US,GOOGL,Alphabet Inc.,Communication Services,287.38,-0.27,-17.03,-13.70,-68,26,14,15.01,44.29,24.70,32.54,strong_buy,39.32
+US,ORCL,Oracle Corporation,Technology,129.73,9.96,-13.81,3.00,-49,44,18,20.34,41.19,29.60,50.30,buy,81.74
+US,CSCO,"Cisco Systems, Inc.",Technology,101.94,3.86,-8.72,1.10,-46,42,4,30.61,27.32,17.60,44.94,buy,32.98
+US,ADBE,Adobe Inc.,Technology,237.40,0.30,-10.08,-1.60,-55,42,9,13.26,61.90,12.90,41.28,hold,12.43
+US,NFLX,"Netflix, Inc.",Communication Services,63.74,0.75,-18.46,-7.20,-48,30,-9,18.42,53.46,11.80,41.66,none,32.99
+US,GOOGL,Alphabet Inc.,Communication Services,294.64,2.53,-14.82,-13.30,-68,26,14,15.39,44.29,24.70,38.92,strong_buy,35.89
+US,CAT,"Caterpillar, Inc.",Industrials,609.15,4.20,-28.88,-13.60,-71,30,9,23.91,56.14,17.30,37.10,buy,35.17

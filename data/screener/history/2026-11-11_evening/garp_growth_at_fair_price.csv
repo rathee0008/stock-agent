@@ -1,0 +1,14 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+IN,JSWSTEEL.NS,JSW STEEL LIMITED,Basic Materials,1353.30,0.47,5.45,44.50,54,36,0,11.64,31.93,20.70,66.23,none,3.46
+IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1788.50,-0.91,8.86,38.00,42,44,9,28.74,19.19,15.60,60.29,buy,-1.87
+IN,ICICIBANK.NS,ICICI BANK LTD.,Financial Services,1571.60,-1.10,9.93,36.10,31,50,9,19.30,16.49,15.80,76.11,strong_buy,12.61
+US,META,"Meta Platforms, Inc.",Communication Services,640.52,-0.14,8.59,34.80,15,60,14,21.87,32.26,26.10,46.27,strong_buy,32.72
+US,MSFT,Microsoft Corporation,Technology,521.38,-2.21,5.24,34.30,28,48,9,27.21,34.22,18.80,47.77,strong_buy,22.01
+US,COP,ConocoPhillips,Energy,136.94,1.00,8.01,31.00,1,62,18,14.43,17.66,29.30,44.84,buy,11.24
+US,MA,Mastercard Incorporated,Financial Services,656.01,-0.43,15.23,30.40,53,16,14,34.33,231.37,14.00,64.07,strong_buy,9.72
+IN,ADANIPORTS.NS,ADANI PORT & SEZ LTD,Industrials,1907.00,-1.84,14.31,29.00,49,18,9,31.83,15.63,23.70,61.81,strong_buy,12.12
+US,AMZN,"Amazon.com, Inc.",Consumer Cyclical,266.48,-1.62,1.46,25.60,40,20,4,21.54,27.42,12.10,57.61,strong_buy,22.70
+US,UNP,Union Pacific Corporation,Industrials,301.02,0.13,2.50,25.10,34,24,4,23.48,38.75,15.30,56.75,buy,9.62
+IN,LT.NS,LARSEN & TOUBRO LTD.,Industrials,4212.00,0.65,4.32,24.50,32,20,18,32.44,17.88,16.90,78.70,buy,7.13
+US,V,Visa Inc.,Financial Services,423.22,0.05,16.22,23.70,35,22,0,34.35,63.51,13.20,63.43,strong_buy,6.11
+US,XOM,ExxonMobil Holdings Corporation,Energy,166.02,0.94,3.70,19.90,-4,40,22,17.08,15.53,32.60,40.71,buy,11.46

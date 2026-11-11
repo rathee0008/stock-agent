@@ -1,34 +1,35 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
 IN,AXISBANK.NS,AXIS BANK LIMITED,Financial Services,1336.40,1.96,8.67,45.60,47,58,4,13.95,13.88,21.10,68.72,strong_buy,18.56
 IN,JSWSTEEL.NS,JSW STEEL LIMITED,Basic Materials,1353.30,0.47,5.45,44.50,54,36,0,11.64,31.93,20.70,66.23,none,3.46
-US,BLK,"BlackRock, Inc.",Financial Services,1222.15,0.61,3.32,44.00,55,46,9,27.83,11.61,19.10,64.43,strong_buy,11.37
+US,BLK,"BlackRock, Inc.",Financial Services,1227.63,0.45,4.59,44.20,55,46,9,27.95,11.61,19.10,65.16,strong_buy,10.87
 IN,BAJFINANCE.NS,BAJAJ FINANCE LIMITED,Financial Services,1078.80,1.31,-1.33,42.50,48,26,79,31.02,19.03,26.70,67.58,buy,7.88
 IN,ASIANPAINT.NS,ASIAN PAINTS LIMITED,Basic Materials,2550.30,1.63,-6.77,39.30,39,26,79,50.54,23.02,16.90,65.91,buy,7.83
+US,LLY,Eli Lilly and Company,Healthcare,1427.47,-0.34,20.96,39.20,63,28,9,46.34,86.02,38.60,68.75,buy,1.82
 IN,DLF.NS,DLF LIMITED,Real Estate,742.65,-1.64,14.24,39.10,46,16,90,40.27,10.31,-23.30,69.24,none,10.33
 IN,PIDILITIND.NS,PIDILITE INDUSTRIES LTD,Basic Materials,1574.40,-0.83,-6.61,38.90,42,34,45,59.79,25.66,20.90,61.50,buy,5.35
+US,ACN,Accenture plc,Technology,251.58,-2.68,42.22,38.20,59,28,14,18.56,26.02,6.20,57.92,buy,-7.30
 IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1788.50,-0.91,8.86,38.00,42,44,9,28.74,19.19,15.60,60.29,buy,-1.87
-US,PG,Procter & Gamble Company (The),Consumer Defensive,168.66,0.20,16.91,37.30,72,10,27,25.40,29.61,4.00,67.84,buy,3.19
+US,AMD,"Advanced Micro Devices, Inc.",Technology,562.95,9.27,9.44,37.00,49,34,14,120.34,11.96,44.70,54.81,strong_buy,16.79
 IN,ABB.NS,ABB INDIA LIMITED,Industrials,6963.00,0.69,-8.52,36.70,40,16,90,94.85,19.13,12.10,56.20,hold,1.04
 IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,487.70,1.71,24.13,36.40,42,38,18,22.60,11.83,20.70,75.01,buy,1.62
+US,TXN,Texas Instruments Incorporated,Technology,313.61,4.36,12.17,36.30,36,46,9,40.70,39.72,27.70,60.52,none,7.41
 IN,CHOLAFIN.NS,CHOLAMANDALAM IN & FIN CO,Financial Services,1814.80,1.34,-5.20,36.30,46,40,0,24.87,20.58,32.00,69.85,strong_buy,6.76
-US,ACN,Accenture plc,Technology,258.51,1.63,44.83,36.20,59,28,0,19.06,26.02,6.20,63.14,buy,-9.79
 IN,ICICIBANK.NS,ICICI BANK LTD.,Financial Services,1571.60,-1.10,9.93,36.10,31,50,9,19.30,16.49,15.80,76.11,strong_buy,12.61
-US,SPGI,S&P Global Inc.,Financial Services,473.38,0.49,12.00,35.80,67,20,0,28.28,17.88,6.80,66.83,strong_buy,11.26
 IN,SBIN.NS,STATE BANK OF INDIA,Financial Services,1061.20,1.84,-0.45,35.60,32,46,14,10.83,14.67,7.80,71.17,strong_buy,16.21
+US,SPGI,S&P Global Inc.,Financial Services,473.49,0.02,13.06,35.50,66,20,0,28.28,17.88,6.80,66.88,strong_buy,11.24
 IN,HEROMOTOCO.NS,HERO MOTOCORP LIMITED,Consumer Cyclical,5345.00,-1.21,-8.87,35.20,23,40,54,17.84,26.93,22.50,54.00,buy,13.84
 IN,BAJAJ-AUTO.NS,BAJAJ AUTO LIMITED,Consumer Cyclical,11040.00,0.56,-5.78,35.00,37,40,15,23.55,35.56,57.40,64.02,buy,8.91
+US,ABBV,AbbVie Inc.,Healthcare,292.46,-0.48,17.24,34.90,47,30,18,50.25,,10.30,59.83,buy,6.22
 IN,RELIANCE.NS,RELIANCE INDUSTRIES LTD,Energy,1335.40,0.83,0.87,34.70,28,36,50,22.01,8.76,29.80,70.25,strong_buy,20.81
-US,LLY,Eli Lilly and Company,Healthcare,1432.29,1.44,18.47,34.30,63,28,-22,46.49,86.02,38.60,69.82,buy,1.47
+US,PG,Procter & Gamble Company (The),Consumer Defensive,166.91,-1.04,15.47,33.90,65,10,22,25.14,29.61,4.00,63.42,buy,4.27
 IN,HDFCBANK.NS,HDFC BANK LTD,Financial Services,806.60,1.06,10.64,33.70,28,44,18,17.63,11.00,80.80,76.89,strong_buy,19.03
-US,MSFT,Microsoft Corporation,Technology,533.16,-2.20,7.30,33.30,24,48,14,27.83,34.22,18.80,52.30,strong_buy,19.31
-US,TMO,Thermo Fisher Scientific Inc,Healthcare,718.20,-0.48,20.53,33.10,60,14,18,37.88,13.38,9.10,60.31,strong_buy,5.34
-US,TXN,Texas Instruments Incorporated,Technology,300.52,1.62,9.91,33.10,28,46,9,38.98,39.72,27.70,55.00,none,12.09
-US,ABBV,AbbVie Inc.,Healthcare,293.89,0.20,17.17,32.80,47,30,4,50.50,,10.30,61.87,buy,5.70
-US,KO,Coca-Cola Company (The),Consumer Defensive,96.91,0.92,10.86,32.00,58,8,36,28.59,40.59,7.40,67.84,buy,1.57
-US,V,Visa Inc.,Financial Services,423.00,0.20,15.75,31.40,54,22,0,34.33,63.51,13.20,63.30,strong_buy,6.09
+US,TMO,Thermo Fisher Scientific Inc,Healthcare,722.35,0.58,22.79,33.40,61,14,18,38.09,13.38,9.10,61.33,strong_buy,4.73
+US,ANET,"Arista Networks, Inc.",Technology,197.95,6.99,-0.44,32.60,37,38,4,53.05,33.52,58.50,56.91,strong_buy,26.12
 IN,SIEMENS.NS,SIEMENS LTD,Industrials,3690.00,0.96,-8.00,31.30,23,16,100,89.28,,17.00,57.24,hold,7.76
 IN,TRENT.NS,TRENT LTD,Consumer Cyclical,3222.70,3.32,7.42,31.10,37,26,0,90.65,27.06,21.90,72.16,buy,5.42
-US,AMGN,Amgen Inc.,Healthcare,465.23,0.00,11.34,30.50,53,18,9,26.97,78.35,8.50,62.50,hold,-7.63
-US,MA,Mastercard Incorporated,Financial Services,658.84,0.46,16.19,30.30,54,16,9,34.48,231.37,14.00,65.75,strong_buy,9.25
+US,QCOM,QUALCOMM Incorporated,Technology,181.61,4.66,9.54,30.60,44,24,14,14.31,52.81,-8.40,55.00,hold,2.00
+US,JPM,JP Morgan Chase & Co.,Financial Services,343.67,0.47,-5.28,30.60,38,28,18,14.42,18.01,10.20,53.97,buy,8.67
+US,KO,Coca-Cola Company (The),Consumer Defensive,96.78,-0.13,10.34,30.50,57,8,27,28.55,40.59,7.40,67.06,buy,1.71
+US,MA,Mastercard Incorporated,Financial Services,656.01,-0.43,15.23,30.40,53,16,14,34.33,231.37,14.00,64.07,strong_buy,9.72
 IN,BEL.NS,BHARAT ELECTRONICS LTD,Industrials,399.00,1.13,-1.69,30.20,7,44,51,45.60,26.75,26.50,63.64,strong_buy,23.82
 IN,APOLLOHOSP.NS,APOLLO HOSPITALS ENTER. L,Healthcare,8604.00,0.64,-1.67,30.00,42,26,9,55.02,22.53,20.80,60.91,strong_buy,14.06
