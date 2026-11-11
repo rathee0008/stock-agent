@@ -1,12 +1,11 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
-IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,479.50,-0.10,21.86,38.60,47,38,18,22.22,11.83,20.70,72.19,buy,3.35
-US,ACN,Accenture plc,Technology,258.74,1.72,44.96,37.60,59,28,9,19.08,26.02,6.20,63.25,buy,-11.21
-US,PG,Procter & Gamble Company (The),Consumer Defensive,169.43,0.66,17.45,36.80,72,10,22,25.52,29.61,4.00,68.73,buy,2.72
-US,LLY,Eli Lilly and Company,Healthcare,1423.79,0.84,17.77,36.30,63,28,-9,46.21,86.02,38.60,69.03,buy,2.08
-US,V,Visa Inc.,Financial Services,424.17,0.48,16.07,33.50,54,22,14,34.43,63.51,13.20,63.91,strong_buy,5.48
-US,TMO,Thermo Fisher Scientific Inc,Healthcare,717.54,-0.57,20.41,33.00,60,14,18,37.84,13.38,9.10,60.07,strong_buy,5.43
-IN,ADANIPORTS.NS,ADANI PORT & SEZ LTD,Industrials,1942.70,0.31,15.57,32.60,58,18,9,32.42,15.63,23.70,68.05,strong_buy,10.06
-US,ABBV,AbbVie Inc.,Healthcare,293.76,0.16,17.12,32.10,47,30,0,50.47,,10.30,61.76,buy,5.75
-US,MA,Mastercard Incorporated,Financial Services,661.39,0.85,16.64,30.50,55,16,9,34.61,231.37,14.00,66.49,strong_buy,8.32
-IN,ETERNAL.NS,ETERNAL LIMITED,Consumer Cyclical,363.45,0.08,17.15,28.40,61,9,0,685.75,1.59,77.60,69.19,buy,5.56
-US,BRK-B,Berkshire Hathaway Inc. New,Financial Services,583.61,1.45,15.13,21.60,45,8,0,16.33,10.57,11.20,78.10,buy,-4.79
+IN,DIVISLAB.NS,DIVI S LABORATORIES LTD,Healthcare,11367.00,-1.72,32.51,39.40,36,38,52,89.69,20.13,35.40,79.15,buy,-12.41
+US,PG,Procter & Gamble Company (The),Consumer Defensive,168.66,0.20,16.91,37.30,72,10,27,25.40,29.61,4.00,67.84,buy,3.19
+IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,487.70,1.71,24.13,36.40,42,38,18,22.60,11.83,20.70,75.01,buy,1.62
+US,ACN,Accenture plc,Technology,258.51,1.63,44.83,36.20,59,28,0,19.06,26.02,6.20,63.14,buy,-9.79
+US,LLY,Eli Lilly and Company,Healthcare,1432.29,1.44,18.47,34.30,63,28,-22,46.49,86.02,38.60,69.82,buy,1.47
+US,TMO,Thermo Fisher Scientific Inc,Healthcare,718.20,-0.48,20.53,33.10,60,14,18,37.88,13.38,9.10,60.31,strong_buy,5.34
+US,ABBV,AbbVie Inc.,Healthcare,293.89,0.20,17.17,32.80,47,30,4,50.50,,10.30,61.87,buy,5.70
+US,V,Visa Inc.,Financial Services,423.00,0.20,15.75,31.40,54,22,0,34.33,63.51,13.20,63.30,strong_buy,6.09
+US,MA,Mastercard Incorporated,Financial Services,658.84,0.46,16.19,30.30,54,16,9,34.48,231.37,14.00,65.75,strong_buy,9.25
+US,BRK-B,Berkshire Hathaway Inc. New,Financial Services,583.34,1.41,15.07,21.60,45,8,0,16.33,10.57,11.20,78.01,buy,-4.74

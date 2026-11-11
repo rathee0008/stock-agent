@@ -1,0 +1,15 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+IN,AXISBANK.NS,AXIS BANK LIMITED,Financial Services,1336.40,1.96,8.67,45.60,47,58,4,13.95,13.88,21.10,68.72,strong_buy,18.56
+IN,SBIN.NS,STATE BANK OF INDIA,Financial Services,1061.20,1.84,-0.45,35.60,32,46,14,10.83,14.67,7.80,71.17,strong_buy,16.21
+US,COP,ConocoPhillips,Energy,135.59,0.83,8.89,29.80,0,62,14,14.29,17.66,29.30,42.38,buy,12.35
+US,WFC,Wells Fargo & Company,Financial Services,85.76,0.32,-2.67,28.20,43,24,0,12.10,12.91,0.40,55.81,buy,13.54
+IN,ONGC.NS,OIL AND NATURAL GAS CORP.,Energy,234.80,0.56,-1.94,25.90,11,39,27,5.97,12.14,25.60,58.08,buy,22.51
+IN,HINDALCO.NS,HINDALCO  INDUSTRIES  LTD,Basic Materials,962.30,0.24,-8.27,23.80,0,42,31,11.16,13.03,38.80,63.06,buy,17.38
+IN,COALINDIA.NS,COAL INDIA LTD,Energy,406.30,1.20,-1.53,21.20,-27,71,0,7.50,28.33,64.20,50.55,buy,12.98
+IN,VEDL.NS,VEDANTA LIMITED,Basic Materials,263.88,0.72,-4.04,17.00,1,27,30,9.26,48.20,-34.20,61.25,buy,15.58
+US,MU,"Micron Technology, Inc.",Technology,725.11,-1.10,-23.66,14.60,-54,74,18,9.76,88.26,379.30,35.82,strong_buy,115.40
+IN,NTPC.NS,NTPC LTD,Utilities,327.00,-0.53,-3.38,13.10,-6,24,32,10.67,14.46,21.20,60.26,strong_buy,27.99
+US,ADBE,Adobe Inc.,Technology,236.70,-0.26,-12.49,3.20,-43,42,9,13.22,61.90,12.90,40.53,hold,12.76
+US,GS,"Goldman Sachs Group, Inc. (The)",Financial Services,910.19,0.44,-12.70,2.70,-39,36,14,13.09,17.71,23.30,51.09,buy,13.24
+US,BAC,Bank of America Corporation,Financial Services,50.68,0.26,-20.92,-12.30,-49,22,-18,12.10,10.73,3.40,43.07,strong_buy,23.28
+US,T,AT&T Inc.,Communication Services,21.94,0.64,-10.74,-13.00,-35,1,4,11.73,11.61,5.30,44.96,buy,25.74
