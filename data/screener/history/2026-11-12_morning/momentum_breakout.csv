@@ -1,0 +1,18 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+IN,AXISBANK.NS,AXIS BANK LIMITED,Financial Services,1342.90,0.49,9.18,45.40,47,58,4,14.29,13.88,21.10,69.61,strong_buy,17.98
+IN,DLF.NS,DLF LIMITED,Real Estate,769.30,3.59,16.25,43.10,56,16,90,41.72,10.31,-23.30,74.65,none,6.51
+IN,ICICIBANK.NS,ICICI BANK LTD.,Financial Services,1590.00,1.17,11.06,42.10,46,50,9,19.53,16.49,15.80,77.60,strong_buy,11.30
+IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,490.40,0.55,25.58,38.80,48,38,18,22.72,11.83,20.70,75.88,buy,1.06
+IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1774.00,-0.81,9.17,37.80,42,44,9,28.51,19.19,15.60,57.48,buy,-1.07
+US,ACN,Accenture plc,Technology,253.66,-1.88,43.40,37.60,59,28,9,18.71,26.02,6.20,59.40,buy,-8.06
+US,PG,Procter & Gamble Company (The),Consumer Defensive,167.67,-0.59,15.99,37.20,72,10,27,25.25,29.61,4.00,65.27,buy,3.80
+IN,HDFCBANK.NS,HDFC BANK LTD,Financial Services,812.30,0.71,11.43,36.80,36,44,18,17.76,11.00,80.80,77.77,strong_buy,18.20
+US,TXN,Texas Instruments Incorporated,Technology,309.81,3.09,10.81,36.50,34,46,14,40.18,39.72,27.70,59.06,none,8.73
+US,ABBV,AbbVie Inc.,Healthcare,294.98,0.37,18.25,34.50,47,30,14,50.68,,10.30,62.83,buy,5.31
+US,SPGI,S&P Global Inc.,Financial Services,475.11,0.37,13.45,33.50,66,20,-14,28.38,17.88,6.80,67.57,strong_buy,10.86
+IN,ADANIPORTS.NS,ADANI PORT & SEZ LTD,Industrials,1930.00,1.21,15.92,32.80,58,18,9,32.21,15.63,23.70,64.10,strong_buy,10.78
+US,TMO,Thermo Fisher Scientific Inc,Healthcare,717.71,-0.07,22.00,32.60,61,14,14,37.85,13.38,9.10,60.12,strong_buy,5.41
+US,LLY,Eli Lilly and Company,Healthcare,1437.29,0.35,21.79,32.60,48,28,4,46.65,86.02,38.60,70.30,buy,1.12
+US,MA,Mastercard Incorporated,Financial Services,660.73,0.29,16.06,31.30,54,16,18,34.58,231.37,14.00,66.34,strong_buy,9.07
+US,AMGN,Amgen Inc.,Healthcare,468.11,0.62,12.74,30.80,53,18,9,27.14,78.35,8.50,63.79,hold,-7.76
+US,KO,Coca-Cola Company (The),Consumer Defensive,97.57,0.68,11.24,30.70,58,8,27,28.78,40.59,7.40,69.64,buy,0.89

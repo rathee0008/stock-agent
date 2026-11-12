@@ -1,18 +1,18 @@
-# Screener results — 2026-11-11 evening (IST)
+# Screener results — 2026-11-12 morning (IST)
 
-Universe scored: 120 stocks. Not investment advice.
+Universe scored: 119 stocks. Not investment advice.
 
 | Preset | Matches | Top 5 by score |
 |---|---|---|
-| Quality momentum | 41 | AXISBANK.NS, JSWSTEEL.NS, BAJFINANCE.NS, ACN, TECHM.NS |
-| Quality compounders | 34 | JSWSTEEL.NS, BAJFINANCE.NS, ASIANPAINT.NS, LLY, PIDILITIND.NS |
-| GARP (growth at fair price) | 13 | JSWSTEEL.NS, TECHM.NS, ICICIBANK.NS, META, MSFT |
-| Deep value | 14 | AXISBANK.NS, SBIN.NS, MU, COP, WFC |
-| Cheap and profitable | 19 | JSWSTEEL.NS, HEROMOTOCO.NS, MU, COP, QCOM |
-| Momentum breakout | 16 | AXISBANK.NS, LLY, DLF.NS, ACN, TECHM.NS |
-| Strong technicals | 34 | AXISBANK.NS, JSWSTEEL.NS, BLK, BAJFINANCE.NS, ASIANPAINT.NS |
-| Oversold quality | 2 | NVDA, CAT |
-| Relative strength leaders | 11 | DIVISLAB.NS, LLY, ACN, KOTAKBANK.NS, ABBV |
-| Growth acceleration | 13 | AXISBANK.NS, JSWSTEEL.NS, LLY, AMD, TXN |
-| Analyst upside | 23 | META, RELIANCE.NS, MSFT, ANET, MU |
-| Large-cap safety | 53 | AXISBANK.NS, JSWSTEEL.NS, BAJFINANCE.NS, ACN, TECHM.NS |
+| Quality momentum | 41 | AXISBANK.NS, JSWSTEEL.NS, COP, TECHM.NS, ACN |
+| Quality compounders | 36 | JSWSTEEL.NS, ASIANPAINT.NS, PIDILITIND.NS, TECHM.NS, BAJAJ-AUTO.NS |
+| GARP (growth at fair price) | 14 | JSWSTEEL.NS, ICICIBANK.NS, COP, TECHM.NS, BAJFINANCE.NS |
+| Deep value | 15 | AXISBANK.NS, COP, SBIN.NS, MU, WFC |
+| Cheap and profitable | 19 | JSWSTEEL.NS, COP, HEROMOTOCO.NS, JPM, MU |
+| Momentum breakout | 17 | AXISBANK.NS, DLF.NS, ICICIBANK.NS, KOTAKBANK.NS, TECHM.NS |
+| Strong technicals | 36 | AXISBANK.NS, JSWSTEEL.NS, BLK, DLF.NS, ICICIBANK.NS |
+| Oversold quality | 3 | NVDA, GOOGL, CAT |
+| Relative strength leaders | 13 | DLF.NS, KOTAKBANK.NS, ACN, PG, ABBV |
+| Growth acceleration | 14 | AXISBANK.NS, JSWSTEEL.NS, COP, TRENT.NS, TXN |
+| Analyst upside | 21 | RELIANCE.NS, ANET, MSFT, BEL.NS, MU |
+| Large-cap safety | 51 | AXISBANK.NS, JSWSTEEL.NS, COP, TECHM.NS, ACN |

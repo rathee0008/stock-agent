@@ -1,0 +1,4 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+US,NVDA,NVIDIA Corporation,Technology,173.73,2.87,-22.84,10.70,-36,60,-14,21.96,117.21,105.90,28.74,strong_buy,84.19
+US,GOOGL,Alphabet Inc.,Communication Services,293.45,2.11,-15.16,-14.10,-68,26,9,15.32,44.29,24.70,37.96,strong_buy,36.44
+US,CAT,"Caterpillar, Inc.",Industrials,601.61,2.91,-29.77,-14.20,-71,30,4,23.61,56.14,17.30,35.32,buy,36.87
