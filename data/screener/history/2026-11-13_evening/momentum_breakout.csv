@@ -1,0 +1,15 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+IN,AXISBANK.NS,AXIS BANK LIMITED,Financial Services,1336.40,1.96,8.67,45.60,47,58,4,14.29,13.88,21.10,68.72,strong_buy,18.56
+US,TXN,Texas Instruments Incorporated,Technology,313.67,1.25,10.87,41.50,54,46,-4,40.69,39.72,27.70,60.65,none,7.39
+IN,DLF.NS,DLF LIMITED,Real Estate,742.65,-1.64,14.24,39.10,46,16,90,41.72,10.31,-23.30,69.24,none,10.33
+IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1788.50,-0.91,8.86,38.00,42,44,9,28.51,19.19,15.60,60.29,buy,-1.87
+IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,487.70,1.71,24.13,37.10,42,38,22,22.72,11.83,20.70,75.01,buy,1.62
+US,PG,Procter & Gamble Company (The),Consumer Defensive,168.49,0.49,17.73,37.00,71,10,27,25.38,29.61,4.00,66.41,buy,3.30
+US,ACN,Accenture plc,Technology,252.50,-0.46,48.55,36.80,59,28,4,18.62,26.02,6.20,58.50,buy,-7.64
+IN,ICICIBANK.NS,ICICI BANK LTD.,Financial Services,1571.60,-1.10,9.93,36.10,31,50,9,19.53,16.49,15.80,76.11,strong_buy,12.61
+US,SPGI,S&P Global Inc.,Financial Services,472.92,-0.46,15.20,35.60,67,20,0,28.25,17.88,6.80,65.58,strong_buy,11.37
+US,AMD,"Advanced Micro Devices, Inc.",Technology,581.38,5.15,14.90,34.60,50,34,-4,124.25,11.96,44.70,57.05,strong_buy,13.27
+IN,HDFCBANK.NS,HDFC BANK LTD,Financial Services,806.60,1.06,10.64,33.70,28,44,18,17.76,11.00,80.80,76.89,strong_buy,19.03
+US,ABBV,AbbVie Inc.,Healthcare,295.44,0.16,18.02,32.80,47,30,4,50.76,,10.30,63.26,buy,5.54
+US,LLY,Eli Lilly and Company,Healthcare,1439.73,0.17,21.68,31.70,49,28,-4,46.73,86.02,38.60,70.55,buy,1.43
+US,MA,Mastercard Incorporated,Financial Services,657.82,-0.44,17.00,30.50,53,16,14,34.42,231.37,14.00,64.50,strong_buy,9.56

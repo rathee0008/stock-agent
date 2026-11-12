@@ -1,0 +1,17 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+IN,AXISBANK.NS,AXIS BANK LIMITED,Financial Services,1336.40,1.96,8.67,45.60,47,58,4,14.29,13.88,21.10,68.72,strong_buy,18.56
+IN,JSWSTEEL.NS,JSW STEEL LIMITED,Basic Materials,1353.30,0.47,5.45,44.50,54,36,0,11.63,31.93,20.70,66.23,buy,3.46
+US,TXN,Texas Instruments Incorporated,Technology,313.67,1.25,10.87,41.50,54,46,-4,40.69,39.72,27.70,60.65,none,7.39
+US,COP,ConocoPhillips,Energy,140.35,1.80,10.02,40.30,31,62,0,14.79,17.66,29.30,50.46,buy,8.99
+US,CVX,Chevron Corporation,Energy,217.25,1.86,7.18,37.50,30,51,18,15.95,13.85,34.80,48.49,buy,11.60
+US,ANET,"Arista Networks, Inc.",Technology,205.60,4.54,1.89,37.20,42,38,22,55.10,33.52,58.50,60.05,strong_buy,21.42
+IN,RELIANCE.NS,RELIANCE INDUSTRIES LTD,Energy,1335.40,0.83,0.87,34.70,28,36,50,22.08,8.76,29.80,70.25,strong_buy,20.81
+US,AMD,"Advanced Micro Devices, Inc.",Technology,581.38,5.15,14.90,34.60,50,34,-4,124.25,11.96,44.70,57.05,strong_buy,13.27
+US,LLY,Eli Lilly and Company,Healthcare,1439.73,0.17,21.68,31.70,49,28,-4,46.73,86.02,38.60,70.55,buy,1.43
+IN,TRENT.NS,TRENT LTD,Consumer Cyclical,3222.70,3.32,7.42,31.10,37,26,0,89.45,27.06,21.90,72.16,buy,5.42
+US,XOM,ExxonMobil Holdings Corporation,Energy,170.26,2.13,5.45,30.70,27,40,14,17.52,15.53,32.60,47.66,buy,8.26
+IN,PERSISTENT.NS,PERSISTENT SYSTEMS LTD,Technology,5973.50,-1.10,7.90,29.90,49,10,39,52.75,22.92,30.30,57.28,hold,-3.56
+IN,ADANIPORTS.NS,ADANI PORT & SEZ LTD,Industrials,1907.00,-1.84,14.31,27.70,49,18,0,32.21,15.63,23.70,61.81,strong_buy,12.12
+IN,ETERNAL.NS,ETERNAL LIMITED,Consumer Cyclical,361.10,-0.65,13.55,27.50,60,9,-4,687.45,1.59,77.60,67.02,buy,6.25
+IN,TVSMOTOR.NS,TVS MOTOR COMPANY  LTD,Consumer Cyclical,4560.00,1.20,3.64,26.60,51,14,0,55.87,37.23,39.40,74.53,buy,2.00
+US,ISRG,"Intuitive Surgical, Inc.",Healthcare,442.48,-1.57,13.36,19.00,29,12,14,53.50,17.93,21.70,51.62,buy,9.96
