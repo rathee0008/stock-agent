@@ -1,12 +1,13 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
-IN,DIVISLAB.NS,DIVI S LABORATORIES LTD,Healthcare,11367.00,-1.72,32.51,39.40,36,38,52,90.63,20.13,35.40,79.15,buy,-8.34
-IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,487.70,1.71,24.13,37.10,42,38,22,22.72,11.83,20.70,75.01,buy,1.62
-US,PG,Procter & Gamble Company (The),Consumer Defensive,168.49,0.49,17.73,37.00,71,10,27,25.38,29.61,4.00,66.41,buy,3.30
-US,ACN,Accenture plc,Technology,252.50,-0.46,48.55,36.80,59,28,4,18.62,26.02,6.20,58.50,buy,-7.64
-US,SPGI,S&P Global Inc.,Financial Services,472.92,-0.46,15.20,35.60,67,20,0,28.25,17.88,6.80,65.58,strong_buy,11.37
-US,ABBV,AbbVie Inc.,Healthcare,295.44,0.16,18.02,32.80,47,30,4,50.76,,10.30,63.26,buy,5.54
-US,LLY,Eli Lilly and Company,Healthcare,1439.73,0.17,21.68,31.70,49,28,-4,46.73,86.02,38.60,70.55,buy,1.43
-US,MA,Mastercard Incorporated,Financial Services,657.82,-0.44,17.00,30.50,53,16,14,34.42,231.37,14.00,64.50,strong_buy,9.56
-US,AAPL,Apple Inc.,Technology,356.11,0.14,16.53,29.20,58,6,22,39.66,142.26,11.70,60.73,buy,-3.23
-US,TMO,Thermo Fisher Scientific Inc,Healthcare,703.39,-2.00,20.13,26.90,48,14,9,37.08,13.38,9.10,54.77,strong_buy,7.55
-US,V,Visa Inc.,Financial Services,424.04,-0.36,18.17,26.40,41,22,0,34.42,63.51,13.20,63.16,strong_buy,5.90
+IN,DIVISLAB.NS,DIVI S LABORATORIES LTD,Healthcare,11442.00,-0.37,34.61,43.90,50,38,45,90.29,20.13,35.40,78.72,buy,-7.39
+US,AMD,"Advanced Micro Devices, Inc.",Technology,585.30,5.86,15.67,39.40,58,34,4,125.06,11.96,44.70,57.48,strong_buy,12.38
+IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,488.55,-0.38,24.50,38.90,48,38,18,22.64,11.83,20.70,73.98,buy,1.76
+US,LLY,Eli Lilly and Company,Healthcare,1427.28,-0.70,20.63,38.20,64,28,0,46.33,86.02,38.60,67.96,buy,2.31
+US,ACN,Accenture plc,Technology,249.95,-1.46,47.05,37.30,58,28,9,18.43,26.02,6.20,56.63,buy,-6.70
+US,PG,Procter & Gamble Company (The),Consumer Defensive,168.03,0.21,17.40,36.20,71,10,22,25.31,29.61,4.00,65.78,buy,3.58
+US,ABBV,AbbVie Inc.,Healthcare,294.45,-0.18,17.62,32.70,46,30,4,50.59,,10.30,62.01,buy,5.89
+US,MA,Mastercard Incorporated,Financial Services,652.60,-1.23,16.07,29.60,53,16,9,34.15,231.37,14.00,61.45,strong_buy,10.43
+US,V,Visa Inc.,Financial Services,420.31,-1.23,17.13,27.50,41,22,9,34.12,63.51,13.20,59.67,strong_buy,6.84
+US,AAPL,Apple Inc.,Technology,354.88,-0.21,16.13,26.40,57,6,4,39.52,142.26,11.70,59.69,buy,-2.89
+US,BRK-B,Berkshire Hathaway Inc. New,Financial Services,589.83,0.27,18.39,23.20,46,8,9,16.51,10.57,11.20,79.98,buy,-5.79
+US,TMO,Thermo Fisher Scientific Inc,Healthcare,699.44,-2.55,19.46,20.20,30,14,14,36.89,13.38,9.10,53.45,strong_buy,8.16
