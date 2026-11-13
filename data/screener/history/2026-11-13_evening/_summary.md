@@ -1,18 +1,18 @@
 # Screener results — 2026-11-13 evening (IST)
 
-Universe scored: 119 stocks. Not investment advice.
+Universe scored: 120 stocks. Not investment advice.
 
 | Preset | Matches | Top 5 by score |
 |---|---|---|
-| Quality momentum | 42 | AXISBANK.NS, JSWSTEEL.NS, BAJFINANCE.NS, TXN, COP |
-| Quality compounders | 36 | JSWSTEEL.NS, BAJFINANCE.NS, TXN, ASIANPAINT.NS, PIDILITIND.NS |
-| GARP (growth at fair price) | 15 | JSWSTEEL.NS, COP, TECHM.NS, ICICIBANK.NS, MSFT |
-| Deep value | 14 | AXISBANK.NS, SBIN.NS, WFC, MU, ONGC.NS |
-| Cheap and profitable | 19 | JSWSTEEL.NS, COP, HEROMOTOCO.NS, XOM, TCS.NS |
-| Momentum breakout | 14 | AXISBANK.NS, TXN, DLF.NS, TECHM.NS, KOTAKBANK.NS |
-| Strong technicals | 30 | AXISBANK.NS, BLK, JSWSTEEL.NS, BAJFINANCE.NS, TXN |
-| Oversold quality | 2 | NVDA, CAT |
-| Relative strength leaders | 11 | DIVISLAB.NS, KOTAKBANK.NS, PG, ACN, SPGI |
-| Growth acceleration | 16 | AXISBANK.NS, JSWSTEEL.NS, TXN, COP, CVX |
-| Analyst upside | 23 | ANET, MSFT, RELIANCE.NS, BEL.NS, AMZN |
-| Large-cap safety | 55 | AXISBANK.NS, JSWSTEEL.NS, BAJFINANCE.NS, COP, TECHM.NS |
+| Quality momentum | 44 | AXISBANK.NS, JSWSTEEL.NS, COP, CVX, HEROMOTOCO.NS |
+| Quality compounders | 37 | JSWSTEEL.NS, LLY, ASIANPAINT.NS, HEROMOTOCO.NS, BAJFINANCE.NS |
+| GARP (growth at fair price) | 14 | JSWSTEEL.NS, ICICIBANK.NS, COP, BAJFINANCE.NS, TECHM.NS |
+| Deep value | 15 | AXISBANK.NS, SBIN.NS, WFC, COALINDIA.NS, VEDL.NS |
+| Cheap and profitable | 19 | JSWSTEEL.NS, COP, HEROMOTOCO.NS, XOM, JPM |
+| Momentum breakout | 10 | AXISBANK.NS, DLF.NS, ICICIBANK.NS, KOTAKBANK.NS, LLY |
+| Strong technicals | 31 | AXISBANK.NS, BLK, DLF.NS, JSWSTEEL.NS, ICICIBANK.NS |
+| Oversold quality | 3 | NVDA, CSCO, CAT |
+| Relative strength leaders | 9 | DIVISLAB.NS, KOTAKBANK.NS, LLY, PG, ACN |
+| Growth acceleration | 20 | AXISBANK.NS, JSWSTEEL.NS, COP, CVX, KOTAKBANK.NS |
+| Analyst upside | 25 | RELIANCE.NS, MSFT, ANET, META, BEL.NS |
+| Large-cap safety | 53 | AXISBANK.NS, JSWSTEEL.NS, COP, CVX, HEROMOTOCO.NS |

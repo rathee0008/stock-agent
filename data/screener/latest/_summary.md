@@ -1,18 +1,18 @@
-# Screener results — 2026-11-13 morning (IST)
+# Screener results — 2026-11-13 evening (IST)
 
-Universe scored: 121 stocks. Not investment advice.
+Universe scored: 120 stocks. Not investment advice.
 
 | Preset | Matches | Top 5 by score |
 |---|---|---|
-| Quality momentum | 42 | AXISBANK.NS, JSWSTEEL.NS, TXN, COP, HEROMOTOCO.NS |
-| Quality compounders | 37 | JSWSTEEL.NS, TXN, ANET, ASIANPAINT.NS, LLY |
-| GARP (growth at fair price) | 15 | JSWSTEEL.NS, ICICIBANK.NS, COP, BAJFINANCE.NS, TECHM.NS |
-| Deep value | 15 | AXISBANK.NS, SBIN.NS, WFC, MU, COALINDIA.NS |
-| Cheap and profitable | 20 | JSWSTEEL.NS, COP, HEROMOTOCO.NS, XOM, MU |
-| Momentum breakout | 12 | AXISBANK.NS, DLF.NS, ICICIBANK.NS, TXN, AMD |
-| Strong technicals | 32 | BLK, AXISBANK.NS, DLF.NS, JSWSTEEL.NS, ICICIBANK.NS |
-| Oversold quality | 2 | NVDA, CAT |
-| Relative strength leaders | 12 | DIVISLAB.NS, AMD, KOTAKBANK.NS, LLY, ACN |
-| Growth acceleration | 18 | AXISBANK.NS, JSWSTEEL.NS, TXN, AMD, KOTAKBANK.NS |
-| Analyst upside | 24 | ANET, RELIANCE.NS, MSFT, BEL.NS, AMZN |
-| Large-cap safety | 53 | AXISBANK.NS, JSWSTEEL.NS, COP, HEROMOTOCO.NS, TECHM.NS |
+| Quality momentum | 44 | AXISBANK.NS, JSWSTEEL.NS, COP, CVX, HEROMOTOCO.NS |
+| Quality compounders | 37 | JSWSTEEL.NS, LLY, ASIANPAINT.NS, HEROMOTOCO.NS, BAJFINANCE.NS |
+| GARP (growth at fair price) | 14 | JSWSTEEL.NS, ICICIBANK.NS, COP, BAJFINANCE.NS, TECHM.NS |
+| Deep value | 15 | AXISBANK.NS, SBIN.NS, WFC, COALINDIA.NS, VEDL.NS |
+| Cheap and profitable | 19 | JSWSTEEL.NS, COP, HEROMOTOCO.NS, XOM, JPM |
+| Momentum breakout | 10 | AXISBANK.NS, DLF.NS, ICICIBANK.NS, KOTAKBANK.NS, LLY |
+| Strong technicals | 31 | AXISBANK.NS, BLK, DLF.NS, JSWSTEEL.NS, ICICIBANK.NS |
+| Oversold quality | 3 | NVDA, CSCO, CAT |
+| Relative strength leaders | 9 | DIVISLAB.NS, KOTAKBANK.NS, LLY, PG, ACN |
+| Growth acceleration | 20 | AXISBANK.NS, JSWSTEEL.NS, COP, CVX, KOTAKBANK.NS |
+| Analyst upside | 25 | RELIANCE.NS, MSFT, ANET, META, BEL.NS |
+| Large-cap safety | 53 | AXISBANK.NS, JSWSTEEL.NS, COP, CVX, HEROMOTOCO.NS |

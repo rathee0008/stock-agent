@@ -1,3 +1,4 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
-US,NVDA,NVIDIA Corporation,Technology,166.19,-4.34,-26.14,0.40,-58,60,-22,21.01,117.21,105.90,25.99,buy,71.70
-US,CAT,"Caterpillar, Inc.",Industrials,605.28,0.61,-31.35,-12.90,-71,30,14,23.76,56.14,17.30,36.26,buy,36.04
+US,NVDA,NVIDIA Corporation,Technology,160.93,-3.17,-26.76,6.30,-50,60,-4,20.35,117.21,105.90,24.25,buy,77.31
+US,CSCO,"Cisco Systems, Inc.",Technology,95.39,-6.48,-14.53,-0.70,-55,50,-9,25.37,27.32,17.60,36.81,buy,40.47
+US,CAT,"Caterpillar, Inc.",Industrials,594.36,-1.80,-29.32,-5.00,-53,30,18,23.33,56.14,17.30,34.64,buy,38.54
