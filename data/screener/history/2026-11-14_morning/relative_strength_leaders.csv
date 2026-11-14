@@ -1,0 +1,10 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+IN,DIVISLAB.NS,DIVI S LABORATORIES LTD,Healthcare,11442.00,-0.37,34.61,43.90,50,38,45,90.29,20.13,35.40,78.72,buy,-4.40
+IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,488.55,-0.38,24.50,38.90,48,38,18,22.64,11.83,20.70,73.98,buy,1.76
+US,LLY,Eli Lilly and Company,Healthcare,1443.50,1.14,17.77,37.30,63,28,-4,46.85,86.02,38.60,69.72,buy,1.38
+US,PG,Procter & Gamble Company (The),Consumer Defensive,169.80,1.05,18.37,36.60,72,10,22,25.57,29.61,4.00,68.24,buy,2.50
+US,ACN,Accenture plc,Technology,250.49,0.22,44.85,36.00,57,28,4,18.47,26.02,6.20,56.94,buy,-6.90
+US,V,Visa Inc.,Financial Services,425.76,1.30,16.89,27.80,41,22,9,34.56,63.51,13.20,62.90,strong_buy,5.47
+US,MA,Mastercard Incorporated,Financial Services,661.19,1.32,15.13,23.30,35,16,14,34.60,231.37,14.00,64.43,strong_buy,9.00
+US,COST,Costco Wholesale Corporation,Consumer Defensive,1106.21,1.28,15.07,23.10,42,10,14,53.29,28.40,11.10,76.04,buy,-2.97
+US,TMO,Thermo Fisher Scientific Inc,Healthcare,700.22,0.11,18.87,22.20,35,14,14,36.93,13.38,9.10,53.69,strong_buy,8.04
