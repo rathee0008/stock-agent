@@ -1,0 +1,17 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+IN,AXISBANK.NS,AXIS BANK LIMITED,Financial Services,1369.00,1.98,11.55,40.90,34,58,9,14.29,13.88,21.10,71.41,strong_buy,15.74
+IN,SBIN.NS,STATE BANK OF INDIA,Financial Services,1108.60,1.66,4.47,37.60,35,46,18,11.32,14.67,7.80,76.25,strong_buy,11.23
+US,WFC,Wells Fargo & Company,Financial Services,84.84,-1.41,-1.28,24.70,38,24,-9,11.97,12.91,0.40,51.50,buy,14.77
+US,JPM,JP Morgan Chase & Co.,Financial Services,338.21,-2.31,-5.33,18.00,12,28,4,14.19,18.01,10.20,48.39,buy,10.43
+IN,COALINDIA.NS,COAL INDIA LTD,Energy,391.55,-1.50,-4.14,14.60,-43,71,0,7.23,28.33,64.20,40.23,buy,17.24
+US,MU,"Micron Technology, Inc.",Technology,719.02,-7.62,-23.27,13.60,-51,74,4,9.67,88.26,379.30,38.01,strong_buy,117.23
+IN,NTPC.NS,NTPC LTD,Utilities,321.80,0.17,-4.51,13.00,-5,24,28,10.50,14.46,21.20,53.84,strong_buy,30.06
+IN,VEDL.NS,VEDANTA LIMITED,Basic Materials,255.03,0.80,-5.44,8.00,-28,33,30,8.95,48.20,-34.20,52.05,none,19.59
+IN,HINDALCO.NS,HINDALCO  INDUSTRIES  LTD,Basic Materials,927.75,0.48,-11.63,7.50,-40,42,31,10.76,13.03,38.80,49.30,buy,21.83
+IN,POWERGRID.NS,POWER GRID CORP. LTD.,Utilities,258.00,-1.60,-3.06,1.30,-27,12,45,14.81,15.75,3.00,49.52,buy,20.56
+IN,ONGC.NS,OIL AND NATURAL GAS CORP.,Energy,223.52,-1.53,-6.28,0.40,-53,39,27,5.68,12.14,25.60,43.30,buy,28.43
+US,QCOM,QUALCOMM Incorporated,Technology,168.52,-2.29,4.08,0.10,-27,24,0,13.27,52.81,-8.40,45.97,hold,10.35
+US,GS,"Goldman Sachs Group, Inc. (The)",Financial Services,891.54,-2.73,-12.74,-2.50,-48,36,4,12.82,17.71,23.30,46.27,none,15.61
+US,GOOGL,Alphabet Inc.,Communication Services,283.72,-4.07,-17.70,-7.30,-56,34,0,14.82,44.29,24.70,34.45,strong_buy,41.12
+US,BAC,Bank of America Corporation,Financial Services,50.08,-1.84,-20.72,-9.10,-47,22,0,11.95,10.73,3.40,40.67,strong_buy,24.75
+US,T,AT&T Inc.,Communication Services,22.36,0.81,-10.99,-10.10,-30,1,9,11.96,11.61,5.30,50.22,buy,23.38

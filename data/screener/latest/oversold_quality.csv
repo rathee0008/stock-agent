@@ -1,9 +1,8 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
-US,CRM,"Salesforce, Inc.",Technology,215.48,-1.08,4.56,14.60,-1,32,4,19.72,19.38,10.80,37.58,buy,33.23
-US,MU,"Micron Technology, Inc.",Technology,718.67,-7.66,-23.31,11.50,-51,74,-9,9.67,88.26,379.30,37.99,strong_buy,117.33
-US,NVDA,NVIDIA Corporation,Technology,155.44,-4.55,-28.55,6.30,-50,60,-4,19.65,117.21,105.90,22.51,buy,72.90
-US,LRCX,Lam Research Corporation,Technology,210.63,-6.77,-31.43,1.80,-59,52,14,31.39,70.12,54.40,37.61,strong_buy,71.91
-US,CSCO,"Cisco Systems, Inc.",Technology,94.28,-1.42,-14.72,1.50,-54,50,4,25.08,30.38,24.40,35.59,buy,37.84
-US,NFLX,"Netflix, Inc.",Communication Services,60.72,-2.31,-24.31,-3.30,-51,38,0,17.55,53.46,11.80,35.17,buy,39.61
-US,GOOGL,Alphabet Inc.,Communication Services,284.58,-3.78,-17.45,-8.60,-56,34,-9,14.86,44.29,24.70,34.83,strong_buy,40.69
-US,CAT,"Caterpillar, Inc.",Industrials,568.34,-5.31,-30.36,-11.80,-65,30,4,22.31,56.14,17.30,31.03,buy,42.04
+US,CRM,"Salesforce, Inc.",Technology,214.83,-1.38,4.24,14.50,-1,32,4,19.66,19.38,10.80,37.09,buy,33.63
+US,NVDA,NVIDIA Corporation,Technology,156.14,-4.12,-28.23,3.80,-58,60,0,19.74,117.21,105.90,22.72,buy,71.41
+US,LRCX,Lam Research Corporation,Technology,210.83,-6.68,-31.36,1.80,-59,52,14,31.42,70.12,54.40,37.66,strong_buy,71.75
+US,CSCO,"Cisco Systems, Inc.",Technology,94.52,-1.17,-14.50,0.90,-54,50,0,25.14,30.38,24.40,35.84,buy,37.49
+US,NFLX,"Netflix, Inc.",Communication Services,60.75,-2.25,-24.27,-2.60,-51,38,4,17.56,53.46,11.80,35.24,buy,39.53
+US,GOOGL,Alphabet Inc.,Communication Services,283.72,-4.07,-17.70,-7.30,-56,34,0,14.82,44.29,24.70,34.45,strong_buy,41.12
+US,CAT,"Caterpillar, Inc.",Industrials,570.49,-4.95,-30.10,-12.50,-65,30,0,22.39,56.14,17.30,31.30,buy,41.50

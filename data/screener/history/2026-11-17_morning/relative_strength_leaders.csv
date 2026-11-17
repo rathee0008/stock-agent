@@ -1,0 +1,9 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+IN,DIVISLAB.NS,DIVI S LABORATORIES LTD,Healthcare,11150.00,0.63,31.46,47.50,59,38,45,87.98,20.13,35.40,69.35,buy,-0.60
+IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,497.25,0.62,26.62,38.90,48,38,18,23.04,11.83,20.70,76.97,buy,-0.02
+US,ACN,Accenture plc,Technology,247.70,-1.11,35.23,33.50,51,28,4,18.27,26.02,6.20,54.74,buy,-5.60
+US,PG,Procter & Gamble Company (The),Consumer Defensive,173.02,1.90,19.84,31.60,58,10,27,26.06,29.61,4.00,72.16,buy,0.72
+US,V,Visa Inc.,Financial Services,426.46,0.16,16.67,25.50,41,22,-4,34.62,63.51,13.20,63.31,strong_buy,5.30
+IN,ETERNAL.NS,ETERNAL LIMITED,Consumer Cyclical,375.05,1.06,17.94,23.00,47,9,0,707.64,1.59,77.60,72.80,buy,2.29
+US,MA,Mastercard Incorporated,Financial Services,661.71,0.08,15.34,22.70,40,16,-4,34.63,231.37,14.00,64.61,strong_buy,8.91
+US,COST,Costco Wholesale Corporation,Consumer Defensive,1113.74,0.68,16.38,20.80,41,10,0,53.65,28.40,11.10,77.11,buy,-2.84
