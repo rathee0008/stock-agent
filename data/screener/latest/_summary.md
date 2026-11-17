@@ -1,18 +1,18 @@
-# Screener results — 2026-11-17 morning (IST)
+# Screener results — 2026-11-18 evening (IST)
 
-Universe scored: 120 stocks. Not investment advice.
+Universe scored: 121 stocks. Not investment advice.
 
 | Preset | Matches | Top 5 by score |
 |---|---|---|
-| Quality momentum | 35 | COP, AXISBANK.NS, JSWSTEEL.NS, BAJFINANCE.NS, HEROMOTOCO.NS |
-| Quality compounders | 36 | JSWSTEEL.NS, LLY, BAJFINANCE.NS, PIDILITIND.NS, HEROMOTOCO.NS |
-| GARP (growth at fair price) | 15 | ICICIBANK.NS, COP, JSWSTEEL.NS, BAJFINANCE.NS, TECHM.NS |
-| Deep value | 16 | AXISBANK.NS, SBIN.NS, WFC, JPM, COALINDIA.NS |
-| Cheap and profitable | 20 | COP, JSWSTEEL.NS, HEROMOTOCO.NS, TCS.NS, JPM |
-| Momentum breakout | 11 | DIVISLAB.NS, ICICIBANK.NS, AXISBANK.NS, LLY, DLF.NS |
-| Strong technicals | 29 | DIVISLAB.NS, ICICIBANK.NS, COP, AXISBANK.NS, JSWSTEEL.NS |
-| Oversold quality | 7 | CRM, NVDA, LRCX, CSCO, NFLX |
-| Relative strength leaders | 8 | DIVISLAB.NS, KOTAKBANK.NS, ACN, PG, V |
-| Growth acceleration | 20 | DIVISLAB.NS, COP, AXISBANK.NS, JSWSTEEL.NS, LLY |
-| Analyst upside | 26 | BEL.NS, MSFT, ANET, AMZN, AMD |
-| Large-cap safety | 50 | COP, JSWSTEEL.NS, CVX, HEROMOTOCO.NS, TECHM.NS |
+| Quality momentum | 32 | AXISBANK.NS, BAJFINANCE.NS, JSWSTEEL.NS, COP, TECHM.NS |
+| Quality compounders | 37 | BAJFINANCE.NS, JSWSTEEL.NS, ASIANPAINT.NS, TECHM.NS, PIDILITIND.NS |
+| GARP (growth at fair price) | 12 | BAJFINANCE.NS, ICICIBANK.NS, JSWSTEEL.NS, COP, TECHM.NS |
+| Deep value | 17 | AXISBANK.NS, SBIN.NS, COALINDIA.NS, NTPC.NS, POWERGRID.NS |
+| Cheap and profitable | 23 | JSWSTEEL.NS, COP, HEROMOTOCO.NS, TCS.NS, WIPRO.NS |
+| Momentum breakout | 9 | DIVISLAB.NS, AXISBANK.NS, DLF.NS, ICICIBANK.NS, KOTAKBANK.NS |
+| Strong technicals | 25 | DIVISLAB.NS, AXISBANK.NS, BAJFINANCE.NS, DLF.NS, ICICIBANK.NS |
+| Oversold quality | 10 | MU, NVDA, AMAT, CRM, CSCO |
+| Relative strength leaders | 7 | DIVISLAB.NS, KOTAKBANK.NS, PG, ACN, ETERNAL.NS |
+| Growth acceleration | 17 | DIVISLAB.NS, AXISBANK.NS, BAJFINANCE.NS, JSWSTEEL.NS, COP |
+| Analyst upside | 29 | BEL.NS, BAJAJFINSV.NS, ANET, MSFT, AMZN |
+| Large-cap safety | 53 | AXISBANK.NS, BAJFINANCE.NS, JSWSTEEL.NS, COP, TECHM.NS |
