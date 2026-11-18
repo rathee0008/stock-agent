@@ -1,7 +1,7 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
-IN,DIVISLAB.NS,DIVI S LABORATORIES LTD,Healthcare,11049.00,-0.91,28.66,47.50,59,38,45,87.19,20.13,35.40,66.63,buy,0.31
-IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,494.85,-0.48,27.65,38.80,48,38,18,22.93,11.83,20.70,74.31,buy,0.47
-US,PG,Procter & Gamble Company (The),Consumer Defensive,171.72,-0.75,20.11,37.50,72,10,27,25.86,29.61,4.00,68.49,buy,1.48
-IN,ETERNAL.NS,ETERNAL LIMITED,Consumer Cyclical,366.00,-2.41,15.86,25.70,54,9,0,690.57,1.59,77.60,63.89,buy,4.82
-US,BRK-B,Berkshire Hathaway Inc. New,Financial Services,586.76,-1.03,18.09,23.00,45,8,9,16.42,10.57,11.20,73.09,buy,-3.77
-US,COST,Costco Wholesale Corporation,Consumer Defensive,1110.08,-0.33,18.91,22.40,40,10,14,53.47,28.40,11.10,75.34,buy,-2.23
+IN,DIVISLAB.NS,DIVI S LABORATORIES LTD,Healthcare,11150.00,0.63,31.46,47.50,59,38,45,87.19,20.13,35.40,69.35,buy,-0.60
+IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,497.25,0.62,26.62,38.90,48,38,18,22.93,11.83,20.70,76.97,buy,-0.02
+US,PG,Procter & Gamble Company (The),Consumer Defensive,170.53,-0.69,17.87,34.20,66,10,22,25.68,29.61,4.00,65.21,buy,2.49
+US,COST,Costco Wholesale Corporation,Consumer Defensive,1109.31,-0.07,17.05,28.50,53,10,18,53.43,28.40,11.10,74.95,buy,-2.16
+US,BRK-B,Berkshire Hathaway Inc. New,Financial Services,574.96,-2.01,15.96,25.20,52,8,4,16.09,10.57,11.20,60.96,buy,-1.79
+IN,ETERNAL.NS,ETERNAL LIMITED,Consumer Cyclical,375.05,1.06,17.94,23.00,47,9,0,690.57,1.59,77.60,72.80,buy,2.29
