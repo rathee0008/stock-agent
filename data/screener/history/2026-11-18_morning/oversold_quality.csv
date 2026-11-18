@@ -1,0 +1,12 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+US,MU,"Micron Technology, Inc.",Technology,712.42,-0.92,-26.88,13.00,-52,74,4,9.58,88.26,379.30,37.54,strong_buy,119.24
+US,NVDA,NVIDIA Corporation,Technology,155.46,-0.44,-28.31,5.10,-58,60,9,19.65,117.21,105.90,22.50,buy,70.61
+US,CSCO,"Cisco Systems, Inc.",Technology,95.11,0.62,-13.21,0.60,-53,50,-4,25.30,30.38,24.40,37.02,buy,37.21
+US,LRCX,Lam Research Corporation,Technology,210.69,-0.07,-32.15,0.50,-59,52,4,31.40,70.12,54.40,37.62,strong_buy,71.86
+US,CRM,"Salesforce, Inc.",Technology,194.52,-9.45,-5.31,-1.40,-31,32,-22,17.80,19.38,10.80,25.73,buy,47.59
+US,GOOGL,Alphabet Inc.,Communication Services,280.20,-1.24,-17.75,-4.90,-57,34,18,14.63,44.29,24.70,32.89,strong_buy,42.89
+US,IBM,International Business Machines,Technology,231.09,-4.71,-1.11,-5.70,-33,20,-9,19.72,34.77,4.70,37.73,buy,12.44
+US,CAT,"Caterpillar, Inc.",Industrials,570.79,0.05,-30.00,-7.00,-53,30,4,22.40,56.14,17.30,31.38,buy,41.43
+IN,POLYCAB.NS,POLYCAB INDIA LIMITED,Industrials,7307.50,-5.12,-20.04,-7.50,-76,36,45,34.82,26.77,52.80,32.52,buy,35.81
+US,BAC,Bank of America Corporation,Financial Services,49.44,-1.28,-20.08,-8.50,-48,22,4,11.80,10.73,3.40,37.53,strong_buy,26.37
+US,NFLX,"Netflix, Inc.",Communication Services,59.68,-1.76,-25.53,-10.20,-70,38,4,17.25,53.46,11.80,32.98,buy,42.03

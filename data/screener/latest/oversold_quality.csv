@@ -1,11 +1,12 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
-US,MU,"Micron Technology, Inc.",Technology,696.53,-3.13,-28.51,8.00,-53,74,-27,9.37,88.26,379.30,36.45,strong_buy,124.24
-US,NVDA,NVIDIA Corporation,Technology,153.48,-1.71,-29.23,5.70,-50,60,-9,19.40,117.21,105.90,21.91,buy,74.39
-US,AMAT,"Applied Materials, Inc.",Technology,342.82,-2.12,-30.91,4.50,-58,60,4,27.18,43.37,53.10,37.46,strong_buy,63.90
-US,CRM,"Salesforce, Inc.",Technology,196.76,-8.41,-4.22,4.10,-22,32,-9,18.00,19.38,10.80,26.63,buy,45.90
-US,CSCO,"Cisco Systems, Inc.",Technology,94.74,0.23,-13.56,1.80,-53,50,4,25.20,30.38,24.40,36.27,buy,37.18
-US,LRCX,Lam Research Corporation,Technology,206.90,-1.86,-33.37,0.50,-59,52,4,30.83,70.12,54.40,36.61,strong_buy,75.01
-US,CAT,"Caterpillar, Inc.",Industrials,564.24,-1.10,-30.80,-5.70,-53,30,14,22.14,56.14,17.30,30.48,buy,43.07
-US,GOOGL,Alphabet Inc.,Communication Services,280.46,-1.15,-17.67,-6.90,-57,34,4,14.64,44.29,24.70,33.00,strong_buy,42.76
-US,NFLX,"Netflix, Inc.",Communication Services,59.58,-1.92,-25.65,-7.80,-64,38,4,17.22,53.46,11.80,32.80,buy,42.26
-US,BAC,Bank of America Corporation,Financial Services,49.33,-1.49,-20.25,-9.90,-48,22,-4,11.77,10.73,3.40,37.06,strong_buy,26.64
+US,MU,"Micron Technology, Inc.",Technology,712.42,-0.92,-26.88,13.00,-52,74,4,9.58,88.26,379.30,37.54,strong_buy,119.24
+US,NVDA,NVIDIA Corporation,Technology,155.46,-0.44,-28.31,5.10,-58,60,9,19.65,117.21,105.90,22.50,buy,70.61
+US,CSCO,"Cisco Systems, Inc.",Technology,95.11,0.62,-13.21,0.60,-53,50,-4,25.30,30.38,24.40,37.02,buy,37.21
+US,LRCX,Lam Research Corporation,Technology,210.69,-0.07,-32.15,0.50,-59,52,4,31.40,70.12,54.40,37.62,strong_buy,71.86
+US,CRM,"Salesforce, Inc.",Technology,194.52,-9.45,-5.31,-1.40,-31,32,-22,17.80,19.38,10.80,25.73,buy,47.59
+US,GOOGL,Alphabet Inc.,Communication Services,280.20,-1.24,-17.75,-4.90,-57,34,18,14.63,44.29,24.70,32.89,strong_buy,42.89
+US,IBM,International Business Machines,Technology,231.09,-4.71,-1.11,-5.70,-33,20,-9,19.72,34.77,4.70,37.73,buy,12.44
+US,CAT,"Caterpillar, Inc.",Industrials,570.79,0.05,-30.00,-7.00,-53,30,4,22.40,56.14,17.30,31.38,buy,41.43
+IN,POLYCAB.NS,POLYCAB INDIA LIMITED,Industrials,7307.50,-5.12,-20.04,-7.50,-76,36,45,34.82,26.77,52.80,32.52,buy,35.81
+US,BAC,Bank of America Corporation,Financial Services,49.44,-1.28,-20.08,-8.50,-48,22,4,11.80,10.73,3.40,37.53,strong_buy,26.37
+US,NFLX,"Netflix, Inc.",Communication Services,59.68,-1.76,-25.53,-10.20,-70,38,4,17.25,53.46,11.80,32.98,buy,42.03

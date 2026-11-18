@@ -1,0 +1,13 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+IN,ICICIBANK.NS,ICICI BANK LTD.,Financial Services,1601.30,0.16,13.41,41.30,45,50,4,19.66,16.49,15.80,77.49,strong_buy,10.52
+IN,JSWSTEEL.NS,JSW STEEL LIMITED,Basic Materials,1315.90,-1.21,3.81,39.40,43,36,0,11.31,31.93,20.70,55.05,buy,6.40
+US,COP,ConocoPhillips,Energy,139.48,-0.74,3.40,37.30,27,62,-9,14.70,17.66,29.30,48.78,buy,9.67
+IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1750.00,-0.68,9.92,33.20,30,44,9,28.13,19.19,15.60,52.15,buy,0.54
+IN,CHOLAFIN.NS,CHOLAMANDALAM IN & FIN CO,Financial Services,1875.00,-0.51,0.37,32.30,36,40,0,25.69,20.58,32.00,71.58,none,3.34
+IN,ADANIPORTS.NS,ADANI PORT & SEZ LTD,Industrials,1902.60,-0.75,13.09,28.50,48,18,8,31.75,15.63,23.70,58.25,strong_buy,12.37
+IN,LT.NS,LARSEN & TOUBRO LTD.,Industrials,4159.00,0.08,2.33,24.30,32,20,18,32.04,17.88,16.90,70.84,none,8.49
+US,V,Visa Inc.,Financial Services,416.77,-2.27,13.96,24.10,34,22,4,33.83,63.51,13.20,54.42,strong_buy,7.75
+US,MSFT,Microsoft Corporation,Technology,506.24,-2.27,5.21,23.80,-1,54,0,26.42,34.22,18.80,41.86,strong_buy,25.66
+US,MA,Mastercard Incorporated,Financial Services,645.73,-2.41,12.53,22.70,39,16,0,33.79,231.37,14.00,55.40,strong_buy,11.61
+US,META,"Meta Platforms, Inc.",Communication Services,618.87,-1.20,13.38,19.40,-26,60,18,21.11,32.26,26.10,42.04,strong_buy,37.06
+US,XOM,ExxonMobil Holdings Corporation,Energy,167.21,0.20,0.64,15.60,-8,40,4,17.20,15.53,32.60,43.68,buy,10.15
