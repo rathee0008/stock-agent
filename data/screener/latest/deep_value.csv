@@ -1,18 +1,18 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
-IN,AXISBANK.NS,AXIS BANK LIMITED,Financial Services,1380.80,1.53,11.81,41.60,35,58,9,14.41,13.88,21.10,71.40,strong_buy,14.75
-US,COP,ConocoPhillips,Energy,134.40,-3.64,-0.35,24.60,-6,62,-4,14.16,17.66,29.30,41.38,buy,13.84
-IN,NTPC.NS,NTPC LTD,Utilities,325.00,1.44,-3.43,15.80,2,24,28,10.60,14.46,21.20,56.97,strong_buy,28.78
-IN,INFY.NS,INFOSYS LIMITED,Technology,1091.90,-1.52,-2.49,13.80,-14,40,9,14.54,29.95,1.40,42.54,buy,10.15
-IN,COALINDIA.NS,COAL INDIA LTD,Energy,391.50,0.90,-2.12,13.30,-47,71,0,7.23,28.33,64.20,41.41,buy,17.25
-US,MU,"Micron Technology, Inc.",Technology,705.27,-1.00,-27.05,13.00,-54,74,9,9.49,88.26,379.30,37.00,strong_buy,121.46
-IN,HINDALCO.NS,HINDALCO  INDUSTRIES  LTD,Basic Materials,910.00,1.11,-12.41,5.50,-45,42,31,10.55,13.03,38.80,44.71,buy,24.20
-IN,ONGC.NS,OIL AND NATURAL GAS CORP.,Energy,224.52,-0.21,-5.66,2.70,-47,39,27,5.71,12.14,25.60,44.89,buy,27.86
-US,WFC,Wells Fargo & Company,Financial Services,80.92,-2.14,-3.48,-1.50,-32,24,4,11.41,12.91,0.40,38.58,buy,20.33
-US,JPM,JP Morgan Chase & Co.,Financial Services,324.11,-1.77,-7.81,-3.80,-34,28,-18,13.60,18.01,10.20,38.10,buy,15.23
-IN,VEDL.NS,VEDANTA LIMITED,Basic Materials,243.70,-0.69,-7.20,-4.40,-59,33,30,8.55,48.20,-34.20,42.57,none,25.15
-US,BAC,Bank of America Corporation,Financial Services,48.91,-1.07,-20.72,-5.10,-43,22,14,11.67,10.73,3.40,35.11,strong_buy,27.74
-US,GOOGL,Alphabet Inc.,Communication Services,282.44,0.80,-18.09,-5.20,-56,34,14,14.75,44.29,24.70,34.91,strong_buy,41.68
-US,ADBE,Adobe Inc.,Technology,226.20,-3.97,-17.84,-6.80,-64,42,0,12.63,61.90,12.90,35.44,hold,18.00
-US,QCOM,QUALCOMM Incorporated,Technology,159.81,-4.12,-0.58,-9.30,-54,32,-14,12.58,52.81,-8.40,40.11,hold,15.92
-US,GS,"Goldman Sachs Group, Inc. (The)",Financial Services,873.18,-0.49,-15.98,-12.00,-65,36,-14,12.55,17.71,23.30,42.43,buy,18.04
-US,T,AT&T Inc.,Communication Services,21.95,-1.53,-13.21,-13.80,-37,1,4,11.74,11.61,5.30,44.91,buy,25.68
+IN,AXISBANK.NS,AXIS BANK LIMITED,Financial Services,1360.00,-0.66,9.41,46.50,48,58,9,14.41,13.88,21.10,68.53,strong_buy,16.50
+US,COP,ConocoPhillips,Energy,134.16,-0.18,0.61,26.20,-6,62,4,14.14,17.66,29.30,41.07,buy,14.04
+US,MU,"Micron Technology, Inc.",Technology,697.39,-1.12,-23.40,13.70,-56,74,18,9.39,88.26,379.30,36.39,strong_buy,123.97
+IN,NTPC.NS,NTPC LTD,Utilities,320.40,-0.44,-4.95,13.10,-5,24,28,10.60,14.46,21.20,52.12,strong_buy,30.63
+IN,COALINDIA.NS,COAL INDIA LTD,Energy,388.00,-0.91,-4.64,10.20,-54,71,0,7.23,28.33,64.20,38.08,buy,18.31
+IN,ONGC.NS,OIL AND NATURAL GAS CORP.,Energy,225.00,0.66,-6.05,5.00,-41,39,27,5.71,12.14,25.60,45.49,buy,27.59
+IN,HINDALCO.NS,HINDALCO  INDUSTRIES  LTD,Basic Materials,900.00,-2.99,-13.59,4.10,-49,42,31,10.55,13.03,38.80,41.17,buy,24.14
+IN,VEDL.NS,VEDANTA LIMITED,Basic Materials,245.40,-3.78,-7.05,2.50,-42,33,30,8.55,48.20,-34.20,43.84,none,24.29
+US,VZ,Verizon Communications Inc.,Communication Services,45.68,-0.98,-8.91,-1.20,-37,21,27,11.65,15.79,1.50,49.97,none,10.88
+US,JPM,JP Morgan Chase & Co.,Financial Services,320.34,-1.16,-10.12,-1.60,-36,28,0,13.44,18.01,10.20,35.81,buy,16.59
+US,WFC,Wells Fargo & Company,Financial Services,80.43,-0.61,-5.07,-1.80,-33,24,4,11.34,12.91,0.40,37.27,buy,21.07
+US,QCOM,QUALCOMM Incorporated,Technology,162.13,1.45,2.27,-2.00,-48,32,18,12.77,52.81,-8.40,42.26,hold,14.26
+US,ADBE,Adobe Inc.,Technology,222.12,-1.80,-19.60,-4.60,-59,42,0,12.40,61.90,12.90,33.17,hold,20.16
+US,GS,"Goldman Sachs Group, Inc. (The)",Financial Services,851.86,-2.44,-17.80,-7.20,-64,36,14,12.25,17.71,23.30,38.23,buy,20.99
+US,BAC,Bank of America Corporation,Financial Services,48.56,-0.71,-22.08,-7.50,-43,22,0,11.59,10.73,3.40,33.59,strong_buy,28.65
+US,GOOGL,Alphabet Inc.,Communication Services,278.07,-1.55,-20.11,-9.90,-63,34,0,14.52,44.29,24.70,32.83,strong_buy,43.90
+US,T,AT&T Inc.,Communication Services,21.78,-0.75,-15.20,-13.50,-36,1,4,11.65,11.61,5.30,42.92,buy,26.63
