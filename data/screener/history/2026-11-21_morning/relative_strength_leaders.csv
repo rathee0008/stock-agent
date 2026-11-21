@@ -1,0 +1,6 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+IN,DIVISLAB.NS,DIVI S LABORATORIES LTD,Healthcare,11180.50,0.02,30.46,47.50,59,38,45,88.22,20.13,35.40,68.38,buy,-0.15
+IN,AXISBANK.NS,AXIS BANK LIMITED,Financial Services,1446.00,4.72,15.59,43.40,49,50,9,15.09,13.88,21.10,78.15,strong_buy,9.57
+IN,DLF.NS,DLF LIMITED,Real Estate,785.00,2.21,16.10,43.00,56,16,90,42.57,10.31,-23.30,73.74,strong_buy,4.39
+IN,HDFCBANK.NS,HDFC BANK LTD,Financial Services,846.00,2.94,16.68,40.20,48,44,9,18.49,11.00,80.80,77.95,strong_buy,13.71
+US,PG,Procter & Gamble Company (The),Consumer Defensive,169.37,0.91,16.49,22.70,39,10,18,25.51,29.61,4.00,60.95,buy,3.81
