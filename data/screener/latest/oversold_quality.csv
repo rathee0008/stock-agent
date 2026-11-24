@@ -1,16 +1,14 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
-US,CVX,Chevron Corporation,Energy,206.17,-1.06,2.98,21.90,-6,51,9,15.14,13.85,34.80,37.98,buy,17.20
-IN,COALINDIA.NS,COAL INDIA LTD,Energy,382.00,-2.05,-5.73,15.10,-42,71,0,7.20,28.33,64.20,35.47,buy,20.17
-US,XOM,ExxonMobil Holdings Corporation,Energy,156.90,-1.93,-0.82,14.30,-11,40,4,16.14,15.53,32.60,33.04,buy,17.39
-US,INTU,Intuit Inc.,Technology,275.46,1.86,-20.36,4.20,-41,50,-14,16.74,25.64,12.10,29.70,buy,31.70
-US,GS,"Goldman Sachs Group, Inc. (The)",Financial Services,823.62,4.16,-20.84,4.10,-46,44,18,11.84,17.71,23.30,37.77,buy,25.14
-US,CRM,"Salesforce, Inc.",Technology,185.46,2.68,-9.80,2.90,-32,32,9,16.97,19.38,10.80,26.53,buy,53.37
-IN,VEDL.NS,VEDANTA LIMITED,Basic Materials,235.53,-1.05,-15.58,-2.60,-55,33,30,8.26,48.20,-34.20,36.88,buy,28.32
-US,JPM,JP Morgan Chase & Co.,Financial Services,316.66,1.97,-11.18,-3.30,-43,28,9,13.28,18.01,10.20,36.78,buy,17.94
-US,NFLX,"Netflix, Inc.",Communication Services,58.10,2.41,-28.68,-6.00,-63,38,14,16.79,53.46,11.80,33.44,buy,45.52
-US,ADBE,Adobe Inc.,Technology,223.98,2.88,-18.10,-6.90,-64,42,0,12.51,61.90,12.90,37.52,hold,19.17
-US,CAT,"Caterpillar, Inc.",Industrials,547.04,7.17,-33.44,-7.80,-59,38,-9,21.47,56.14,17.30,34.59,buy,47.57
-US,UNH,UnitedHealth Group Incorporated,Healthcare,336.08,-1.11,-16.19,-9.10,-41,16,0,19.18,15.77,-0.40,28.78,strong_buy,42.37
-US,BKNG,Booking Holdings Inc. Common St,Consumer Cyclical,144.94,0.02,-30.61,-12.60,-59,20,14,15.72,,-1.30,34.83,buy,48.38
-IN,TATASTEEL.NS,TATA STEEL LIMITED,Basic Materials,163.00,-8.43,-10.93,-13.50,-59,16,18,17.53,11.69,11.50,32.00,buy,32.20
-US,BAC,Bank of America Corporation,Financial Services,48.14,2.34,-22.64,-16.60,-63,22,-9,11.49,10.73,3.40,36.30,strong_buy,29.78
+US,XOM,ExxonMobil Holdings Corporation,Energy,158.30,0.89,1.19,17.00,-9,40,18,16.29,15.53,32.60,35.80,buy,16.35
+IN,COALINDIA.NS,COAL INDIA LTD,Energy,382.00,-2.05,-5.73,14.00,-42,71,-8,7.20,28.33,64.20,35.47,buy,20.17
+US,MU,"Micron Technology, Inc.",Technology,629.52,-11.05,-32.70,10.40,-59,74,4,8.47,88.26,379.30,37.35,strong_buy,142.99
+US,CAT,"Caterpillar, Inc.",Industrials,541.13,-1.08,-33.77,3.40,-41,38,18,21.24,56.14,17.30,33.78,buy,49.18
+US,INTU,Intuit Inc.,Technology,279.33,1.40,-19.73,0.10,-54,50,-4,15.90,25.64,12.10,31.97,buy,29.83
+US,CRM,"Salesforce, Inc.",Technology,193.25,4.20,-23.33,-1.90,-44,32,9,17.67,19.38,10.80,34.81,buy,47.19
+US,JPM,JP Morgan Chase & Co.,Financial Services,317.07,0.13,-10.49,-2.30,-42,28,14,13.30,18.01,10.20,37.18,buy,17.79
+IN,VEDL.NS,VEDANTA LIMITED,Basic Materials,235.53,-1.05,-15.58,-3.80,-55,33,22,8.26,48.20,-34.20,36.88,buy,28.32
+US,NFLX,"Netflix, Inc.",Communication Services,58.81,1.21,-26.35,-5.50,-62,38,14,16.99,53.46,11.80,36.34,buy,43.78
+US,GS,"Goldman Sachs Group, Inc. (The)",Financial Services,806.66,-2.06,-22.50,-6.10,-56,36,0,11.60,17.71,23.30,35.42,buy,27.78
+US,BKNG,Booking Holdings Inc. Common St,Consumer Cyclical,146.52,1.09,-27.67,-12.50,-59,20,14,15.89,,-1.30,37.36,buy,46.78
+IN,TATASTEEL.NS,TATA STEEL LIMITED,Basic Materials,163.00,-8.43,-10.93,-14.20,-59,16,14,17.53,11.69,11.50,32.00,buy,32.20
+US,UNH,UnitedHealth Group Incorporated,Healthcare,342.67,1.96,-13.26,-14.70,-53,16,-4,19.55,15.77,-0.40,32.64,strong_buy,39.63
