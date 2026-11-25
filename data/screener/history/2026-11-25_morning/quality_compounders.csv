@@ -1,0 +1,36 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+IN,BAJFINANCE.NS,BAJAJ FINANCE LIMITED,Financial Services,1131.35,3.27,5.05,46.30,52,34,68,32.53,19.03,26.70,65.84,buy,3.28
+IN,CHOLAFIN.NS,CHOLAMANDALAM IN & FIN CO,Financial Services,1868.00,2.02,1.15,42.00,51,48,0,25.60,20.58,32.00,66.48,none,3.72
+IN,M&M.NS,MAHINDRA & MAHINDRA LTD,Consumer Cyclical,3509.50,0.63,2.79,41.20,51,36,31,20.33,20.07,25.60,69.86,strong_buy,13.93
+IN,HAL.NS,HINDUSTAN AERONAUTICS LTD,Industrials,4936.00,3.26,0.61,39.50,32,44,45,34.43,23.64,14.90,55.70,buy,14.59
+IN,HEROMOTOCO.NS,HERO MOTOCORP LIMITED,Consumer Cyclical,5751.50,3.91,1.17,38.70,39,40,34,19.19,26.93,22.50,68.04,none,5.96
+IN,BAJAJ-AUTO.NS,BAJAJ AUTO LIMITED,Consumer Cyclical,10868.00,2.11,-7.90,37.50,40,40,22,23.18,35.56,57.40,55.54,buy,10.76
+IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1801.20,1.33,13.71,33.60,38,38,9,28.95,19.19,15.60,60.03,buy,-2.14
+US,LLY,Eli Lilly and Company,Healthcare,1407.59,3.15,19.68,33.00,42,28,22,45.69,86.02,38.60,59.24,buy,4.44
+IN,JSWSTEEL.NS,JSW STEEL LIMITED,Basic Materials,1302.50,-0.72,-1.85,31.30,26,36,0,11.20,31.93,20.70,49.86,buy,7.48
+IN,BEL.NS,BHARAT ELECTRONICS LTD,Industrials,404.30,2.15,-1.15,31.20,9,44,51,46.21,26.75,26.50,60.34,strong_buy,22.87
+IN,TCS.NS,TATA CONSULTANCY SERV LT,Technology,2517.30,2.33,10.21,30.70,33,36,9,17.65,45.57,11.20,62.41,buy,-4.85
+IN,EICHERMOT.NS,EICHER MOTORS LTD,Consumer Cyclical,8336.00,2.00,3.59,30.50,25,34,34,38.34,24.89,20.30,74.28,buy,2.33
+US,MSFT,Microsoft Corporation,Technology,496.13,0.74,-1.77,22.30,-3,54,-4,25.89,34.22,18.80,40.98,strong_buy,28.47
+US,UNP,Union Pacific Corporation,Industrials,290.83,0.67,-5.47,21.70,21,30,0,22.69,38.75,15.30,45.94,buy,13.45
+IN,COALINDIA.NS,COAL INDIA LTD,Energy,385.00,0.79,-5.38,12.10,-47,71,-8,7.11,28.33,64.20,38.50,buy,18.87
+US,AMZN,"Amazon.com, Inc.",Consumer Cyclical,252.29,-1.21,-1.55,9.90,-5,28,-4,20.40,27.42,12.10,46.51,strong_buy,29.35
+US,MU,"Micron Technology, Inc.",Technology,629.79,-11.01,-32.67,7.70,-59,74,-14,8.47,88.26,379.30,37.37,strong_buy,142.89
+US,META,"Meta Platforms, Inc.",Communication Services,589.82,-1.30,3.28,5.60,-43,52,-4,20.12,32.26,26.10,40.24,strong_buy,42.85
+US,CAT,"Caterpillar, Inc.",Industrials,540.63,-1.17,-33.83,4.10,-41,38,22,21.22,56.14,17.30,33.71,buy,49.32
+US,NVDA,NVIDIA Corporation,Technology,155.38,-5.86,-31.84,3.40,-59,60,0,16.69,117.36,103.20,39.47,buy,57.49
+US,INTU,Intuit Inc.,Technology,279.42,1.44,-19.71,0.70,-54,50,0,15.90,25.64,12.10,32.02,buy,29.21
+US,LRCX,Lam Research Corporation,Technology,196.16,-6.48,-38.43,0.60,-59,52,4,29.23,70.12,54.40,38.67,strong_buy,83.74
+US,ANET,"Arista Networks, Inc.",Technology,168.56,-5.47,-16.18,-0.10,-43,38,0,45.19,33.52,58.50,42.95,strong_buy,48.11
+US,AVGO,Broadcom Inc.,Technology,301.08,-3.98,-18.96,-1.80,-53,46,-9,38.45,44.25,85.50,40.80,strong_buy,74.54
+US,CRM,"Salesforce, Inc.",Technology,193.26,4.21,-23.32,-1.90,-44,32,9,17.68,19.38,10.80,34.82,buy,47.18
+IN,POLYCAB.NS,POLYCAB INDIA LIMITED,Industrials,7379.00,-0.69,-18.50,-2.30,-63,36,45,35.16,26.77,52.80,37.23,buy,33.76
+US,TXN,Texas Instruments Incorporated,Technology,258.44,-11.25,-3.04,-3.80,-44,32,-4,33.52,39.72,27.70,39.05,buy,31.43
+IN,IRCTC.NS,INDIAN RAIL TOUR CORP LTD,Consumer Cyclical,441.85,-1.20,-8.55,-4.30,-53,38,0,26.89,28.82,16.30,41.07,buy,47.79
+US,JPM,JP Morgan Chase & Co.,Financial Services,317.10,0.14,-10.48,-4.40,-42,28,0,13.30,18.01,10.20,37.21,buy,17.78
+US,GOOGL,Alphabet Inc.,Communication Services,279.05,-1.08,-18.08,-4.50,-55,42,-9,14.57,44.29,24.70,39.62,strong_buy,41.72
+US,CSCO,"Cisco Systems, Inc.",Technology,93.99,-2.90,-16.19,-5.30,-55,36,4,25.00,30.38,24.40,41.00,buy,37.96
+US,AMAT,"Applied Materials, Inc.",Technology,323.76,-6.66,-32.88,-5.50,-70,52,-4,25.65,43.37,53.10,39.18,strong_buy,71.75
+US,NFLX,"Netflix, Inc.",Communication Services,58.87,1.33,-26.27,-6.90,-62,38,4,17.01,53.46,11.80,36.59,buy,43.62
+US,ADBE,Adobe Inc.,Technology,232.08,3.62,-19.74,-7.50,-60,34,9,12.96,61.90,12.90,44.88,hold,15.01
+US,ORCL,Oracle Corporation,Technology,109.50,-3.68,-27.93,-10.80,-57,30,-9,17.16,41.19,29.60,40.89,strong_buy,115.69

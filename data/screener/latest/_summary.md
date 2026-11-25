@@ -1,18 +1,18 @@
-# Screener results — 2026-11-25 evening (IST)
+# Screener results — 2026-11-25 morning (IST)
 
-Universe scored: 121 stocks. Not investment advice.
+Universe scored: 118 stocks. Not investment advice.
 
 | Preset | Matches | Top 5 by score |
 |---|---|---|
-| Quality momentum | 32 | AXISBANK.NS, ICICIBANK.NS, BAJFINANCE.NS, SBIN.NS, CHOLAFIN.NS |
-| Quality compounders | 37 | BAJFINANCE.NS, ASIANPAINT.NS, CHOLAFIN.NS, M&M.NS, HEROMOTOCO.NS |
-| GARP (growth at fair price) | 12 | ICICIBANK.NS, BAJFINANCE.NS, M&M.NS, TECHM.NS, JSWSTEEL.NS |
-| Deep value | 16 | AXISBANK.NS, COP, COALINDIA.NS, MU, NTPC.NS |
-| Cheap and profitable | 24 | JSWSTEEL.NS, TCS.NS, ACN, COP, XOM |
-| Momentum breakout | 16 | AXISBANK.NS, DIVISLAB.NS, ICICIBANK.NS, KOTAKBANK.NS, HDFCBANK.NS |
-| Strong technicals | 28 | AXISBANK.NS, DIVISLAB.NS, ICICIBANK.NS, KOTAKBANK.NS, BAJFINANCE.NS |
-| Oversold quality | 13 | XOM, COALINDIA.NS, MU, CAT, INTU |
-| Relative strength leaders | 7 | DIVISLAB.NS, KOTAKBANK.NS, DLF.NS, ABBV, LLY |
-| Growth acceleration | 17 | AXISBANK.NS, DIVISLAB.NS, KOTAKBANK.NS, BAJFINANCE.NS, HDFCBANK.NS |
-| Analyst upside | 33 | BEL.NS, MSFT, COALINDIA.NS, PLTR, META |
-| Large-cap safety | 56 | AXISBANK.NS, ICICIBANK.NS, BAJFINANCE.NS, CHOLAFIN.NS, M&M.NS |
+| Quality momentum | 29 | AXISBANK.NS, BAJFINANCE.NS, ICICIBANK.NS, CHOLAFIN.NS, M&M.NS |
+| Quality compounders | 35 | BAJFINANCE.NS, CHOLAFIN.NS, M&M.NS, HAL.NS, HEROMOTOCO.NS |
+| GARP (growth at fair price) | 14 | BAJFINANCE.NS, ICICIBANK.NS, CHOLAFIN.NS, M&M.NS, HAL.NS |
+| Deep value | 16 | AXISBANK.NS, COP, COALINDIA.NS, HINDALCO.NS, MU |
+| Cheap and profitable | 23 | JSWSTEEL.NS, TCS.NS, COP, ACN, XOM |
+| Momentum breakout | 13 | AXISBANK.NS, ICICIBANK.NS, DIVISLAB.NS, TRENT.NS, DIS |
+| Strong technicals | 30 | AXISBANK.NS, BAJFINANCE.NS, ICICIBANK.NS, CHOLAFIN.NS, M&M.NS |
+| Oversold quality | 11 | XOM, MU, CAT, INTU, VEDL.NS |
+| Relative strength leaders | 10 | ICICIBANK.NS, DIVISLAB.NS, KOTAKBANK.NS, DLF.NS, LLY |
+| Growth acceleration | 17 | AXISBANK.NS, BAJFINANCE.NS, CHOLAFIN.NS, M&M.NS, DIVISLAB.NS |
+| Analyst upside | 33 | BEL.NS, MSFT, PLTR, AMZN, SHOP |
+| Large-cap safety | 53 | AXISBANK.NS, BAJFINANCE.NS, CHOLAFIN.NS, M&M.NS, HAL.NS |

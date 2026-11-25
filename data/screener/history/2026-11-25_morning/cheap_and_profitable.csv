@@ -1,0 +1,24 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+IN,JSWSTEEL.NS,JSW STEEL LIMITED,Basic Materials,1302.50,-0.72,-1.85,31.30,26,36,0,11.20,31.93,20.70,49.86,buy,7.48
+IN,TCS.NS,TATA CONSULTANCY SERV LT,Technology,2517.30,2.33,10.21,30.70,33,36,9,17.65,45.57,11.20,62.41,buy,-4.85
+US,COP,ConocoPhillips,Energy,134.64,1.85,3.95,27.00,-4,62,4,14.19,17.66,29.30,43.77,buy,13.44
+US,ACN,Accenture plc,Technology,232.32,4.51,23.98,26.90,34,28,4,17.13,26.02,6.20,47.51,buy,1.59
+US,XOM,ExxonMobil Holdings Corporation,Energy,158.23,0.85,1.14,21.90,-9,48,27,16.28,15.53,32.60,35.67,buy,16.40
+IN,WIPRO.NS,WIPRO LTD,Technology,189.05,0.94,4.27,19.20,21,27,-9,14.85,15.94,9.10,52.46,hold,-7.78
+US,VZ,Verizon Communications Inc.,Communication Services,47.16,1.53,-4.59,14.10,27,7,0,12.03,15.79,1.50,60.44,none,7.40
+IN,COALINDIA.NS,COAL INDIA LTD,Energy,385.00,0.79,-5.38,12.10,-47,71,-8,7.11,28.33,64.20,38.50,buy,18.87
+US,MU,"Micron Technology, Inc.",Technology,629.79,-11.01,-32.67,7.70,-59,74,-14,8.47,88.26,379.30,37.37,strong_buy,142.89
+IN,BPCL.NS,BHARAT PETROLEUM CORP  LT,Energy,309.95,1.51,-0.63,7.50,7,9,4,8.38,16.17,42.10,54.95,buy,7.79
+IN,INFY.NS,INFOSYS LIMITED,Technology,1130.00,2.41,0.00,5.70,-12,26,-9,15.05,29.95,1.40,51.60,buy,5.80
+US,NVDA,NVIDIA Corporation,Technology,155.38,-5.86,-31.84,3.40,-59,60,0,16.69,117.36,103.20,39.47,buy,57.49
+US,INTU,Intuit Inc.,Technology,279.42,1.44,-19.71,0.70,-54,50,0,15.90,25.64,12.10,32.02,buy,29.21
+IN,VEDL.NS,VEDANTA LIMITED,Basic Materials,232.80,-1.16,-15.96,-0.40,-56,41,22,8.17,48.20,-34.20,35.11,buy,29.82
+US,CRM,"Salesforce, Inc.",Technology,193.26,4.21,-23.32,-1.90,-44,32,9,17.68,19.38,10.80,34.82,buy,47.18
+US,JPM,JP Morgan Chase & Co.,Financial Services,317.10,0.14,-10.48,-4.40,-42,28,0,13.30,18.01,10.20,37.21,buy,17.78
+US,GOOGL,Alphabet Inc.,Communication Services,279.05,-1.08,-18.08,-4.50,-55,42,-9,14.57,44.29,24.70,39.62,strong_buy,41.72
+US,QCOM,QUALCOMM Incorporated,Technology,164.96,-0.25,0.11,-6.20,-42,24,0,12.99,52.81,-8.40,47.00,hold,12.30
+US,NFLX,"Netflix, Inc.",Communication Services,58.87,1.33,-26.27,-6.90,-62,38,4,17.01,53.46,11.80,36.59,buy,43.62
+US,ADBE,Adobe Inc.,Technology,232.08,3.62,-19.74,-7.50,-60,34,9,12.96,61.90,12.90,44.88,hold,15.01
+US,GS,"Goldman Sachs Group, Inc. (The)",Financial Services,806.02,-2.14,-22.56,-9.50,-56,30,-4,11.59,17.71,23.30,35.34,buy,27.88
+US,ORCL,Oracle Corporation,Technology,109.50,-3.68,-27.93,-10.80,-57,30,-9,17.16,41.19,29.60,40.89,strong_buy,115.69
+US,BKNG,Booking Holdings Inc. Common St,Consumer Cyclical,146.64,1.17,-27.61,-12.50,-59,20,14,15.90,,-1.30,37.54,buy,46.66
