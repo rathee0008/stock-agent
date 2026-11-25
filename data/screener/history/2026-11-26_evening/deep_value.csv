@@ -1,0 +1,17 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+IN,AXISBANK.NS,AXIS BANK LIMITED,Financial Services,1388.60,-3.97,11.46,47.90,51,58,9,14.80,13.88,21.10,63.87,strong_buy,14.05
+US,COP,ConocoPhillips,Energy,135.38,0.55,3.86,28.90,3,62,0,14.26,17.66,29.30,45.11,buy,12.80
+IN,COALINDIA.NS,COAL INDIA LTD,Energy,382.00,-2.05,-5.73,15.10,-42,71,0,7.11,28.33,64.20,35.47,buy,19.80
+US,MU,"Micron Technology, Inc.",Technology,595.65,-5.42,-36.15,10.40,-59,74,4,8.01,88.26,379.30,35.37,strong_buy,156.81
+IN,NTPC.NS,NTPC LTD,Utilities,315.45,-1.88,-7.22,7.10,-29,32,28,10.38,14.46,21.20,46.04,strong_buy,32.51
+US,T,AT&T Inc.,Communication Services,23.15,1.18,-11.00,4.40,-1,9,4,12.38,11.61,5.30,60.57,buy,19.17
+IN,ONGC.NS,OIL AND NATURAL GAS CORP.,Energy,222.85,-0.27,-5.73,3.80,-54,47,27,5.64,12.14,25.60,42.69,buy,28.82
+IN,HINDALCO.NS,HINDALCO  INDUSTRIES  LTD,Basic Materials,900.45,-3.13,-12.92,2.20,-63,50,31,10.32,13.03,38.80,43.15,buy,24.07
+IN,VEDL.NS,VEDANTA LIMITED,Basic Materials,235.53,-1.05,-15.58,1.00,-55,41,30,8.17,48.20,-34.20,36.88,buy,28.32
+US,GOOGL,Alphabet Inc.,Communication Services,271.82,-2.59,-21.57,-1.40,-51,42,0,14.19,44.29,24.70,36.40,strong_buy,45.36
+US,JPM,JP Morgan Chase & Co.,Financial Services,317.35,0.08,-11.26,-4.90,-42,28,-4,13.31,18.01,10.20,37.47,buy,17.74
+US,QCOM,QUALCOMM Incorporated,Technology,167.08,1.29,1.76,-4.90,-43,24,9,13.15,52.81,-8.40,48.52,hold,10.88
+US,ADBE,Adobe Inc.,Technology,233.68,0.69,-19.84,-6.20,-55,34,4,13.05,61.90,12.90,46.23,hold,14.22
+US,WFC,Wells Fargo & Company,Financial Services,81.16,-0.04,-6.38,-9.00,-51,24,4,11.45,12.91,0.40,43.37,buy,19.98
+US,GS,"Goldman Sachs Group, Inc. (The)",Financial Services,802.18,-0.48,-22.42,-9.80,-57,30,-4,11.53,17.71,23.30,34.82,buy,28.49
+US,BAC,Bank of America Corporation,Financial Services,48.51,-0.10,-22.16,-11.50,-43,14,-4,11.58,10.73,3.40,39.00,strong_buy,28.79
