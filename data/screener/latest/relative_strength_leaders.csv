@@ -1,10 +1,11 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
-IN,DIVISLAB.NS,DIVI S LABORATORIES LTD,Healthcare,11203.00,0.20,30.31,44.80,59,32,45,92.45,20.13,35.40,68.70,buy,-0.35
-IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,502.85,-2.51,24.84,39.40,58,30,18,23.59,11.83,20.70,68.86,buy,-1.13
-US,DIS,Walt Disney Company (The),Communication Services,125.58,2.51,16.17,37.00,55,30,9,22.31,9.13,15.50,68.83,buy,4.59
-IN,DLF.NS,DLF LIMITED,Real Estate,794.10,1.16,17.11,36.20,48,8,90,43.11,10.31,-23.30,75.48,strong_buy,3.20
-US,LLY,Eli Lilly and Company,Healthcare,1397.40,-0.72,18.97,30.20,42,28,4,45.36,86.02,38.60,57.19,buy,5.20
-US,ACN,Accenture plc,Technology,240.76,3.63,26.98,28.70,37,28,9,17.76,26.02,6.20,52.80,buy,-1.50
-US,PG,Procter & Gamble Company (The),Consumer Defensive,173.30,0.48,20.53,28.10,49,10,27,26.10,29.61,4.00,66.94,buy,1.96
-US,COST,Costco Wholesale Corporation,Consumer Defensive,1089.28,-0.22,15.21,26.90,51,10,14,52.47,28.40,11.10,63.36,buy,-0.51
-US,ABBV,AbbVie Inc.,Healthcare,294.41,-1.96,15.24,26.00,39,16,22,50.59,,10.30,56.56,buy,7.30
+IN,DIVISLAB.NS,DIVI S LABORATORIES LTD,Healthcare,11631.00,-0.73,33.01,41.10,50,32,45,91.78,20.13,35.40,72.38,buy,-4.02
+US,DIS,Walt Disney Company (The),Communication Services,125.60,2.52,16.19,39.60,64,30,4,22.31,9.13,15.50,68.86,buy,4.57
+IN,DLF.NS,DLF LIMITED,Real Estate,807.80,1.61,18.28,36.20,48,8,90,43.81,10.31,-23.30,78.01,strong_buy,1.45
+IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,509.95,0.19,26.98,35.90,49,30,18,23.63,11.83,20.70,71.39,buy,-2.51
+IN,HDFCBANK.NS,HDFC BANK LTD,Financial Services,862.00,1.87,18.49,35.80,47,36,4,18.84,11.00,80.80,72.89,strong_buy,11.83
+IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1854.70,2.97,15.93,33.70,40,38,4,29.81,19.19,15.60,66.49,buy,-4.83
+US,ACN,Accenture plc,Technology,240.49,3.52,26.83,28.70,37,28,9,17.74,26.02,6.20,52.65,buy,-1.39
+US,PG,Procter & Gamble Company (The),Consumer Defensive,173.23,0.44,20.48,28.10,49,10,27,26.09,29.61,4.00,66.85,buy,2.00
+US,LLY,Eli Lilly and Company,Healthcare,1392.22,-1.09,18.53,28.00,42,28,-9,45.19,86.02,38.60,56.21,buy,5.59
+US,ABBV,AbbVie Inc.,Healthcare,294.48,-1.93,15.27,24.70,39,16,14,50.60,,10.30,56.64,buy,7.27
