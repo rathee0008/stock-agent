@@ -1,0 +1,14 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+US,XOM,ExxonMobil Holdings Corporation,Energy,158.08,-0.09,0.87,21.00,-8,48,18,16.26,15.53,32.60,35.50,buy,16.51
+US,MU,"Micron Technology, Inc.",Technology,601.25,-4.53,-35.55,9.70,-59,74,0,8.09,88.26,379.30,35.68,strong_buy,154.42
+US,INTU,Intuit Inc.,Technology,271.72,-2.76,-24.11,3.50,-47,50,0,15.46,25.64,12.10,29.95,buy,31.99
+US,NVDA,NVIDIA Corporation,Technology,149.30,-3.91,-31.37,3.40,-59,60,0,16.04,117.36,103.20,37.45,buy,62.38
+US,GOOGL,Alphabet Inc.,Communication Services,273.10,-2.13,-21.20,1.80,-45,42,4,14.26,44.29,24.70,36.93,strong_buy,44.68
+IN,VEDL.NS,VEDANTA LIMITED,Basic Materials,232.80,-1.16,-15.96,-0.40,-56,41,22,8.35,48.20,-34.20,35.11,buy,29.82
+US,CAT,"Caterpillar, Inc.",Industrials,543.69,0.57,-32.06,-1.70,-47,38,0,21.34,56.14,17.30,34.57,buy,48.48
+IN,POLYCAB.NS,POLYCAB INDIA LIMITED,Industrials,7379.00,-0.69,-18.50,-2.30,-63,36,45,35.02,26.77,52.80,37.23,buy,33.39
+US,AMAT,"Applied Materials, Inc.",Technology,311.18,-3.89,-32.60,-4.30,-71,52,4,24.66,43.37,53.10,37.20,strong_buy,78.69
+US,JPM,JP Morgan Chase & Co.,Financial Services,316.74,-0.11,-11.43,-4.90,-42,28,-4,13.29,18.01,10.20,36.99,buy,17.97
+US,LRCX,Lam Research Corporation,Technology,185.01,-5.68,-38.72,-6.00,-77,52,9,27.57,70.12,54.40,35.93,strong_buy,94.82
+US,GS,"Goldman Sachs Group, Inc. (The)",Financial Services,801.03,-0.62,-22.53,-7.80,-57,30,9,11.52,17.71,23.30,34.66,buy,28.67
+US,ORCL,Oracle Corporation,Technology,103.88,-5.13,-31.14,-11.20,-65,30,9,16.28,41.19,29.60,37.74,strong_buy,127.36
