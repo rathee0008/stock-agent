@@ -1,0 +1,12 @@
+Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
+IN,HEROMOTOCO.NS,HERO MOTOCORP LIMITED,Consumer Cyclical,5701.00,-1.52,1.89,42.00,47,40,34,19.03,26.93,22.50,63.67,none,6.96
+IN,M&M.NS,MAHINDRA & MAHINDRA LTD,Consumer Cyclical,3450.00,-1.08,1.52,40.40,49,36,31,19.98,20.07,25.60,64.30,strong_buy,15.90
+IN,ICICIBANK.NS,ICICI BANK LTD.,Financial Services,1593.40,-1.09,11.43,39.60,36,50,18,19.57,16.49,15.80,61.31,strong_buy,11.94
+IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1813.90,-2.20,15.46,32.80,38,38,4,29.15,19.19,15.60,58.70,buy,-2.69
+US,V,Visa Inc.,Financial Services,424.39,1.83,11.21,28.10,39,22,18,34.45,63.51,13.20,59.09,strong_buy,7.00
+US,COP,ConocoPhillips,Energy,135.02,0.28,3.58,26.80,-3,62,0,14.23,17.66,29.30,44.47,buy,13.10
+US,MA,Mastercard Incorporated,Financial Services,659.97,1.94,10.86,25.10,40,16,14,34.54,231.37,14.00,60.52,strong_buy,9.51
+IN,LT.NS,LARSEN & TOUBRO LTD.,Industrials,4108.50,-0.57,1.74,24.30,32,20,18,31.65,17.88,16.90,57.74,buy,9.57
+US,XOM,ExxonMobil Holdings Corporation,Energy,158.08,-0.09,0.87,21.00,-8,48,18,16.26,15.53,32.60,35.50,buy,16.51
+IN,ADANIPORTS.NS,ADANI PORT & SEZ LTD,Industrials,1880.00,-1.64,11.14,16.50,21,18,0,31.38,15.63,23.70,51.71,strong_buy,14.75
+US,META,"Meta Platforms, Inc.",Communication Services,609.89,3.40,5.51,9.30,-34,52,-4,20.81,32.26,26.10,45.70,strong_buy,38.15
