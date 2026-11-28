@@ -1,13 +1,12 @@
 Market,Symbol,Name,Sector,Price,Day %,3M %,Score,Technical,Fundamental,News,P/E,ROE %,Rev growth %,RSI,Analyst,Upside %
-IN,DIVISLAB.NS,DIVI S LABORATORIES LTD,Healthcare,11631.00,-0.73,33.01,41.10,50,32,45,91.22,20.13,35.40,72.38,buy,-4.02
-IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,509.95,0.19,26.98,37.20,49,30,27,23.17,11.83,20.70,71.39,buy,-1.73
-IN,DLF.NS,DLF LIMITED,Real Estate,807.80,1.61,18.28,36.20,48,8,90,43.68,10.31,-23.30,78.01,strong_buy,1.45
-IN,HDFCBANK.NS,HDFC BANK LTD,Financial Services,862.00,1.87,18.49,35.80,47,36,4,18.74,11.00,80.80,72.89,strong_buy,11.83
-IN,TECHM.NS,TECH MAHINDRA LIMITED,Technology,1854.70,2.97,15.93,33.70,40,38,4,29.15,19.19,15.60,66.49,buy,-4.83
+IN,DIVISLAB.NS,DIVI S LABORATORIES LTD,Healthcare,11560.00,-0.61,28.09,41.10,50,32,45,91.22,20.13,35.40,70.20,buy,-3.43
+IN,KOTAKBANK.NS,KOTAK MAHINDRA BANK LTD,Financial Services,500.00,-1.95,19.99,39.80,57,30,22,23.17,11.83,20.70,63.14,buy,0.54
+IN,DLF.NS,DLF LIMITED,Real Estate,805.45,-0.29,19.77,36.30,48,8,90,43.68,10.31,-23.30,76.54,strong_buy,1.74
 US,DIS,Walt Disney Company (The),Communication Services,127.24,1.31,18.31,32.80,41,30,18,22.60,9.13,15.50,70.91,buy,3.23
-US,LOW,"Lowe's Companies, Inc.",Consumer Cyclical,236.46,0.34,15.52,30.30,59,6,27,19.84,,9.30,68.54,buy,5.69
-US,LLY,Eli Lilly and Company,Healthcare,1392.38,0.01,20.37,30.00,42,28,4,45.19,86.02,38.60,56.23,buy,5.58
-US,PG,Procter & Gamble Company (The),Consumer Defensive,172.86,-0.21,19.12,28.10,49,10,27,26.03,29.61,4.00,65.76,buy,2.22
+IN,HDFCBANK.NS,HDFC BANK LTD,Financial Services,857.25,-0.55,17.88,32.60,39,36,4,18.74,11.00,80.80,70.98,strong_buy,12.45
+US,LOW,"Lowe's Companies, Inc.",Consumer Cyclical,236.46,0.34,15.52,29.70,59,6,22,19.84,,9.30,68.54,buy,5.69
+US,LLY,Eli Lilly and Company,Healthcare,1392.38,0.01,20.37,29.30,42,28,0,45.19,86.02,38.60,56.23,buy,6.25
 US,ACN,Accenture plc,Technology,241.84,0.56,27.45,27.60,36,28,4,17.83,26.02,6.20,53.46,buy,-1.94
-US,COST,Costco Wholesale Corporation,Consumer Defensive,1097.81,1.01,16.31,26.50,53,10,4,52.88,28.40,11.10,65.26,buy,-1.29
-US,BRK-B,Berkshire Hathaway Inc. New,Financial Services,580.79,0.25,15.23,23.80,40,14,9,16.25,10.57,11.20,63.64,hold,-2.78
+US,PG,Procter & Gamble Company (The),Consumer Defensive,172.86,-0.21,19.12,27.40,49,10,22,26.03,29.61,4.00,65.76,buy,2.22
+US,COST,Costco Wholesale Corporation,Consumer Defensive,1097.81,1.01,16.31,27.10,53,10,9,52.88,28.40,11.10,65.26,buy,-1.29
+US,BRK-B,Berkshire Hathaway Inc. New,Financial Services,580.79,0.25,15.23,23.20,40,14,4,16.21,10.57,11.20,63.64,hold,-2.78
